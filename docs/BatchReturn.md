@@ -1,0 +1,10 @@
+# SwaggerClient::BatchReturn
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**body** | [**Result**](Result.md) | The result body | 
+**code** | **Integer** | The HTTP response code | 
+**uri** | **String** | Full URI of REST call | 
+
+
