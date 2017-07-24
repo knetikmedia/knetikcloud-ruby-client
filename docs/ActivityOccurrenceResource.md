@@ -1,4 +1,4 @@
-# KnetikCloudClient::AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings
+# KnetikCloudClient::ActivityOccurrenceResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **create_activity**
-> RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc create_activity(opts)
+> ActivityResource create_activity(opts)
 
 Create an activity
 
@@ -37,7 +37,7 @@ end
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
 opts = { 
-  activity_resource: KnetikCloudClient::RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.new # RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc | The activity resource object
+  activity_resource: KnetikCloudClient::ActivityResource.new # ActivityResource | The activity resource object
 }
 
 begin
@@ -53,11 +53,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activity_resource** | [**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)| The activity resource object | [optional] 
+ **activity_resource** | [**ActivityResource**](ActivityResource.md)| The activity resource object | [optional] 
 
 ### Return type
 
-[**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 
 # **create_activity_occurrence**
-> AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings create_activity_occurrence(opts)
+> ActivityOccurrenceResource create_activity_occurrence(opts)
 
 Create a new activity occurrence. Ex: start a game
 
@@ -91,7 +91,7 @@ api_instance = KnetikCloudClient::ActivitiesApi.new
 
 opts = { 
   test: false, # BOOLEAN | if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings
-  activity_occurrence_resource: KnetikCloudClient::AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.new # AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings | The activity occurrence object
+  activity_occurrence_resource: KnetikCloudClient::ActivityOccurrenceResource.new # ActivityOccurrenceResource | The activity occurrence object
 }
 
 begin
@@ -108,11 +108,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **test** | **BOOLEAN**| if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings | [optional] [default to false]
- **activity_occurrence_resource** | [**AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings**](AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.md)| The activity occurrence object | [optional] 
+ **activity_occurrence_resource** | [**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)| The activity occurrence object | [optional] 
 
 ### Return type
 
-[**AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings**](AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.md)
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ api_instance = KnetikCloudClient::ActivitiesApi.new
 opts = { 
   filter_template: true, # BOOLEAN | Filter for activities that are templates, or specifically not if false
   filter_name: "filter_name_example", # String | Filter for activities that have a name starting with specified string
-  filter_id: nil, # Object | Filter for activities with an id in the given comma separated list of ids
+  filter_id: "filter_id_example", # String | Filter for activities with an id in the given comma separated list of ids
   size: 25, # Integer | The number of objects returned per page
   page: 1, # Integer | The number of the page returned, starting with 1
   order: "id:ASC" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_template** | **BOOLEAN**| Filter for activities that are templates, or specifically not if false | [optional] 
  **filter_name** | **String**| Filter for activities that have a name starting with specified string | [optional] 
- **filter_id** | [**Object**](.md)| Filter for activities with an id in the given comma separated list of ids | [optional] 
+ **filter_id** | **String**| Filter for activities with an id in the given comma separated list of ids | [optional] 
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
@@ -339,7 +339,7 @@ No authorization required
 
 
 # **get_activity**
-> RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc get_activity(id)
+> ActivityResource get_activity(id)
 
 Get a single activity
 
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -508,7 +508,7 @@ api_instance = KnetikCloudClient::ActivitiesApi.new
 activity_occurrence_id = 789 # Integer | The id of the activity occurrence
 
 opts = { 
-  activity_occurrence_results: KnetikCloudClient::ActivityOccurrenceResults.new # ActivityOccurrenceResults | The activity occurrence object
+  activity_occurrence_results: KnetikCloudClient::ActivityOccurrenceResultsResource.new # ActivityOccurrenceResultsResource | The activity occurrence object
 }
 
 begin
@@ -525,7 +525,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activity_occurrence_id** | **Integer**| The id of the activity occurrence | 
- **activity_occurrence_results** | [**ActivityOccurrenceResults**](ActivityOccurrenceResults.md)| The activity occurrence object | [optional] 
+ **activity_occurrence_results** | [**ActivityOccurrenceResultsResource**](ActivityOccurrenceResultsResource.md)| The activity occurrence object | [optional] 
 
 ### Return type
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 
 # **update_activity**
-> RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc update_activity(id, opts)
+> ActivityResource update_activity(id, opts)
 
 Update an activity
 
@@ -562,7 +562,7 @@ api_instance = KnetikCloudClient::ActivitiesApi.new
 id = 789 # Integer | The id of the activity
 
 opts = { 
-  activity_resource: KnetikCloudClient::RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.new # RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc | The activity resource object
+  activity_resource: KnetikCloudClient::ActivityResource.new # ActivityResource | The activity resource object
 }
 
 begin
@@ -579,11 +579,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The id of the activity | 
- **activity_resource** | [**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)| The activity resource object | [optional] 
+ **activity_resource** | [**ActivityResource**](ActivityResource.md)| The activity resource object | [optional] 
 
 ### Return type
 
-[**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 

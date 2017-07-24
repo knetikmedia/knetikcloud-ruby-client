@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**set_subscription_payment_method**](UsersSubscriptionsApi.md#set_subscription_payment_method) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/payment-method | Set the payment method to use for a subscription
 [**set_subscription_status**](UsersSubscriptionsApi.md#set_subscription_status) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/status | Set the status of a subscription
 [**set_user_subscription_plan**](UsersSubscriptionsApi.md#set_user_subscription_plan) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/plan | Set a new subscription plan for a user
+[**set_user_subscription_price**](UsersSubscriptionsApi.md#set_user_subscription_price) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/price-override | Set a new subscription price for a user
 
 
 # **get_user_subscription_details**
@@ -383,6 +384,64 @@ Name | Type | Description  | Notes
  **user_id** | **Integer**| The id of the user | 
  **inventory_id** | **Integer**| The id of the user&#39;s inventory | 
  **plan_id** | **String**| The id of the new plan. Must be from the same subscription | [optional] 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **set_user_subscription_price**
+> set_user_subscription_price(user_id, inventory_id, opts)
+
+Set a new subscription price for a user
+
+This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+
+### Example
+```ruby
+# load the gem
+require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = KnetikCloudClient::UsersSubscriptionsApi.new
+
+user_id = 56 # Integer | The id of the user
+
+inventory_id = 56 # Integer | The id of the user's inventory
+
+opts = { 
+  the_override_details: KnetikCloudClient::SubscriptionPriceOverrideRequest.new # SubscriptionPriceOverrideRequest | override
+}
+
+begin
+  #Set a new subscription price for a user
+  api_instance.set_user_subscription_price(user_id, inventory_id, opts)
+rescue KnetikCloudClient::ApiError => e
+  puts "Exception when calling UsersSubscriptionsApi->set_user_subscription_price: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **Integer**| The id of the user | 
+ **inventory_id** | **Integer**| The id of the user&#39;s inventory | 
+ **the_override_details** | [**SubscriptionPriceOverrideRequest**](SubscriptionPriceOverrideRequest.md)| override | [optional] 
 
 ### Return type
 

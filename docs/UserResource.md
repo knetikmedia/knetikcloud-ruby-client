@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **gender** | **String** | The user&#39;s gender (private) | [optional] 
 **id** | **Integer** | The id of the user | [optional] 
 **language_code** | **String** | The ISO3 code for the user&#39;s currency (private) | [optional] 
+**last_activity** | **Integer** | The date the user last interacted with the API (private) | [optional] 
 **last_name** | **String** | The user&#39;s last name (private) | [optional] 
 **last_updated** | **Integer** | The date the user&#39;s info was last updated as a unix timestamp | [optional] 
 **member_since** | **Integer** | The user&#39;s date of registration as a unix timestamp | [optional] 

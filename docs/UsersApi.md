@@ -732,7 +732,7 @@ require 'knetikcloud_client'
 api_instance = KnetikCloudClient::UsersApi.new
 
 opts = { 
-  password_reset: KnetikCloudClient::ARequestToResetAUsersPasswordByUsingAKnownUserProperty.new # ARequestToResetAUsersPasswordByUsingAKnownUserProperty | An object containing one of three methods to look up a user
+  password_reset: KnetikCloudClient::PasswordResetRequest.new # PasswordResetRequest | An object containing one of three methods to look up a user
 }
 
 begin
@@ -747,7 +747,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **password_reset** | [**ARequestToResetAUsersPasswordByUsingAKnownUserProperty**](ARequestToResetAUsersPasswordByUsingAKnownUserProperty.md)| An object containing one of three methods to look up a user | [optional] 
+ **password_reset** | [**PasswordResetRequest**](PasswordResetRequest.md)| An object containing one of three methods to look up a user | [optional] 
 
 ### Return type
 

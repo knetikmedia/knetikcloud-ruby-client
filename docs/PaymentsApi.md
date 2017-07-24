@@ -192,6 +192,10 @@ api_instance = KnetikCloudClient::PaymentsApi.new
 user_id = 56 # Integer | ID of the user for whom the payment methods are being retrieved
 
 opts = { 
+  filter_name: "filter_name_example", # String | Filter for payment methods whose name starts with a given string
+  filter_payment_type: "filter_payment_type_example", # String | Filter for payment methods with a specific payment type
+  filter_payment_method_type_id: 56, # Integer | Filter for payment methods with a specific payment method type by id
+  filter_payment_method_type_name: "filter_payment_method_type_name_example", # String | Filter for payment methods whose payment method type name starts with a given string
   size: 25, # Integer | The number of objects returned per page
   page: 1, # Integer | The number of the page returned, starting with 1
   order: "id:ASC" # String | a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -211,6 +215,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **Integer**| ID of the user for whom the payment methods are being retrieved | 
+ **filter_name** | **String**| Filter for payment methods whose name starts with a given string | [optional] 
+ **filter_payment_type** | **String**| Filter for payment methods with a specific payment type | [optional] 
+ **filter_payment_method_type_id** | **Integer**| Filter for payment methods with a specific payment method type by id | [optional] 
+ **filter_payment_method_type_name** | **String**| Filter for payment methods whose payment method type name starts with a given string | [optional] 
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]

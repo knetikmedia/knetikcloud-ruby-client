@@ -1,4 +1,4 @@
-# KnetikCloudClient::TheDefinitionOfAnActivityParametersExDifficultyLevel
+# KnetikCloudClient::AvailableSettingResource
 
 ## Properties
 Name | Type | Description | Notes

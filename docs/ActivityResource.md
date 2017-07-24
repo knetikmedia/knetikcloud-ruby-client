@@ -1,4 +1,4 @@
-# KnetikCloudClient::RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc
+# KnetikCloudClient::ActivityResource
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **long_description** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] 
 **name** | **String** | The user friendly name of that resource | 
 **reward_set** | [**RewardSetResource**](RewardSetResource.md) | The rewards to give at the end of each occurence of the activity. When creating/updating only id is used. Reward set must be pre-existing | [optional] 
-**settings** | [**Array&lt;TheDefinitionOfAnActivityParametersExDifficultyLevel&gt;**](TheDefinitionOfAnActivityParametersExDifficultyLevel.md) | Define what parameters are required/available to start and run an activity. For example: Difficulty, Number of Questions, Character name, Avatar, Duration, etc. Not populated when getting listing | [optional] 
+**settings** | [**Array&lt;AvailableSettingResource&gt;**](AvailableSettingResource.md) | Define what parameters are required/available to start and run an activity. For example: Difficulty, Number of Questions, Character name, Avatar, Duration, etc. Not populated when getting listing | [optional] 
 **short_description** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] 
 **template** | **BOOLEAN** | Whether this activity is a template for other activities. Default: false | [optional] 
 **template_id** | **String** | An activity template this activity is validated against (private). May be null and no validation of additional_properties will be done | [optional] 

@@ -9,13 +9,13 @@ Method | HTTP request | Description
 [**create_challenge_activity_template**](CampaignsChallengesApi.md#create_challenge_activity_template) | **POST** /challenge-activities/templates | Create a challenge activity template
 [**create_challenge_template**](CampaignsChallengesApi.md#create_challenge_template) | **POST** /challenges/templates | Create a challenge template
 [**delete_challenge**](CampaignsChallengesApi.md#delete_challenge) | **DELETE** /challenges/{id} | Delete a challenge
-[**delete_challenge_activity**](CampaignsChallengesApi.md#delete_challenge_activity) | **DELETE** /challenges/{challenge_id}/activities/{activity_id} | Delete a challenge activity
+[**delete_challenge_activity**](CampaignsChallengesApi.md#delete_challenge_activity) | **DELETE** /challenges/{challenge_id}/activities/{id} | Delete a challenge activity
 [**delete_challenge_activity_template**](CampaignsChallengesApi.md#delete_challenge_activity_template) | **DELETE** /challenge-activities/templates/{id} | Delete a challenge activity template
 [**delete_challenge_event**](CampaignsChallengesApi.md#delete_challenge_event) | **DELETE** /challenges/events/{id} | Delete a challenge event
 [**delete_challenge_template**](CampaignsChallengesApi.md#delete_challenge_template) | **DELETE** /challenges/templates/{id} | Delete a challenge template
 [**get_challenge**](CampaignsChallengesApi.md#get_challenge) | **GET** /challenges/{id} | Retrieve a challenge
 [**get_challenge_activities**](CampaignsChallengesApi.md#get_challenge_activities) | **GET** /challenges/{challenge_id}/activities | List and search challenge activities
-[**get_challenge_activity**](CampaignsChallengesApi.md#get_challenge_activity) | **GET** /challenges/{challenge_id}/activities/{activity_id} | Get a single challenge activity
+[**get_challenge_activity**](CampaignsChallengesApi.md#get_challenge_activity) | **GET** /challenges/{challenge_id}/activities/{id} | Get a single challenge activity
 [**get_challenge_activity_template**](CampaignsChallengesApi.md#get_challenge_activity_template) | **GET** /challenge-activities/templates/{id} | Get a single challenge activity template
 [**get_challenge_activity_templates**](CampaignsChallengesApi.md#get_challenge_activity_templates) | **GET** /challenge-activities/templates | List and search challenge activity templates
 [**get_challenge_event**](CampaignsChallengesApi.md#get_challenge_event) | **GET** /challenges/events/{id} | Retrieve a single challenge event details
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**get_challenge_templates**](CampaignsChallengesApi.md#get_challenge_templates) | **GET** /challenges/templates | List and search challenge templates
 [**get_challenges**](CampaignsChallengesApi.md#get_challenges) | **GET** /challenges | Retrieve a list of challenges
 [**update_challenge**](CampaignsChallengesApi.md#update_challenge) | **PUT** /challenges/{id} | Update a challenge
-[**update_challenge_activity**](CampaignsChallengesApi.md#update_challenge_activity) | **PUT** /challenges/{challenge_id}/activities/{activity_id} | Update a challenge activity
+[**update_challenge_activity**](CampaignsChallengesApi.md#update_challenge_activity) | **PUT** /challenges/{challenge_id}/activities/{id} | Update a challenge activity
 [**update_challenge_activity_template**](CampaignsChallengesApi.md#update_challenge_activity_template) | **PUT** /challenge-activities/templates/{id} | Update an challenge activity template
 [**update_challenge_template**](CampaignsChallengesApi.md#update_challenge_template) | **PUT** /challenges/templates/{id} | Update a challenge template
 
@@ -294,9 +294,11 @@ nil (empty response body)
 
 
 # **delete_challenge_activity**
-> delete_challenge_activity(activity_id, challenge_id)
+> delete_challenge_activity(id, challenge_id)
 
 Delete a challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example
 ```ruby
@@ -310,14 +312,14 @@ end
 
 api_instance = KnetikCloudClient::CampaignsChallengesApi.new
 
-activity_id = 789 # Integer | The activity id
+id = 789 # Integer | The challenge_activity id
 
 challenge_id = 789 # Integer | The challenge id
 
 
 begin
   #Delete a challenge activity
-  api_instance.delete_challenge_activity(activity_id, challenge_id)
+  api_instance.delete_challenge_activity(id, challenge_id)
 rescue KnetikCloudClient::ApiError => e
   puts "Exception when calling CampaignsChallengesApi->delete_challenge_activity: #{e}"
 end
@@ -327,7 +329,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activity_id** | **Integer**| The activity id | 
+ **id** | **Integer**| The challenge_activity id | 
  **challenge_id** | **Integer**| The challenge id | 
 
 ### Return type
@@ -603,9 +605,11 @@ No authorization required
 
 
 # **get_challenge_activity**
-> ChallengeActivityResource get_challenge_activity(activity_id)
+> ChallengeActivityResource get_challenge_activity(id, challenge_id)
 
 Get a single challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example
 ```ruby
@@ -614,12 +618,14 @@ require 'knetikcloud_client'
 
 api_instance = KnetikCloudClient::CampaignsChallengesApi.new
 
-activity_id = 789 # Integer | The activity id
+id = 789 # Integer | The challenge_activity id
+
+challenge_id = 789 # Integer | The challenge id
 
 
 begin
   #Get a single challenge activity
-  result = api_instance.get_challenge_activity(activity_id)
+  result = api_instance.get_challenge_activity(id, challenge_id)
   p result
 rescue KnetikCloudClient::ApiError => e
   puts "Exception when calling CampaignsChallengesApi->get_challenge_activity: #{e}"
@@ -630,7 +636,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activity_id** | **Integer**| The activity id | 
+ **id** | **Integer**| The challenge_activity id | 
+ **challenge_id** | **Integer**| The challenge id | 
 
 ### Return type
 
@@ -1075,9 +1082,11 @@ Name | Type | Description  | Notes
 
 
 # **update_challenge_activity**
-> ChallengeActivityResource update_challenge_activity(activity_id, challenge_id, opts)
+> ChallengeActivityResource update_challenge_activity(id, challenge_id, opts)
 
 Update a challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example
 ```ruby
@@ -1091,7 +1100,7 @@ end
 
 api_instance = KnetikCloudClient::CampaignsChallengesApi.new
 
-activity_id = 789 # Integer | The activity id
+id = 789 # Integer | The challenge_activity id
 
 challenge_id = 789 # Integer | The challenge id
 
@@ -1101,7 +1110,7 @@ opts = {
 
 begin
   #Update a challenge activity
-  result = api_instance.update_challenge_activity(activity_id, challenge_id, opts)
+  result = api_instance.update_challenge_activity(id, challenge_id, opts)
   p result
 rescue KnetikCloudClient::ApiError => e
   puts "Exception when calling CampaignsChallengesApi->update_challenge_activity: #{e}"
@@ -1112,7 +1121,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activity_id** | **Integer**| The activity id | 
+ **id** | **Integer**| The challenge_activity id | 
  **challenge_id** | **Integer**| The challenge id | 
  **challenge_activity_resource** | [**ChallengeActivityResource**](ChallengeActivityResource.md)| The challenge activity resource object | [optional] 
 

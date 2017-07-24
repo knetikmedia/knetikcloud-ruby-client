@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**affiliate_id** | **Integer** |  | [optional] 
 **bundle_sku** | **String** |  | [optional] 
 **current_fulfillment_status** | **String** |  | [optional] 
 **id** | **Integer** |  | [optional] 

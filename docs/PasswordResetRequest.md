@@ -1,4 +1,4 @@
-# KnetikCloudClient::ARequestToResetAUsersPasswordByUsingAKnownUserProperty
+# KnetikCloudClient::PasswordResetRequest
 
 ## Properties
 Name | Type | Description | Notes

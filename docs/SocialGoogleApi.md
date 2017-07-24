@@ -4,15 +4,15 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**link_accounts1**](SocialGoogleApi.md#link_accounts1) | **POST** /social/google/users | Link facebook account
+[**link_accounts1**](SocialGoogleApi.md#link_accounts1) | **POST** /social/google/users | Link google account
 
 
 # **link_accounts1**
 > link_accounts1(opts)
 
-Link facebook account
+Link google account
 
-Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
+Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
 
 ### Example
 ```ruby
@@ -27,11 +27,11 @@ end
 api_instance = KnetikCloudClient::SocialGoogleApi.new
 
 opts = { 
-  facebook_token: KnetikCloudClient::GoogleToken.new # GoogleToken | The token from facebook
+  google_token: KnetikCloudClient::GoogleToken.new # GoogleToken | The token from google
 }
 
 begin
-  #Link facebook account
+  #Link google account
   api_instance.link_accounts1(opts)
 rescue KnetikCloudClient::ApiError => e
   puts "Exception when calling SocialGoogleApi->link_accounts1: #{e}"
@@ -42,7 +42,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **facebook_token** | [**GoogleToken**](GoogleToken.md)| The token from facebook | [optional] 
+ **google_token** | [**GoogleToken**](GoogleToken.md)| The token from google | [optional] 
 
 ### Return type
 

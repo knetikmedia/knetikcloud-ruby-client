@@ -392,7 +392,9 @@ api_instance = KnetikCloudClient::ContentArticlesApi.new
 
 opts = { 
   filter_category: "filter_category_example", # String | Filter for articles from a specific category by id
-  filter_tagset: "filter_tagset_example", # String | Filter for articles with specified tags (separated by comma)
+  filter_tagset: "filter_tagset_example", # String | Filter for articles with at least one of a specified set of tags (separated by comma)
+  filter_tag_intersection: "filter_tag_intersection_example", # String | Filter for articles with all of a specified set of tags (separated by comma)
+  filter_tag_exclusion: "filter_tag_exclusion_example", # String | Filter for articles with none of a specified set of tags (separated by comma)
   filter_title: "filter_title_example", # String | Filter for articles whose title contains a string
   size: 25, # Integer | The number of objects returned per page
   page: 1, # Integer | The number of the page returned, starting with 1
@@ -413,7 +415,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_category** | **String**| Filter for articles from a specific category by id | [optional] 
- **filter_tagset** | **String**| Filter for articles with specified tags (separated by comma) | [optional] 
+ **filter_tagset** | **String**| Filter for articles with at least one of a specified set of tags (separated by comma) | [optional] 
+ **filter_tag_intersection** | **String**| Filter for articles with all of a specified set of tags (separated by comma) | [optional] 
+ **filter_tag_exclusion** | **String**| Filter for articles with none of a specified set of tags (separated by comma) | [optional] 
  **filter_title** | **String**| Filter for articles whose title contains a string | [optional] 
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]

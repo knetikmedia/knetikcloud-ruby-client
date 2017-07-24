@@ -931,12 +931,12 @@ api_instance = KnetikCloudClient::MediaVideosApi.new
 
 opts = { 
   exclude_flagged: true, # BOOLEAN | Skip videos that have been flagged by the current user
-  filter_videos_by_uploader: nil, # Object | Filter for videos by uploader id
+  filter_videos_by_uploader: 56, # Integer | Filter for videos by uploader id
   filter_category: "filter_category_example", # String | Filter for videos from a specific category by id
   filter_tagset: "filter_tagset_example", # String | Filter for videos with specified tags (separated by comma)
   filter_videos_by_name: "filter_videos_by_name_example", # String | Filter for videos which name *STARTS* with the given string
-  filter_videos_by_contributor: nil, # Object | Filter for videos with contribution from the artist specified by ID
-  filter_videos_by_author: nil, # Object | Filter for videos with an artist as author specified by ID
+  filter_videos_by_contributor: 56, # Integer | Filter for videos with contribution from the artist specified by ID
+  filter_videos_by_author: 56, # Integer | Filter for videos with an artist as author specified by ID
   filter_has_author: true, # BOOLEAN | Filter for videos that have an author set if true, or that have no author if false
   filter_has_uploader: true, # BOOLEAN | Filter for videos that have an uploader set if true, or that have no uploader if false
   filter_related_to: "filter_related_to_example", # String | Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well
@@ -961,12 +961,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exclude_flagged** | **BOOLEAN**| Skip videos that have been flagged by the current user | [optional] [default to true]
- **filter_videos_by_uploader** | [**Object**](.md)| Filter for videos by uploader id | [optional] 
+ **filter_videos_by_uploader** | **Integer**| Filter for videos by uploader id | [optional] 
  **filter_category** | **String**| Filter for videos from a specific category by id | [optional] 
  **filter_tagset** | **String**| Filter for videos with specified tags (separated by comma) | [optional] 
  **filter_videos_by_name** | **String**| Filter for videos which name *STARTS* with the given string | [optional] 
- **filter_videos_by_contributor** | [**Object**](.md)| Filter for videos with contribution from the artist specified by ID | [optional] 
- **filter_videos_by_author** | [**Object**](.md)| Filter for videos with an artist as author specified by ID | [optional] 
+ **filter_videos_by_contributor** | **Integer**| Filter for videos with contribution from the artist specified by ID | [optional] 
+ **filter_videos_by_author** | **Integer**| Filter for videos with an artist as author specified by ID | [optional] 
  **filter_has_author** | **BOOLEAN**| Filter for videos that have an author set if true, or that have no author if false | [optional] 
  **filter_has_uploader** | **BOOLEAN**| Filter for videos that have an uploader set if true, or that have no uploader if false | [optional] 
  **filter_related_to** | **String**| Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well | [optional] 

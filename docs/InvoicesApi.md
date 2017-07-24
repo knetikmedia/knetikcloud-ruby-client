@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_invoices**](InvoicesApi.md#get_invoices) | **GET** /invoices | Retrieve invoices
 [**get_payment_statuses**](InvoicesApi.md#get_payment_statuses) | **GET** /invoices/payment-statuses | Lists available payment statuses
 [**pay_invoice**](InvoicesApi.md#pay_invoice) | **POST** /invoices/{id}/payments | Trigger payment of an invoice
+[**set_bundled_invoice_item_fulfillment_status**](InvoicesApi.md#set_bundled_invoice_item_fulfillment_status) | **PUT** /invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
 [**set_external_ref**](InvoicesApi.md#set_external_ref) | **PUT** /invoices/{id}/external-ref | Set the external reference of an invoice
 [**set_invoice_item_fulfillment_status**](InvoicesApi.md#set_invoice_item_fulfillment_status) | **PUT** /invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
 [**set_order_notes**](InvoicesApi.md#set_order_notes) | **PUT** /invoices/{id}/order-notes | Set the order notes of an invoice
@@ -243,7 +244,7 @@ opts = {
   filter_item_name: "filter_item_name_example", # String | Filters invoices by item name containing the given string
   filter_external_ref: "filter_external_ref_example", # String | Filters invoices by external reference.
   filter_created_date: "filter_created_date_example", # String | Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date=OP,ts&... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date=GT,1452154258,LT,1554254874
-  filter_vendor_ids: nil, # Object | Filters invoices for ones from one of the vendors whose id is in the given comma separated list
+  filter_vendor_ids: "filter_vendor_ids_example", # String | Filters invoices for ones from one of the vendors whose id is in the given comma separated list
   filter_currency: "filter_currency_example", # String | Filters invoices by currency. ISO3 currency code
   filter_shipping_state_name: "filter_shipping_state_name_example", # String | Filters invoices by shipping address: Exact match state name
   filter_shipping_country_name: "filter_shipping_country_name_example", # String | Filters invoices by shipping address: Exact match country name
@@ -275,7 +276,7 @@ Name | Type | Description  | Notes
  **filter_item_name** | **String**| Filters invoices by item name containing the given string | [optional] 
  **filter_external_ref** | **String**| Filters invoices by external reference. | [optional] 
  **filter_created_date** | **String**| Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874 | [optional] 
- **filter_vendor_ids** | [**Object**](.md)| Filters invoices for ones from one of the vendors whose id is in the given comma separated list | [optional] 
+ **filter_vendor_ids** | **String**| Filters invoices for ones from one of the vendors whose id is in the given comma separated list | [optional] 
  **filter_currency** | **String**| Filters invoices by currency. ISO3 currency code | [optional] 
  **filter_shipping_state_name** | **String**| Filters invoices by shipping address: Exact match state name | [optional] 
  **filter_shipping_country_name** | **String**| Filters invoices by shipping address: Exact match country name | [optional] 
@@ -377,6 +378,66 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The id of the invoice | 
  **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| Payment info | [optional] 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **set_bundled_invoice_item_fulfillment_status**
+> set_bundled_invoice_item_fulfillment_status(id, bundle_sku, sku, status)
+
+Set the fulfillment status of a bundled invoice item
+
+This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+
+### Example
+```ruby
+# load the gem
+require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = KnetikCloudClient::InvoicesApi.new
+
+id = 56 # Integer | The id of the invoice
+
+bundle_sku = "bundle_sku_example" # String | The sku of the bundle in the invoice that contains the given target
+
+sku = "sku_example" # String | The sku of an item in the bundle in the invoice
+
+status = "status_example" # String | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+
+
+begin
+  #Set the fulfillment status of a bundled invoice item
+  api_instance.set_bundled_invoice_item_fulfillment_status(id, bundle_sku, sku, status)
+rescue KnetikCloudClient::ApiError => e
+  puts "Exception when calling InvoicesApi->set_bundled_invoice_item_fulfillment_status: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| The id of the invoice | 
+ **bundle_sku** | **String**| The sku of the bundle in the invoice that contains the given target | 
+ **sku** | **String**| The sku of an item in the bundle in the invoice | 
+ **status** | **String**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 
