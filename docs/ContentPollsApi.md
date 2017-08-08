@@ -38,7 +38,7 @@ api_instance = KnetikCloudClient::ContentPollsApi.new
 id = "id_example" # String | The poll id
 
 opts = { 
-  answer_key: "answer_key_example" # String | The answer key
+  answer_key: KnetikCloudClient::StringWrapper.new # StringWrapper | The answer key
 }
 
 begin
@@ -55,7 +55,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The poll id | 
- **answer_key** | **String**| The answer key | [optional] 
+ **answer_key** | [**StringWrapper**](StringWrapper.md)| The answer key | [optional] 
 
 ### Return type
 

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ascending** | **BOOLEAN** |  | [optional] 
+**descending** | **BOOLEAN** |  | [optional] 
 **direction** | **String** |  | [optional] 
 **ignore_case** | **BOOLEAN** |  | [optional] 
 **null_handling** | **String** |  | [optional] 

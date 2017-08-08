@@ -238,6 +238,8 @@ end
 api_instance = KnetikCloudClient::AuthRolesApi.new
 
 opts = { 
+  filter_name: "filter_name_example", # String | Filter for roles that have a name starting with specified string
+  filter_role: "filter_role_example", # String | Filter for roles that have a role starting with specified string
   size: 25, # Integer | The number of objects returned per page
   page: 1, # Integer | The number of the page returned, starting with 1
   order: "order_example" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -256,6 +258,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter_name** | **String**| Filter for roles that have a name starting with specified string | [optional] 
+ **filter_role** | **String**| Filter for roles that have a role starting with specified string | [optional] 
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 

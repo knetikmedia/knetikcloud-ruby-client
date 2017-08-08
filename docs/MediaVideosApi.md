@@ -52,7 +52,7 @@ api_instance = KnetikCloudClient::MediaVideosApi.new
 id = 789 # Integer | The video id
 
 opts = { 
-  user_id: 56 # Integer | The user id
+  user_id: KnetikCloudClient::IntWrapper.new # IntWrapper | The user id
 }
 
 begin
@@ -68,7 +68,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The video id | 
- **user_id** | **Integer**| The user id | [optional] 
+ **user_id** | [**IntWrapper**](IntWrapper.md)| The user id | [optional] 
 
 ### Return type
 
@@ -263,7 +263,7 @@ api_instance = KnetikCloudClient::MediaVideosApi.new
 video_id = 789 # Integer | The video id
 
 opts = { 
-  reason: "reason_example" # String | The flag reason
+  reason: KnetikCloudClient::StringWrapper.new # StringWrapper | The flag reason
 }
 
 begin
@@ -280,7 +280,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **video_id** | **Integer**| The video id | 
- **reason** | **String**| The flag reason | [optional] 
+ **reason** | [**StringWrapper**](StringWrapper.md)| The flag reason | [optional] 
 
 ### Return type
 
@@ -1172,7 +1172,7 @@ video_id = 789 # Integer | The video id
 id = 789 # Integer | The comment id
 
 opts = { 
-  content: "content_example" # String | The comment content
+  content: KnetikCloudClient::StringWrapper.new # StringWrapper | The comment content
 }
 
 begin
@@ -1189,7 +1189,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **video_id** | **Integer**| The video id | 
  **id** | **Integer**| The comment id | 
- **content** | **String**| The comment content | [optional] 
+ **content** | [**StringWrapper**](StringWrapper.md)| The comment content | [optional] 
 
 ### Return type
 
@@ -1228,7 +1228,7 @@ video_id = 789 # Integer | The video id
 relationship_id = 789 # Integer | The relationship id
 
 opts = { 
-  details: "details_example" # String | The video relationship details
+  details: KnetikCloudClient::StringWrapper.new # StringWrapper | The video relationship details
 }
 
 begin
@@ -1245,7 +1245,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **video_id** | **Integer**| The video id | 
  **relationship_id** | **Integer**| The relationship id | 
- **details** | **String**| The video relationship details | [optional] 
+ **details** | [**StringWrapper**](StringWrapper.md)| The video relationship details | [optional] 
 
 ### Return type
 

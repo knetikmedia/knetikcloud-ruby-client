@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**get_store**](StoreApi.md#get_store) | **GET** /store | Get a listing of store items
 [**get_store_item**](StoreApi.md#get_store_item) | **GET** /store/items/{id} | Get a single store item
 [**get_store_items**](StoreApi.md#get_store_items) | **GET** /store/items | List and search store items
+[**quick_buy**](StoreApi.md#quick_buy) | **POST** /store/quick-buy | One-step purchase and pay for a single SKU item from a user&#39;s wallet
 [**update_item_template**](StoreApi.md#update_item_template) | **PUT** /store/items/templates/{id} | Update an item template
 [**update_store_item**](StoreApi.md#update_store_item) | **PUT** /store/items/{id} | Update a store item
 
@@ -550,6 +551,59 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **quick_buy**
+> InvoiceResource quick_buy(opts)
+
+One-step purchase and pay for a single SKU item from a user's wallet
+
+Used to create and automatically pay an invoice for a single unit of a single SKU from a user's wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+
+### Example
+```ruby
+# load the gem
+require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = KnetikCloudClient::StoreApi.new
+
+opts = { 
+  quick_buy_request: KnetikCloudClient::QuickBuyRequest.new # QuickBuyRequest | Quick buy details
+}
+
+begin
+  #One-step purchase and pay for a single SKU item from a user's wallet
+  result = api_instance.quick_buy(opts)
+  p result
+rescue KnetikCloudClient::ApiError => e
+  puts "Exception when calling StoreApi->quick_buy: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **quick_buy_request** | [**QuickBuyRequest**](QuickBuyRequest.md)| Quick buy details | [optional] 
+
+### Return type
+
+[**InvoiceResource**](InvoiceResource.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

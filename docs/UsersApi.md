@@ -41,7 +41,7 @@ api_instance = KnetikCloudClient::UsersApi.new
 
 user_id = 56 # Integer | The id of the user
 
-tag = "tag_example" # String | tag
+tag = KnetikCloudClient::StringWrapper.new # StringWrapper | tag
 
 
 begin
@@ -57,7 +57,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **Integer**| The id of the user | 
- **tag** | **String**| tag | 
+ **tag** | [**StringWrapper**](StringWrapper.md)| tag | 
 
 ### Return type
 
@@ -638,7 +638,7 @@ api_instance = KnetikCloudClient::UsersApi.new
 id = 56 # Integer | The id of the user
 
 opts = { 
-  password: "password_example" # String | The new plain text password
+  password: KnetikCloudClient::StringWrapper.new # StringWrapper | The new plain text password
 }
 
 begin
@@ -654,7 +654,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The id of the user | 
- **password** | **String**| The new plain text password | [optional] 
+ **password** | [**StringWrapper**](StringWrapper.md)| The new plain text password | [optional] 
 
 ### Return type
 

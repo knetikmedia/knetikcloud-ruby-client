@@ -110,7 +110,7 @@ api_instance = KnetikCloudClient::GamificationTriviaApi.new
 id = "id_example" # String | The id of the question
 
 opts = { 
-  tag: "tag_example" # String | The new tag
+  tag: KnetikCloudClient::StringWrapper.new # StringWrapper | The new tag
 }
 
 begin
@@ -126,7 +126,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the question | 
- **tag** | **String**| The new tag | [optional] 
+ **tag** | [**StringWrapper**](StringWrapper.md)| The new tag | [optional] 
 
 ### Return type
 
@@ -163,7 +163,7 @@ end
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
 opts = { 
-  tag: "tag_example", # String | The tag to add
+  tag: KnetikCloudClient::StringWrapper.new, # StringWrapper | The tag to add
   filter_search: "filter_search_example", # String | Filter for documents whose question, answers or tags contains provided string
   filter_idset: "filter_idset_example", # String | Filter for documents whose id is in the comma separated list provided
   filter_category: "filter_category_example", # String | Filter for questions with specified category, by id
@@ -187,7 +187,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | **String**| The tag to add | [optional] 
+ **tag** | [**StringWrapper**](StringWrapper.md)| The tag to add | [optional] 
  **filter_search** | **String**| Filter for documents whose question, answers or tags contains provided string | [optional] 
  **filter_idset** | **String**| Filter for documents whose id is in the comma separated list provided | [optional] 
  **filter_category** | **String**| Filter for questions with specified category, by id | [optional] 

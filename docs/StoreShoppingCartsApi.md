@@ -518,7 +518,7 @@ api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 id = "id_example" # String | The id of the cart
 
 opts = { 
-  currency_code: "currency_code_example" # String | The code of the currency
+  currency_code: KnetikCloudClient::StringWrapper.new # StringWrapper | The code of the currency
 }
 
 begin
@@ -534,7 +534,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the cart | 
- **currency_code** | **String**| The code of the currency | [optional] 
+ **currency_code** | [**StringWrapper**](StringWrapper.md)| The code of the currency | [optional] 
 
 ### Return type
 
@@ -571,7 +571,7 @@ api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 id = "id_example" # String | The id of the cart
 
 opts = { 
-  user_id: 56 # Integer | The id of the user
+  user_id: KnetikCloudClient::IntWrapper.new # IntWrapper | The id of the user
 }
 
 begin
@@ -587,7 +587,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the cart | 
- **user_id** | **Integer**| The id of the user | [optional] 
+ **user_id** | [**IntWrapper**](IntWrapper.md)| The id of the user | [optional] 
 
 ### Return type
 

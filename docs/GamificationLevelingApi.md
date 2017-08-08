@@ -408,7 +408,7 @@ user_id = 56 # Integer | The id of the user
 name = "name_example" # String | The level schema name
 
 opts = { 
-  progress: 56 # Integer | The amount of progress to add
+  progress: KnetikCloudClient::IntWrapper.new # IntWrapper | The amount of progress to add
 }
 
 begin
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **Integer**| The id of the user | 
  **name** | **String**| The level schema name | 
- **progress** | **Integer**| The amount of progress to add | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The amount of progress to add | [optional] 
 
 ### Return type
 
@@ -466,7 +466,7 @@ user_id = 56 # Integer | The id of the user
 name = "name_example" # String | The level schema name
 
 opts = { 
-  progress: 56 # Integer | The new progress amount
+  progress: KnetikCloudClient::IntWrapper.new # IntWrapper | The new progress amount
 }
 
 begin
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **Integer**| The id of the user | 
  **name** | **String**| The level schema name | 
- **progress** | **Integer**| The new progress amount | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The new progress amount | [optional] 
 
 ### Return type
 

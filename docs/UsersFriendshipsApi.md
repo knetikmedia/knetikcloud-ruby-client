@@ -254,7 +254,7 @@ api_instance = KnetikCloudClient::UsersFriendshipsApi.new
 user_id = "user_id_example" # String | The id of the user or 'me' if logged in
 
 opts = { 
-  token: "token_example" # String | The invite token
+  token: KnetikCloudClient::StringWrapper.new # StringWrapper | The invite token
 }
 
 begin
@@ -270,7 +270,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| The id of the user or &#39;me&#39; if logged in | 
- **token** | **String**| The invite token | [optional] 
+ **token** | [**StringWrapper**](StringWrapper.md)| The invite token | [optional] 
 
 ### Return type
 

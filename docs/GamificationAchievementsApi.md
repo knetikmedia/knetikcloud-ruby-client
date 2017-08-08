@@ -818,7 +818,7 @@ user_id = 56 # Integer | The user's id
 achievement_name = "achievement_name_example" # String | The achievement's name
 
 opts = { 
-  progress: 56 # Integer | The amount to add to the progress value
+  progress: KnetikCloudClient::IntWrapper.new # IntWrapper | The amount to add to the progress value
 }
 
 begin
@@ -836,7 +836,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **Integer**| The user&#39;s id | 
  **achievement_name** | **String**| The achievement&#39;s name | 
- **progress** | **Integer**| The amount to add to the progress value | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The amount to add to the progress value | [optional] 
 
 ### Return type
 
@@ -877,7 +877,7 @@ user_id = 56 # Integer | The user's id
 achievement_name = "achievement_name_example" # String | The achievement's name
 
 opts = { 
-  progress: 56 # Integer | The new progress value
+  progress: KnetikCloudClient::IntWrapper.new # IntWrapper | The new progress value
 }
 
 begin
@@ -895,7 +895,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **Integer**| The user&#39;s id | 
  **achievement_name** | **String**| The achievement&#39;s name | 
- **progress** | **Integer**| The new progress value | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The new progress value | [optional] 
 
 ### Return type
 

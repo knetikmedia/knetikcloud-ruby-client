@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get_invoice_logs**](InvoicesApi.md#get_invoice_logs) | **GET** /invoices/{id}/logs | List invoice logs
 [**get_invoices**](InvoicesApi.md#get_invoices) | **GET** /invoices | Retrieve invoices
 [**get_payment_statuses**](InvoicesApi.md#get_payment_statuses) | **GET** /invoices/payment-statuses | Lists available payment statuses
-[**pay_invoice**](InvoicesApi.md#pay_invoice) | **POST** /invoices/{id}/payments | Trigger payment of an invoice
+[**pay_invoice**](InvoicesApi.md#pay_invoice) | **POST** /invoices/{id}/payments | Pay an invoice using a saved payment method
 [**set_bundled_invoice_item_fulfillment_status**](InvoicesApi.md#set_bundled_invoice_item_fulfillment_status) | **PUT** /invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
 [**set_external_ref**](InvoicesApi.md#set_external_ref) | **PUT** /invoices/{id}/external-ref | Set the external reference of an invoice
 [**set_invoice_item_fulfillment_status**](InvoicesApi.md#set_invoice_item_fulfillment_status) | **PUT** /invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
@@ -344,7 +344,7 @@ No authorization required
 # **pay_invoice**
 > pay_invoice(id, opts)
 
-Trigger payment of an invoice
+Pay an invoice using a saved payment method
 
 ### Example
 ```ruby
@@ -361,11 +361,11 @@ api_instance = KnetikCloudClient::InvoicesApi.new
 id = 56 # Integer | The id of the invoice
 
 opts = { 
-  request: KnetikCloudClient::PayBySavedMethodRequest.new # PayBySavedMethodRequest | Payment info
+  request: KnetikCloudClient::PayBySavedMethodRequest.new # PayBySavedMethodRequest | The payment method details. Will default to the appropriate user's wallet in the invoice currency if ommited.
 }
 
 begin
-  #Trigger payment of an invoice
+  #Pay an invoice using a saved payment method
   api_instance.pay_invoice(id, opts)
 rescue KnetikCloudClient::ApiError => e
   puts "Exception when calling InvoicesApi->pay_invoice: #{e}"
@@ -377,7 +377,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The id of the invoice | 
- **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| Payment info | [optional] 
+ **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited. | [optional] 
 
 ### Return type
 
@@ -419,7 +419,7 @@ bundle_sku = "bundle_sku_example" # String | The sku of the bundle in the invoic
 
 sku = "sku_example" # String | The sku of an item in the bundle in the invoice
 
-status = "status_example" # String | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+status = KnetikCloudClient::StringWrapper.new # StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 
 
 begin
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
  **id** | **Integer**| The id of the invoice | 
  **bundle_sku** | **String**| The sku of the bundle in the invoice that contains the given target | 
  **sku** | **String**| The sku of an item in the bundle in the invoice | 
- **status** | **String**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
+ **status** | [**StringWrapper**](StringWrapper.md)| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 
@@ -474,7 +474,7 @@ api_instance = KnetikCloudClient::InvoicesApi.new
 id = 56 # Integer | The id of the invoice
 
 opts = { 
-  external_ref: "external_ref_example" # String | External reference info
+  external_ref: KnetikCloudClient::StringWrapper.new # StringWrapper | External reference info
 }
 
 begin
@@ -490,7 +490,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The id of the invoice | 
- **external_ref** | **String**| External reference info | [optional] 
+ **external_ref** | [**StringWrapper**](StringWrapper.md)| External reference info | [optional] 
 
 ### Return type
 
@@ -530,7 +530,7 @@ id = 56 # Integer | The id of the invoice
 
 sku = "sku_example" # String | The sku of an item in the invoice
 
-status = "status_example" # String | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+status = KnetikCloudClient::StringWrapper.new # StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 
 
 begin
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The id of the invoice | 
  **sku** | **String**| The sku of an item in the invoice | 
- **status** | **String**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
+ **status** | [**StringWrapper**](StringWrapper.md)| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 
@@ -584,7 +584,7 @@ api_instance = KnetikCloudClient::InvoicesApi.new
 id = 56 # Integer | The id of the invoice
 
 opts = { 
-  order_notes: "order_notes_example" # String | Payment status info
+  order_notes: KnetikCloudClient::StringWrapper.new # StringWrapper | Payment status info
 }
 
 begin
@@ -600,7 +600,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The id of the invoice | 
- **order_notes** | **String**| Payment status info | [optional] 
+ **order_notes** | [**StringWrapper**](StringWrapper.md)| Payment status info | [optional] 
 
 ### Return type
 

@@ -283,7 +283,7 @@ api_instance = KnetikCloudClient::ContentCommentsApi.new
 id = 789 # Integer | The comment id
 
 opts = { 
-  content: "content_example" # String | The comment content
+  content: KnetikCloudClient::StringWrapper.new # StringWrapper | The comment content
 }
 
 begin
@@ -299,7 +299,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| The comment id | 
- **content** | **String**| The comment content | [optional] 
+ **content** | [**StringWrapper**](StringWrapper.md)| The comment content | [optional] 
 
 ### Return type
 
