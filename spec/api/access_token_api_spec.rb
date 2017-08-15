@@ -39,8 +39,10 @@ describe 'AccessTokenApi' do
   # @param client_id The id of the client
   # @param [Hash] opts the optional parameters
   # @option opts [String] :client_secret The secret key of the client.  Used only with a grant_type of client_credentials
-  # @option opts [String] :username The username of the client.  Used only with a grant_type of password
-  # @option opts [String] :password The password of the client.  Used only with a grant_type of password
+  # @option opts [String] :username The username of the client. Used only with a grant_type of password
+  # @option opts [String] :password The password of the client. Used only with a grant_type of password
+  # @option opts [String] :token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)
+  # @option opts [String] :refresh_token The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token
   # @return [OAuth2Resource]
   describe 'get_o_auth_token test' do
     it "should work" do

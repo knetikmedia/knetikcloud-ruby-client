@@ -26,8 +26,10 @@ module KnetikCloudClient
     # @param client_id The id of the client
     # @param [Hash] opts the optional parameters
     # @option opts [String] :client_secret The secret key of the client.  Used only with a grant_type of client_credentials
-    # @option opts [String] :username The username of the client.  Used only with a grant_type of password
-    # @option opts [String] :password The password of the client.  Used only with a grant_type of password
+    # @option opts [String] :username The username of the client. Used only with a grant_type of password
+    # @option opts [String] :password The password of the client. Used only with a grant_type of password
+    # @option opts [String] :token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)
+    # @option opts [String] :refresh_token The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token
     # @return [OAuth2Resource]
     def get_o_auth_token(grant_type, client_id, opts = {})
       data, _status_code, _headers = get_o_auth_token_with_http_info(grant_type, client_id, opts)
@@ -40,8 +42,10 @@ module KnetikCloudClient
     # @param client_id The id of the client
     # @param [Hash] opts the optional parameters
     # @option opts [String] :client_secret The secret key of the client.  Used only with a grant_type of client_credentials
-    # @option opts [String] :username The username of the client.  Used only with a grant_type of password
-    # @option opts [String] :password The password of the client.  Used only with a grant_type of password
+    # @option opts [String] :username The username of the client. Used only with a grant_type of password
+    # @option opts [String] :password The password of the client. Used only with a grant_type of password
+    # @option opts [String] :token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)
+    # @option opts [String] :refresh_token The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token
     # @return [Array<(OAuth2Resource, Fixnum, Hash)>] OAuth2Resource data, response status code and response headers
     def get_o_auth_token_with_http_info(grant_type, client_id, opts = {})
       if @api_client.config.debugging
@@ -52,8 +56,8 @@ module KnetikCloudClient
         fail ArgumentError, "Missing the required parameter 'grant_type' when calling AccessTokenApi.get_o_auth_token"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['client_credentials', 'password'].include?(grant_type)
-        fail ArgumentError, "invalid value for 'grant_type', must be one of client_credentials, password"
+      if @api_client.config.client_side_validation && !['client_credentials', 'password', 'facebook', 'google', 'refresh_token'].include?(grant_type)
+        fail ArgumentError, "invalid value for 'grant_type', must be one of client_credentials, password, facebook, google, refresh_token"
       end
       # verify the required parameter 'client_id' is set
       if @api_client.config.client_side_validation && client_id.nil?
@@ -79,6 +83,8 @@ module KnetikCloudClient
       form_params["client_secret"] = opts[:'client_secret'] if !opts[:'client_secret'].nil?
       form_params["username"] = opts[:'username'] if !opts[:'username'].nil?
       form_params["password"] = opts[:'password'] if !opts[:'password'].nil?
+      form_params["token"] = opts[:'token'] if !opts[:'token'].nil?
+      form_params["refresh_token"] = opts[:'refresh_token'] if !opts[:'refresh_token'].nil?
 
       # http body (model)
       post_body = nil

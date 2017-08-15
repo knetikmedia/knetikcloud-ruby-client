@@ -85,8 +85,10 @@ client_id = "knetik" # String | The id of the client
 
 opts = { 
   client_secret: "client_secret_example", # String | The secret key of the client.  Used only with a grant_type of client_credentials
-  username: "username_example", # String | The username of the client.  Used only with a grant_type of password
-  password: "password_example" # String | The password of the client.  Used only with a grant_type of password
+  username: "username_example", # String | The username of the client. Used only with a grant_type of password
+  password: "password_example", # String | The password of the client. Used only with a grant_type of password
+  token: "token_example", # String | The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)
+  refresh_token: "refresh_token_example" # String | The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token
 }
 
 begin
