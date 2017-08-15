@@ -21,11 +21,6 @@ Returns the token that should be used to forward the user to PayPal so they can 
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::PaymentsPayPalClassicApi.new
 
@@ -54,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -74,11 +69,6 @@ Returns the token that should be used to forward the user to PayPal so they can 
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::PaymentsPayPalClassicApi.new
 
@@ -107,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -127,11 +117,6 @@ Returns the ID of the new payment method created for the user for the billing ag
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::PaymentsPayPalClassicApi.new
 
@@ -160,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -180,11 +165,6 @@ The invoice will be marked paid/failed by asynchronous IPN callback.
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::PaymentsPayPalClassicApi.new
 
@@ -212,7 +192,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

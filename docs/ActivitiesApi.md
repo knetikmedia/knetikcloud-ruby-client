@@ -28,11 +28,6 @@ Create an activity
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -61,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -81,11 +76,6 @@ Has to enforce extra rules if not used as an admin
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -116,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -136,11 +126,6 @@ Activity Templates define a type of activity and the properties they have
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -169,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -187,11 +172,6 @@ Delete an activity
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -218,7 +198,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -238,11 +218,6 @@ If cascade = 'detach', it will force delete the template even if it's attached t
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -273,7 +248,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -392,11 +367,6 @@ Get a single activity template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -424,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -442,11 +412,6 @@ List and search activity templates
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -479,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -497,11 +462,6 @@ Sets the status of an activity occurrence to FINISHED and logs metrics
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -533,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -551,11 +511,6 @@ Update an activity
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -587,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -607,11 +562,6 @@ If setting to 'FINISHED' you must POST to /results instead to record the metrics
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -642,7 +592,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -660,11 +610,6 @@ Update an activity template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -696,7 +641,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

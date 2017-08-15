@@ -57,7 +57,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'article_resource'])
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -108,7 +108,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'article_template_resource'])
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -163,7 +163,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -220,7 +220,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -329,7 +329,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -387,7 +387,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -404,6 +404,7 @@ module KnetikCloudClient
     # List and search articles
     # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single article' to retrieve the full resource with assets for a given item as needed.
     # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :filter_active_only Filter for articles that are active (true) or inactive (false)
     # @option opts [String] :filter_category Filter for articles from a specific category by id
     # @option opts [String] :filter_tagset Filter for articles with at least one of a specified set of tags (separated by comma)
     # @option opts [String] :filter_tag_intersection Filter for articles with all of a specified set of tags (separated by comma)
@@ -421,6 +422,7 @@ module KnetikCloudClient
     # List and search articles
     # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
     # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :filter_active_only Filter for articles that are active (true) or inactive (false)
     # @option opts [String] :filter_category Filter for articles from a specific category by id
     # @option opts [String] :filter_tagset Filter for articles with at least one of a specified set of tags (separated by comma)
     # @option opts [String] :filter_tag_intersection Filter for articles with all of a specified set of tags (separated by comma)
@@ -439,6 +441,7 @@ module KnetikCloudClient
 
       # query parameters
       query_params = {}
+      query_params[:'filter_active_only'] = opts[:'filter_active_only'] if !opts[:'filter_active_only'].nil?
       query_params[:'filter_category'] = opts[:'filter_category'] if !opts[:'filter_category'].nil?
       query_params[:'filter_tagset'] = opts[:'filter_tagset'] if !opts[:'filter_tagset'].nil?
       query_params[:'filter_tag_intersection'] = opts[:'filter_tag_intersection'] if !opts[:'filter_tag_intersection'].nil?
@@ -517,7 +520,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'article_resource'])
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -574,7 +577,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'article_template_resource'])
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

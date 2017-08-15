@@ -18,11 +18,6 @@ Get a flag report
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::MediaModerationApi.new
 
@@ -50,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -70,11 +65,6 @@ Context can be either a free-form string or a pre-defined context name
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::MediaModerationApi.new
 
@@ -109,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -129,11 +119,6 @@ Lets you set the resolution of a report. Resolution types is {banned,ignore} in 
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::MediaModerationApi.new
 
@@ -164,7 +149,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

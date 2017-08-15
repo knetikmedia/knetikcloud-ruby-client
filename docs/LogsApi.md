@@ -22,11 +22,6 @@ Add a user log entry
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::LogsApi.new
 
@@ -54,7 +49,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -72,11 +67,6 @@ Get an existing BRE event log entry by id
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::LogsApi.new
 
@@ -104,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -122,11 +112,6 @@ Returns a list of BRE event log entries
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::LogsApi.new
 
@@ -165,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -183,11 +168,6 @@ Get an existing forward log entry by id
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::LogsApi.new
 
@@ -215,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -233,11 +213,6 @@ Returns a list of forward log entries
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::LogsApi.new
 
@@ -276,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -294,11 +269,6 @@ Returns a user log entry by id
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::LogsApi.new
 
@@ -326,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -344,11 +314,6 @@ Returns a page of user logs entries
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::LogsApi.new
 
@@ -385,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

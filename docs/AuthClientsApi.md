@@ -23,11 +23,6 @@ Create a new client
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::AuthClientsApi.new
 
@@ -56,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -74,11 +69,6 @@ Delete a client
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::AuthClientsApi.new
 
@@ -105,7 +95,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -123,11 +113,6 @@ Get a single client
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::AuthClientsApi.new
 
@@ -155,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -173,11 +158,6 @@ List available client grant types
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::AuthClientsApi.new
 
@@ -199,7 +179,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -217,11 +197,6 @@ List and search clients
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::AuthClientsApi.new
 
@@ -254,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -272,11 +247,6 @@ Set grant types for a client
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::AuthClientsApi.new
 
@@ -307,7 +277,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -325,11 +295,6 @@ Set redirect uris for a client
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::AuthClientsApi.new
 
@@ -360,7 +325,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -378,11 +343,6 @@ Update a client
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::AuthClientsApi.new
 
@@ -414,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

@@ -18,11 +18,6 @@ These are expression types that take a second expression as input and produce a 
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::BRERuleEngineExpressionsApi.new
 
@@ -44,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

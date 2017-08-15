@@ -196,7 +196,14 @@ module KnetikCloudClient
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'OAuth2' =>
+        'oauth2_client_credentials_grant' =>
+          {
+            type: 'oauth2',
+            in: 'header',
+            key: 'Authorization',
+            value: "Bearer #{access_token}"
+          },
+        'oauth2_password_grant' =>
           {
             type: 'oauth2',
             in: 'header',

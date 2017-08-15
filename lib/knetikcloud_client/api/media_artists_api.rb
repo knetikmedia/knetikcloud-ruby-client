@@ -57,7 +57,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'artist_resource'])
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -108,7 +108,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'artist_template_resource'])
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -163,7 +163,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -220,7 +220,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -332,7 +332,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -390,7 +390,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -508,7 +508,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'artist_resource'])
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -564,7 +564,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'artist_template_resource'])
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

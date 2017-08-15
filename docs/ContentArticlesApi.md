@@ -27,11 +27,6 @@ Articles are blobs of text with titles, a category and assets. Formatting and di
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
@@ -60,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,11 +75,6 @@ Article Templates define a type of article and the properties they have
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
@@ -113,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -131,11 +121,6 @@ Delete an existing article
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
@@ -162,7 +147,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -182,11 +167,6 @@ If cascade = 'detach', it will force delete the template even if it's attached t
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
@@ -217,7 +197,7 @@ nil (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -280,11 +260,6 @@ Get a single article template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
@@ -312,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -330,11 +305,6 @@ List and search article templates
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
@@ -367,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -391,6 +361,7 @@ require 'knetikcloud_client'
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
 opts = { 
+  filter_active_only: true, # BOOLEAN | Filter for articles that are active (true) or inactive (false)
   filter_category: "filter_category_example", # String | Filter for articles from a specific category by id
   filter_tagset: "filter_tagset_example", # String | Filter for articles with at least one of a specified set of tags (separated by comma)
   filter_tag_intersection: "filter_tag_intersection_example", # String | Filter for articles with all of a specified set of tags (separated by comma)
@@ -414,6 +385,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter_active_only** | **BOOLEAN**| Filter for articles that are active (true) or inactive (false) | [optional] 
  **filter_category** | **String**| Filter for articles from a specific category by id | [optional] 
  **filter_tagset** | **String**| Filter for articles with at least one of a specified set of tags (separated by comma) | [optional] 
  **filter_tag_intersection** | **String**| Filter for articles with all of a specified set of tags (separated by comma) | [optional] 
@@ -447,11 +419,6 @@ Update an existing article
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
@@ -483,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -501,11 +468,6 @@ Update an article template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = KnetikCloudClient::ContentArticlesApi.new
 
@@ -537,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

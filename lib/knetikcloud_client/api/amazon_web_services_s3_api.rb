@@ -20,8 +20,66 @@ module KnetikCloudClient
       @api_client = api_client
     end
 
-    # Get a signed S3 URL
-    # Requires the file name and file content type (i.e., 'video/mpeg')
+    # Get a temporary signed S3 URL for download
+    # To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :bucket S3 bucket name
+    # @option opts [String] :path The path to the file relative the bucket (the s3 object key)
+    # @option opts [Integer] :expiration The number of seconds this URL will be valid. Default to 60 (default to 60)
+    # @return [String]
+    def get_download_url(opts = {})
+      data, _status_code, _headers = get_download_url_with_http_info(opts)
+      return data
+    end
+
+    # Get a temporary signed S3 URL for download
+    # To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :bucket S3 bucket name
+    # @option opts [String] :path The path to the file relative the bucket (the s3 object key)
+    # @option opts [Integer] :expiration The number of seconds this URL will be valid. Default to 60
+    # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
+    def get_download_url_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AmazonWebServicesS3Api.get_download_url ..."
+      end
+      # resource path
+      local_var_path = "/amazon/s3/downloadurl"
+
+      # query parameters
+      query_params = {}
+      query_params[:'bucket'] = opts[:'bucket'] if !opts[:'bucket'].nil?
+      query_params[:'path'] = opts[:'path'] if !opts[:'path'].nil?
+      query_params[:'expiration'] = opts[:'expiration'] if !opts[:'expiration'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'String')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AmazonWebServicesS3Api#get_download_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a signed S3 URL for upload
+    # Requires the file name and file content type (i.e., 'video/mpeg'). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filename The file name
     # @option opts [String] :content_type The content type
@@ -31,8 +89,8 @@ module KnetikCloudClient
       return data
     end
 
-    # Get a signed S3 URL
-    # Requires the file name and file content type (i.e., &#39;video/mpeg&#39;)
+    # Get a signed S3 URL for upload
+    # Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filename The file name
     # @option opts [String] :content_type The content type
@@ -61,7 +119,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

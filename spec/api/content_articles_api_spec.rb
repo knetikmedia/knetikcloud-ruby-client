@@ -123,6 +123,7 @@ describe 'ContentArticlesApi' do
   # List and search articles
   # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
   # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :filter_active_only Filter for articles that are active (true) or inactive (false)
   # @option opts [String] :filter_category Filter for articles from a specific category by id
   # @option opts [String] :filter_tagset Filter for articles with at least one of a specified set of tags (separated by comma)
   # @option opts [String] :filter_tag_intersection Filter for articles with all of a specified set of tags (separated by comma)

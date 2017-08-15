@@ -143,7 +143,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['OAuth2']
+      auth_names = []
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

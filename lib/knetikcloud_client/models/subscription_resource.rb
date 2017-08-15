@@ -21,6 +21,9 @@ module KnetikCloudClient
     # Who can purchase this subscription
     attr_accessor :availability
 
+    # The behaviors linked to the item, describing various options and interactions. May not be included in item lists
+    attr_accessor :behaviors
+
     # A category for filtering items
     attr_accessor :category
 
@@ -102,6 +105,7 @@ module KnetikCloudClient
       {
         :'additional_properties' => :'additional_properties',
         :'availability' => :'availability',
+        :'behaviors' => :'behaviors',
         :'category' => :'category',
         :'consolidation_day_of_month' => :'consolidation_day_of_month',
         :'created_date' => :'created_date',
@@ -128,6 +132,7 @@ module KnetikCloudClient
       {
         :'additional_properties' => :'Hash<String, Property>',
         :'availability' => :'String',
+        :'behaviors' => :'Array<Behavior>',
         :'category' => :'String',
         :'consolidation_day_of_month' => :'Integer',
         :'created_date' => :'Integer',
@@ -165,6 +170,12 @@ module KnetikCloudClient
 
       if attributes.has_key?(:'availability')
         self.availability = attributes[:'availability']
+      end
+
+      if attributes.has_key?(:'behaviors')
+        if (value = attributes[:'behaviors']).is_a?(Array)
+          self.behaviors = value
+        end
       end
 
       if attributes.has_key?(:'category')
@@ -301,6 +312,7 @@ module KnetikCloudClient
       self.class == o.class &&
           additional_properties == o.additional_properties &&
           availability == o.availability &&
+          behaviors == o.behaviors &&
           category == o.category &&
           consolidation_day_of_month == o.consolidation_day_of_month &&
           created_date == o.created_date &&
@@ -330,7 +342,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [additional_properties, availability, category, consolidation_day_of_month, created_date, geo_country_list, geo_policy_type, id, long_description, name, plans, short_description, sort, store_end, store_start, tags, template, unique_key, updated_date, vendor_id].hash
+      [additional_properties, availability, behaviors, category, consolidation_day_of_month, created_date, geo_country_list, geo_policy_type, id, long_description, name, plans, short_description, sort, store_end, store_start, tags, template, unique_key, updated_date, vendor_id].hash
     end
 
     # Builds the object from hash
