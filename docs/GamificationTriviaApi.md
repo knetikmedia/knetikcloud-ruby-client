@@ -45,6 +45,14 @@ Add an answer to a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -76,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -94,6 +102,14 @@ Add a tag to a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -124,7 +140,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -144,6 +160,14 @@ All questions that dont't have the tag and match filters will have it added. The
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -188,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -208,6 +232,14 @@ Set up a job to import a set of trivia questions from a cvs file at a remote url
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -236,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -254,6 +286,14 @@ Create a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -282,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -302,6 +342,14 @@ Question templates define a type of question and the properties they have
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -330,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -350,6 +398,14 @@ Also deletes all questions that were imported by it
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -376,7 +432,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -394,6 +450,14 @@ Delete a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -420,7 +484,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -438,6 +502,14 @@ Remove an answer from a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -467,7 +539,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -487,6 +559,14 @@ If cascade = 'detach', it will force delete the template even if it's attached t
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -517,7 +597,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -535,6 +615,14 @@ Get an import job
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -562,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -580,6 +668,14 @@ Get a list of import job
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -620,7 +716,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -638,6 +734,14 @@ Get a single question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -665,7 +769,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -683,6 +787,14 @@ Get an answer for a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -713,7 +825,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -731,6 +843,14 @@ List the answers available for a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -758,7 +878,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -778,6 +898,14 @@ The 'since' parameter is important to avoid getting a full list of all questions
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -806,7 +934,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -824,6 +952,14 @@ List the tags for a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -851,7 +987,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -869,6 +1005,14 @@ Get a single question template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -896,7 +1040,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -914,6 +1058,14 @@ List and search question templates
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -946,7 +1098,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -964,6 +1116,14 @@ List and search questions
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1012,7 +1172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1032,6 +1192,14 @@ This is also provided by the list endpoint so you don't need to call this for pa
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1072,7 +1240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1092,6 +1260,14 @@ Will process the CSV file and add new questions asynchronously. The status of th
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1122,7 +1298,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1140,6 +1316,14 @@ Remove a tag from a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1169,7 +1353,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1189,6 +1373,14 @@ ll questions that have the tag and match filters will have it removed. The retur
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1234,7 +1426,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1254,6 +1446,14 @@ For performance reasons, search & category filters are mutually exclusive. If ca
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1286,7 +1486,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1306,6 +1506,14 @@ Changes should be made before process is started for there to be any effect.
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1337,7 +1545,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1355,6 +1563,14 @@ Update a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1386,7 +1602,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1404,6 +1620,14 @@ Update an answer for a question
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1437,7 +1661,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1455,6 +1679,14 @@ Update a question template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1486,7 +1718,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1506,6 +1738,14 @@ Will update all questions that match filters used (or all questions in system if
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::GamificationTriviaApi.new
 
@@ -1548,7 +1788,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 

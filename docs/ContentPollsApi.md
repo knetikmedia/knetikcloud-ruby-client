@@ -27,6 +27,14 @@ Add your vote to a poll
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -58,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -78,6 +86,14 @@ Polls are blobs of text with titles, a category and assets. Formatting and displ
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -106,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -126,6 +142,14 @@ Poll templates define a type of poll and the properties they have
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -154,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -172,6 +196,14 @@ Delete an existing poll
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -198,7 +230,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -218,6 +250,14 @@ If cascade = 'detach', it will force delete the template even if it's attached t
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -248,7 +288,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -311,6 +351,14 @@ Get poll answer
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -338,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -356,6 +404,14 @@ Get a single poll template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -383,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -401,6 +457,14 @@ List and search poll templates
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -433,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -509,6 +573,14 @@ Update an existing poll
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -540,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -558,6 +630,14 @@ Update a poll template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ContentPollsApi.new
 
@@ -589,7 +669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 

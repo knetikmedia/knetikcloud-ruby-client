@@ -28,6 +28,14 @@ Adds a custom discount to the cart
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -58,7 +66,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -76,6 +84,14 @@ Adds a discount coupon to the cart
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -106,7 +122,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -126,6 +142,14 @@ Currently, carts cannot contain virtual and real currency items at the same time
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -156,7 +180,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -224,6 +248,14 @@ Returns the cart with the given GUID
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -251,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -269,6 +301,14 @@ Get a list of carts
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -303,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -321,6 +361,14 @@ Returns whether a cart requires shipping
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -348,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -368,6 +416,14 @@ Since a cart can have multiple vendors with different shipping options, the coun
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -395,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -413,6 +469,14 @@ Removes a discount coupon from the cart
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -442,7 +506,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -462,6 +526,14 @@ May be disallowed by site settings.
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -492,7 +564,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -510,6 +582,14 @@ Sets the owner of a cart if none is set already
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -540,7 +620,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -560,6 +640,14 @@ A quantity of zero will remove the item from the cart altogether.
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -590,7 +678,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -608,6 +696,14 @@ Modifies or sets the order shipping address
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::StoreShoppingCartsApi.new
 
@@ -638,7 +734,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 

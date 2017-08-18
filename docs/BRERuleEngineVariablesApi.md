@@ -19,6 +19,14 @@ Types include integer, string, user and invoice. These are used to qualify trigg
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::BRERuleEngineVariablesApi.new
 
@@ -40,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -60,6 +68,14 @@ Used to lookup users to fill in a user constant for example. Only types marked a
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::BRERuleEngineVariablesApi.new
 
@@ -95,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 

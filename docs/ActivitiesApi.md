@@ -28,6 +28,14 @@ Create an activity
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -56,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -76,6 +84,14 @@ Has to enforce extra rules if not used as an admin
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -106,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -126,6 +142,14 @@ Activity Templates define a type of activity and the properties they have
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -154,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -172,6 +196,14 @@ Delete an activity
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -198,7 +230,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -218,6 +250,14 @@ If cascade = 'detach', it will force delete the template even if it's attached t
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -248,7 +288,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -367,6 +407,14 @@ Get a single activity template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -394,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -412,6 +460,14 @@ List and search activity templates
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -444,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -462,6 +518,14 @@ Sets the status of an activity occurrence to FINISHED and logs metrics
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -493,7 +557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -511,6 +575,14 @@ Update an activity
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -542,7 +614,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -562,6 +634,14 @@ If setting to 'FINISHED' you must POST to /results instead to record the metrics
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -592,7 +672,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -610,6 +690,14 @@ Update an activity template
 ```ruby
 # load the gem
 require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = KnetikCloudClient::ActivitiesApi.new
 
@@ -641,7 +729,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
