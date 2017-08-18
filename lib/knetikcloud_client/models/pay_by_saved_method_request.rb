@@ -18,18 +18,23 @@ module KnetikCloudClient
     # The id of the payment method to use. Must belong to the caller, be public or have PAYMENTS_ADMIN permission
     attr_accessor :payment_method
 
+    # The id of a user to bill. Must have PAYMENTS_ADMIN permission
+    attr_accessor :user_id
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'payment_method' => :'payment_method'
+        :'payment_method' => :'payment_method',
+        :'user_id' => :'user_id'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'payment_method' => :'Integer'
+        :'payment_method' => :'Integer',
+        :'user_id' => :'Integer'
       }
     end
 
@@ -43,6 +48,10 @@ module KnetikCloudClient
 
       if attributes.has_key?(:'payment_method')
         self.payment_method = attributes[:'payment_method']
+      end
+
+      if attributes.has_key?(:'user_id')
+        self.user_id = attributes[:'user_id']
       end
 
     end
@@ -70,7 +79,8 @@ module KnetikCloudClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          payment_method == o.payment_method
+          payment_method == o.payment_method &&
+          user_id == o.user_id
     end
 
     # @see the `==` method
@@ -82,7 +92,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [payment_method].hash
+      [payment_method, user_id].hash
     end
 
     # Builds the object from hash
