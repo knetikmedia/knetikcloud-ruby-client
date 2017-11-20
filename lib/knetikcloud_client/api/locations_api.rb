@@ -55,7 +55,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -104,7 +104,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -159,7 +159,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -208,7 +208,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

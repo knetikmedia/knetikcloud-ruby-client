@@ -103,7 +103,7 @@ module KnetikCloudClient
 
       # query parameters
       query_params = {}
-      query_params[:'validateSettings'] = opts[:'validate_settings'] if !opts[:'validate_settings'].nil?
+      query_params[:'validate_settings'] = opts[:'validate_settings'] if !opts[:'validate_settings'].nil?
 
       # header parameters
       header_params = {}
@@ -556,7 +556,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -620,7 +620,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -681,7 +681,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -849,7 +849,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -919,7 +919,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1099,7 +1099,7 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1176,6 +1176,7 @@ module KnetikCloudClient
     # @param challenge_id The challenge id
     # @param [Hash] opts the optional parameters
     # @option opts [ChallengeActivityResource] :challenge_activity_resource The challenge activity resource object
+    # @option opts [BOOLEAN] :validate_settings Whether to validate the settings being sent against the available settings on the base activity. (default to false)
     # @return [ChallengeActivityResource]
     def update_challenge_activity(id, challenge_id, opts = {})
       data, _status_code, _headers = update_challenge_activity_with_http_info(id, challenge_id, opts)
@@ -1188,6 +1189,7 @@ module KnetikCloudClient
     # @param challenge_id The challenge id
     # @param [Hash] opts the optional parameters
     # @option opts [ChallengeActivityResource] :challenge_activity_resource The challenge activity resource object
+    # @option opts [BOOLEAN] :validate_settings Whether to validate the settings being sent against the available settings on the base activity.
     # @return [Array<(ChallengeActivityResource, Fixnum, Hash)>] ChallengeActivityResource data, response status code and response headers
     def update_challenge_activity_with_http_info(id, challenge_id, opts = {})
       if @api_client.config.debugging
@@ -1206,6 +1208,7 @@ module KnetikCloudClient
 
       # query parameters
       query_params = {}
+      query_params[:'validateSettings'] = opts[:'validate_settings'] if !opts[:'validate_settings'].nil?
 
       # header parameters
       header_params = {}
