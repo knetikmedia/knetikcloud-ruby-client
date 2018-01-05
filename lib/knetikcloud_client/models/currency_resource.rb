@@ -24,7 +24,10 @@ module KnetikCloudClient
     # The unix timestamp in seconds the currency was added to the system
     attr_accessor :created_date
 
-    # The decimal to multiply the system base currency (from config 'currency') to localize to this one. Should be 1 for the base currency itself.
+    # Whether this is the default currency. All real money wallets will be in this currency, and the 'factor' on each currency is in relation to the default. There must be one default currency and the current will be changed if you set another as the default. Cannot be combined with virtual currency. Take extreme caution when changing
+    attr_accessor :default_currency
+
+    # The decimal to multiply the default currency to localize to this one. Should be 1 for the default currency itself.
     attr_accessor :factor
 
     # The url for an icon of the currency
@@ -67,6 +70,7 @@ module KnetikCloudClient
         :'active' => :'active',
         :'code' => :'code',
         :'created_date' => :'created_date',
+        :'default_currency' => :'default_currency',
         :'factor' => :'factor',
         :'icon' => :'icon',
         :'name' => :'name',
@@ -81,6 +85,7 @@ module KnetikCloudClient
         :'active' => :'BOOLEAN',
         :'code' => :'String',
         :'created_date' => :'Integer',
+        :'default_currency' => :'BOOLEAN',
         :'factor' => :'Float',
         :'icon' => :'String',
         :'name' => :'String',
@@ -107,6 +112,10 @@ module KnetikCloudClient
 
       if attributes.has_key?(:'created_date')
         self.created_date = attributes[:'created_date']
+      end
+
+      if attributes.has_key?(:'default_currency')
+        self.default_currency = attributes[:'default_currency']
       end
 
       if attributes.has_key?(:'factor')
@@ -179,6 +188,7 @@ module KnetikCloudClient
           active == o.active &&
           code == o.code &&
           created_date == o.created_date &&
+          default_currency == o.default_currency &&
           factor == o.factor &&
           icon == o.icon &&
           name == o.name &&
@@ -195,7 +205,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [active, code, created_date, factor, icon, name, type, updated_date].hash
+      [active, code, created_date, default_currency, factor, icon, name, type, updated_date].hash
     end
 
     # Builds the object from hash

@@ -86,13 +86,7 @@ describe 'CacheClearEvent' do
     end
   end
 
-  describe 'test attribute "customer_setup"' do
-    it 'should work' do
-       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "customer_teardown"' do
+  describe 'test attribute "teardown"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

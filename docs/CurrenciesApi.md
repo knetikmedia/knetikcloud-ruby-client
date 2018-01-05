@@ -138,6 +138,7 @@ end
 api_instance = KnetikCloudClient::CurrenciesApi.new
 
 opts = { 
+  filter_default: true, # BOOLEAN | Filter for the one currency that is set as default (true), or all that are not (false)
   filter_enabled_currencies: true, # BOOLEAN | Filter for alternate currencies setup explicitely in system config
   filter_type: "filter_type_example", # String | Filter currencies by type.  Allowable values: ('virtual', 'real')
   size: 25, # Integer | The number of objects returned per page
@@ -158,6 +159,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter_default** | **BOOLEAN**| Filter for the one currency that is set as default (true), or all that are not (false) | [optional] 
  **filter_enabled_currencies** | **BOOLEAN**| Filter for alternate currencies setup explicitely in system config | [optional] 
  **filter_type** | **String**| Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;) | [optional] 
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]

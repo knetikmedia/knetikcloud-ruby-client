@@ -128,6 +128,7 @@ module KnetikCloudClient
     # List and search currencies
     # 
     # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :filter_default Filter for the one currency that is set as default (true), or all that are not (false)
     # @option opts [BOOLEAN] :filter_enabled_currencies Filter for alternate currencies setup explicitely in system config
     # @option opts [String] :filter_type Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;)
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -142,6 +143,7 @@ module KnetikCloudClient
     # List and search currencies
     # 
     # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :filter_default Filter for the one currency that is set as default (true), or all that are not (false)
     # @option opts [BOOLEAN] :filter_enabled_currencies Filter for alternate currencies setup explicitely in system config
     # @option opts [String] :filter_type Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;)
     # @option opts [Integer] :size The number of objects returned per page
@@ -157,6 +159,7 @@ module KnetikCloudClient
 
       # query parameters
       query_params = {}
+      query_params[:'filter_default'] = opts[:'filter_default'] if !opts[:'filter_default'].nil?
       query_params[:'filter_enabled_currencies'] = opts[:'filter_enabled_currencies'] if !opts[:'filter_enabled_currencies'].nil?
       query_params[:'filter_type'] = opts[:'filter_type'] if !opts[:'filter_type'].nil?
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?

@@ -18,14 +18,14 @@ module KnetikCloudClient
     # A map of additional properties, keyed on the property name (private). Must match the names and types defined in the template for this type, or be an extra not from the template
     attr_accessor :additional_properties
 
-    # The url of the user's avatar image
-    attr_accessor :avatar_url
+    # The group. Id is the unique name
+    attr_accessor :group
 
-    # The public username of the user
-    attr_accessor :display_name
+    # Whether this membership is explicit (the user was added directly to the group) or implicit (the user was added only to one or more child groups)
+    attr_accessor :implicit
 
-    # The id of the user
-    attr_accessor :id
+    # The id of the membership entry
+    attr_accessor :membership_id
 
     # The position of the member in the group if applicable. Read notes for details
     attr_accessor :order
@@ -36,8 +36,8 @@ module KnetikCloudClient
     # A template this member additional properties are validated against (private). May be null and no validation of properties will be done
     attr_accessor :template
 
-    # The username of the user
-    attr_accessor :username
+    # The user
+    attr_accessor :user
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -65,13 +65,13 @@ module KnetikCloudClient
     def self.attribute_map
       {
         :'additional_properties' => :'additional_properties',
-        :'avatar_url' => :'avatar_url',
-        :'display_name' => :'display_name',
-        :'id' => :'id',
+        :'group' => :'group',
+        :'implicit' => :'implicit',
+        :'membership_id' => :'membership_id',
         :'order' => :'order',
         :'status' => :'status',
         :'template' => :'template',
-        :'username' => :'username'
+        :'user' => :'user'
       }
     end
 
@@ -79,13 +79,13 @@ module KnetikCloudClient
     def self.swagger_types
       {
         :'additional_properties' => :'Hash<String, Property>',
-        :'avatar_url' => :'String',
-        :'display_name' => :'String',
-        :'id' => :'Integer',
+        :'group' => :'SimpleGroupResource',
+        :'implicit' => :'BOOLEAN',
+        :'membership_id' => :'Integer',
         :'order' => :'String',
         :'status' => :'String',
         :'template' => :'String',
-        :'username' => :'String'
+        :'user' => :'SimpleUserResource'
       }
     end
 
@@ -103,16 +103,16 @@ module KnetikCloudClient
         end
       end
 
-      if attributes.has_key?(:'avatar_url')
-        self.avatar_url = attributes[:'avatar_url']
+      if attributes.has_key?(:'group')
+        self.group = attributes[:'group']
       end
 
-      if attributes.has_key?(:'display_name')
-        self.display_name = attributes[:'display_name']
+      if attributes.has_key?(:'implicit')
+        self.implicit = attributes[:'implicit']
       end
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.has_key?(:'membership_id')
+        self.membership_id = attributes[:'membership_id']
       end
 
       if attributes.has_key?(:'order')
@@ -127,8 +127,8 @@ module KnetikCloudClient
         self.template = attributes[:'template']
       end
 
-      if attributes.has_key?(:'username')
-        self.username = attributes[:'username']
+      if attributes.has_key?(:'user')
+        self.user = attributes[:'user']
       end
 
     end
@@ -137,8 +137,8 @@ module KnetikCloudClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push("invalid value for 'id', id cannot be nil.")
+      if @user.nil?
+        invalid_properties.push("invalid value for 'user', user cannot be nil.")
       end
 
       return invalid_properties
@@ -147,9 +147,9 @@ module KnetikCloudClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.nil?
       status_validator = EnumAttributeValidator.new('String', ["moderator", "member"])
       return false unless status_validator.valid?(@status)
+      return false if @user.nil?
       return true
     end
 
@@ -169,13 +169,13 @@ module KnetikCloudClient
       return true if self.equal?(o)
       self.class == o.class &&
           additional_properties == o.additional_properties &&
-          avatar_url == o.avatar_url &&
-          display_name == o.display_name &&
-          id == o.id &&
+          group == o.group &&
+          implicit == o.implicit &&
+          membership_id == o.membership_id &&
           order == o.order &&
           status == o.status &&
           template == o.template &&
-          username == o.username
+          user == o.user
     end
 
     # @see the `==` method
@@ -187,7 +187,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [additional_properties, avatar_url, display_name, id, order, status, template, username].hash
+      [additional_properties, group, implicit, membership_id, order, status, template, user].hash
     end
 
     # Builds the object from hash

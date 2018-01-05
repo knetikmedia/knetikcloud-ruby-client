@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 
 # **update_object_item**
-> update_object_item(template_id, entitlement_id, opts)
+> update_object_item(template_id, object_id, opts)
 
 Update an object
 
@@ -494,16 +494,16 @@ api_instance = KnetikCloudClient::ObjectsApi.new
 
 template_id = "template_id_example" # String | The id of the template this object is part of
 
-entitlement_id = 56 # Integer | The id of the entitlement
+object_id = 56 # Integer | The id of the object
 
 opts = { 
   cascade: false, # BOOLEAN | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  object_item: KnetikCloudClient::EntitlementItem.new # EntitlementItem | The object item object
+  object_item: KnetikCloudClient::ObjectResource.new # ObjectResource | The object item object
 }
 
 begin
   #Update an object
-  api_instance.update_object_item(template_id, entitlement_id, opts)
+  api_instance.update_object_item(template_id, object_id, opts)
 rescue KnetikCloudClient::ApiError => e
   puts "Exception when calling ObjectsApi->update_object_item: #{e}"
 end
@@ -514,9 +514,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **String**| The id of the template this object is part of | 
- **entitlement_id** | **Integer**| The id of the entitlement | 
+ **object_id** | **Integer**| The id of the object | 
  **cascade** | **BOOLEAN**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **object_item** | [**EntitlementItem**](EntitlementItem.md)| The object item object | [optional] 
+ **object_item** | [**ObjectResource**](ObjectResource.md)| The object item object | [optional] 
 
 ### Return type
 

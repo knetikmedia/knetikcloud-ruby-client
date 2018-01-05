@@ -60,6 +60,7 @@ describe 'CurrenciesApi' do
   # List and search currencies
   # 
   # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :filter_default Filter for the one currency that is set as default (true), or all that are not (false)
   # @option opts [BOOLEAN] :filter_enabled_currencies Filter for alternate currencies setup explicitely in system config
   # @option opts [String] :filter_type Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;)
   # @option opts [Integer] :size The number of objects returned per page

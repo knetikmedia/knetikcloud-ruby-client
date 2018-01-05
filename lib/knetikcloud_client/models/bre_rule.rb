@@ -33,6 +33,9 @@ module KnetikCloudClient
     # The date the rule ceases to take effect, or null if never. Unix timestamp in seconds
     attr_accessor :end_date
 
+    # How many times the rule has been evaluated (it's conditions checked, whether it then runs or not)
+    attr_accessor :evaluation_count
+
     # The event name of the trigger this rule runs for. Affects which parameters are available
     attr_accessor :event_name
 
@@ -41,6 +44,9 @@ module KnetikCloudClient
 
     # The human readable name of the rule
     attr_accessor :name
+
+    # How many times the rule has run
+    attr_accessor :run_count
 
     # Used to sort rules to control the order they run in. Larger numbered sort values run first.  Default 500
     attr_accessor :sort
@@ -61,9 +67,11 @@ module KnetikCloudClient
         :'description' => :'description',
         :'enabled' => :'enabled',
         :'end_date' => :'end_date',
+        :'evaluation_count' => :'evaluation_count',
         :'event_name' => :'event_name',
         :'id' => :'id',
         :'name' => :'name',
+        :'run_count' => :'run_count',
         :'sort' => :'sort',
         :'start_date' => :'start_date',
         :'system_rule' => :'system_rule'
@@ -79,9 +87,11 @@ module KnetikCloudClient
         :'description' => :'String',
         :'enabled' => :'BOOLEAN',
         :'end_date' => :'Integer',
+        :'evaluation_count' => :'Integer',
         :'event_name' => :'String',
         :'id' => :'String',
         :'name' => :'String',
+        :'run_count' => :'Integer',
         :'sort' => :'Integer',
         :'start_date' => :'Integer',
         :'system_rule' => :'BOOLEAN'
@@ -122,6 +132,10 @@ module KnetikCloudClient
         self.end_date = attributes[:'end_date']
       end
 
+      if attributes.has_key?(:'evaluation_count')
+        self.evaluation_count = attributes[:'evaluation_count']
+      end
+
       if attributes.has_key?(:'event_name')
         self.event_name = attributes[:'event_name']
       end
@@ -132,6 +146,10 @@ module KnetikCloudClient
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'run_count')
+        self.run_count = attributes[:'run_count']
       end
 
       if attributes.has_key?(:'sort')
@@ -187,9 +205,11 @@ module KnetikCloudClient
           description == o.description &&
           enabled == o.enabled &&
           end_date == o.end_date &&
+          evaluation_count == o.evaluation_count &&
           event_name == o.event_name &&
           id == o.id &&
           name == o.name &&
+          run_count == o.run_count &&
           sort == o.sort &&
           start_date == o.start_date &&
           system_rule == o.system_rule
@@ -204,7 +224,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [actions, condition, condition_text, description, enabled, end_date, event_name, id, name, sort, start_date, system_rule].hash
+      [actions, condition, condition_text, description, enabled, end_date, evaluation_count, event_name, id, name, run_count, sort, start_date, system_rule].hash
     end
 
     # Builds the object from hash

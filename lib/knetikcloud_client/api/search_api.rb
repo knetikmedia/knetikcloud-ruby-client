@@ -20,7 +20,7 @@ module KnetikCloudClient
       @api_client = api_client
     end
 
-    # Search an index
+    # Search an index with no template
     # The body is an ElasticSearch query in JSON format. Please see their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html'>documentation</a> for details on the format and search options. The searchable object's format depends on on the type but mostly matches the resource from it's main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
     # @param type The index type
     # @param [Hash] opts the optional parameters
@@ -33,7 +33,7 @@ module KnetikCloudClient
       return data
     end
 
-    # Search an index
+    # Search an index with no template
     # The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
     # @param type The index type
     # @param [Hash] opts the optional parameters
@@ -79,6 +79,75 @@ module KnetikCloudClient
         :return_type => 'PageResourceMapstringobject')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SearchApi#search_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Search an index with a template
+    # The body is an ElasticSearch query in JSON format. Please see their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html'>documentation</a> for details on the format and search options. The searchable object's format depends on on the type but mostly matches the resource from it's main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @option opts [Integer] :size The number of documents returned per page (default to 25)
+    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
+    # @return [PageResourceMapstringobject]
+    def search_index_with_template(type, template, opts = {})
+      data, _status_code, _headers = search_index_with_template_with_http_info(type, template, opts)
+      return data
+    end
+
+    # Search an index with a template
+    # The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @option opts [Integer] :size The number of documents returned per page
+    # @option opts [Integer] :page The number of the page returned, starting with 1
+    # @return [Array<(PageResourceMapstringobject, Fixnum, Hash)>] PageResourceMapstringobject data, response status code and response headers
+    def search_index_with_template_with_http_info(type, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_index_with_template ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_index_with_template"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_index_with_template"
+      end
+      # resource path
+      local_var_path = "/search/index/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'query'])
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PageResourceMapstringobject')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_index_with_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

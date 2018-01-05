@@ -14,62 +14,27 @@ require 'date'
 
 module KnetikCloudClient
 
-  class BooleanPropertyDefinitionResource
-    # The description of the property
-    attr_accessor :description
-
-    # A list of the fields on both the property definition and property of this type
-    attr_accessor :field_list
-
-    # The friendly front-facing name of the property
-    attr_accessor :friendly_name
-
-    # The name of the property
+  class SimpleGroupResource
+    # The name of the group. Max 50 characters
     attr_accessor :name
 
-    # The JSON path to the option label
-    attr_accessor :option_label_path
-
-    # The JSON path to the option value
-    attr_accessor :option_value_path
-
-    # URL of service containing the property options (assumed JSON array)
-    attr_accessor :options_url
-
-    # Whether the property is required
-    attr_accessor :required
-
-    # The type of the property. Used for polymorphic type recognition and thus must match an expected type with additional properties.
-    attr_accessor :type
+    # Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID
+    attr_accessor :unique_name
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'description' => :'description',
-        :'field_list' => :'field_list',
-        :'friendly_name' => :'friendly_name',
         :'name' => :'name',
-        :'option_label_path' => :'option_label_path',
-        :'option_value_path' => :'option_value_path',
-        :'options_url' => :'options_url',
-        :'required' => :'required',
-        :'type' => :'type'
+        :'unique_name' => :'unique_name'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'description' => :'String',
-        :'field_list' => :'PropertyFieldListResource',
-        :'friendly_name' => :'String',
         :'name' => :'String',
-        :'option_label_path' => :'String',
-        :'option_value_path' => :'String',
-        :'options_url' => :'String',
-        :'required' => :'BOOLEAN',
-        :'type' => :'String'
+        :'unique_name' => :'String'
       }
     end
 
@@ -81,40 +46,12 @@ module KnetikCloudClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.has_key?(:'field_list')
-        self.field_list = attributes[:'field_list']
-      end
-
-      if attributes.has_key?(:'friendly_name')
-        self.friendly_name = attributes[:'friendly_name']
-      end
-
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'option_label_path')
-        self.option_label_path = attributes[:'option_label_path']
-      end
-
-      if attributes.has_key?(:'option_value_path')
-        self.option_value_path = attributes[:'option_value_path']
-      end
-
-      if attributes.has_key?(:'options_url')
-        self.options_url = attributes[:'options_url']
-      end
-
-      if attributes.has_key?(:'required')
-        self.required = attributes[:'required']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'unique_name')
+        self.unique_name = attributes[:'unique_name']
       end
 
     end
@@ -127,14 +64,6 @@ module KnetikCloudClient
         invalid_properties.push("invalid value for 'name', name cannot be nil.")
       end
 
-      if @required.nil?
-        invalid_properties.push("invalid value for 'required', required cannot be nil.")
-      end
-
-      if @type.nil?
-        invalid_properties.push("invalid value for 'type', type cannot be nil.")
-      end
-
       return invalid_properties
     end
 
@@ -142,8 +71,6 @@ module KnetikCloudClient
     # @return true if the model is valid
     def valid?
       return false if @name.nil?
-      return false if @required.nil?
-      return false if @type.nil?
       return true
     end
 
@@ -152,15 +79,8 @@ module KnetikCloudClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          description == o.description &&
-          field_list == o.field_list &&
-          friendly_name == o.friendly_name &&
           name == o.name &&
-          option_label_path == o.option_label_path &&
-          option_value_path == o.option_value_path &&
-          options_url == o.options_url &&
-          required == o.required &&
-          type == o.type
+          unique_name == o.unique_name
     end
 
     # @see the `==` method
@@ -172,7 +92,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, field_list, friendly_name, name, option_label_path, option_value_path, options_url, required, type].hash
+      [name, unique_name].hash
     end
 
     # Builds the object from hash

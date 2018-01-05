@@ -295,8 +295,8 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
-    # Removes a group from the system IF no resources are attached to it
-    # 
+    # Removes a group from the system
+    # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group's parent if they were not added to it directly as well.
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -305,8 +305,8 @@ module KnetikCloudClient
       return nil
     end
 
-    # Removes a group from the system IF no resources are attached to it
-    # 
+    # Removes a group from the system
+    # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -514,6 +514,61 @@ module KnetikCloudClient
         :return_type => 'GroupResource')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersGroupsApi#get_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get group ancestors
+    # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+    # @param unique_name The group unique name
+    # @param [Hash] opts the optional parameters
+    # @return [Array<GroupResource>]
+    def get_group_ancestors(unique_name, opts = {})
+      data, _status_code, _headers = get_group_ancestors_with_http_info(unique_name, opts)
+      return data
+    end
+
+    # Get group ancestors
+    # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+    # @param unique_name The group unique name
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<GroupResource>, Fixnum, Hash)>] Array<GroupResource> data, response status code and response headers
+    def get_group_ancestors_with_http_info(unique_name, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersGroupsApi.get_group_ancestors ..."
+      end
+      # verify the required parameter 'unique_name' is set
+      if @api_client.config.client_side_validation && unique_name.nil?
+        fail ArgumentError, "Missing the required parameter 'unique_name' when calling UsersGroupsApi.get_group_ancestors"
+      end
+      # resource path
+      local_var_path = "/users/groups/{unique_name}/ancestors".sub('{' + 'unique_name' + '}', unique_name.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<GroupResource>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersGroupsApi#get_group_ancestors\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1067,7 +1122,7 @@ module KnetikCloudClient
     end
 
     # Update a group
-    # 
+    # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @option opts [GroupResource] :group_resource The updated group
@@ -1078,7 +1133,7 @@ module KnetikCloudClient
     end
 
     # Update a group
-    # 
+    # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @option opts [GroupResource] :group_resource The updated group

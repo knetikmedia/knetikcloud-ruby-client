@@ -489,25 +489,25 @@ module KnetikCloudClient
     # Update an object
     # 
     # @param template_id The id of the template this object is part of
-    # @param entitlement_id The id of the entitlement
+    # @param object_id The id of the object
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
-    # @option opts [EntitlementItem] :object_item The object item object
+    # @option opts [ObjectResource] :object_item The object item object
     # @return [nil]
-    def update_object_item(template_id, entitlement_id, opts = {})
-      update_object_item_with_http_info(template_id, entitlement_id, opts)
+    def update_object_item(template_id, object_id, opts = {})
+      update_object_item_with_http_info(template_id, object_id, opts)
       return nil
     end
 
     # Update an object
     # 
     # @param template_id The id of the template this object is part of
-    # @param entitlement_id The id of the entitlement
+    # @param object_id The id of the object
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-    # @option opts [EntitlementItem] :object_item The object item object
+    # @option opts [ObjectResource] :object_item The object item object
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_object_item_with_http_info(template_id, entitlement_id, opts = {})
+    def update_object_item_with_http_info(template_id, object_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ObjectsApi.update_object_item ..."
       end
@@ -515,12 +515,12 @@ module KnetikCloudClient
       if @api_client.config.client_side_validation && template_id.nil?
         fail ArgumentError, "Missing the required parameter 'template_id' when calling ObjectsApi.update_object_item"
       end
-      # verify the required parameter 'entitlement_id' is set
-      if @api_client.config.client_side_validation && entitlement_id.nil?
-        fail ArgumentError, "Missing the required parameter 'entitlement_id' when calling ObjectsApi.update_object_item"
+      # verify the required parameter 'object_id' is set
+      if @api_client.config.client_side_validation && object_id.nil?
+        fail ArgumentError, "Missing the required parameter 'object_id' when calling ObjectsApi.update_object_item"
       end
       # resource path
-      local_var_path = "/objects/{template_id}/{object_id}".sub('{' + 'template_id' + '}', template_id.to_s).sub('{' + 'entitlement_id' + '}', entitlement_id.to_s)
+      local_var_path = "/objects/{template_id}/{object_id}".sub('{' + 'template_id' + '}', template_id.to_s).sub('{' + 'object_id' + '}', object_id.to_s)
 
       # query parameters
       query_params = {}

@@ -38,19 +38,19 @@ describe 'GroupMemberResource' do
     end
   end
 
-  describe 'test attribute "avatar_url"' do
+  describe 'test attribute "group"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "display_name"' do
+  describe 'test attribute "implicit"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "id"' do
+  describe 'test attribute "membership_id"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -78,7 +78,7 @@ describe 'GroupMemberResource' do
     end
   end
 
-  describe 'test attribute "username"' do
+  describe 'test attribute "user"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

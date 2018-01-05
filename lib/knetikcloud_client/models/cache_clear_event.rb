@@ -34,9 +34,7 @@ module KnetikCloudClient
     # The type of the event. Used for polymorphic type recognition and thus must match an expected type
     attr_accessor :type
 
-    attr_accessor :customer_setup
-
-    attr_accessor :customer_teardown
+    attr_accessor :teardown
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -51,8 +49,7 @@ module KnetikCloudClient
         :'synchronous' => :'synchronous',
         :'timestamp' => :'timestamp',
         :'type' => :'type',
-        :'customer_setup' => :'customer_setup',
-        :'customer_teardown' => :'customer_teardown'
+        :'teardown' => :'teardown'
       }
     end
 
@@ -68,8 +65,7 @@ module KnetikCloudClient
         :'synchronous' => :'BOOLEAN',
         :'timestamp' => :'Integer',
         :'type' => :'String',
-        :'customer_setup' => :'BOOLEAN',
-        :'customer_teardown' => :'BOOLEAN'
+        :'teardown' => :'BOOLEAN'
       }
     end
 
@@ -117,12 +113,8 @@ module KnetikCloudClient
         self.type = attributes[:'type']
       end
 
-      if attributes.has_key?(:'customer_setup')
-        self.customer_setup = attributes[:'customer_setup']
-      end
-
-      if attributes.has_key?(:'customer_teardown')
-        self.customer_teardown = attributes[:'customer_teardown']
+      if attributes.has_key?(:'teardown')
+        self.teardown = attributes[:'teardown']
       end
 
     end
@@ -159,8 +151,7 @@ module KnetikCloudClient
           synchronous == o.synchronous &&
           timestamp == o.timestamp &&
           type == o.type &&
-          customer_setup == o.customer_setup &&
-          customer_teardown == o.customer_teardown
+          teardown == o.teardown
     end
 
     # @see the `==` method
@@ -172,7 +163,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [client, customer, do_not_broadcast, section, source, specifics, synchronous, timestamp, type, customer_setup, customer_teardown].hash
+      [client, customer, do_not_broadcast, section, source, specifics, synchronous, timestamp, type, teardown].hash
     end
 
     # Builds the object from hash

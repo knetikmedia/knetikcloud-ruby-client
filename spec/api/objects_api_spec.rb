@@ -142,10 +142,10 @@ describe 'ObjectsApi' do
   # Update an object
   # 
   # @param template_id The id of the template this object is part of
-  # @param entitlement_id The id of the entitlement
+  # @param object_id The id of the object
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  # @option opts [EntitlementItem] :object_item The object item object
+  # @option opts [ObjectResource] :object_item The object item object
   # @return [nil]
   describe 'update_object_item test' do
     it "should work" do

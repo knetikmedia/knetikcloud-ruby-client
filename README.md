@@ -484,7 +484,8 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::ReportingUsageApi* | [**get_usage_by_year**](docs/ReportingUsageApi.md#get_usage_by_year) | **GET** /reporting/usage/year | Returns aggregated endpoint usage information by year
 *KnetikCloudClient::ReportingUsageApi* | [**get_usage_endpoints**](docs/ReportingUsageApi.md#get_usage_endpoints) | **GET** /reporting/usage/endpoints | Returns list of endpoints called (method and url)
 *KnetikCloudClient::ReportingUsersApi* | [**get_user_registrations**](docs/ReportingUsersApi.md#get_user_registrations) | **GET** /reporting/users/registrations | Get user registration info
-*KnetikCloudClient::SearchApi* | [**search_index**](docs/SearchApi.md#search_index) | **POST** /search/index/{type} | Search an index
+*KnetikCloudClient::SearchApi* | [**search_index**](docs/SearchApi.md#search_index) | **POST** /search/index/{type} | Search an index with no template
+*KnetikCloudClient::SearchApi* | [**search_index_with_template**](docs/SearchApi.md#search_index_with_template) | **POST** /search/index/{type}/{template} | Search an index with a template
 *KnetikCloudClient::SocialFacebookApi* | [**link_accounts**](docs/SocialFacebookApi.md#link_accounts) | **POST** /social/facebook/users | Link facebook account
 *KnetikCloudClient::SocialGoogleApi* | [**link_accounts1**](docs/SocialGoogleApi.md#link_accounts1) | **POST** /social/google/users | Link google account
 *KnetikCloudClient::StoreApi* | [**create_item_template**](docs/StoreApi.md#create_item_template) | **POST** /store/items/templates | Create an item template
@@ -611,10 +612,11 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::UsersGroupsApi* | [**create_group**](docs/UsersGroupsApi.md#create_group) | **POST** /users/groups | Create a group
 *KnetikCloudClient::UsersGroupsApi* | [**create_group_member_template**](docs/UsersGroupsApi.md#create_group_member_template) | **POST** /users/groups/members/templates | Create an group member template
 *KnetikCloudClient::UsersGroupsApi* | [**create_group_template**](docs/UsersGroupsApi.md#create_group_template) | **POST** /users/groups/templates | Create a group template
-*KnetikCloudClient::UsersGroupsApi* | [**delete_group**](docs/UsersGroupsApi.md#delete_group) | **DELETE** /users/groups/{unique_name} | Removes a group from the system IF no resources are attached to it
+*KnetikCloudClient::UsersGroupsApi* | [**delete_group**](docs/UsersGroupsApi.md#delete_group) | **DELETE** /users/groups/{unique_name} | Removes a group from the system
 *KnetikCloudClient::UsersGroupsApi* | [**delete_group_member_template**](docs/UsersGroupsApi.md#delete_group_member_template) | **DELETE** /users/groups/members/templates/{id} | Delete an group member template
 *KnetikCloudClient::UsersGroupsApi* | [**delete_group_template**](docs/UsersGroupsApi.md#delete_group_template) | **DELETE** /users/groups/templates/{id} | Delete a group template
 *KnetikCloudClient::UsersGroupsApi* | [**get_group**](docs/UsersGroupsApi.md#get_group) | **GET** /users/groups/{unique_name} | Loads a specific group's details
+*KnetikCloudClient::UsersGroupsApi* | [**get_group_ancestors**](docs/UsersGroupsApi.md#get_group_ancestors) | **GET** /users/groups/{unique_name}/ancestors | Get group ancestors
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_member**](docs/UsersGroupsApi.md#get_group_member) | **GET** /users/groups/{unique_name}/members/{user_id} | Get a user from a group
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_member_template**](docs/UsersGroupsApi.md#get_group_member_template) | **GET** /users/groups/members/templates/{id} | Get a single group member template
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_member_templates**](docs/UsersGroupsApi.md#get_group_member_templates) | **GET** /users/groups/members/templates | List and search group member templates
@@ -937,6 +939,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::SelectedSettingRequest](docs/SelectedSettingRequest.md)
  - [KnetikCloudClient::SelectedSettingResource](docs/SelectedSettingResource.md)
  - [KnetikCloudClient::SettingOption](docs/SettingOption.md)
+ - [KnetikCloudClient::SimpleGroupResource](docs/SimpleGroupResource.md)
  - [KnetikCloudClient::SimpleReferenceResourceint](docs/SimpleReferenceResourceint.md)
  - [KnetikCloudClient::SimpleReferenceResourcelong](docs/SimpleReferenceResourcelong.md)
  - [KnetikCloudClient::SimpleReferenceResourceobject](docs/SimpleReferenceResourceobject.md)

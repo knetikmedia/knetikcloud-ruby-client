@@ -15,11 +15,26 @@ require 'date'
 module KnetikCloudClient
 
   class ImageGroupPropertyDefinitionResource
+    # The description of the property
+    attr_accessor :description
+
     # A list of the fields on both the property definition and property of this type
     attr_accessor :field_list
 
+    # The friendly front-facing name of the property
+    attr_accessor :friendly_name
+
     # The name of the property
     attr_accessor :name
+
+    # The JSON path to the option label
+    attr_accessor :option_label_path
+
+    # The JSON path to the option value
+    attr_accessor :option_value_path
+
+    # URL of service containing the property options (assumed JSON array)
+    attr_accessor :options_url
 
     # Whether the property is required
     attr_accessor :required
@@ -55,8 +70,13 @@ module KnetikCloudClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'description' => :'description',
         :'field_list' => :'field_list',
+        :'friendly_name' => :'friendly_name',
         :'name' => :'name',
+        :'option_label_path' => :'option_label_path',
+        :'option_value_path' => :'option_value_path',
+        :'options_url' => :'options_url',
         :'required' => :'required',
         :'type' => :'type',
         :'file_type' => :'file_type',
@@ -73,8 +93,13 @@ module KnetikCloudClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'description' => :'String',
         :'field_list' => :'PropertyFieldListResource',
+        :'friendly_name' => :'String',
         :'name' => :'String',
+        :'option_label_path' => :'String',
+        :'option_value_path' => :'String',
+        :'options_url' => :'String',
         :'required' => :'BOOLEAN',
         :'type' => :'String',
         :'file_type' => :'String',
@@ -96,12 +121,32 @@ module KnetikCloudClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
       if attributes.has_key?(:'field_list')
         self.field_list = attributes[:'field_list']
       end
 
+      if attributes.has_key?(:'friendly_name')
+        self.friendly_name = attributes[:'friendly_name']
+      end
+
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'option_label_path')
+        self.option_label_path = attributes[:'option_label_path']
+      end
+
+      if attributes.has_key?(:'option_value_path')
+        self.option_value_path = attributes[:'option_value_path']
+      end
+
+      if attributes.has_key?(:'options_url')
+        self.options_url = attributes[:'options_url']
       end
 
       if attributes.has_key?(:'required')
@@ -179,8 +224,13 @@ module KnetikCloudClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          description == o.description &&
           field_list == o.field_list &&
+          friendly_name == o.friendly_name &&
           name == o.name &&
+          option_label_path == o.option_label_path &&
+          option_value_path == o.option_value_path &&
+          options_url == o.options_url &&
           required == o.required &&
           type == o.type &&
           file_type == o.file_type &&
@@ -202,7 +252,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [field_list, name, required, type, file_type, max_count, max_file_size, min_count, max_height, max_width, min_height, min_width].hash
+      [description, field_list, friendly_name, name, option_label_path, option_value_path, options_url, required, type, file_type, max_count, max_file_size, min_count, max_height, max_width, min_height, min_width].hash
     end
 
     # Builds the object from hash

@@ -95,8 +95,8 @@ describe 'UsersGroupsApi' do
   end
 
   # unit tests for delete_group
-  # Removes a group from the system IF no resources are attached to it
-  # 
+  # Removes a group from the system
+  # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
   # @param unique_name The group unique name
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -139,6 +139,18 @@ describe 'UsersGroupsApi' do
   # @param [Hash] opts the optional parameters
   # @return [GroupResource]
   describe 'get_group test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_group_ancestors
+  # Get group ancestors
+  # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+  # @param unique_name The group unique name
+  # @param [Hash] opts the optional parameters
+  # @return [Array<GroupResource>]
+  describe 'get_group_ancestors test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -272,7 +284,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for update_group
   # Update a group
-  # 
+  # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
   # @param unique_name The group unique name
   # @param [Hash] opts the optional parameters
   # @option opts [GroupResource] :group_resource The updated group

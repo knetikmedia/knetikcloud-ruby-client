@@ -33,7 +33,7 @@ describe 'SearchApi' do
   end
 
   # unit tests for search_index
-  # Search an index
+  # Search an index with no template
   # The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
   # @param type The index type
   # @param [Hash] opts the optional parameters
@@ -42,6 +42,22 @@ describe 'SearchApi' do
   # @option opts [Integer] :page The number of the page returned, starting with 1
   # @return [PageResourceMapstringobject]
   describe 'search_index test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_index_with_template
+  # Search an index with a template
+  # The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+  # @param type The index type
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @option opts [Object] :query The query to be used for the search
+  # @option opts [Integer] :size The number of documents returned per page
+  # @option opts [Integer] :page The number of the page returned, starting with 1
+  # @return [PageResourceMapstringobject]
+  describe 'search_index_with_template test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

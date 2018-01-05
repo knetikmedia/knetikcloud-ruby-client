@@ -39,10 +39,13 @@ module KnetikCloudClient
     # The number of users in child groups
     attr_accessor :sub_member_count
 
+    # Tags for search
+    attr_accessor :tags
+
     # A group template this group is validated against. May be null and no validation of additional_properties will be done
     attr_accessor :template
 
-    # Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created
+    # Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID
     attr_accessor :unique_name
 
     class EnumAttributeValidator
@@ -78,6 +81,7 @@ module KnetikCloudClient
         :'parent' => :'parent',
         :'status' => :'status',
         :'sub_member_count' => :'sub_member_count',
+        :'tags' => :'tags',
         :'template' => :'template',
         :'unique_name' => :'unique_name'
       }
@@ -94,6 +98,7 @@ module KnetikCloudClient
         :'parent' => :'String',
         :'status' => :'String',
         :'sub_member_count' => :'Integer',
+        :'tags' => :'Array<String>',
         :'template' => :'String',
         :'unique_name' => :'String'
       }
@@ -141,6 +146,12 @@ module KnetikCloudClient
         self.sub_member_count = attributes[:'sub_member_count']
       end
 
+      if attributes.has_key?(:'tags')
+        if (value = attributes[:'tags']).is_a?(Array)
+          self.tags = value
+        end
+      end
+
       if attributes.has_key?(:'template')
         self.template = attributes[:'template']
       end
@@ -163,10 +174,6 @@ module KnetikCloudClient
         invalid_properties.push("invalid value for 'status', status cannot be nil.")
       end
 
-      if @unique_name.nil?
-        invalid_properties.push("invalid value for 'unique_name', unique_name cannot be nil.")
-      end
-
       return invalid_properties
     end
 
@@ -177,7 +184,6 @@ module KnetikCloudClient
       return false if @status.nil?
       status_validator = EnumAttributeValidator.new('String', ["open", "closed"])
       return false unless status_validator.valid?(@status)
-      return false if @unique_name.nil?
       return true
     end
 
@@ -204,6 +210,7 @@ module KnetikCloudClient
           parent == o.parent &&
           status == o.status &&
           sub_member_count == o.sub_member_count &&
+          tags == o.tags &&
           template == o.template &&
           unique_name == o.unique_name
     end
@@ -217,7 +224,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [additional_properties, description, member_count, message_of_the_day, name, parent, status, sub_member_count, template, unique_name].hash
+      [additional_properties, description, member_count, message_of_the_day, name, parent, status, sub_member_count, tags, template, unique_name].hash
     end
 
     # Builds the object from hash

@@ -9,10 +9,11 @@ Method | HTTP request | Description
 [**create_group**](UsersGroupsApi.md#create_group) | **POST** /users/groups | Create a group
 [**create_group_member_template**](UsersGroupsApi.md#create_group_member_template) | **POST** /users/groups/members/templates | Create an group member template
 [**create_group_template**](UsersGroupsApi.md#create_group_template) | **POST** /users/groups/templates | Create a group template
-[**delete_group**](UsersGroupsApi.md#delete_group) | **DELETE** /users/groups/{unique_name} | Removes a group from the system IF no resources are attached to it
+[**delete_group**](UsersGroupsApi.md#delete_group) | **DELETE** /users/groups/{unique_name} | Removes a group from the system
 [**delete_group_member_template**](UsersGroupsApi.md#delete_group_member_template) | **DELETE** /users/groups/members/templates/{id} | Delete an group member template
 [**delete_group_template**](UsersGroupsApi.md#delete_group_template) | **DELETE** /users/groups/templates/{id} | Delete a group template
 [**get_group**](UsersGroupsApi.md#get_group) | **GET** /users/groups/{unique_name} | Loads a specific group&#39;s details
+[**get_group_ancestors**](UsersGroupsApi.md#get_group_ancestors) | **GET** /users/groups/{unique_name}/ancestors | Get group ancestors
 [**get_group_member**](UsersGroupsApi.md#get_group_member) | **GET** /users/groups/{unique_name}/members/{user_id} | Get a user from a group
 [**get_group_member_template**](UsersGroupsApi.md#get_group_member_template) | **GET** /users/groups/members/templates/{id} | Get a single group member template
 [**get_group_member_templates**](UsersGroupsApi.md#get_group_member_templates) | **GET** /users/groups/members/templates | List and search group member templates
@@ -311,7 +312,9 @@ Name | Type | Description  | Notes
 # **delete_group**
 > delete_group(unique_name)
 
-Removes a group from the system IF no resources are attached to it
+Removes a group from the system
+
+All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group's parent if they were not added to it directly as well.
 
 ### Example
 ```ruby
@@ -332,7 +335,7 @@ unique_name = "unique_name_example" # String | The group unique name
 
 
 begin
-  #Removes a group from the system IF no resources are attached to it
+  #Removes a group from the system
   api_instance.delete_group(unique_name)
 rescue KnetikCloudClient::ApiError => e
   puts "Exception when calling UsersGroupsApi->delete_group: #{e}"
@@ -521,6 +524,53 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_group_ancestors**
+> Array&lt;GroupResource&gt; get_group_ancestors(unique_name)
+
+Get group ancestors
+
+Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+
+### Example
+```ruby
+# load the gem
+require 'knetikcloud_client'
+
+api_instance = KnetikCloudClient::UsersGroupsApi.new
+
+unique_name = "unique_name_example" # String | The group unique name
+
+
+begin
+  #Get group ancestors
+  result = api_instance.get_group_ancestors(unique_name)
+  p result
+rescue KnetikCloudClient::ApiError => e
+  puts "Exception when calling UsersGroupsApi->get_group_ancestors: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unique_name** | **String**| The group unique name | 
+
+### Return type
+
+[**Array&lt;GroupResource&gt;**](GroupResource.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -1054,6 +1104,8 @@ nil (empty response body)
 > update_group(unique_name, opts)
 
 Update a group
+
+If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
 
 ### Example
 ```ruby
