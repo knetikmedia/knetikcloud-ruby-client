@@ -122,6 +122,18 @@ describe 'MediaVideosApi' do
     end
   end
 
+  # unit tests for create_video_template
+  # Create a video template
+  # Video Templates define a type of video and the properties they have
+  # @param [Hash] opts the optional parameters
+  # @option opts [TemplateResource] :video_template_resource The video template resource object
+  # @return [TemplateResource]
+  describe 'create_video_template test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for delete_video
   # Deletes a video from the system if no resources are attached to it
   # 
@@ -179,6 +191,19 @@ describe 'MediaVideosApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_video_relationship test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_video_template
+  # Delete a video template
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # @param id The id of the template
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :cascade The value needed to delete used templates
+  # @return [nil]
+  describe 'delete_video_template test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -248,6 +273,32 @@ describe 'MediaVideosApi' do
   # @option opts [Integer] :page The number of the page returned, starting with 1
   # @return [PageResourceVideoRelationshipResource]
   describe 'get_video_relationships test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_video_template
+  # Get a single video template
+  # 
+  # @param id The id of the template
+  # @param [Hash] opts the optional parameters
+  # @return [TemplateResource]
+  describe 'get_video_template test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_video_templates
+  # List and search video templates
+  # 
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :size The number of objects returned per page
+  # @option opts [Integer] :page The number of the page returned, starting with 1
+  # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  # @return [PageResourceTemplateResource]
+  describe 'get_video_templates test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -341,6 +392,19 @@ describe 'MediaVideosApi' do
   # @option opts [StringWrapper] :details The video relationship details
   # @return [nil]
   describe 'update_video_relationship test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for update_video_template
+  # Update a video template
+  # 
+  # @param id The id of the template
+  # @param [Hash] opts the optional parameters
+  # @option opts [TemplateResource] :video_template_resource The video template resource object
+  # @return [TemplateResource]
+  describe 'update_video_template test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

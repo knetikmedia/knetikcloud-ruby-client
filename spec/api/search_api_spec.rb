@@ -32,32 +32,276 @@ describe 'SearchApi' do
     end
   end
 
-  # unit tests for search_index
-  # Search an index with no template
-  # The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+  # unit tests for search_count_get
+  # Count matches with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_count_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_count_post
+  # Count matches with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
   # @param type The index type
   # @param [Hash] opts the optional parameters
   # @option opts [Object] :query The query to be used for the search
-  # @option opts [Integer] :size The number of documents returned per page
-  # @option opts [Integer] :page The number of the page returned, starting with 1
-  # @return [PageResourceMapstringobject]
+  # @return [Object]
+  describe 'search_count_post test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_count_with_template_get
+  # Count matches with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_count_with_template_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_count_with_template_post
+  # Count matches with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @option opts [Object] :query The query to be used for the search
+  # @return [Object]
+  describe 'search_count_with_template_post test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_document_get
+  # Get document with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param id The index id
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_document_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_document_with_template_get
+  # Get document with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param id The index id
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_document_with_template_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_explain_get
+  # Explain matches with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param id The index id
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_explain_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_explain_post
+  # Explain matches with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param id The index id
+  # @param [Hash] opts the optional parameters
+  # @option opts [Object] :query The query to be used for the search
+  # @return [Object]
+  describe 'search_explain_post test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_explain_with_template_get
+  # Explain matches with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param id The index id
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_explain_with_template_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_explain_with_template_post
+  # Explain matches with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param id The index id
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @option opts [Object] :query The query to be used for the search
+  # @return [Object]
+  describe 'search_explain_with_template_post test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_index
+  # Search an index with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param [Hash] opts the optional parameters
+  # @option opts [Object] :query The query to be used for the search
+  # @return [Object]
   describe 'search_index test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  # unit tests for search_index_with_template
+  # unit tests for search_index_get
+  # Search an index with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_index_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_index_with_template_get
   # Search an index with a template
-  # The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+  # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_index_with_template_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_index_with_template_post
+  # Search an index with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
   # @param type The index type
   # @param template The index template
   # @param [Hash] opts the optional parameters
   # @option opts [Object] :query The query to be used for the search
-  # @option opts [Integer] :size The number of documents returned per page
-  # @option opts [Integer] :page The number of the page returned, starting with 1
-  # @return [PageResourceMapstringobject]
-  describe 'search_index_with_template test' do
+  # @return [Object]
+  describe 'search_index_with_template_post test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_indices_get
+  # Get indices
+  # This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_indices_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_mappings_get
+  # Get mapping with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_mappings_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_mappings_with_template_get
+  # Get mapping with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_mappings_with_template_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_validate_get
+  # Validate matches with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_validate_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_validate_post
+  # Validate matches with no template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param [Hash] opts the optional parameters
+  # @option opts [Object] :query The query to be used for the search
+  # @return [Object]
+  describe 'search_validate_post test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_validate_with_template_get
+  # Validate matches with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @return [Object]
+  describe 'search_validate_with_template_get test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_validate_with_template_post
+  # Validate matches with a template
+  # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+  # @param type The index type
+  # @param template The index template
+  # @param [Hash] opts the optional parameters
+  # @option opts [Object] :query The query to be used for the search
+  # @return [Object]
+  describe 'search_validate_with_template_post test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

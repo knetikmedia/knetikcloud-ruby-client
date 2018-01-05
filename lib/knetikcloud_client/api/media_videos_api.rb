@@ -411,6 +411,57 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
+    # Create a video template
+    # Video Templates define a type of video and the properties they have
+    # @param [Hash] opts the optional parameters
+    # @option opts [TemplateResource] :video_template_resource The video template resource object
+    # @return [TemplateResource]
+    def create_video_template(opts = {})
+      data, _status_code, _headers = create_video_template_with_http_info(opts)
+      return data
+    end
+
+    # Create a video template
+    # Video Templates define a type of video and the properties they have
+    # @param [Hash] opts the optional parameters
+    # @option opts [TemplateResource] :video_template_resource The video template resource object
+    # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
+    def create_video_template_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaVideosApi.create_video_template ..."
+      end
+      # resource path
+      local_var_path = "/media/videos/templates"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'video_template_resource'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaVideosApi#create_video_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Deletes a video from the system if no resources are attached to it
     # 
     # @param id The video id
@@ -689,6 +740,63 @@ module KnetikCloudClient
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MediaVideosApi#delete_video_relationship\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a video template
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :cascade The value needed to delete used templates
+    # @return [nil]
+    def delete_video_template(id, opts = {})
+      delete_video_template_with_http_info(id, opts)
+      return nil
+    end
+
+    # Delete a video template
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :cascade The value needed to delete used templates
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_video_template_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaVideosApi.delete_video_template ..."
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling MediaVideosApi.delete_video_template"
+      end
+      # resource path
+      local_var_path = "/media/videos/templates/{id}".sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'cascade'] = opts[:'cascade'] if !opts[:'cascade'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaVideosApi#delete_video_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -991,6 +1099,119 @@ module KnetikCloudClient
         :return_type => 'PageResourceVideoRelationshipResource')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MediaVideosApi#get_video_relationships\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a single video template
+    # 
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @return [TemplateResource]
+    def get_video_template(id, opts = {})
+      data, _status_code, _headers = get_video_template_with_http_info(id, opts)
+      return data
+    end
+
+    # Get a single video template
+    # 
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
+    def get_video_template_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaVideosApi.get_video_template ..."
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling MediaVideosApi.get_video_template"
+      end
+      # resource path
+      local_var_path = "/media/videos/templates/{id}".sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaVideosApi#get_video_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List and search video templates
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :size The number of objects returned per page (default to 25)
+    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
+    # @return [PageResourceTemplateResource]
+    def get_video_templates(opts = {})
+      data, _status_code, _headers = get_video_templates_with_http_info(opts)
+      return data
+    end
+
+    # List and search video templates
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :size The number of objects returned per page
+    # @option opts [Integer] :page The number of the page returned, starting with 1
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+    # @return [Array<(PageResourceTemplateResource, Fixnum, Hash)>] PageResourceTemplateResource data, response status code and response headers
+    def get_video_templates_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaVideosApi.get_video_templates ..."
+      end
+      # resource path
+      local_var_path = "/media/videos/templates"
+
+      # query parameters
+      query_params = {}
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PageResourceTemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaVideosApi#get_video_templates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1385,6 +1606,63 @@ module KnetikCloudClient
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MediaVideosApi#update_video_relationship\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a video template
+    # 
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @option opts [TemplateResource] :video_template_resource The video template resource object
+    # @return [TemplateResource]
+    def update_video_template(id, opts = {})
+      data, _status_code, _headers = update_video_template_with_http_info(id, opts)
+      return data
+    end
+
+    # Update a video template
+    # 
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @option opts [TemplateResource] :video_template_resource The video template resource object
+    # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
+    def update_video_template_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaVideosApi.update_video_template ..."
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling MediaVideosApi.update_video_template"
+      end
+      # resource path
+      local_var_path = "/media/videos/templates/{id}".sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'video_template_resource'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaVideosApi#update_video_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

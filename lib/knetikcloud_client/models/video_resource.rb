@@ -18,6 +18,9 @@ module KnetikCloudClient
     # Whether the video is available, based on various factors
     attr_accessor :active
 
+    # A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type
+    attr_accessor :additional_properties
+
     # The original artist of the media
     attr_accessor :author
 
@@ -84,6 +87,9 @@ module KnetikCloudClient
     # The tags for the video
     attr_accessor :tags
 
+    # A video template this video is validated against (private). May be null and no validation of additional_properties will be done
+    attr_accessor :template
+
     # The country of a thumbnail version. Typically a url
     attr_accessor :thumbnail
 
@@ -125,6 +131,7 @@ module KnetikCloudClient
     def self.attribute_map
       {
         :'active' => :'active',
+        :'additional_properties' => :'additional_properties',
         :'author' => :'author',
         :'authored' => :'authored',
         :'banned' => :'banned',
@@ -147,6 +154,7 @@ module KnetikCloudClient
         :'short_description' => :'short_description',
         :'size' => :'size',
         :'tags' => :'tags',
+        :'template' => :'template',
         :'thumbnail' => :'thumbnail',
         :'updated_date' => :'updated_date',
         :'uploader' => :'uploader',
@@ -159,6 +167,7 @@ module KnetikCloudClient
     def self.swagger_types
       {
         :'active' => :'BOOLEAN',
+        :'additional_properties' => :'Hash<String, Property>',
         :'author' => :'SimpleReferenceResourcelong',
         :'authored' => :'Integer',
         :'banned' => :'BOOLEAN',
@@ -181,6 +190,7 @@ module KnetikCloudClient
         :'short_description' => :'String',
         :'size' => :'Integer',
         :'tags' => :'Array<String>',
+        :'template' => :'String',
         :'thumbnail' => :'String',
         :'updated_date' => :'Integer',
         :'uploader' => :'SimpleUserResource',
@@ -199,6 +209,12 @@ module KnetikCloudClient
 
       if attributes.has_key?(:'active')
         self.active = attributes[:'active']
+      end
+
+      if attributes.has_key?(:'additional_properties')
+        if (value = attributes[:'additional_properties']).is_a?(Array)
+          self.additional_properties = value
+        end
       end
 
       if attributes.has_key?(:'author')
@@ -295,6 +311,10 @@ module KnetikCloudClient
         end
       end
 
+      if attributes.has_key?(:'template')
+        self.template = attributes[:'template']
+      end
+
       if attributes.has_key?(:'thumbnail')
         self.thumbnail = attributes[:'thumbnail']
       end
@@ -383,6 +403,7 @@ module KnetikCloudClient
       return true if self.equal?(o)
       self.class == o.class &&
           active == o.active &&
+          additional_properties == o.additional_properties &&
           author == o.author &&
           authored == o.authored &&
           banned == o.banned &&
@@ -405,6 +426,7 @@ module KnetikCloudClient
           short_description == o.short_description &&
           size == o.size &&
           tags == o.tags &&
+          template == o.template &&
           thumbnail == o.thumbnail &&
           updated_date == o.updated_date &&
           uploader == o.uploader &&
@@ -421,7 +443,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [active, author, authored, banned, category, comments, contributors, created_date, embed, extension, height, id, length, location, long_description, mime_type, name, priority, privacy, published, short_description, size, tags, thumbnail, updated_date, uploader, views, width].hash
+      [active, additional_properties, author, authored, banned, category, comments, contributors, created_date, embed, extension, height, id, length, location, long_description, mime_type, name, priority, privacy, published, short_description, size, tags, template, thumbnail, updated_date, uploader, views, width].hash
     end
 
     # Builds the object from hash

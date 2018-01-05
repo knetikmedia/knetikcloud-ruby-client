@@ -83,20 +83,6 @@ describe 'ContentCommentsApi' do
     end
   end
 
-  # unit tests for search_comments
-  # Search the comment index
-  # The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-  # @param [Hash] opts the optional parameters
-  # @option opts [Object] :query The search query
-  # @option opts [Integer] :size The number of objects returned per page
-  # @option opts [Integer] :page The number of the page returned, starting with 1
-  # @return [PageResourceCommentResource]
-  describe 'search_comments test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for update_comment
   # Update a comment
   # 

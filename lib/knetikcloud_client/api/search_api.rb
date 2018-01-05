@@ -20,42 +20,91 @@ module KnetikCloudClient
       @api_client = api_client
     end
 
-    # Search an index with no template
-    # The body is an ElasticSearch query in JSON format. Please see their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html'>documentation</a> for details on the format and search options. The searchable object's format depends on on the type but mostly matches the resource from it's main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+    # Count matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
     # @param type The index type
     # @param [Hash] opts the optional parameters
-    # @option opts [Object] :query The query to be used for the search
-    # @option opts [Integer] :size The number of documents returned per page (default to 25)
-    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
-    # @return [PageResourceMapstringobject]
-    def search_index(type, opts = {})
-      data, _status_code, _headers = search_index_with_http_info(type, opts)
+    # @return [Object]
+    def search_count_get(type, opts = {})
+      data, _status_code, _headers = search_count_get_with_http_info(type, opts)
       return data
     end
 
-    # Search an index with no template
-    # The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+    # Count matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
     # @param type The index type
     # @param [Hash] opts the optional parameters
-    # @option opts [Object] :query The query to be used for the search
-    # @option opts [Integer] :size The number of documents returned per page
-    # @option opts [Integer] :page The number of the page returned, starting with 1
-    # @return [Array<(PageResourceMapstringobject, Fixnum, Hash)>] PageResourceMapstringobject data, response status code and response headers
-    def search_index_with_http_info(type, opts = {})
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_count_get_with_http_info(type, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SearchApi.search_index ..."
+        @api_client.config.logger.debug "Calling API: SearchApi.search_count_get ..."
       end
       # verify the required parameter 'type' is set
       if @api_client.config.client_side_validation && type.nil?
-        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_index"
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_count_get"
       end
       # resource path
-      local_var_path = "/search/index/{type}".sub('{' + 'type' + '}', type.to_s)
+      local_var_path = "/search/count/{type}".sub('{' + 'type' + '}', type.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
-      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_count_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Count matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Object]
+    def search_count_post(type, opts = {})
+      data, _status_code, _headers = search_count_post_with_http_info(type, opts)
+      return data
+    end
+
+    # Count matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_count_post_with_http_info(type, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_count_post ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_count_post"
+      end
+      # resource path
+      local_var_path = "/search/count/{type}".sub('{' + 'type' + '}', type.to_s)
+
+      # query parameters
+      query_params = {}
 
       # header parameters
       header_params = {}
@@ -76,55 +125,110 @@ module KnetikCloudClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'PageResourceMapstringobject')
+        :return_type => 'Object')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SearchApi#search_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SearchApi#search_count_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Search an index with a template
-    # The body is an ElasticSearch query in JSON format. Please see their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html'>documentation</a> for details on the format and search options. The searchable object's format depends on on the type but mostly matches the resource from it's main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+    # Count matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
     # @param type The index type
     # @param template The index template
     # @param [Hash] opts the optional parameters
-    # @option opts [Object] :query The query to be used for the search
-    # @option opts [Integer] :size The number of documents returned per page (default to 25)
-    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
-    # @return [PageResourceMapstringobject]
-    def search_index_with_template(type, template, opts = {})
-      data, _status_code, _headers = search_index_with_template_with_http_info(type, template, opts)
+    # @return [Object]
+    def search_count_with_template_get(type, template, opts = {})
+      data, _status_code, _headers = search_count_with_template_get_with_http_info(type, template, opts)
       return data
     end
 
-    # Search an index with a template
-    # The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+    # Count matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_count_with_template_get_with_http_info(type, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_count_with_template_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_count_with_template_get"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_count_with_template_get"
+      end
+      # resource path
+      local_var_path = "/search/count/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_count_with_template_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Count matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
     # @param type The index type
     # @param template The index template
     # @param [Hash] opts the optional parameters
     # @option opts [Object] :query The query to be used for the search
-    # @option opts [Integer] :size The number of documents returned per page
-    # @option opts [Integer] :page The number of the page returned, starting with 1
-    # @return [Array<(PageResourceMapstringobject, Fixnum, Hash)>] PageResourceMapstringobject data, response status code and response headers
-    def search_index_with_template_with_http_info(type, template, opts = {})
+    # @return [Object]
+    def search_count_with_template_post(type, template, opts = {})
+      data, _status_code, _headers = search_count_with_template_post_with_http_info(type, template, opts)
+      return data
+    end
+
+    # Count matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_count_with_template_post_with_http_info(type, template, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SearchApi.search_index_with_template ..."
+        @api_client.config.logger.debug "Calling API: SearchApi.search_count_with_template_post ..."
       end
       # verify the required parameter 'type' is set
       if @api_client.config.client_side_validation && type.nil?
-        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_index_with_template"
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_count_with_template_post"
       end
       # verify the required parameter 'template' is set
       if @api_client.config.client_side_validation && template.nil?
-        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_index_with_template"
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_count_with_template_post"
       end
       # resource path
-      local_var_path = "/search/index/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
+      local_var_path = "/search/count/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
-      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
 
       # header parameters
       header_params = {}
@@ -138,16 +242,1041 @@ module KnetikCloudClient
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'query'])
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'PageResourceMapstringobject')
+        :return_type => 'Object')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SearchApi#search_index_with_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SearchApi#search_count_with_template_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get document with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
+    # @param type The index type
+    # @param id The index id
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_document_get(type, id, opts = {})
+      data, _status_code, _headers = search_document_get_with_http_info(type, id, opts)
+      return data
+    end
+
+    # Get document with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param id The index id
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_document_get_with_http_info(type, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_document_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_document_get"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling SearchApi.search_document_get"
+      end
+      # resource path
+      local_var_path = "/search/documents/{type}/{id}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_document_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get document with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
+    # @param type The index type
+    # @param id The index id
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_document_with_template_get(type, id, template, opts = {})
+      data, _status_code, _headers = search_document_with_template_get_with_http_info(type, id, template, opts)
+      return data
+    end
+
+    # Get document with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param id The index id
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_document_with_template_get_with_http_info(type, id, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_document_with_template_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_document_with_template_get"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling SearchApi.search_document_with_template_get"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_document_with_template_get"
+      end
+      # resource path
+      local_var_path = "/search/documents/{type}/{template}/{id}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'id' + '}', id.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_document_with_template_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Explain matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
+    # @param type The index type
+    # @param id The index id
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_explain_get(type, id, opts = {})
+      data, _status_code, _headers = search_explain_get_with_http_info(type, id, opts)
+      return data
+    end
+
+    # Explain matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param id The index id
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_explain_get_with_http_info(type, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_explain_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_explain_get"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling SearchApi.search_explain_get"
+      end
+      # resource path
+      local_var_path = "/search/explain/{type}/{id}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_explain_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Explain matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
+    # @param type The index type
+    # @param id The index id
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Object]
+    def search_explain_post(type, id, opts = {})
+      data, _status_code, _headers = search_explain_post_with_http_info(type, id, opts)
+      return data
+    end
+
+    # Explain matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param id The index id
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_explain_post_with_http_info(type, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_explain_post ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_explain_post"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling SearchApi.search_explain_post"
+      end
+      # resource path
+      local_var_path = "/search/explain/{type}/{id}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'query'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_explain_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Explain matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
+    # @param type The index type
+    # @param id The index id
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_explain_with_template_get(type, id, template, opts = {})
+      data, _status_code, _headers = search_explain_with_template_get_with_http_info(type, id, template, opts)
+      return data
+    end
+
+    # Explain matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param id The index id
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_explain_with_template_get_with_http_info(type, id, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_explain_with_template_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_explain_with_template_get"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling SearchApi.search_explain_with_template_get"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_explain_with_template_get"
+      end
+      # resource path
+      local_var_path = "/search/explain/{type}/{template}/{id}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'id' + '}', id.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_explain_with_template_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Explain matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html'>API guide</a>
+    # @param type The index type
+    # @param id The index id
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Object]
+    def search_explain_with_template_post(type, id, template, opts = {})
+      data, _status_code, _headers = search_explain_with_template_post_with_http_info(type, id, template, opts)
+      return data
+    end
+
+    # Explain matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param id The index id
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_explain_with_template_post_with_http_info(type, id, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_explain_with_template_post ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_explain_with_template_post"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling SearchApi.search_explain_with_template_post"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_explain_with_template_post"
+      end
+      # resource path
+      local_var_path = "/search/explain/{type}/{template}/{id}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'id' + '}', id.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'query'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_explain_with_template_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Search an index with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html'>API guide</a>
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Object]
+    def search_index(type, opts = {})
+      data, _status_code, _headers = search_index_with_http_info(type, opts)
+      return data
+    end
+
+    # Search an index with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_index_with_http_info(type, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_index ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_index"
+      end
+      # resource path
+      local_var_path = "/search/index/{type}".sub('{' + 'type' + '}', type.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'query'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Search an index with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html'>API guide</a>
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_index_get(type, opts = {})
+      data, _status_code, _headers = search_index_get_with_http_info(type, opts)
+      return data
+    end
+
+    # Search an index with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_index_get_with_http_info(type, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_index_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_index_get"
+      end
+      # resource path
+      local_var_path = "/search/index/{type}".sub('{' + 'type' + '}', type.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_index_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Search an index with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html'>API guide</a>
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_index_with_template_get(type, template, opts = {})
+      data, _status_code, _headers = search_index_with_template_get_with_http_info(type, template, opts)
+      return data
+    end
+
+    # Search an index with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_index_with_template_get_with_http_info(type, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_index_with_template_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_index_with_template_get"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_index_with_template_get"
+      end
+      # resource path
+      local_var_path = "/search/index/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_index_with_template_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Search an index with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html'>API guide</a>
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Object]
+    def search_index_with_template_post(type, template, opts = {})
+      data, _status_code, _headers = search_index_with_template_post_with_http_info(type, template, opts)
+      return data
+    end
+
+    # Search an index with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_index_with_template_post_with_http_info(type, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_index_with_template_post ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_index_with_template_post"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_index_with_template_post"
+      end
+      # resource path
+      local_var_path = "/search/index/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'query'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_index_with_template_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get indices
+    # This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html'>API guide</a>
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_indices_get(opts = {})
+      data, _status_code, _headers = search_indices_get_with_http_info(opts)
+      return data
+    end
+
+    # Get indices
+    # This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_indices_get_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_indices_get ..."
+      end
+      # resource path
+      local_var_path = "/search/indices"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_indices_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get mapping with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html'>API guide</a>
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_mappings_get(type, opts = {})
+      data, _status_code, _headers = search_mappings_get_with_http_info(type, opts)
+      return data
+    end
+
+    # Get mapping with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_mappings_get_with_http_info(type, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_mappings_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_mappings_get"
+      end
+      # resource path
+      local_var_path = "/search/mappings/{type}".sub('{' + 'type' + '}', type.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_mappings_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get mapping with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html'>API guide</a>
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_mappings_with_template_get(type, template, opts = {})
+      data, _status_code, _headers = search_mappings_with_template_get_with_http_info(type, template, opts)
+      return data
+    end
+
+    # Get mapping with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_mappings_with_template_get_with_http_info(type, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_mappings_with_template_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_mappings_with_template_get"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_mappings_with_template_get"
+      end
+      # resource path
+      local_var_path = "/search/mappings/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_mappings_with_template_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Validate matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html'>API guide</a>
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_validate_get(type, opts = {})
+      data, _status_code, _headers = search_validate_get_with_http_info(type, opts)
+      return data
+    end
+
+    # Validate matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_validate_get_with_http_info(type, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_validate_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_validate_get"
+      end
+      # resource path
+      local_var_path = "/search/validate/{type}".sub('{' + 'type' + '}', type.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_validate_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Validate matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html'>API guide</a>
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Object]
+    def search_validate_post(type, opts = {})
+      data, _status_code, _headers = search_validate_post_with_http_info(type, opts)
+      return data
+    end
+
+    # Validate matches with no template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_validate_post_with_http_info(type, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_validate_post ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_validate_post"
+      end
+      # resource path
+      local_var_path = "/search/validate/{type}".sub('{' + 'type' + '}', type.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'query'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_validate_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Validate matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html'>API guide</a>
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Object]
+    def search_validate_with_template_get(type, template, opts = {})
+      data, _status_code, _headers = search_validate_with_template_get_with_http_info(type, template, opts)
+      return data
+    end
+
+    # Validate matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_validate_with_template_get_with_http_info(type, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_validate_with_template_get ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_validate_with_template_get"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_validate_with_template_get"
+      end
+      # resource path
+      local_var_path = "/search/validate/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_validate_with_template_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Validate matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html'>API guide</a>
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Object]
+    def search_validate_with_template_post(type, template, opts = {})
+      data, _status_code, _headers = search_validate_with_template_post_with_http_info(type, template, opts)
+      return data
+    end
+
+    # Validate matches with a template
+    # This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+    # @param type The index type
+    # @param template The index template
+    # @param [Hash] opts the optional parameters
+    # @option opts [Object] :query The query to be used for the search
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def search_validate_with_template_post_with_http_info(type, template, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: SearchApi.search_validate_with_template_post ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling SearchApi.search_validate_with_template_post"
+      end
+      # verify the required parameter 'template' is set
+      if @api_client.config.client_side_validation && template.nil?
+        fail ArgumentError, "Missing the required parameter 'template' when calling SearchApi.search_validate_with_template_post"
+      end
+      # resource path
+      local_var_path = "/search/validate/{type}/{template}".sub('{' + 'type' + '}', type.to_s).sub('{' + 'template' + '}', template.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'query'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SearchApi#search_validate_with_template_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

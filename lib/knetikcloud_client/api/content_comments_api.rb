@@ -249,63 +249,6 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
-    # Search the comment index
-    # The body is an ElasticSearch query json. Please see their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html'>documentation</a> for details on the format and search options
-    # @param [Hash] opts the optional parameters
-    # @option opts [Object] :query The search query
-    # @option opts [Integer] :size The number of objects returned per page (default to 25)
-    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
-    # @return [PageResourceCommentResource]
-    def search_comments(opts = {})
-      data, _status_code, _headers = search_comments_with_http_info(opts)
-      return data
-    end
-
-    # Search the comment index
-    # The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-    # @param [Hash] opts the optional parameters
-    # @option opts [Object] :query The search query
-    # @option opts [Integer] :size The number of objects returned per page
-    # @option opts [Integer] :page The number of the page returned, starting with 1
-    # @return [Array<(PageResourceCommentResource, Fixnum, Hash)>] PageResourceCommentResource data, response status code and response headers
-    def search_comments_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ContentCommentsApi.search_comments ..."
-      end
-      # resource path
-      local_var_path = "/comments/search"
-
-      # query parameters
-      query_params = {}
-      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
-      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'query'])
-      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'PageResourceCommentResource')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ContentCommentsApi#search_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Update a comment
     # 
     # @param id The comment id
