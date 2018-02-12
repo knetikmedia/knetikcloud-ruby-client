@@ -15,6 +15,9 @@ require 'date'
 module KnetikCloudClient
 
   class BreRuleLog
+    # The actions of the BRE rule
+    attr_accessor :actions
+
     # Whether the rule ran
     attr_accessor :ran
 
@@ -37,6 +40,7 @@ module KnetikCloudClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'actions' => :'actions',
         :'ran' => :'ran',
         :'reason' => :'reason',
         :'rule_end_date' => :'rule_end_date',
@@ -49,6 +53,7 @@ module KnetikCloudClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'actions' => :'Array<BreActionLog>',
         :'ran' => :'BOOLEAN',
         :'reason' => :'String',
         :'rule_end_date' => :'Integer',
@@ -65,6 +70,12 @@ module KnetikCloudClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'actions')
+        if (value = attributes[:'actions']).is_a?(Array)
+          self.actions = value
+        end
+      end
 
       if attributes.has_key?(:'ran')
         self.ran = attributes[:'ran']
@@ -110,6 +121,7 @@ module KnetikCloudClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          actions == o.actions &&
           ran == o.ran &&
           reason == o.reason &&
           rule_end_date == o.rule_end_date &&
@@ -127,7 +139,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ran, reason, rule_end_date, rule_id, rule_name, rule_start_date].hash
+      [actions, ran, reason, rule_end_date, rule_id, rule_name, rule_start_date].hash
     end
 
     # Builds the object from hash

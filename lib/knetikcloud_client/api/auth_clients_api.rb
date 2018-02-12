@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new client
-    # 
+    # <b>Permissions Needed:</b> CLIENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ClientResource] :client_resource The client resource object
     # @return [ClientResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a new client
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ClientResource] :client_resource The client resource object
     # @return [Array<(ClientResource, Fixnum, Hash)>] ClientResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a client
-    # 
+    # <b>Permissions Needed:</b> CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete a client
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -104,8 +104,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Get a single client
-    # 
+    # <b>Permissions Needed:</b> CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @return [ClientResource]
@@ -136,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Get a single client
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @return [Array<(ClientResource, Fixnum, Hash)>] ClientResource data, response status code and response headers
@@ -158,8 +156,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -181,7 +177,7 @@ module KnetikCloudClient
     end
 
     # List available client grant types
-    # 
+    # <b>Permissions Needed:</b> CLIENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [Array<GrantTypeResource>]
     def get_client_grant_types(opts = {})
@@ -190,7 +186,7 @@ module KnetikCloudClient
     end
 
     # List available client grant types
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<GrantTypeResource>, Fixnum, Hash)>] Array<GrantTypeResource> data, response status code and response headers
     def get_client_grant_types_with_http_info(opts = {})
@@ -207,8 +203,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -230,7 +224,7 @@ module KnetikCloudClient
     end
 
     # List and search clients
-    # 
+    # <b>Permissions Needed:</b> CLIENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -242,7 +236,7 @@ module KnetikCloudClient
     end
 
     # List and search clients
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -265,8 +259,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -288,7 +280,7 @@ module KnetikCloudClient
     end
 
     # Set grant types for a client
-    # 
+    # <b>Permissions Needed:</b> CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :grant_list A list of unique grant types
@@ -299,7 +291,7 @@ module KnetikCloudClient
     end
 
     # Set grant types for a client
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :grant_list A list of unique grant types
@@ -344,7 +336,7 @@ module KnetikCloudClient
     end
 
     # Set redirect uris for a client
-    # 
+    # <b>Permissions Needed:</b> CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :redirect_list A list of unique redirect uris
@@ -355,7 +347,7 @@ module KnetikCloudClient
     end
 
     # Set redirect uris for a client
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :redirect_list A list of unique redirect uris
@@ -400,7 +392,7 @@ module KnetikCloudClient
     end
 
     # Update a client
-    # 
+    # <b>Permissions Needed:</b> CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @option opts [ClientResource] :client_resource The client resource object
@@ -411,7 +403,7 @@ module KnetikCloudClient
     end
 
     # Update a client
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
     # @param client_key The key of the client
     # @param [Hash] opts the optional parameters
     # @option opts [ClientResource] :client_resource The client resource object

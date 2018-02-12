@@ -1,6 +1,6 @@
 # KnetikCloudClient::AuthTokensApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,6 +13,8 @@ Method | HTTP request | Description
 > delete_tokens(opts)
 
 Delete tokens by username, client id, or both
+
+<b>Permissions Needed:</b> TOKENS_ADMIN
 
 ### Example
 ```ruby
@@ -59,7 +61,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -68,6 +70,8 @@ nil (empty response body)
 > OauthAccessTokenResource get_token(username, client_id)
 
 Get a single token by username and client id
+
+<b>Permissions Needed:</b> TOKENS_ADMIN
 
 ### Example
 ```ruby
@@ -115,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -125,7 +129,7 @@ Name | Type | Description  | Notes
 
 List usernames and client ids
 
-Token value not shown
+Token value not shown. <br><br><b>Permissions Needed:</b> TOKENS_ADMIN
 
 ### Example
 ```ruby
@@ -179,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

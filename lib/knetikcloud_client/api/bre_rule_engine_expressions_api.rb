@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Lookup a specific expression
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
     # @param type Specifiy the type of expression as returned by the listing endpoint
     # @param [Hash] opts the optional parameters
     # @return [ExpressionResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Lookup a specific expression
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
     # @param type Specifiy the type of expression as returned by the listing endpoint
     # @param [Hash] opts the optional parameters
     # @return [Array<(ExpressionResource, Fixnum, Hash)>] ExpressionResource data, response status code and response headers
@@ -53,8 +53,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -75,8 +73,8 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
-    # Get a list of supported expressions to use in conditions or actions.
-    # Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+    # Get a list of supported expressions to use in conditions or actions
+    # Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_type_group Filter for expressions by type group
     # @return [Array<ExpressionResource>]
@@ -85,8 +83,8 @@ module KnetikCloudClient
       return data
     end
 
-    # Get a list of supported expressions to use in conditions or actions.
-    # Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+    # Get a list of supported expressions to use in conditions or actions
+    # Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_type_group Filter for expressions by type group
     # @return [Array<(Array<ExpressionResource>, Fixnum, Hash)>] Array<ExpressionResource> data, response status code and response headers
@@ -108,8 +106,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -131,7 +127,7 @@ module KnetikCloudClient
     end
 
     # Returns the textual representation of an expression
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [ExpressionResource] :expression The expression resource to be converted
     # @return [StringWrapper]
@@ -141,7 +137,7 @@ module KnetikCloudClient
     end
 
     # Returns the textual representation of an expression
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [ExpressionResource] :expression The expression resource to be converted
     # @return [Array<(StringWrapper, Fixnum, Hash)>] StringWrapper data, response status code and response headers

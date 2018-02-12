@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by day
-    # 
+    # <b>Permissions Needed:</b> USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -37,7 +37,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by day
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -79,8 +79,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -102,7 +100,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by hour
-    # 
+    # <b>Permissions Needed:</b> USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -118,7 +116,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by hour
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -160,8 +158,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -183,7 +179,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by minute
-    # 
+    # <b>Permissions Needed:</b> USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -199,7 +195,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by minute
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -241,8 +237,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -264,7 +258,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by month
-    # 
+    # <b>Permissions Needed:</b> USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -280,7 +274,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by month
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -322,8 +316,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -345,7 +337,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by year
-    # 
+    # <b>Permissions Needed:</b> USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -361,7 +353,7 @@ module KnetikCloudClient
     end
 
     # Returns aggregated endpoint usage information by year
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -403,8 +395,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -426,7 +416,7 @@ module KnetikCloudClient
     end
 
     # Returns list of endpoints called (method and url)
-    # 
+    # <b>Permissions Needed:</b> USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -437,7 +427,7 @@ module KnetikCloudClient
     end
 
     # Returns list of endpoints called (method and url)
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
     # @param start_date The beginning of the range being requested, unix timestamp in seconds
     # @param end_date The ending of the range being requested, unix timestamp in seconds
     # @param [Hash] opts the optional parameters
@@ -466,8 +456,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

@@ -1,6 +1,6 @@
 # KnetikCloudClient::AuthClientsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > ClientResource create_client(opts)
 
 Create a new client
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example
 ```ruby
@@ -73,6 +75,8 @@ Name | Type | Description  | Notes
 
 Delete a client
 
+<b>Permissions Needed:</b> CLIENTS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -115,7 +119,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -124,6 +128,8 @@ nil (empty response body)
 > ClientResource get_client(client_key)
 
 Get a single client
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example
 ```ruby
@@ -168,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -177,6 +183,8 @@ Name | Type | Description  | Notes
 > Array&lt;GrantTypeResource&gt; get_client_grant_types
 
 List available client grant types
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example
 ```ruby
@@ -215,7 +223,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -224,6 +232,8 @@ This endpoint does not need any parameter.
 > PageResourceClientResource get_clients(opts)
 
 List and search clients
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example
 ```ruby
@@ -273,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -282,6 +292,8 @@ Name | Type | Description  | Notes
 > set_client_grant_types(client_key, opts)
 
 Set grant types for a client
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example
 ```ruby
@@ -339,6 +351,8 @@ nil (empty response body)
 
 Set redirect uris for a client
 
+<b>Permissions Needed:</b> CLIENTS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -394,6 +408,8 @@ nil (empty response body)
 > ClientResource update_client(client_key, opts)
 
 Update a client
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example
 ```ruby

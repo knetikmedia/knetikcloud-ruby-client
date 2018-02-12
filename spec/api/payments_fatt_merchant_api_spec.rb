@@ -34,7 +34,7 @@ describe 'PaymentsFattMerchantApi' do
 
   # unit tests for create_or_update_fatt_merchant_payment_method
   # Create or update a FattMerchant payment method for a user
-  # Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
+  # Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FATTMERCHANT_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [FattMerchantPaymentMethodRequest] :request Request containing payment method information for user
   # @return [PaymentMethodResource]

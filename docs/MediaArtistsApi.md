@@ -1,6 +1,6 @@
 # KnetikCloudClient::MediaArtistsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Adds a new artist in the system
 
-Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+Adds a new artist in the system. Use specific media contributions endpoint to add contributions. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 Create an artist template
 
-Artist Templates define a type of artist and the properties they have
+Artist Templates define a type of artist and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -133,6 +133,8 @@ Name | Type | Description  | Notes
 
 Removes an artist from the system IF no resources are attached to it
 
+<b>Permissions Needed:</b> ARTISTS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -175,7 +177,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -185,7 +187,7 @@ nil (empty response body)
 
 Delete an artist template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -233,7 +235,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -242,6 +244,8 @@ nil (empty response body)
 > ArtistResource get_artist(id, opts)
 
 Loads a specific artist details
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -290,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -299,6 +303,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_artist_template(id)
 
 Get a single artist template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTISTS_ADMIN
 
 ### Example
 ```ruby
@@ -343,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -352,6 +358,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_artist_templates(opts)
 
 List and search artist templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTISTS_ADMIN
 
 ### Example
 ```ruby
@@ -401,7 +409,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -410,6 +418,8 @@ Name | Type | Description  | Notes
 > PageResourceArtistResource get_artists(opts)
 
 Search for artists
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -461,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -470,6 +480,8 @@ Name | Type | Description  | Notes
 > update_artist(id, opts)
 
 Modifies an artist details
+
+<b>Permissions Needed:</b> ARTISTS_ADMIN
 
 ### Example
 ```ruby
@@ -526,6 +538,8 @@ nil (empty response body)
 > TemplateResource update_artist_template(id, opts)
 
 Update an artist template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

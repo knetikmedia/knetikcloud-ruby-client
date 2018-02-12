@@ -1,6 +1,6 @@
 # KnetikCloudClient::LogsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > add_user_log(opts)
 
 Add a user log entry
+
+<b>Permissions Needed:</b> owner
 
 ### Example
 ```ruby
@@ -71,6 +73,8 @@ nil (empty response body)
 
 Get an existing BRE event log entry by id
 
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -114,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -123,6 +127,8 @@ Name | Type | Description  | Notes
 > PageResourceBreEventLog get_bre_event_logs(opts)
 
 Returns a list of BRE event log entries
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```ruby
@@ -145,7 +151,8 @@ opts = {
   filter_event_id: "filter_event_id_example", # String | Filter event logs by request id
   size: 25, # Integer | The number of objects returned per page
   page: 1, # Integer | The number of the page returned, starting with 1
-  order: "id:DESC" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  order: "id:DESC", # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  filter_rule_id: "filter_rule_id_example" # String | Filter event logs by request id
 }
 
 begin
@@ -167,6 +174,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:DESC]
+ **filter_rule_id** | **String**| Filter event logs by request id | [optional] 
 
 ### Return type
 
@@ -178,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -187,6 +195,8 @@ Name | Type | Description  | Notes
 > ForwardLog get_bre_forward_log(id)
 
 Get an existing forward log entry by id
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```ruby
@@ -231,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -240,6 +250,8 @@ Name | Type | Description  | Notes
 > PageResourceForwardLog get_bre_forward_logs(opts)
 
 Returns a list of forward log entries
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```ruby
@@ -260,6 +272,7 @@ opts = {
   filter_start_date: "filter_start_date_example", # String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   filter_end_date: "filter_end_date_example", # String | A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   filter_status_code: 56, # Integer | Filter forward logs by http status code
+  filter_url: 56, # Integer | Filter forward logs by URL starting with...
   size: 25, # Integer | The number of objects returned per page
   page: 1, # Integer | The number of the page returned, starting with 1
   order: "id:DESC" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -281,6 +294,7 @@ Name | Type | Description  | Notes
  **filter_start_date** | **String**| A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). | [optional] 
  **filter_end_date** | **String**| A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). | [optional] 
  **filter_status_code** | **Integer**| Filter forward logs by http status code | [optional] 
+ **filter_url** | **Integer**| Filter forward logs by URL starting with... | [optional] 
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:DESC]
@@ -295,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -304,6 +318,8 @@ Name | Type | Description  | Notes
 > UserActionLog get_user_log(id)
 
 Returns a user log entry by id
+
+<b>Permissions Needed:</b> LOGS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -348,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -357,6 +373,8 @@ Name | Type | Description  | Notes
 > PageResourceUserActionLog get_user_logs(opts)
 
 Returns a page of user logs entries
+
+<b>Permissions Needed:</b> LOGS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -410,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new address
-    # 
+    # <b>Permissions Needed:</b> USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [SavedAddressResource] :saved_address_resource The new address
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Create a new address
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [SavedAddressResource] :saved_address_resource The new address
@@ -78,7 +78,7 @@ module KnetikCloudClient
     end
 
     # Delete an address
-    # 
+    # <b>Permissions Needed:</b> USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param id The id of the address
     # @param [Hash] opts the optional parameters
@@ -89,7 +89,7 @@ module KnetikCloudClient
     end
 
     # Delete an address
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param id The id of the address
     # @param [Hash] opts the optional parameters
@@ -116,8 +116,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -138,7 +136,7 @@ module KnetikCloudClient
     end
 
     # Get a single address
-    # 
+    # <b>Permissions Needed:</b> USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param id The id of the address
     # @param [Hash] opts the optional parameters
@@ -149,7 +147,7 @@ module KnetikCloudClient
     end
 
     # Get a single address
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param id The id of the address
     # @param [Hash] opts the optional parameters
@@ -176,8 +174,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -199,7 +195,7 @@ module KnetikCloudClient
     end
 
     # List and search addresses
-    # 
+    # <b>Permissions Needed:</b> USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -212,7 +208,7 @@ module KnetikCloudClient
     end
 
     # List and search addresses
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -240,8 +236,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -263,7 +257,7 @@ module KnetikCloudClient
     end
 
     # Update an address
-    # 
+    # <b>Permissions Needed:</b> USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param id The id of the address
     # @param [Hash] opts the optional parameters
@@ -275,7 +269,7 @@ module KnetikCloudClient
     end
 
     # Update an address
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
     # @param user_id The id of the user
     # @param id The id of the address
     # @param [Hash] opts the optional parameters

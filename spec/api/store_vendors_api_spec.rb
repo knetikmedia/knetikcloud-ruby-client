@@ -34,7 +34,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for create_vendor
   # Create a vendor
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [VendorResource] :vendor The vendor
   # @return [VendorResource]
@@ -46,7 +46,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for create_vendor_template
   # Create a vendor template
-  # Vendor Templates define a type of vendor and the properties they have.
+  # Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :vendor_template_resource The new vendor template
   # @return [ItemTemplateResource]
@@ -58,7 +58,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for delete_vendor
   # Delete a vendor
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   # @param id The id of the vendor
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -70,7 +70,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for delete_vendor_template
   # Delete a vendor template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -83,7 +83,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for get_vendor
   # Get a single vendor
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the vendor
   # @param [Hash] opts the optional parameters
   # @return [VendorResource]
@@ -95,7 +95,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for get_vendor_template
   # Get a single vendor template
-  # Vendor Templates define a type of vendor and the properties they have.
+  # Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [ItemTemplateResource]
@@ -107,7 +107,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for get_vendor_templates
   # List and search vendor templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -121,7 +121,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for get_vendors
   # List and search vendors
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_name Filters vendors by name starting with the text provided in the filter
   # @option opts [Integer] :size The number of objects returned per page
@@ -136,7 +136,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for update_vendor
   # Update a vendor
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   # @param id The id of the vendor
   # @param [Hash] opts the optional parameters
   # @option opts [VendorResource] :vendor The vendor
@@ -149,7 +149,7 @@ describe 'StoreVendorsApi' do
 
   # unit tests for update_vendor_template
   # Update a vendor template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :vendor_template_resource The vendor template resource object

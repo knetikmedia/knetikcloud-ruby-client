@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get the details for a single transaction
-    # 
+    # <b>Permissions Needed:</b> TRANSACTIONS_ADMIN or owner
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [TransactionResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Get the details for a single transaction
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [Array<(TransactionResource, Fixnum, Hash)>] TransactionResource data, response status code and response headers
@@ -53,8 +53,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -76,7 +74,7 @@ module KnetikCloudClient
     end
 
     # List and search transactions
-    # 
+    # <b>Permissions Needed:</b> TRANSACTIONS_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_invoice Filter for transactions from a specific invoice
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -89,7 +87,7 @@ module KnetikCloudClient
     end
 
     # List and search transactions
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_invoice Filter for transactions from a specific invoice
     # @option opts [Integer] :size The number of objects returned per page
@@ -114,8 +112,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -137,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Refund a payment transaction, in full or in part
-    # Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+    # Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. <br><br><b>Permissions Needed:</b> PAYMENTS_ADMIN
     # @param id The id of the transaction to refund
     # @param [Hash] opts the optional parameters
     # @option opts [RefundRequest] :request Request containing refund details
@@ -148,7 +144,7 @@ module KnetikCloudClient
     end
 
     # Refund a payment transaction, in full or in part
-    # Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+    # Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
     # @param id The id of the transaction to refund
     # @param [Hash] opts the optional parameters
     # @option opts [RefundRequest] :request Request containing refund details

@@ -34,7 +34,7 @@ describe 'StoreSalesApi' do
 
   # unit tests for create_catalog_sale
   # Create a sale
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [CatalogSale] :catalog_sale The catalog sale object
   # @return [CatalogSale]
@@ -46,7 +46,7 @@ describe 'StoreSalesApi' do
 
   # unit tests for delete_catalog_sale
   # Delete a sale
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   # @param id The id of the sale
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'StoreSalesApi' do
 
   # unit tests for get_catalog_sale
   # Get a single sale
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
   # @param id The id of the sale
   # @param [Hash] opts the optional parameters
   # @return [CatalogSale]
@@ -70,7 +70,7 @@ describe 'StoreSalesApi' do
 
   # unit tests for get_catalog_sales
   # List and search sales
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -84,7 +84,7 @@ describe 'StoreSalesApi' do
 
   # unit tests for update_catalog_sale
   # Update a sale
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   # @param id The id of the sale
   # @param [Hash] opts the optional parameters
   # @option opts [CatalogSale] :catalog_sale The catalog sale object

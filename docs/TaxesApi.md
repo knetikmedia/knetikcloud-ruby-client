@@ -1,6 +1,6 @@
 # KnetikCloudClient::TaxesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > CountryTaxResource create_country_tax(opts)
 
 Create a country tax
+
+<b>Permissions Needed:</b> TAX_ADMIN
 
 ### Example
 ```ruby
@@ -75,6 +77,8 @@ Name | Type | Description  | Notes
 > StateTaxResource create_state_tax(country_code_iso3, opts)
 
 Create a state tax
+
+<b>Permissions Needed:</b> TAX_ADMIN
 
 ### Example
 ```ruby
@@ -133,6 +137,8 @@ Name | Type | Description  | Notes
 
 Delete an existing tax
 
+<b>Permissions Needed:</b> TAX_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -175,7 +181,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -184,6 +190,8 @@ nil (empty response body)
 > delete_state_tax(country_code_iso3, state_code)
 
 Delete an existing state tax
+
+<b>Permissions Needed:</b> TAX_ADMIN
 
 ### Example
 ```ruby
@@ -230,7 +238,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -239,6 +247,8 @@ nil (empty response body)
 > CountryTaxResource get_country_tax(country_code_iso3)
 
 Get a single tax
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -283,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -293,7 +303,7 @@ Name | Type | Description  | Notes
 
 List and search taxes
 
-Get a list of taxes
+<b>Permissions Needed:</b> TAX_ADMIN
 
 ### Example
 ```ruby
@@ -343,7 +353,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -352,6 +362,8 @@ Name | Type | Description  | Notes
 > StateTaxResource get_state_tax(country_code_iso3, state_code)
 
 Get a single state tax
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -399,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -409,7 +421,7 @@ Name | Type | Description  | Notes
 
 List and search taxes across all countries
 
-Get a list of taxes
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -459,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -469,7 +481,7 @@ Name | Type | Description  | Notes
 
 List and search taxes within a country
 
-Get a list of taxes
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -522,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -531,6 +543,8 @@ Name | Type | Description  | Notes
 > CountryTaxResource update_country_tax(country_code_iso3, opts)
 
 Create or update a tax
+
+<b>Permissions Needed:</b> TAX_ADMIN
 
 ### Example
 ```ruby
@@ -588,6 +602,8 @@ Name | Type | Description  | Notes
 > StateTaxResource update_state_tax(country_code_iso3, state_code, opts)
 
 Create or update a state tax
+
+<b>Permissions Needed:</b> TAX_ADMIN
 
 ### Example
 ```ruby

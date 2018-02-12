@@ -1,6 +1,6 @@
 # KnetikCloudClient::CampaignsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,6 +23,8 @@ Method | HTTP request | Description
 > add_challenge_to_campaign(id, opts)
 
 Add a challenge to a campaign
+
+<b>Permissions Needed:</b> CAMPAIGNS_ADMIN
 
 ### Example
 ```ruby
@@ -80,6 +82,8 @@ nil (empty response body)
 
 Create a campaign
 
+<b>Permissions Needed:</b> CAMPAIGNS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -134,7 +138,7 @@ Name | Type | Description  | Notes
 
 Create a campaign template
 
-Campaign Templates define a type of campaign and the properties they have
+Campaign Templates define a type of campaign and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -190,6 +194,8 @@ Name | Type | Description  | Notes
 
 Delete a campaign
 
+<b>Permissions Needed:</b> CAMPAIGNS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -232,7 +238,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -242,7 +248,7 @@ nil (empty response body)
 
 Delete a campaign template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -290,7 +296,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -299,6 +305,8 @@ nil (empty response body)
 > CampaignResource get_campaign(id)
 
 Returns a single campaign
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -343,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -352,6 +360,8 @@ Name | Type | Description  | Notes
 > PageResourceChallengeResource get_campaign_challenges(id, opts)
 
 List the challenges associated with a campaign
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -408,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -417,6 +427,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_campaign_template(id)
 
 Get a single campaign template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
 
 ### Example
 ```ruby
@@ -461,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -470,6 +482,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_campaign_templates(opts)
 
 List and search campaign templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
 
 ### Example
 ```ruby
@@ -519,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -528,6 +542,8 @@ Name | Type | Description  | Notes
 > PageResourceCampaignResource get_campaigns(opts)
 
 List and search campaigns
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -579,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -588,6 +604,8 @@ Name | Type | Description  | Notes
 > remove_challenge_from_campaign(campaign_id, id)
 
 Remove a challenge from a campaign
+
+<b>Permissions Needed:</b> CAMPAIGNS_ADMIN
 
 ### Example
 ```ruby
@@ -634,7 +652,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -643,6 +661,8 @@ nil (empty response body)
 > CampaignResource update_campaign(id, opts)
 
 Update a campaign
+
+<b>Permissions Needed:</b> CAMPAIGNS_ADMIN
 
 ### Example
 ```ruby
@@ -700,6 +720,8 @@ Name | Type | Description  | Notes
 > TemplateResource update_campaign_template(id, opts)
 
 Update an campaign template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

@@ -34,7 +34,7 @@ describe 'InvoicesApi' do
 
   # unit tests for create_invoice
   # Create an invoice
-  # Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
+  # Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER or INVOICES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [InvoiceCreateRequest] :req Invoice to be created
   # @return [Array<InvoiceResource>]
@@ -46,7 +46,7 @@ describe 'InvoicesApi' do
 
   # unit tests for get_ful_fillment_statuses
   # Lists available fulfillment statuses
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [Array<String>]
   describe 'get_ful_fillment_statuses test' do
@@ -57,7 +57,7 @@ describe 'InvoicesApi' do
 
   # unit tests for get_invoice
   # Retrieve an invoice
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   # @param id The id of the invoice
   # @param [Hash] opts the optional parameters
   # @return [InvoiceResource]
@@ -69,7 +69,7 @@ describe 'InvoicesApi' do
 
   # unit tests for get_invoice_logs
   # List invoice logs
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   # @param id The id of the invoice
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -83,7 +83,7 @@ describe 'InvoicesApi' do
 
   # unit tests for get_invoices
   # Retrieve invoices
-  # Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
+  # Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :filter_user The id of a user to get invoices for. Automtically added if not being called with admin permissions.
   # @option opts [String] :filter_email Filters invoices by customer&#39;s email. Admins only.
@@ -111,7 +111,7 @@ describe 'InvoicesApi' do
 
   # unit tests for get_payment_statuses
   # Lists available payment statuses
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [Array<String>]
   describe 'get_payment_statuses test' do
@@ -122,7 +122,7 @@ describe 'InvoicesApi' do
 
   # unit tests for pay_invoice
   # Pay an invoice using a saved payment method
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   # @param id The id of the invoice
   # @param [Hash] opts the optional parameters
   # @option opts [PayBySavedMethodRequest] :request The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.
@@ -135,7 +135,7 @@ describe 'InvoicesApi' do
 
   # unit tests for set_bundled_invoice_item_fulfillment_status
   # Set the fulfillment status of a bundled invoice item
-  # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+  # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   # @param id The id of the invoice
   # @param bundle_sku The sku of the bundle in the invoice that contains the given target
   # @param sku The sku of an item in the bundle in the invoice
@@ -150,7 +150,7 @@ describe 'InvoicesApi' do
 
   # unit tests for set_external_ref
   # Set the external reference of an invoice
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   # @param id The id of the invoice
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :external_ref External reference info
@@ -163,7 +163,7 @@ describe 'InvoicesApi' do
 
   # unit tests for set_invoice_item_fulfillment_status
   # Set the fulfillment status of an invoice item
-  # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+  # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   # @param id The id of the invoice
   # @param sku The sku of an item in the invoice
   # @param status The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;
@@ -177,7 +177,7 @@ describe 'InvoicesApi' do
 
   # unit tests for set_order_notes
   # Set the order notes of an invoice
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   # @param id The id of the invoice
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :order_notes Payment status info
@@ -190,7 +190,7 @@ describe 'InvoicesApi' do
 
   # unit tests for set_payment_status
   # Set the payment status of an invoice
-  # This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
+  # This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   # @param id The id of the invoice
   # @param [Hash] opts the optional parameters
   # @option opts [InvoicePaymentStatusRequest] :request Payment status info
@@ -203,7 +203,7 @@ describe 'InvoicesApi' do
 
   # unit tests for update_billing_info
   # Set or update billing info
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   # @param id The id of the invoice
   # @param [Hash] opts the optional parameters
   # @option opts [AddressResource] :billing_info_request Address info

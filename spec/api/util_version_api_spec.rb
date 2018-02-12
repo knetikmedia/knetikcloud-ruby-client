@@ -34,7 +34,7 @@ describe 'UtilVersionApi' do
 
   # unit tests for get_version
   # Get current version info
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [Version]
   describe 'get_version test' do

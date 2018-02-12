@@ -1,6 +1,6 @@
 # KnetikCloudClient::UsersAddressesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > SavedAddressResource create_address(user_id, opts)
 
 Create a new address
+
+<b>Permissions Needed:</b> USERS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -73,6 +75,8 @@ Name | Type | Description  | Notes
 
 Delete an address
 
+<b>Permissions Needed:</b> USERS_ADMIN or owner
+
 ### Example
 ```ruby
 # load the gem
@@ -118,7 +122,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -127,6 +131,8 @@ nil (empty response body)
 > SavedAddressResource get_address(user_id, id)
 
 Get a single address
+
+<b>Permissions Needed:</b> USERS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -174,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -183,6 +189,8 @@ Name | Type | Description  | Notes
 > PageResourceSavedAddressResource get_addresses(user_id, opts)
 
 List and search addresses
+
+<b>Permissions Needed:</b> USERS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -235,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -244,6 +252,8 @@ Name | Type | Description  | Notes
 > SavedAddressResource update_address(user_id, id, opts)
 
 Update an address
+
+<b>Permissions Needed:</b> USERS_ADMIN or owner
 
 ### Example
 ```ruby

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get a list of countries
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<CountryResource>]
     def get_countries(opts = {})
@@ -30,7 +30,7 @@ module KnetikCloudClient
     end
 
     # Get a list of countries
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<CountryResource>, Fixnum, Hash)>] Array<CountryResource> data, response status code and response headers
     def get_countries_with_http_info(opts = {})
@@ -47,8 +47,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -70,7 +68,7 @@ module KnetikCloudClient
     end
 
     # Get the iso3 code of your country
-    # Determined by geo ip location
+    # Determined by geo ip location. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [String]
     def get_country_by_geo_location(opts = {})
@@ -79,7 +77,7 @@ module KnetikCloudClient
     end
 
     # Get the iso3 code of your country
-    # Determined by geo ip location
+    # Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
     def get_country_by_geo_location_with_http_info(opts = {})
@@ -96,8 +94,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -119,7 +115,7 @@ module KnetikCloudClient
     end
 
     # Get a list of a country's states
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @return [Array<StateResource>]
@@ -129,7 +125,7 @@ module KnetikCloudClient
     end
 
     # Get a list of a country&#39;s states
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<StateResource>, Fixnum, Hash)>] Array<StateResource> data, response status code and response headers
@@ -151,8 +147,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -174,7 +168,7 @@ module KnetikCloudClient
     end
 
     # Get the currency information of your country
-    # Determined by geo ip location, currency to country mapping and a fallback setting
+    # Determined by geo ip location, currency to country mapping and a fallback setting. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [CurrencyResource]
     def get_currency_by_geo_location(opts = {})
@@ -183,7 +177,7 @@ module KnetikCloudClient
     end
 
     # Get the currency information of your country
-    # Determined by geo ip location, currency to country mapping and a fallback setting
+    # Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(CurrencyResource, Fixnum, Hash)>] CurrencyResource data, response status code and response headers
     def get_currency_by_geo_location_with_http_info(opts = {})
@@ -200,8 +194,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

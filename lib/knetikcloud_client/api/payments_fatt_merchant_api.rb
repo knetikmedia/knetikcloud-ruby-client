@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create or update a FattMerchant payment method for a user
-    # Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
+    # Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. <br><br><b>Permissions Needed:</b> FATTMERCHANT_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [FattMerchantPaymentMethodRequest] :request Request containing payment method information for user
     # @return [PaymentMethodResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create or update a FattMerchant payment method for a user
-    # Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
+    # Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FATTMERCHANT_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [FattMerchantPaymentMethodRequest] :request Request containing payment method information for user
     # @return [Array<(PaymentMethodResource, Fixnum, Hash)>] PaymentMethodResource data, response status code and response headers

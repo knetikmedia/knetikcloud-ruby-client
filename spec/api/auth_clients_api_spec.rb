@@ -34,7 +34,7 @@ describe 'AuthClientsApi' do
 
   # unit tests for create_client
   # Create a new client
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [ClientResource] :client_resource The client resource object
   # @return [ClientResource]
@@ -46,7 +46,7 @@ describe 'AuthClientsApi' do
 
   # unit tests for delete_client
   # Delete a client
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   # @param client_key The key of the client
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'AuthClientsApi' do
 
   # unit tests for get_client
   # Get a single client
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   # @param client_key The key of the client
   # @param [Hash] opts the optional parameters
   # @return [ClientResource]
@@ -70,7 +70,7 @@ describe 'AuthClientsApi' do
 
   # unit tests for get_client_grant_types
   # List available client grant types
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   # @param [Hash] opts the optional parameters
   # @return [Array<GrantTypeResource>]
   describe 'get_client_grant_types test' do
@@ -81,7 +81,7 @@ describe 'AuthClientsApi' do
 
   # unit tests for get_clients
   # List and search clients
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -95,7 +95,7 @@ describe 'AuthClientsApi' do
 
   # unit tests for set_client_grant_types
   # Set grant types for a client
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   # @param client_key The key of the client
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :grant_list A list of unique grant types
@@ -108,7 +108,7 @@ describe 'AuthClientsApi' do
 
   # unit tests for set_client_redirect_uris
   # Set redirect uris for a client
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   # @param client_key The key of the client
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :redirect_list A list of unique redirect uris
@@ -121,7 +121,7 @@ describe 'AuthClientsApi' do
 
   # unit tests for update_client
   # Update a client
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   # @param client_key The key of the client
   # @param [Hash] opts the optional parameters
   # @option opts [ClientResource] :client_resource The client resource object

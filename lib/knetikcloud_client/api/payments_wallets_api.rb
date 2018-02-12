@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Returns the user's wallet for the given currency code
-    # 
+    # <b>Permissions Needed:</b> WALLETS_ADMIN or owner
     # @param user_id The ID of the user for whom wallet is being retrieved
     # @param currency_code Currency code of the user&#39;s wallet
     # @param [Hash] opts the optional parameters
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Returns the user&#39;s wallet for the given currency code
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
     # @param user_id The ID of the user for whom wallet is being retrieved
     # @param currency_code Currency code of the user&#39;s wallet
     # @param [Hash] opts the optional parameters
@@ -59,8 +59,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -82,7 +80,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a user's wallet transactions
-    # 
+    # <b>Permissions Needed:</b> WALLETS_ADMIN or owner
     # @param user_id The ID of the user for whom wallet transactions are being retrieved
     # @param currency_code Currency code of the user&#39;s wallet
     # @param [Hash] opts the optional parameters
@@ -100,7 +98,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a user&#39;s wallet transactions
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
     # @param user_id The ID of the user for whom wallet transactions are being retrieved
     # @param currency_code Currency code of the user&#39;s wallet
     # @param [Hash] opts the optional parameters
@@ -141,8 +139,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -164,7 +160,7 @@ module KnetikCloudClient
     end
 
     # List all of a user's wallets
-    # 
+    # <b>Permissions Needed:</b> WALLETS_ADMIN or owner
     # @param user_id The ID of the user for whom wallets are being retrieved
     # @param [Hash] opts the optional parameters
     # @return [Array<SimpleWallet>]
@@ -174,7 +170,7 @@ module KnetikCloudClient
     end
 
     # List all of a user&#39;s wallets
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
     # @param user_id The ID of the user for whom wallets are being retrieved
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<SimpleWallet>, Fixnum, Hash)>] Array<SimpleWallet> data, response status code and response headers
@@ -196,8 +192,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -219,7 +213,7 @@ module KnetikCloudClient
     end
 
     # Retrieves a summation of wallet balances by currency code
-    # 
+    # <b>Permissions Needed:</b> WALLETS_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [PageResourceWalletTotalResponse]
     def get_wallet_balances(opts = {})
@@ -228,7 +222,7 @@ module KnetikCloudClient
     end
 
     # Retrieves a summation of wallet balances by currency code
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [Array<(PageResourceWalletTotalResponse, Fixnum, Hash)>] PageResourceWalletTotalResponse data, response status code and response headers
     def get_wallet_balances_with_http_info(opts = {})
@@ -245,8 +239,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -268,7 +260,7 @@ module KnetikCloudClient
     end
 
     # Retrieve wallet transactions across the system
-    # 
+    # <b>Permissions Needed:</b> WALLETS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_invoice Filter for transactions from a specific invoice
     # @option opts [String] :filter_type Filter for transactions with specified type
@@ -288,7 +280,7 @@ module KnetikCloudClient
     end
 
     # Retrieve wallet transactions across the system
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_invoice Filter for transactions from a specific invoice
     # @option opts [String] :filter_type Filter for transactions with specified type
@@ -330,8 +322,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -353,7 +343,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a list of wallets across the system
-    # 
+    # <b>Permissions Needed:</b> WALLETS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -365,7 +355,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a list of wallets across the system
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -388,8 +378,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -411,7 +399,7 @@ module KnetikCloudClient
     end
 
     # Updates the balance for a user's wallet
-    # 
+    # <b>Permissions Needed:</b> WALLETS_ADMIN
     # @param user_id The ID of the user for whom wallet is being modified
     # @param currency_code Currency code of the user&#39;s wallet
     # @param [Hash] opts the optional parameters
@@ -423,7 +411,7 @@ module KnetikCloudClient
     end
 
     # Updates the balance for a user&#39;s wallet
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
     # @param user_id The ID of the user for whom wallet is being modified
     # @param currency_code Currency code of the user&#39;s wallet
     # @param [Hash] opts the optional parameters

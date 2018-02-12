@@ -1,6 +1,6 @@
 # KnetikCloudClient::FulfillmentApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > FulfillmentType create_fulfillment_type(opts)
 
 Create a fulfillment type
+
+<b>Permissions Needed:</b> FULFILLMENT_ADMIN
 
 ### Example
 ```ruby
@@ -70,6 +72,8 @@ Name | Type | Description  | Notes
 
 Delete a fulfillment type
 
+<b>Permissions Needed:</b> FULFILLMENT_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -112,7 +116,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -121,6 +125,8 @@ nil (empty response body)
 > FulfillmentType get_fulfillment_type(id)
 
 Get a single fulfillment type
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -165,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -174,6 +180,8 @@ Name | Type | Description  | Notes
 > PageResourceFulfillmentType get_fulfillment_types(opts)
 
 List and search fulfillment types
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -223,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -232,6 +240,8 @@ Name | Type | Description  | Notes
 > update_fulfillment_type(id, opts)
 
 Update a fulfillment type
+
+<b>Permissions Needed:</b> FULFILLMENT_ADMIN
 
 ### Example
 ```ruby

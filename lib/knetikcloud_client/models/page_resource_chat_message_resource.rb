@@ -14,33 +14,53 @@ require 'date'
 
 module KnetikCloudClient
 
-  class IOConfig
-    attr_accessor :customer
+  class PageResourceChatMessageResource
+    attr_accessor :content
 
-    attr_accessor :enabled
+    attr_accessor :first
 
-    attr_accessor :environment
+    attr_accessor :last
 
-    attr_accessor :product
+    attr_accessor :number
+
+    attr_accessor :number_of_elements
+
+    attr_accessor :size
+
+    attr_accessor :sort
+
+    attr_accessor :total_elements
+
+    attr_accessor :total_pages
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'customer' => :'customer',
-        :'enabled' => :'enabled',
-        :'environment' => :'environment',
-        :'product' => :'product'
+        :'content' => :'content',
+        :'first' => :'first',
+        :'last' => :'last',
+        :'number' => :'number',
+        :'number_of_elements' => :'number_of_elements',
+        :'size' => :'size',
+        :'sort' => :'sort',
+        :'total_elements' => :'total_elements',
+        :'total_pages' => :'total_pages'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'customer' => :'String',
-        :'enabled' => :'BOOLEAN',
-        :'environment' => :'String',
-        :'product' => :'String'
+        :'content' => :'Array<ChatMessageResource>',
+        :'first' => :'BOOLEAN',
+        :'last' => :'BOOLEAN',
+        :'number' => :'Integer',
+        :'number_of_elements' => :'Integer',
+        :'size' => :'Integer',
+        :'sort' => :'Array<Order>',
+        :'total_elements' => :'Integer',
+        :'total_pages' => :'Integer'
       }
     end
 
@@ -52,20 +72,44 @@ module KnetikCloudClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'customer')
-        self.customer = attributes[:'customer']
+      if attributes.has_key?(:'content')
+        if (value = attributes[:'content']).is_a?(Array)
+          self.content = value
+        end
       end
 
-      if attributes.has_key?(:'enabled')
-        self.enabled = attributes[:'enabled']
+      if attributes.has_key?(:'first')
+        self.first = attributes[:'first']
       end
 
-      if attributes.has_key?(:'environment')
-        self.environment = attributes[:'environment']
+      if attributes.has_key?(:'last')
+        self.last = attributes[:'last']
       end
 
-      if attributes.has_key?(:'product')
-        self.product = attributes[:'product']
+      if attributes.has_key?(:'number')
+        self.number = attributes[:'number']
+      end
+
+      if attributes.has_key?(:'number_of_elements')
+        self.number_of_elements = attributes[:'number_of_elements']
+      end
+
+      if attributes.has_key?(:'size')
+        self.size = attributes[:'size']
+      end
+
+      if attributes.has_key?(:'sort')
+        if (value = attributes[:'sort']).is_a?(Array)
+          self.sort = value
+        end
+      end
+
+      if attributes.has_key?(:'total_elements')
+        self.total_elements = attributes[:'total_elements']
+      end
+
+      if attributes.has_key?(:'total_pages')
+        self.total_pages = attributes[:'total_pages']
       end
 
     end
@@ -88,10 +132,15 @@ module KnetikCloudClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          customer == o.customer &&
-          enabled == o.enabled &&
-          environment == o.environment &&
-          product == o.product
+          content == o.content &&
+          first == o.first &&
+          last == o.last &&
+          number == o.number &&
+          number_of_elements == o.number_of_elements &&
+          size == o.size &&
+          sort == o.sort &&
+          total_elements == o.total_elements &&
+          total_pages == o.total_pages
     end
 
     # @see the `==` method
@@ -103,7 +152,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [customer, enabled, environment, product].hash
+      [content, first, last, number, number_of_elements, size, sort, total_elements, total_pages].hash
     end
 
     # Builds the object from hash

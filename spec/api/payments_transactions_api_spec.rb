@@ -34,7 +34,7 @@ describe 'PaymentsTransactionsApi' do
 
   # unit tests for get_transaction
   # Get the details for a single transaction
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
   # @param id id
   # @param [Hash] opts the optional parameters
   # @return [TransactionResource]
@@ -46,7 +46,7 @@ describe 'PaymentsTransactionsApi' do
 
   # unit tests for get_transactions
   # List and search transactions
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :filter_invoice Filter for transactions from a specific invoice
   # @option opts [Integer] :size The number of objects returned per page
@@ -61,7 +61,7 @@ describe 'PaymentsTransactionsApi' do
 
   # unit tests for refund_transaction
   # Refund a payment transaction, in full or in part
-  # Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+  # Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
   # @param id The id of the transaction to refund
   # @param [Hash] opts the optional parameters
   # @option opts [RefundRequest] :request Request containing refund details

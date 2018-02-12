@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new category
-    # 
+    # <b>Permissions Needed:</b> CATEGORIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [CategoryResource] :category The category to create
     # @return [CategoryResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a new category
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [CategoryResource] :category The category to create
     # @return [Array<(CategoryResource, Fixnum, Hash)>] CategoryResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create a category template
-    # Templates define a type of category and the properties they have
+    # Templates define a type of category and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The template to create
     # @return [TemplateResource]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Create a category template
-    # Templates define a type of category and the properties they have
+    # Templates define a type of category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The template to create
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -123,7 +123,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing category
-    # 
+    # <b>Permissions Needed:</b> CATEGORIES_ADMIN
     # @param id The id of the category to be deleted
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -133,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing category
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
     # @param id The id of the category to be deleted
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -155,8 +155,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -177,7 +175,7 @@ module KnetikCloudClient
     end
 
     # Delete a category template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -188,7 +186,7 @@ module KnetikCloudClient
     end
 
     # Delete a category template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -212,8 +210,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -234,7 +230,7 @@ module KnetikCloudClient
     end
 
     # List and search categories with optional filters
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for categories whose names begin with provided string
     # @option opts [BOOLEAN] :filter_active Filter for categories that are specifically active or inactive
@@ -248,7 +244,7 @@ module KnetikCloudClient
     end
 
     # List and search categories with optional filters
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for categories whose names begin with provided string
     # @option opts [BOOLEAN] :filter_active Filter for categories that are specifically active or inactive
@@ -275,8 +271,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -298,7 +292,7 @@ module KnetikCloudClient
     end
 
     # Get a single category
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The id of the category to retrieve
     # @param [Hash] opts the optional parameters
     # @return [CategoryResource]
@@ -308,7 +302,7 @@ module KnetikCloudClient
     end
 
     # Get a single category
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the category to retrieve
     # @param [Hash] opts the optional parameters
     # @return [Array<(CategoryResource, Fixnum, Hash)>] CategoryResource data, response status code and response headers
@@ -330,8 +324,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -353,7 +345,7 @@ module KnetikCloudClient
     end
 
     # Get a single category template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or CATEGORIES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -363,7 +355,7 @@ module KnetikCloudClient
     end
 
     # Get a single category template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -385,8 +377,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -408,7 +398,7 @@ module KnetikCloudClient
     end
 
     # List and search category templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or CATEGORIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -420,7 +410,7 @@ module KnetikCloudClient
     end
 
     # List and search category templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -443,8 +433,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -466,7 +454,7 @@ module KnetikCloudClient
     end
 
     # List all trivia tags in the system
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -477,7 +465,7 @@ module KnetikCloudClient
     end
 
     # List all trivia tags in the system
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -498,8 +486,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -521,7 +507,7 @@ module KnetikCloudClient
     end
 
     # Update an existing category
-    # 
+    # <b>Permissions Needed:</b> CATEGORIES_ADMIN
     # @param id The id of the category
     # @param [Hash] opts the optional parameters
     # @option opts [CategoryResource] :category The category to update
@@ -532,7 +518,7 @@ module KnetikCloudClient
     end
 
     # Update an existing category
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
     # @param id The id of the category
     # @param [Hash] opts the optional parameters
     # @option opts [CategoryResource] :category The category to update
@@ -578,7 +564,7 @@ module KnetikCloudClient
     end
 
     # Update a category template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The updated template information
@@ -589,7 +575,7 @@ module KnetikCloudClient
     end
 
     # Update a category template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The updated template information

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a bundle item
-    # The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+    # The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item. <br><br><b>Permissions Needed:</b> BUNDLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
     # @option opts [BundleItem] :bundle_item The bundle item object
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Create a bundle item
-    # The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+    # The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
     # @option opts [BundleItem] :bundle_item The bundle item object
@@ -75,7 +75,7 @@ module KnetikCloudClient
     end
 
     # Create a bundle template
-    # Bundle Templates define a type of bundle and the properties they have.
+    # Bundle Templates define a type of bundle and the properties they have. <br><br><b>Permissions Needed:</b> BUNDLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :bundle_template_resource The new bundle template
     # @return [ItemTemplateResource]
@@ -85,7 +85,7 @@ module KnetikCloudClient
     end
 
     # Create a bundle template
-    # Bundle Templates define a type of bundle and the properties they have.
+    # Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :bundle_template_resource The new bundle template
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -126,7 +126,7 @@ module KnetikCloudClient
     end
 
     # Delete a bundle item
-    # 
+    # <b>Permissions Needed:</b> BUNDLES_ADMIN
     # @param id The id of the bundle
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -136,7 +136,7 @@ module KnetikCloudClient
     end
 
     # Delete a bundle item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
     # @param id The id of the bundle
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -158,8 +158,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -180,7 +178,7 @@ module KnetikCloudClient
     end
 
     # Delete a bundle template
-    # 
+    # <b>Permissions Needed:</b> BUNDLES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -191,7 +189,7 @@ module KnetikCloudClient
     end
 
     # Delete a bundle template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -215,8 +213,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -237,7 +233,7 @@ module KnetikCloudClient
     end
 
     # Get a single bundle item
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The id of the bundle
     # @param [Hash] opts the optional parameters
     # @return [BundleItem]
@@ -247,7 +243,7 @@ module KnetikCloudClient
     end
 
     # Get a single bundle item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the bundle
     # @param [Hash] opts the optional parameters
     # @return [Array<(BundleItem, Fixnum, Hash)>] BundleItem data, response status code and response headers
@@ -269,8 +265,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -292,7 +286,7 @@ module KnetikCloudClient
     end
 
     # Get a single bundle template
-    # Bundle Templates define a type of bundle and the properties they have.
+    # Bundle Templates define a type of bundle and the properties they have. <br><br><b>Permissions Needed:</b> ANY
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [ItemTemplateResource]
@@ -302,7 +296,7 @@ module KnetikCloudClient
     end
 
     # Get a single bundle template
-    # Bundle Templates define a type of bundle and the properties they have.
+    # Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -324,8 +318,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -347,7 +339,7 @@ module KnetikCloudClient
     end
 
     # List and search bundle templates
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -359,7 +351,7 @@ module KnetikCloudClient
     end
 
     # List and search bundle templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -382,8 +374,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -405,7 +395,7 @@ module KnetikCloudClient
     end
 
     # Update a bundle item
-    # 
+    # <b>Permissions Needed:</b> BUNDLES_ADMIN
     # @param id The id of the bundle
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -417,7 +407,7 @@ module KnetikCloudClient
     end
 
     # Update a bundle item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
     # @param id The id of the bundle
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -465,7 +455,7 @@ module KnetikCloudClient
     end
 
     # Update a bundle template
-    # 
+    # <b>Permissions Needed:</b> BUNDLES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :bundle_template_resource The bundle template resource object
@@ -476,7 +466,7 @@ module KnetikCloudClient
     end
 
     # Update a bundle template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :bundle_template_resource The bundle template resource object

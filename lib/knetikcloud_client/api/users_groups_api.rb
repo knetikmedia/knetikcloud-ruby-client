@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Adds a new member to the group
-    # 
+    # <b>Permissions Needed:</b> GROUP_ADMIN or self if open
     # @param unique_name The group unique name
     # @param user The id and status for a user to add to the group
     # @param [Hash] opts the optional parameters
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Adds a new member to the group
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN or self if open
     # @param unique_name The group unique name
     # @param user The id and status for a user to add to the group
     # @param [Hash] opts the optional parameters
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Adds multiple members to the group
-    # 
+    # <b>Permissions Needed:</b> GROUP_ADMIN
     # @param unique_name The group unique name
     # @param users The id and status for a list of users to add to the group
     # @param [Hash] opts the optional parameters
@@ -93,7 +93,7 @@ module KnetikCloudClient
     end
 
     # Adds multiple members to the group
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
     # @param unique_name The group unique name
     # @param users The id and status for a list of users to add to the group
     # @param [Hash] opts the optional parameters
@@ -143,7 +143,7 @@ module KnetikCloudClient
     end
 
     # Create a group
-    # 
+    # <b>Permissions Needed:</b> GROUP_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [GroupResource] :group_resource The new group
     # @return [GroupResource]
@@ -153,7 +153,7 @@ module KnetikCloudClient
     end
 
     # Create a group
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [GroupResource] :group_resource The new group
     # @return [Array<(GroupResource, Fixnum, Hash)>] GroupResource data, response status code and response headers
@@ -194,7 +194,7 @@ module KnetikCloudClient
     end
 
     # Create an group member template
-    # GroupMember Templates define a type of group member and the properties they have
+    # GroupMember Templates define a type of group member and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :group_member_template_resource The group member template resource object
     # @return [TemplateResource]
@@ -204,7 +204,7 @@ module KnetikCloudClient
     end
 
     # Create an group member template
-    # GroupMember Templates define a type of group member and the properties they have
+    # GroupMember Templates define a type of group member and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :group_member_template_resource The group member template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -245,7 +245,7 @@ module KnetikCloudClient
     end
 
     # Create a group template
-    # Group Templates define a type of group and the properties they have
+    # Group Templates define a type of group and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :group_template_resource The group template resource object
     # @return [TemplateResource]
@@ -255,7 +255,7 @@ module KnetikCloudClient
     end
 
     # Create a group template
-    # Group Templates define a type of group and the properties they have
+    # Group Templates define a type of group and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :group_template_resource The group template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -296,7 +296,7 @@ module KnetikCloudClient
     end
 
     # Removes a group from the system
-    # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group's parent if they were not added to it directly as well.
+    # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group's parent if they were not added to it directly as well. <br><br><b>Permissions Needed:</b> GROUP_ADMIN
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -306,7 +306,7 @@ module KnetikCloudClient
     end
 
     # Removes a group from the system
-    # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
+    # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -328,8 +328,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -350,7 +348,7 @@ module KnetikCloudClient
     end
 
     # Delete an group member template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -361,7 +359,7 @@ module KnetikCloudClient
     end
 
     # Delete an group member template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -385,8 +383,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -407,7 +403,7 @@ module KnetikCloudClient
     end
 
     # Delete a group template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -418,7 +414,7 @@ module KnetikCloudClient
     end
 
     # Delete a group template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -442,8 +438,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -463,8 +457,74 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
-    # Loads a specific group's details
+    # Enable or disable notification of group messages
     # 
+    # @param unique_name The group unique name
+    # @param user_id The user id of the member or &#39;me&#39;
+    # @param disabled disabled
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def disable_group_notification(unique_name, user_id, disabled, opts = {})
+      disable_group_notification_with_http_info(unique_name, user_id, disabled, opts)
+      return nil
+    end
+
+    # Enable or disable notification of group messages
+    # 
+    # @param unique_name The group unique name
+    # @param user_id The user id of the member or &#39;me&#39;
+    # @param disabled disabled
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def disable_group_notification_with_http_info(unique_name, user_id, disabled, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersGroupsApi.disable_group_notification ..."
+      end
+      # verify the required parameter 'unique_name' is set
+      if @api_client.config.client_side_validation && unique_name.nil?
+        fail ArgumentError, "Missing the required parameter 'unique_name' when calling UsersGroupsApi.disable_group_notification"
+      end
+      # verify the required parameter 'user_id' is set
+      if @api_client.config.client_side_validation && user_id.nil?
+        fail ArgumentError, "Missing the required parameter 'user_id' when calling UsersGroupsApi.disable_group_notification"
+      end
+      # verify the required parameter 'disabled' is set
+      if @api_client.config.client_side_validation && disabled.nil?
+        fail ArgumentError, "Missing the required parameter 'disabled' when calling UsersGroupsApi.disable_group_notification"
+      end
+      # resource path
+      local_var_path = "/users/groups/{unique_name}/members/{user_id}/messages/disabled".sub('{' + 'unique_name' + '}', unique_name.to_s).sub('{' + 'user_id' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(disabled)
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersGroupsApi#disable_group_notification\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Loads a specific group's details
+    # <b>Permissions Needed:</b> ANY
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @return [GroupResource]
@@ -474,7 +534,7 @@ module KnetikCloudClient
     end
 
     # Loads a specific group&#39;s details
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @return [Array<(GroupResource, Fixnum, Hash)>] GroupResource data, response status code and response headers
@@ -496,8 +556,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -519,7 +577,7 @@ module KnetikCloudClient
     end
 
     # Get group ancestors
-    # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+    # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). <br><br><b>Permissions Needed:</b> ANY
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @return [Array<GroupResource>]
@@ -529,7 +587,7 @@ module KnetikCloudClient
     end
 
     # Get group ancestors
-    # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+    # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<GroupResource>, Fixnum, Hash)>] Array<GroupResource> data, response status code and response headers
@@ -551,15 +609,13 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -574,7 +630,7 @@ module KnetikCloudClient
     end
 
     # Get a user from a group
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param unique_name The group unique name
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
@@ -585,7 +641,7 @@ module KnetikCloudClient
     end
 
     # Get a user from a group
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param unique_name The group unique name
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
@@ -612,8 +668,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -635,7 +689,7 @@ module KnetikCloudClient
     end
 
     # Get a single group member template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or GROUP_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -645,7 +699,7 @@ module KnetikCloudClient
     end
 
     # Get a single group member template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -667,8 +721,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -690,7 +742,7 @@ module KnetikCloudClient
     end
 
     # List and search group member templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or GROUP_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -702,7 +754,7 @@ module KnetikCloudClient
     end
 
     # List and search group member templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -725,8 +777,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -748,7 +798,7 @@ module KnetikCloudClient
     end
 
     # Lists members of the group
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -761,7 +811,7 @@ module KnetikCloudClient
     end
 
     # Lists members of the group
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -789,8 +839,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -811,8 +859,67 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
+    # Get a list of group messages
+    # <b>Permissions Needed:</b> ANY
+    # @param unique_name The group unique name
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :size The number of objects returned per page (default to 25)
+    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
+    # @return [PageResourceChatMessageResource]
+    def get_group_messages(unique_name, opts = {})
+      data, _status_code, _headers = get_group_messages_with_http_info(unique_name, opts)
+      return data
+    end
+
+    # Get a list of group messages
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+    # @param unique_name The group unique name
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :size The number of objects returned per page
+    # @option opts [Integer] :page The number of the page returned, starting with 1
+    # @return [Array<(PageResourceChatMessageResource, Fixnum, Hash)>] PageResourceChatMessageResource data, response status code and response headers
+    def get_group_messages_with_http_info(unique_name, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersGroupsApi.get_group_messages ..."
+      end
+      # verify the required parameter 'unique_name' is set
+      if @api_client.config.client_side_validation && unique_name.nil?
+        fail ArgumentError, "Missing the required parameter 'unique_name' when calling UsersGroupsApi.get_group_messages"
+      end
+      # resource path
+      local_var_path = "/users/groups/{unique_name}/messages".sub('{' + 'unique_name' + '}', unique_name.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PageResourceChatMessageResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersGroupsApi#get_group_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get a single group template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or GROUP_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -822,7 +929,7 @@ module KnetikCloudClient
     end
 
     # Get a single group template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -844,8 +951,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -867,7 +972,7 @@ module KnetikCloudClient
     end
 
     # List and search group templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or GROUP_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -879,7 +984,7 @@ module KnetikCloudClient
     end
 
     # List and search group templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -902,8 +1007,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -925,7 +1028,7 @@ module KnetikCloudClient
     end
 
     # List groups a user is in
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_children Whether to limit group list to children of groups only. If true, shows only groups with parents. If false, shows only groups with no parent.
@@ -936,7 +1039,7 @@ module KnetikCloudClient
     end
 
     # List groups a user is in
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_children Whether to limit group list to children of groups only. If true, shows only groups with parents. If false, shows only groups with no parent.
@@ -960,8 +1063,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -983,7 +1084,7 @@ module KnetikCloudClient
     end
 
     # List and search groups
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_template Filter for groups using a specific template, by id
     # @option opts [String] :filter_member_count Filters groups by member count. Multiple values possible for range search. Format: filter_member_count&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_member_count&#x3D;GT,14,LT,17
@@ -1001,7 +1102,7 @@ module KnetikCloudClient
     end
 
     # List and search groups
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_template Filter for groups using a specific template, by id
     # @option opts [String] :filter_member_count Filters groups by member count. Multiple values possible for range search. Format: filter_member_count&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_member_count&#x3D;GT,14,LT,17
@@ -1039,8 +1140,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1061,8 +1160,65 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
-    # Removes a user from a group
+    # Send a group message
     # 
+    # @param unique_name The group unique name
+    # @param [Hash] opts the optional parameters
+    # @option opts [ChatMessageRequest] :chat_message_request The chat message request
+    # @return [ChatMessageResource]
+    def post_group_message(unique_name, opts = {})
+      data, _status_code, _headers = post_group_message_with_http_info(unique_name, opts)
+      return data
+    end
+
+    # Send a group message
+    # 
+    # @param unique_name The group unique name
+    # @param [Hash] opts the optional parameters
+    # @option opts [ChatMessageRequest] :chat_message_request The chat message request
+    # @return [Array<(ChatMessageResource, Fixnum, Hash)>] ChatMessageResource data, response status code and response headers
+    def post_group_message_with_http_info(unique_name, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersGroupsApi.post_group_message ..."
+      end
+      # verify the required parameter 'unique_name' is set
+      if @api_client.config.client_side_validation && unique_name.nil?
+        fail ArgumentError, "Missing the required parameter 'unique_name' when calling UsersGroupsApi.post_group_message"
+      end
+      # resource path
+      local_var_path = "/users/groups/{unique_name}/messages".sub('{' + 'unique_name' + '}', unique_name.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'chat_message_request'])
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ChatMessageResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersGroupsApi#post_group_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Removes a user from a group
+    # <b>Permissions Needed:</b> GROUP_ADMIN or self if open
     # @param unique_name The group unique name
     # @param user_id The id of the user to remove
     # @param [Hash] opts the optional parameters
@@ -1073,7 +1229,7 @@ module KnetikCloudClient
     end
 
     # Removes a user from a group
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN or self if open
     # @param unique_name The group unique name
     # @param user_id The id of the user to remove
     # @param [Hash] opts the optional parameters
@@ -1100,8 +1256,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1122,7 +1276,7 @@ module KnetikCloudClient
     end
 
     # Update a group
-    # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
+    # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. <br><br><b>Permissions Needed:</b> GROUP_ADMIN or admin of the group
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @option opts [GroupResource] :group_resource The updated group
@@ -1133,7 +1287,7 @@ module KnetikCloudClient
     end
 
     # Update a group
-    # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
+    # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN or admin of the group
     # @param unique_name The group unique name
     # @param [Hash] opts the optional parameters
     # @option opts [GroupResource] :group_resource The updated group
@@ -1178,7 +1332,7 @@ module KnetikCloudClient
     end
 
     # Change a user's order
-    # 
+    # <b>Permissions Needed:</b> GROUP_ADMIN
     # @param unique_name The group unique name
     # @param user_id The user id of the member to modify
     # @param order The new order for the membership
@@ -1190,7 +1344,7 @@ module KnetikCloudClient
     end
 
     # Change a user&#39;s order
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
     # @param unique_name The group unique name
     # @param user_id The user id of the member to modify
     # @param order The new order for the membership
@@ -1244,7 +1398,7 @@ module KnetikCloudClient
     end
 
     # Change a user's membership properties
-    # 
+    # <b>Permissions Needed:</b> GROUP_ADMIN
     # @param unique_name The group unique name
     # @param user_id The user id of the member to modify
     # @param properties The new properties for the membership
@@ -1256,7 +1410,7 @@ module KnetikCloudClient
     end
 
     # Change a user&#39;s membership properties
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
     # @param unique_name The group unique name
     # @param user_id The user id of the member to modify
     # @param properties The new properties for the membership
@@ -1310,7 +1464,7 @@ module KnetikCloudClient
     end
 
     # Change a user's status
-    # 
+    # <b>Permissions Needed:</b> GROUP_ADMIN
     # @param unique_name The group unique name
     # @param user_id The user id of the member to modify
     # @param status The new status for the user
@@ -1322,7 +1476,7 @@ module KnetikCloudClient
     end
 
     # Change a user&#39;s status
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
     # @param unique_name The group unique name
     # @param user_id The user id of the member to modify
     # @param status The new status for the user
@@ -1376,7 +1530,7 @@ module KnetikCloudClient
     end
 
     # Update an group member template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :group_member_template_resource The group member template resource object
@@ -1387,7 +1541,7 @@ module KnetikCloudClient
     end
 
     # Update an group member template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :group_member_template_resource The group member template resource object
@@ -1433,7 +1587,7 @@ module KnetikCloudClient
     end
 
     # Update a group template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :group_template_resource The group template resource object
@@ -1444,7 +1598,7 @@ module KnetikCloudClient
     end
 
     # Update a group template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :group_template_resource The group template resource object

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Retrieves leaderboard details and paginated entries
-    # The context type identifies the type of entity (i.e., 'activity') being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource.
+    # The context type identifies the type of entity (i.e., 'activity') being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource. <br><br><b>Permissions Needed:</b> ANY
     # @param context_type The context type for the leaderboard
     # @param context_id The context id for the leaderboard
     # @param [Hash] opts the optional parameters
@@ -35,7 +35,7 @@ module KnetikCloudClient
     end
 
     # Retrieves leaderboard details and paginated entries
-    # The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource.
+    # The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param context_type The context type for the leaderboard
     # @param context_id The context id for the leaderboard
     # @param [Hash] opts the optional parameters
@@ -68,8 +68,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -91,7 +89,7 @@ module KnetikCloudClient
     end
 
     # Retrieves a specific user entry with rank
-    # The context type identifies the type of entity (i.e., 'activity') being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard
+    # The context type identifies the type of entity (i.e., 'activity') being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. <br><br><b>Permissions Needed:</b> ANY
     # @param context_type The context type for the leaderboard
     # @param context_id The context id for the leaderboard
     # @param id The id of a user
@@ -103,7 +101,7 @@ module KnetikCloudClient
     end
 
     # Retrieves a specific user entry with rank
-    # The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard
+    # The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param context_type The context type for the leaderboard
     # @param context_id The context id for the leaderboard
     # @param id The id of a user
@@ -135,8 +133,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -158,7 +154,7 @@ module KnetikCloudClient
     end
 
     # Get a list of available leaderboard strategy names
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<String>]
     def get_leaderboard_strategies(opts = {})
@@ -167,7 +163,7 @@ module KnetikCloudClient
     end
 
     # Get a list of available leaderboard strategy names
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<String>, Fixnum, Hash)>] Array<String> data, response status code and response headers
     def get_leaderboard_strategies_with_http_info(opts = {})
@@ -184,8 +180,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

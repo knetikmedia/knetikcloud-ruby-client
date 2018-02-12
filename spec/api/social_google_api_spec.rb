@@ -34,7 +34,7 @@ describe 'SocialGoogleApi' do
 
   # unit tests for link_accounts1
   # Link google account
-  # Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+  # Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-google user token
   # @param [Hash] opts the optional parameters
   # @option opts [GoogleToken] :google_token The token from google
   # @return [nil]

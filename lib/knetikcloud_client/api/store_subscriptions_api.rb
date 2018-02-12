@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Creates a subscription item and associated plans
-    # 
+    # <b>Permissions Needed:</b> SUBSCRIPTIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [SubscriptionResource] :subscription_resource The subscription to be created
     # @return [SubscriptionResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Creates a subscription item and associated plans
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [SubscriptionResource] :subscription_resource The subscription to be created
     # @return [Array<(SubscriptionResource, Fixnum, Hash)>] SubscriptionResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create a subscription template
-    # Subscription Templates define a type of subscription and the properties they have.
+    # Subscription Templates define a type of subscription and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [SubscriptionTemplateResource] :subscription_template_resource The new subscription template
     # @return [SubscriptionTemplateResource]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Create a subscription template
-    # Subscription Templates define a type of subscription and the properties they have.
+    # Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [SubscriptionTemplateResource] :subscription_template_resource The new subscription template
     # @return [Array<(SubscriptionTemplateResource, Fixnum, Hash)>] SubscriptionTemplateResource data, response status code and response headers
@@ -123,7 +123,7 @@ module KnetikCloudClient
     end
 
     # Delete a subscription plan
-    # Must not be locked or a migration target
+    # Must not be locked or a migration target. <br><br><b>Permissions Needed:</b> SUBSCRIPTIONS_ADMIN
     # @param id The id of the subscription
     # @param plan_id The id of the plan
     # @param [Hash] opts the optional parameters
@@ -134,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Delete a subscription plan
-    # Must not be locked or a migration target
+    # Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
     # @param id The id of the subscription
     # @param plan_id The id of the plan
     # @param [Hash] opts the optional parameters
@@ -161,8 +161,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -183,7 +181,7 @@ module KnetikCloudClient
     end
 
     # Delete a subscription template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -194,7 +192,7 @@ module KnetikCloudClient
     end
 
     # Delete a subscription template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -218,8 +216,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -240,7 +236,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a single subscription item and associated plans
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The id of the subscription
     # @param [Hash] opts the optional parameters
     # @return [SubscriptionResource]
@@ -250,7 +246,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a single subscription item and associated plans
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the subscription
     # @param [Hash] opts the optional parameters
     # @return [Array<(SubscriptionResource, Fixnum, Hash)>] SubscriptionResource data, response status code and response headers
@@ -272,8 +268,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -295,7 +289,7 @@ module KnetikCloudClient
     end
 
     # Get a single subscription template
-    # Subscription Templates define a type of subscription and the properties they have.
+    # Subscription Templates define a type of subscription and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [SubscriptionTemplateResource]
@@ -305,7 +299,7 @@ module KnetikCloudClient
     end
 
     # Get a single subscription template
-    # Subscription Templates define a type of subscription and the properties they have.
+    # Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(SubscriptionTemplateResource, Fixnum, Hash)>] SubscriptionTemplateResource data, response status code and response headers
@@ -327,8 +321,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -350,7 +342,7 @@ module KnetikCloudClient
     end
 
     # List and search subscription templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -362,7 +354,7 @@ module KnetikCloudClient
     end
 
     # List and search subscription templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -385,8 +377,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -408,7 +398,7 @@ module KnetikCloudClient
     end
 
     # List available subscription items and associated plans
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -420,7 +410,7 @@ module KnetikCloudClient
     end
 
     # List available subscription items and associated plans
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -443,8 +433,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -466,7 +454,7 @@ module KnetikCloudClient
     end
 
     # Processes subscriptions and charge dues
-    # 
+    # <b>Permissions Needed:</b> SUBSCRIPTIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def process_subscriptions(opts = {})
@@ -475,7 +463,7 @@ module KnetikCloudClient
     end
 
     # Processes subscriptions and charge dues
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def process_subscriptions_with_http_info(opts = {})
@@ -514,7 +502,7 @@ module KnetikCloudClient
     end
 
     # Updates a subscription item and associated plans
-    # Will not remove plans left out
+    # Will not remove plans left out. <br><br><b>Permissions Needed:</b> SUBSCRIPTIONS_ADMIN
     # @param id The id of the subscription
     # @param [Hash] opts the optional parameters
     # @option opts [SubscriptionResource] :subscription_resource The subscription resource object
@@ -525,7 +513,7 @@ module KnetikCloudClient
     end
 
     # Updates a subscription item and associated plans
-    # Will not remove plans left out
+    # Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
     # @param id The id of the subscription
     # @param [Hash] opts the optional parameters
     # @option opts [SubscriptionResource] :subscription_resource The subscription resource object
@@ -570,7 +558,7 @@ module KnetikCloudClient
     end
 
     # Update a subscription template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [SubscriptionTemplateResource] :subscription_template_resource The subscription template resource object
@@ -581,7 +569,7 @@ module KnetikCloudClient
     end
 
     # Update a subscription template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [SubscriptionTemplateResource] :subscription_template_resource The subscription template resource object

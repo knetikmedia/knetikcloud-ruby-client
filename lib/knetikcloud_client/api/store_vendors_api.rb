@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a vendor
-    # 
+    # <b>Permissions Needed:</b> VENDORS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [VendorResource] :vendor The vendor
     # @return [VendorResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a vendor
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [VendorResource] :vendor The vendor
     # @return [Array<(VendorResource, Fixnum, Hash)>] VendorResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create a vendor template
-    # Vendor Templates define a type of vendor and the properties they have.
+    # Vendor Templates define a type of vendor and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :vendor_template_resource The new vendor template
     # @return [ItemTemplateResource]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Create a vendor template
-    # Vendor Templates define a type of vendor and the properties they have.
+    # Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :vendor_template_resource The new vendor template
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -123,7 +123,7 @@ module KnetikCloudClient
     end
 
     # Delete a vendor
-    # 
+    # <b>Permissions Needed:</b> VENDORS_ADMIN
     # @param id The id of the vendor
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -133,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Delete a vendor
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
     # @param id The id of the vendor
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -155,8 +155,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -177,7 +175,7 @@ module KnetikCloudClient
     end
 
     # Delete a vendor template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -188,7 +186,7 @@ module KnetikCloudClient
     end
 
     # Delete a vendor template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -212,8 +210,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -234,7 +230,7 @@ module KnetikCloudClient
     end
 
     # Get a single vendor
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The id of the vendor
     # @param [Hash] opts the optional parameters
     # @return [VendorResource]
@@ -244,7 +240,7 @@ module KnetikCloudClient
     end
 
     # Get a single vendor
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the vendor
     # @param [Hash] opts the optional parameters
     # @return [Array<(VendorResource, Fixnum, Hash)>] VendorResource data, response status code and response headers
@@ -266,8 +262,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -289,7 +283,7 @@ module KnetikCloudClient
     end
 
     # Get a single vendor template
-    # Vendor Templates define a type of vendor and the properties they have.
+    # Vendor Templates define a type of vendor and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [ItemTemplateResource]
@@ -299,7 +293,7 @@ module KnetikCloudClient
     end
 
     # Get a single vendor template
-    # Vendor Templates define a type of vendor and the properties they have.
+    # Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -321,8 +315,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -344,11 +336,11 @@ module KnetikCloudClient
     end
 
     # List and search vendor templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
-    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to 1)
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
     # @return [PageResourceItemTemplateResource]
     def get_vendor_templates(opts = {})
       data, _status_code, _headers = get_vendor_templates_with_http_info(opts)
@@ -356,7 +348,7 @@ module KnetikCloudClient
     end
 
     # List and search vendor templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -379,8 +371,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -402,7 +392,7 @@ module KnetikCloudClient
     end
 
     # List and search vendors
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filters vendors by name starting with the text provided in the filter
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -415,7 +405,7 @@ module KnetikCloudClient
     end
 
     # List and search vendors
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filters vendors by name starting with the text provided in the filter
     # @option opts [Integer] :size The number of objects returned per page
@@ -440,8 +430,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -463,7 +451,7 @@ module KnetikCloudClient
     end
 
     # Update a vendor
-    # 
+    # <b>Permissions Needed:</b> VENDORS_ADMIN
     # @param id The id of the vendor
     # @param [Hash] opts the optional parameters
     # @option opts [VendorResource] :vendor The vendor
@@ -474,7 +462,7 @@ module KnetikCloudClient
     end
 
     # Update a vendor
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
     # @param id The id of the vendor
     # @param [Hash] opts the optional parameters
     # @option opts [VendorResource] :vendor The vendor
@@ -520,7 +508,7 @@ module KnetikCloudClient
     end
 
     # Update a vendor template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :vendor_template_resource The vendor template resource object
@@ -531,7 +519,7 @@ module KnetikCloudClient
     end
 
     # Update a vendor template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :vendor_template_resource The vendor template resource object

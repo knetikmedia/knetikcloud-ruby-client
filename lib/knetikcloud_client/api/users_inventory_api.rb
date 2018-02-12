@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Adds an item to the user inventory
-    # The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time
+    # The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time. <br><br><b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [UserInventoryAddRequest] :user_inventory_add_request The user inventory add request object
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Adds an item to the user inventory
-    # The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time
+    # The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [UserInventoryAddRequest] :user_inventory_add_request The user inventory add request object
@@ -78,7 +78,7 @@ module KnetikCloudClient
     end
 
     # Check for access to an item without consuming
-    # Useful for pre-check and accounts for all various buisness rules
+    # Useful for pre-check and accounts for all various buisness rules. <br><br><b>Permissions Needed:</b> INVENTORY_ADMIN or owner
     # @param user_id The id of the user to check for or &#39;me&#39; for logged in user
     # @param item_id The id of the item
     # @param [Hash] opts the optional parameters
@@ -90,7 +90,7 @@ module KnetikCloudClient
     end
 
     # Check for access to an item without consuming
-    # Useful for pre-check and accounts for all various buisness rules
+    # Useful for pre-check and accounts for all various buisness rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
     # @param user_id The id of the user to check for or &#39;me&#39; for logged in user
     # @param item_id The id of the item
     # @param [Hash] opts the optional parameters
@@ -119,8 +119,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -141,7 +139,7 @@ module KnetikCloudClient
     end
 
     # Create an entitlement item
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
     # @option opts [EntitlementItem] :entitlement_item The entitlement item object
@@ -152,7 +150,7 @@ module KnetikCloudClient
     end
 
     # Create an entitlement item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
     # @option opts [EntitlementItem] :entitlement_item The entitlement item object
@@ -195,7 +193,7 @@ module KnetikCloudClient
     end
 
     # Create an entitlement template
-    # Entitlement templates define a type of entitlement and the properties they have
+    # Entitlement templates define a type of entitlement and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :template The entitlement template to be created
     # @return [ItemTemplateResource]
@@ -205,7 +203,7 @@ module KnetikCloudClient
     end
 
     # Create an entitlement template
-    # Entitlement templates define a type of entitlement and the properties they have
+    # Entitlement templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :template The entitlement template to be created
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -246,7 +244,7 @@ module KnetikCloudClient
     end
 
     # Delete an entitlement item
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param entitlement_id The id of the entitlement
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -256,7 +254,7 @@ module KnetikCloudClient
     end
 
     # Delete an entitlement item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param entitlement_id The id of the entitlement
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -278,8 +276,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -300,7 +296,7 @@ module KnetikCloudClient
     end
 
     # Delete an entitlement template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -311,7 +307,7 @@ module KnetikCloudClient
     end
 
     # Delete an entitlement template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -335,8 +331,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -357,7 +351,7 @@ module KnetikCloudClient
     end
 
     # Get a single entitlement item
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param entitlement_id The id of the entitlement
     # @param [Hash] opts the optional parameters
     # @return [EntitlementItem]
@@ -367,7 +361,7 @@ module KnetikCloudClient
     end
 
     # Get a single entitlement item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param entitlement_id The id of the entitlement
     # @param [Hash] opts the optional parameters
     # @return [Array<(EntitlementItem, Fixnum, Hash)>] EntitlementItem data, response status code and response headers
@@ -389,8 +383,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -412,7 +404,7 @@ module KnetikCloudClient
     end
 
     # List and search entitlement items
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_template Filter for entitlements using a specified template
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -425,7 +417,7 @@ module KnetikCloudClient
     end
 
     # List and search entitlement items
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_template Filter for entitlements using a specified template
     # @option opts [Integer] :size The number of objects returned per page
@@ -450,8 +442,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -473,7 +463,7 @@ module KnetikCloudClient
     end
 
     # Get a single entitlement template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [ItemTemplateResource]
@@ -483,7 +473,7 @@ module KnetikCloudClient
     end
 
     # Get a single entitlement template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -505,8 +495,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -528,7 +516,7 @@ module KnetikCloudClient
     end
 
     # List and search entitlement templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -540,7 +528,7 @@ module KnetikCloudClient
     end
 
     # List and search entitlement templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -563,8 +551,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -586,7 +572,7 @@ module KnetikCloudClient
     end
 
     # List the user inventory entries for a given user
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN or owner
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :inactive If true, accepts inactive user inventories (default to false)
@@ -604,7 +590,7 @@ module KnetikCloudClient
     end
 
     # List the user inventory entries for a given user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :inactive If true, accepts inactive user inventories
@@ -642,8 +628,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -665,7 +649,7 @@ module KnetikCloudClient
     end
 
     # Get an inventory entry
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param user_id The id of the inventory owner or &#39;me&#39; for the logged in user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -676,7 +660,7 @@ module KnetikCloudClient
     end
 
     # Get an inventory entry
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param user_id The id of the inventory owner or &#39;me&#39; for the logged in user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -703,8 +687,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -726,7 +708,7 @@ module KnetikCloudClient
     end
 
     # List the log entries for this inventory entry
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN or owner
     # @param user_id The id of the inventory owner or &#39;me&#39; for the logged in user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -739,7 +721,7 @@ module KnetikCloudClient
     end
 
     # List the log entries for this inventory entry
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
     # @param user_id The id of the inventory owner or &#39;me&#39; for the logged in user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -770,8 +752,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -793,7 +773,7 @@ module KnetikCloudClient
     end
 
     # List the user inventory entries for all users
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :inactive If true, accepts inactive user inventories (default to false)
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -810,7 +790,7 @@ module KnetikCloudClient
     end
 
     # List the user inventory entries for all users
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :inactive If true, accepts inactive user inventories
     # @option opts [Integer] :size The number of objects returned per page
@@ -843,8 +823,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -866,7 +844,7 @@ module KnetikCloudClient
     end
 
     # Grant an entitlement
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param user_id The id of the user to grant the entitlement to
     # @param grant_request grantRequest
     # @param [Hash] opts the optional parameters
@@ -877,7 +855,7 @@ module KnetikCloudClient
     end
 
     # Grant an entitlement
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param user_id The id of the user to grant the entitlement to
     # @param grant_request grantRequest
     # @param [Hash] opts the optional parameters
@@ -926,7 +904,7 @@ module KnetikCloudClient
     end
 
     # Update an entitlement item
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param entitlement_id The id of the entitlement
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -938,7 +916,7 @@ module KnetikCloudClient
     end
 
     # Update an entitlement item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param entitlement_id The id of the entitlement
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -985,7 +963,7 @@ module KnetikCloudClient
     end
 
     # Update an entitlement template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :template The updated template
@@ -996,7 +974,7 @@ module KnetikCloudClient
     end
 
     # Update an entitlement template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :template The updated template
@@ -1042,7 +1020,7 @@ module KnetikCloudClient
     end
 
     # Set the behavior data for an inventory entry
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param user_id The id of the user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -1054,7 +1032,7 @@ module KnetikCloudClient
     end
 
     # Set the behavior data for an inventory entry
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param user_id The id of the user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -1104,7 +1082,7 @@ module KnetikCloudClient
     end
 
     # Set the expiration date
-    # Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill)
+    # Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill). <br><br><b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param user_id user_id
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -1116,7 +1094,7 @@ module KnetikCloudClient
     end
 
     # Set the expiration date
-    # Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill)
+    # Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param user_id user_id
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -1166,7 +1144,7 @@ module KnetikCloudClient
     end
 
     # Set the status for an inventory entry
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param user_id The id of the user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -1178,7 +1156,7 @@ module KnetikCloudClient
     end
 
     # Set the status for an inventory entry
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param user_id The id of the user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
@@ -1228,7 +1206,7 @@ module KnetikCloudClient
     end
 
     # Use an item
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN or owner
     # @param user_id The id of the user to check for or &#39;me&#39; for logged in user
     # @param item_id The id of the item
     # @param [Hash] opts the optional parameters
@@ -1241,7 +1219,7 @@ module KnetikCloudClient
     end
 
     # Use an item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
     # @param user_id The id of the user to check for or &#39;me&#39; for logged in user
     # @param item_id The id of the item
     # @param [Hash] opts the optional parameters

@@ -1,6 +1,6 @@
 # KnetikCloudClient::ContentArticlesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Create a new article
 
-Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.<br><br><b>Permissions:</b> ARTICLES_ADMIN
 
 ### Example
 ```ruby
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 Create an article template
 
-Article Templates define a type of article and the properties they have
+Article Templates define a type of article and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -133,6 +133,8 @@ Name | Type | Description  | Notes
 
 Delete an existing article
 
+<b>Permissions Needed:</b> ARTICLES_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -175,7 +177,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -185,7 +187,7 @@ nil (empty response body)
 
 Delete an article template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -233,7 +235,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -242,6 +244,8 @@ nil (empty response body)
 > ArticleResource get_article(id)
 
 Get a single article
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -286,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -295,6 +299,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_article_template(id)
 
 Get a single article template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTICLES_ADMIN
 
 ### Example
 ```ruby
@@ -339,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -348,6 +354,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_article_templates(opts)
 
 List and search article templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTICLES_ADMIN
 
 ### Example
 ```ruby
@@ -397,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -407,7 +415,7 @@ Name | Type | Description  | Notes
 
 List and search articles
 
-Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single article' to retrieve the full resource with assets for a given item as needed.
+Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single article' to retrieve the full resource with assets for a given item as needed. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -469,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -478,6 +486,8 @@ Name | Type | Description  | Notes
 > ArticleResource update_article(id, opts)
 
 Update an existing article
+
+<b>Permissions Needed:</b> ARTICLES_ADMIN
 
 ### Example
 ```ruby
@@ -535,6 +545,8 @@ Name | Type | Description  | Notes
 > TemplateResource update_article_template(id, opts)
 
 Update an article template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Add a new disposition
-    # 
+    # <b>Permissions Needed:</b> DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [DispositionResource] :disposition The new disposition record
     # @return [DispositionResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Add a new disposition
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [DispositionResource] :disposition The new disposition record
     # @return [Array<(DispositionResource, Fixnum, Hash)>] DispositionResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a disposition
-    # 
+    # <b>Permissions Needed:</b> DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
     # @param id The id of the disposition record
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete a disposition
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
     # @param id The id of the disposition record
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -104,8 +104,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Returns a disposition
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The id of the disposition record
     # @param [Hash] opts the optional parameters
     # @return [DispositionResource]
@@ -136,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Returns a disposition
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the disposition record
     # @param [Hash] opts the optional parameters
     # @return [Array<(DispositionResource, Fixnum, Hash)>] DispositionResource data, response status code and response headers
@@ -158,8 +156,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -181,7 +177,7 @@ module KnetikCloudClient
     end
 
     # Returns a list of disposition counts
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_context Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
     # @option opts [String] :filter_owner Filter for dispositions from a specific user by id or &#39;me&#39;
@@ -192,7 +188,7 @@ module KnetikCloudClient
     end
 
     # Returns a list of disposition counts
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_context Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
     # @option opts [String] :filter_owner Filter for dispositions from a specific user by id or &#39;me&#39;
@@ -213,8 +209,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -236,7 +230,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of dispositions
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_context Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
     # @option opts [String] :filter_owner Filter for dispositions from a specific user by id or &#39;me&#39;
@@ -250,7 +244,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of dispositions
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_context Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
     # @option opts [String] :filter_owner Filter for dispositions from a specific user by id or &#39;me&#39;
@@ -277,8 +271,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

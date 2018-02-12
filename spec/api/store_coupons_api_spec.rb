@@ -34,7 +34,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for create_coupon_item
   # Create a coupon item
-  # SKUs have to be unique in the entire store.
+  # SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   # @option opts [CouponItem] :coupon_item The coupon item object
@@ -47,7 +47,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for create_coupon_template
   # Create a coupon template
-  # Coupon Templates define a type of coupon and the properties they have.
+  # Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :coupon_template_resource The new coupon template
   # @return [ItemTemplateResource]
@@ -59,7 +59,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for delete_coupon_item
   # Delete a coupon item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
   # @param id The id of the coupon
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -71,7 +71,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for delete_coupon_template
   # Delete a coupon template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -84,7 +84,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for get_coupon_item
   # Get a single coupon item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
   # @param id The id of the coupon
   # @param [Hash] opts the optional parameters
   # @return [CouponItem]
@@ -96,7 +96,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for get_coupon_item_by_sku
   # Get a coupon by sku
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param sku A sku of the coupon
   # @param [Hash] opts the optional parameters
   # @return [CouponItem]
@@ -108,7 +108,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for get_coupon_template
   # Get a single coupon template
-  # Coupon Templates define a type of coupon and the properties they have.
+  # Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [ItemTemplateResource]
@@ -120,7 +120,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for get_coupon_templates
   # List and search coupon templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -134,7 +134,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for update_coupon_item
   # Update a coupon item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
   # @param id The id of the coupon
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -148,7 +148,7 @@ describe 'StoreCouponsApi' do
 
   # unit tests for update_coupon_template
   # Update a coupon template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :coupon_template_resource The coupon template resource object

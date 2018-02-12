@@ -1,6 +1,6 @@
 # KnetikCloudClient::AuthRolesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,6 +20,8 @@ Method | HTTP request | Description
 > RoleResource create_role(opts)
 
 Create a new role
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example
 ```ruby
@@ -75,6 +77,8 @@ Name | Type | Description  | Notes
 
 Delete a role
 
+<b>Permissions Needed:</b> ROLES_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -121,7 +125,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -130,6 +134,8 @@ nil (empty response body)
 > Array&lt;RoleResource&gt; get_client_roles(client_key)
 
 Get roles for a client
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example
 ```ruby
@@ -174,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -183,6 +189,8 @@ Name | Type | Description  | Notes
 > RoleResource get_role(role)
 
 Get a single role
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example
 ```ruby
@@ -227,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -236,6 +244,8 @@ Name | Type | Description  | Notes
 > PageResourceRoleResource get_roles(opts)
 
 List and search roles
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example
 ```ruby
@@ -289,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -298,6 +308,8 @@ Name | Type | Description  | Notes
 > Array&lt;RoleResource&gt; get_user_roles(user_id)
 
 Get roles for a user
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example
 ```ruby
@@ -342,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -351,6 +363,8 @@ Name | Type | Description  | Notes
 > ClientResource set_client_roles(client_key, opts)
 
 Set roles for a client
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example
 ```ruby
@@ -409,6 +423,8 @@ Name | Type | Description  | Notes
 
 Set permissions for a role
 
+<b>Permissions Needed:</b> ROLES_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -466,6 +482,8 @@ Name | Type | Description  | Notes
 
 Set roles for a user
 
+<b>Permissions Needed:</b> ROLES_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -522,6 +540,8 @@ Name | Type | Description  | Notes
 > RoleResource update_role(role, opts)
 
 Update a role
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example
 ```ruby

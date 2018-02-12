@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get health info
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [Object]
     def get_health(opts = {})
@@ -30,7 +30,7 @@ module KnetikCloudClient
     end
 
     # Get health info
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
     def get_health_with_http_info(opts = {})
@@ -47,8 +47,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

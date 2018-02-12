@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a global definition
-    # Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+    # Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BreGlobalResource] :bre_global_resource The BRE global resource object
     # @return [BreGlobalResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a global definition
-    # Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+    # Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BreGlobalResource] :bre_global_resource The BRE global resource object
     # @return [Array<(BreGlobalResource, Fixnum, Hash)>] BreGlobalResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a global
-    # May fail if there are existing rules against it. Cannot delete core globals
+    # May fail if there are existing rules against it. Cannot delete core globals. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
     # @param id The id of the global definition
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete a global
-    # May fail if there are existing rules against it. Cannot delete core globals
+    # May fail if there are existing rules against it. Cannot delete core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
     # @param id The id of the global definition
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -104,8 +104,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Get a single global definition
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_USER
     # @param id The id of the global definition
     # @param [Hash] opts the optional parameters
     # @return [BreGlobalResource]
@@ -136,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Get a single global definition
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
     # @param id The id of the global definition
     # @param [Hash] opts the optional parameters
     # @return [Array<(BreGlobalResource, Fixnum, Hash)>] BreGlobalResource data, response status code and response headers
@@ -158,8 +156,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -181,7 +177,7 @@ module KnetikCloudClient
     end
 
     # List global definitions
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_system Filter for globals that are system globals when true, or not when false. Leave off for both mixed
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -193,7 +189,7 @@ module KnetikCloudClient
     end
 
     # List global definitions
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_system Filter for globals that are system globals when true, or not when false. Leave off for both mixed
     # @option opts [Integer] :size The number of objects returned per page
@@ -216,8 +212,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -239,7 +233,7 @@ module KnetikCloudClient
     end
 
     # Update a global definition
-    # May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+    # May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
     # @param id The id of the global definition
     # @param [Hash] opts the optional parameters
     # @option opts [BreGlobalResource] :bre_global_resource The BRE global resource object
@@ -250,7 +244,7 @@ module KnetikCloudClient
     end
 
     # Update a global definition
-    # May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+    # May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
     # @param id The id of the global definition
     # @param [Hash] opts the optional parameters
     # @option opts [BreGlobalResource] :bre_global_resource The BRE global resource object

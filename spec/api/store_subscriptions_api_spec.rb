@@ -34,7 +34,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for create_subscription
   # Creates a subscription item and associated plans
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [SubscriptionResource] :subscription_resource The subscription to be created
   # @return [SubscriptionResource]
@@ -46,7 +46,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for create_subscription_template
   # Create a subscription template
-  # Subscription Templates define a type of subscription and the properties they have.
+  # Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [SubscriptionTemplateResource] :subscription_template_resource The new subscription template
   # @return [SubscriptionTemplateResource]
@@ -58,7 +58,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for delete_subscription
   # Delete a subscription plan
-  # Must not be locked or a migration target
+  # Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   # @param id The id of the subscription
   # @param plan_id The id of the plan
   # @param [Hash] opts the optional parameters
@@ -71,7 +71,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for delete_subscription_template
   # Delete a subscription template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -84,7 +84,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for get_subscription
   # Retrieve a single subscription item and associated plans
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the subscription
   # @param [Hash] opts the optional parameters
   # @return [SubscriptionResource]
@@ -96,7 +96,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for get_subscription_template
   # Get a single subscription template
-  # Subscription Templates define a type of subscription and the properties they have.
+  # Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [SubscriptionTemplateResource]
@@ -108,7 +108,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for get_subscription_templates
   # List and search subscription templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -122,7 +122,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for get_subscriptions
   # List available subscription items and associated plans
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -136,7 +136,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for process_subscriptions
   # Processes subscriptions and charge dues
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'process_subscriptions test' do
@@ -147,7 +147,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for update_subscription
   # Updates a subscription item and associated plans
-  # Will not remove plans left out
+  # Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   # @param id The id of the subscription
   # @param [Hash] opts the optional parameters
   # @option opts [SubscriptionResource] :subscription_resource The subscription resource object
@@ -160,7 +160,7 @@ describe 'StoreSubscriptionsApi' do
 
   # unit tests for update_subscription_template
   # Update a subscription template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [SubscriptionTemplateResource] :subscription_template_resource The subscription template resource object

@@ -34,7 +34,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for answer_poll
   # Add your vote to a poll
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
   # @param id The poll id
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :answer_key The answer key
@@ -47,7 +47,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for create_poll
   # Create a new poll
-  # Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+  # Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [PollResource] :poll_resource The poll object
   # @return [PollResource]
@@ -59,7 +59,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for create_poll_template
   # Create a poll template
-  # Poll templates define a type of poll and the properties they have
+  # Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :poll_template_resource The poll template resource object
   # @return [TemplateResource]
@@ -71,7 +71,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for delete_poll
   # Delete an existing poll
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
   # @param id The poll id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -83,7 +83,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for delete_poll_template
   # Delete a poll template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -96,7 +96,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for get_poll
   # Get a single poll
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The poll id
   # @param [Hash] opts the optional parameters
   # @return [PollResource]
@@ -108,7 +108,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for get_poll_answer
   # Get poll answer
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
   # @param id The poll id
   # @param [Hash] opts the optional parameters
   # @return [PollResponseResource]
@@ -120,7 +120,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for get_poll_template
   # Get a single poll template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -132,7 +132,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for get_poll_templates
   # List and search poll templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -146,7 +146,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for get_polls
   # List and search polls
-  # Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+  # Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_category Filter for polls from a specific category by id
   # @option opts [String] :filter_tagset Filter for polls with specified tags (separated by comma)
@@ -163,7 +163,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for update_poll
   # Update an existing poll
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
   # @param id The poll id
   # @param [Hash] opts the optional parameters
   # @option opts [PollResource] :poll_resource The poll object
@@ -176,7 +176,7 @@ describe 'ContentPollsApi' do
 
   # unit tests for update_poll_template
   # Update a poll template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :poll_template_resource The poll template resource object

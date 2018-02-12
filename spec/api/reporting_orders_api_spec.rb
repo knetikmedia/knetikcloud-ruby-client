@@ -34,7 +34,7 @@ describe 'ReportingOrdersApi' do
 
   # unit tests for get_invoice_reports
   # Retrieve invoice counts aggregated by time ranges
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
   # @param currency_code The code for a currency to get sales data for
   # @param [Hash] opts the optional parameters
   # @option opts [String] :granularity The time duration to aggregate by

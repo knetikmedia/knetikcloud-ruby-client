@@ -34,7 +34,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for add_user_to_video_whitelist
   # Adds a user to a video&#39;s whitelist
-  # Whitelisted users can view video regardless of privacy setting.
+  # Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [IntWrapper] :user_id The user id
@@ -47,7 +47,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for add_video
   # Adds a new video in the system
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [VideoResource] :video_resource The video object
   # @return [VideoResource]
@@ -59,7 +59,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for add_video_comment
   # Add a new video comment
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id 
   # @param [Hash] opts the optional parameters
   # @option opts [CommentResource] :comment_resource The comment object
@@ -72,7 +72,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for add_video_contributor
   # Adds a contributor to a video
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [ContributionResource] :contribution_resource The contribution object
@@ -85,7 +85,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for add_video_flag
   # Add a new flag
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :reason The flag reason
@@ -98,7 +98,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for add_video_relationships
   # Adds one or more existing videos as related to this one
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [VideoRelationshipResource] :video_relationship_resource The video relationship object 
@@ -111,7 +111,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for create_video_disposition
   # Create a video disposition
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [DispositionResource] :disposition_resource The disposition object
@@ -124,7 +124,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for create_video_template
   # Create a video template
-  # Video Templates define a type of video and the properties they have
+  # Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :video_template_resource The video template resource object
   # @return [TemplateResource]
@@ -136,7 +136,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for delete_video
   # Deletes a video from the system if no resources are attached to it
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param id The video id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -148,7 +148,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for delete_video_comment
   # Delete a video comment
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param id The comment id
   # @param [Hash] opts the optional parameters
@@ -161,7 +161,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for delete_video_disposition
   # Delete a video disposition
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param disposition_id The disposition id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -173,7 +173,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for delete_video_flag
   # Delete a flag
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -185,7 +185,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for delete_video_relationship
   # Delete a video&#39;s relationship
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param id The relationship id
   # @param [Hash] opts the optional parameters
@@ -198,7 +198,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for delete_video_template
   # Delete a video template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -211,7 +211,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for get_user_videos
   # Get user videos
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param user_id The user id
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :exclude_flagged Skip videos that have been flagged by the current user
@@ -226,7 +226,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for get_video
   # Loads a specific video details
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param id The video id
   # @param [Hash] opts the optional parameters
   # @return [VideoResource]
@@ -238,7 +238,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for get_video_comments
   # Returns a page of comments for a video
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param video_id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -252,7 +252,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for get_video_dispositions
   # Returns a page of dispositions for a video
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param video_id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -266,7 +266,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for get_video_relationships
   # Returns a page of video relationships
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param video_id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -280,7 +280,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for get_video_template
   # Get a single video template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -292,7 +292,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for get_video_templates
   # List and search video templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -306,7 +306,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for get_videos
   # Search videos using the documented filters
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :exclude_flagged Skip videos that have been flagged by the current user
   # @option opts [Integer] :filter_videos_by_uploader Filter for videos by uploader id
@@ -332,7 +332,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for remove_user_from_video_whitelist
   # Removes a user from a video&#39;s whitelist
-  # Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+  # Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param id The user id
   # @param [Hash] opts the optional parameters
@@ -345,7 +345,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for remove_video_contributor
   # Removes a contributor from a video
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param id The contributor id
   # @param [Hash] opts the optional parameters
@@ -358,7 +358,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for update_video
   # Modifies a video&#39;s details
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param id The video id
   # @param [Hash] opts the optional parameters
   # @option opts [VideoResource] :video_resource The video object
@@ -371,7 +371,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for update_video_comment
   # Update a video comment
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param id The comment id
   # @param [Hash] opts the optional parameters
@@ -385,7 +385,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for update_video_relationship
   # Update a video&#39;s relationship details
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   # @param video_id The video id
   # @param relationship_id The relationship id
   # @param [Hash] opts the optional parameters
@@ -399,7 +399,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for update_video_template
   # Update a video template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :video_template_resource The video template resource object
@@ -412,7 +412,7 @@ describe 'MediaVideosApi' do
 
   # unit tests for view_video
   # Increment a video&#39;s view count
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The video id
   # @param [Hash] opts the optional parameters
   # @return [nil]

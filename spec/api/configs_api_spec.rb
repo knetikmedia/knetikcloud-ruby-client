@@ -34,7 +34,7 @@ describe 'ConfigsApi' do
 
   # unit tests for create_config
   # Create a new config
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Config] :config The config object
   # @return [Config]
@@ -46,7 +46,7 @@ describe 'ConfigsApi' do
 
   # unit tests for delete_config
   # Delete an existing config
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
   # @param name The config name
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'ConfigsApi' do
 
   # unit tests for get_config
   # Get a single config
-  # Only configs that are public readable will be shown without admin access
+  # Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param name The config name
   # @param [Hash] opts the optional parameters
   # @return [Config]
@@ -70,7 +70,7 @@ describe 'ConfigsApi' do
 
   # unit tests for get_configs
   # List and search configs
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_search Filter for configs whose name contains the given string
   # @option opts [Integer] :size The number of objects returned per page
@@ -85,7 +85,7 @@ describe 'ConfigsApi' do
 
   # unit tests for update_config
   # Update an existing config
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
   # @param name The config name
   # @param [Hash] opts the optional parameters
   # @option opts [Config] :config The config object

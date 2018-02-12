@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Add an answer to a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param [Hash] opts the optional parameters
     # @option opts [AnswerResource] :answer The new answer
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Add an answer to a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param [Hash] opts the optional parameters
     # @option opts [AnswerResource] :answer The new answer
@@ -78,7 +78,7 @@ module KnetikCloudClient
     end
 
     # Add a tag to a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :tag The new tag
@@ -89,7 +89,7 @@ module KnetikCloudClient
     end
 
     # Add a tag to a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :tag The new tag
@@ -134,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Add a tag to a batch of questions
-    # All questions that dont't have the tag and match filters will have it added. The returned number is the number of questions updated.
+    # All questions that dont't have the tag and match filters will have it added. The returned number is the number of questions updated. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :tag The tag to add
     # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
@@ -152,7 +152,7 @@ module KnetikCloudClient
     end
 
     # Add a tag to a batch of questions
-    # All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+    # All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :tag The tag to add
     # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
@@ -212,7 +212,7 @@ module KnetikCloudClient
     end
 
     # Create an import job
-    # Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+    # Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ImportJobResource] :request The new import job
     # @return [ImportJobResource]
@@ -222,7 +222,7 @@ module KnetikCloudClient
     end
 
     # Create an import job
-    # Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+    # Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ImportJobResource] :request The new import job
     # @return [Array<(ImportJobResource, Fixnum, Hash)>] ImportJobResource data, response status code and response headers
@@ -263,7 +263,7 @@ module KnetikCloudClient
     end
 
     # Create a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionResource] :question The new question
     # @return [QuestionResource]
@@ -273,7 +273,7 @@ module KnetikCloudClient
     end
 
     # Create a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionResource] :question The new question
     # @return [Array<(QuestionResource, Fixnum, Hash)>] QuestionResource data, response status code and response headers
@@ -314,7 +314,7 @@ module KnetikCloudClient
     end
 
     # Create a question template
-    # Question templates define a type of question and the properties they have
+    # Question templates define a type of question and the properties they have. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionTemplateResource] :question_template_resource The question template resource object
     # @return [QuestionTemplateResource]
@@ -324,7 +324,7 @@ module KnetikCloudClient
     end
 
     # Create a question template
-    # Question templates define a type of question and the properties they have
+    # Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionTemplateResource] :question_template_resource The question template resource object
     # @return [Array<(QuestionTemplateResource, Fixnum, Hash)>] QuestionTemplateResource data, response status code and response headers
@@ -365,7 +365,7 @@ module KnetikCloudClient
     end
 
     # Delete an import job
-    # Also deletes all questions that were imported by it
+    # Also deletes all questions that were imported by it. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the job
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -375,7 +375,7 @@ module KnetikCloudClient
     end
 
     # Delete an import job
-    # Also deletes all questions that were imported by it
+    # Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the job
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -397,8 +397,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -419,7 +417,7 @@ module KnetikCloudClient
     end
 
     # Delete a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -429,7 +427,7 @@ module KnetikCloudClient
     end
 
     # Delete a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -451,8 +449,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -473,7 +469,7 @@ module KnetikCloudClient
     end
 
     # Remove an answer from a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param id The id of the answer
     # @param [Hash] opts the optional parameters
@@ -484,7 +480,7 @@ module KnetikCloudClient
     end
 
     # Remove an answer from a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param id The id of the answer
     # @param [Hash] opts the optional parameters
@@ -511,8 +507,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -533,7 +527,7 @@ module KnetikCloudClient
     end
 
     # Delete a question template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -544,7 +538,7 @@ module KnetikCloudClient
     end
 
     # Delete a question template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -568,8 +562,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -590,7 +582,7 @@ module KnetikCloudClient
     end
 
     # Get an import job
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the job
     # @param [Hash] opts the optional parameters
     # @return [ImportJobResource]
@@ -600,7 +592,7 @@ module KnetikCloudClient
     end
 
     # Get an import job
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the job
     # @param [Hash] opts the optional parameters
     # @return [Array<(ImportJobResource, Fixnum, Hash)>] ImportJobResource data, response status code and response headers
@@ -622,8 +614,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -645,7 +635,7 @@ module KnetikCloudClient
     end
 
     # Get a list of import job
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_vendor Filter for jobs by vendor id
     # @option opts [String] :filter_category Filter for jobs by category id
@@ -661,7 +651,7 @@ module KnetikCloudClient
     end
 
     # Get a list of import job
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_vendor Filter for jobs by vendor id
     # @option opts [String] :filter_category Filter for jobs by category id
@@ -692,8 +682,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -715,7 +703,7 @@ module KnetikCloudClient
     end
 
     # Get a single question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @return [QuestionResource]
@@ -725,7 +713,7 @@ module KnetikCloudClient
     end
 
     # Get a single question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @return [Array<(QuestionResource, Fixnum, Hash)>] QuestionResource data, response status code and response headers
@@ -747,8 +735,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -770,7 +756,7 @@ module KnetikCloudClient
     end
 
     # Get an answer for a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param id The id of the answer
     # @param [Hash] opts the optional parameters
@@ -781,7 +767,7 @@ module KnetikCloudClient
     end
 
     # Get an answer for a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param id The id of the answer
     # @param [Hash] opts the optional parameters
@@ -808,8 +794,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -831,7 +815,7 @@ module KnetikCloudClient
     end
 
     # List the answers available for a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param [Hash] opts the optional parameters
     # @return [Array<AnswerResource>]
@@ -841,7 +825,7 @@ module KnetikCloudClient
     end
 
     # List the answers available for a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<AnswerResource>, Fixnum, Hash)>] Array<AnswerResource> data, response status code and response headers
@@ -863,8 +847,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -886,7 +868,7 @@ module KnetikCloudClient
     end
 
     # List question deltas in ascending order of updated date
-    # The 'since' parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+    # The 'since' parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :since Timestamp in seconds
     # @return [Array<DeltaResource>]
@@ -896,7 +878,7 @@ module KnetikCloudClient
     end
 
     # List question deltas in ascending order of updated date
-    # The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+    # The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :since Timestamp in seconds
     # @return [Array<(Array<DeltaResource>, Fixnum, Hash)>] Array<DeltaResource> data, response status code and response headers
@@ -915,8 +897,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -938,7 +918,7 @@ module KnetikCloudClient
     end
 
     # List the tags for a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @return [Array<String>]
@@ -948,7 +928,7 @@ module KnetikCloudClient
     end
 
     # List the tags for a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<String>, Fixnum, Hash)>] Array<String> data, response status code and response headers
@@ -970,8 +950,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -993,7 +971,7 @@ module KnetikCloudClient
     end
 
     # Get a single question template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or TRIVIA_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [QuestionTemplateResource]
@@ -1003,7 +981,7 @@ module KnetikCloudClient
     end
 
     # Get a single question template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(QuestionTemplateResource, Fixnum, Hash)>] QuestionTemplateResource data, response status code and response headers
@@ -1025,8 +1003,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1048,7 +1024,7 @@ module KnetikCloudClient
     end
 
     # List and search question templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -1060,7 +1036,7 @@ module KnetikCloudClient
     end
 
     # List and search question templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -1083,8 +1059,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1106,7 +1080,7 @@ module KnetikCloudClient
     end
 
     # List and search questions
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -1126,7 +1100,7 @@ module KnetikCloudClient
     end
 
     # List and search questions
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -1165,8 +1139,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1188,7 +1160,7 @@ module KnetikCloudClient
     end
 
     # Count questions based on filters
-    # This is also provided by the list endpoint so you don't need to call this for pagination purposes
+    # This is also provided by the list endpoint so you don't need to call this for pagination purposes. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
     # @option opts [String] :filter_idset Filter for documents whose id is in the comma separated list provided
@@ -1204,7 +1176,7 @@ module KnetikCloudClient
     end
 
     # Count questions based on filters
-    # This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+    # This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
     # @option opts [String] :filter_idset Filter for documents whose id is in the comma separated list provided
@@ -1235,8 +1207,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1258,7 +1228,7 @@ module KnetikCloudClient
     end
 
     # Start processing an import job
-    # Will process the CSV file and add new questions asynchronously. The status of the job must be 'VALID'.
+    # Will process the CSV file and add new questions asynchronously. The status of the job must be 'VALID'. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the job
     # @param publish_now Whether the new questions should be published live immediately
     # @param [Hash] opts the optional parameters
@@ -1269,7 +1239,7 @@ module KnetikCloudClient
     end
 
     # Start processing an import job
-    # Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+    # Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the job
     # @param publish_now Whether the new questions should be published live immediately
     # @param [Hash] opts the optional parameters
@@ -1320,7 +1290,7 @@ module KnetikCloudClient
     end
 
     # Remove a tag from a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the question
     # @param tag The tag to remove
     # @param [Hash] opts the optional parameters
@@ -1331,7 +1301,7 @@ module KnetikCloudClient
     end
 
     # Remove a tag from a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the question
     # @param tag The tag to remove
     # @param [Hash] opts the optional parameters
@@ -1358,8 +1328,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1380,7 +1348,7 @@ module KnetikCloudClient
     end
 
     # Remove a tag from a batch of questions
-    # ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+    # ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param tag The tag to remove
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
@@ -1398,7 +1366,7 @@ module KnetikCloudClient
     end
 
     # Remove a tag from a batch of questions
-    # ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+    # ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param tag The tag to remove
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
@@ -1436,8 +1404,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1459,7 +1425,7 @@ module KnetikCloudClient
     end
 
     # List and search tags by the beginning of the string
-    # For performance reasons, search & category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+    # For performance reasons, search & category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for tags starting with the given text
     # @option opts [String] :filter_category Filter for tags on questions from a specific category
@@ -1471,7 +1437,7 @@ module KnetikCloudClient
     end
 
     # List and search tags by the beginning of the string
-    # For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+    # For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for tags starting with the given text
     # @option opts [String] :filter_category Filter for tags on questions from a specific category
@@ -1494,8 +1460,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1517,7 +1481,7 @@ module KnetikCloudClient
     end
 
     # Update an import job
-    # Changes should be made before process is started for there to be any effect.
+    # Changes should be made before process is started for there to be any effect. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the job
     # @param [Hash] opts the optional parameters
     # @option opts [ImportJobResource] :request The updated job
@@ -1528,7 +1492,7 @@ module KnetikCloudClient
     end
 
     # Update an import job
-    # Changes should be made before process is started for there to be any effect.
+    # Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the job
     # @param [Hash] opts the optional parameters
     # @option opts [ImportJobResource] :request The updated job
@@ -1574,7 +1538,7 @@ module KnetikCloudClient
     end
 
     # Update a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionResource] :question The updated question
@@ -1585,7 +1549,7 @@ module KnetikCloudClient
     end
 
     # Update a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param id The id of the question
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionResource] :question The updated question
@@ -1631,7 +1595,7 @@ module KnetikCloudClient
     end
 
     # Update an answer for a question
-    # 
+    # <b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param id The id of the answer
     # @param [Hash] opts the optional parameters
@@ -1643,7 +1607,7 @@ module KnetikCloudClient
     end
 
     # Update an answer for a question
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param question_id The id of the question
     # @param id The id of the answer
     # @param [Hash] opts the optional parameters
@@ -1693,7 +1657,7 @@ module KnetikCloudClient
     end
 
     # Update a question template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionTemplateResource] :question_template_resource The question template resource object
@@ -1704,7 +1668,7 @@ module KnetikCloudClient
     end
 
     # Update a question template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionTemplateResource] :question_template_resource The question template resource object
@@ -1750,7 +1714,7 @@ module KnetikCloudClient
     end
 
     # Bulk update questions
-    # Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+    # Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. <br><br><b>Permissions Needed:</b> TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionResource] :question New values for a set of question fields
     # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
@@ -1767,7 +1731,7 @@ module KnetikCloudClient
     end
 
     # Bulk update questions
-    # Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+    # Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [QuestionResource] :question New values for a set of question fields
     # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string

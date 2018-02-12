@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Retrieve invoice counts aggregated by time ranges
-    # 
+    # <b>Permissions Needed:</b> REPORTING_ORDERS_ADMIN
     # @param currency_code The code for a currency to get sales data for
     # @param [Hash] opts the optional parameters
     # @option opts [String] :granularity The time duration to aggregate by (default to day)
@@ -38,7 +38,7 @@ module KnetikCloudClient
     end
 
     # Retrieve invoice counts aggregated by time ranges
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
     # @param currency_code The code for a currency to get sales data for
     # @param [Hash] opts the optional parameters
     # @option opts [String] :granularity The time duration to aggregate by
@@ -77,8 +77,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

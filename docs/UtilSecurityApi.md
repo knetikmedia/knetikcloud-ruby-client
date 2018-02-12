@@ -1,6 +1,6 @@
 # KnetikCloudClient::UtilSecurityApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Returns the authentication log for a user
 
-A log entry is recorded everytime a user requests a new token. Standard pagination available
+A log entry is recorded everytime a user requests a new token. Standard pagination available. <br><br><b>Permissions Needed:</b> SECURITY_ADMIN
 
 ### Example
 ```ruby
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -74,6 +74,8 @@ Name | Type | Description  | Notes
 > TokenDetailsResource get_user_token_details
 
 Returns the authentication token details. Use /users endpoint for detailed user's info
+
+<b>Permissions Needed:</b> SECURITY_ADMIN
 
 ### Example
 ```ruby
@@ -112,7 +114,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

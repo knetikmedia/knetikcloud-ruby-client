@@ -34,7 +34,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for create_challenge
   # Create a challenge
-  # Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+  # Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [ChallengeResource] :challenge_resource The challenge resource object
   # @return [ChallengeResource]
@@ -46,7 +46,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for create_challenge_activity
   # Create a challenge activity
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   # @param challenge_id The challenge id
   # @param [Hash] opts the optional parameters
   # @option opts [ChallengeActivityResource] :challenge_activity_resource The challenge activity resource object
@@ -60,7 +60,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for create_challenge_activity_template
   # Create a challenge activity template
-  # Challenge Activity Templates define a type of challenge activity and the properties they have
+  # Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :challenge_activity_template_resource The challengeActivity template resource object
   # @return [TemplateResource]
@@ -72,7 +72,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for create_challenge_template
   # Create a challenge template
-  # Challenge Templates define a type of challenge and the properties they have
+  # Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :challenge_template_resource The challenge template resource object
   # @return [TemplateResource]
@@ -84,7 +84,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for delete_challenge
   # Delete a challenge
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   # @param id The challenge id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -96,7 +96,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for delete_challenge_activity
   # Delete a challenge activity
-  # A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  # A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   # @param id The challenge_activity id
   # @param challenge_id The challenge id
   # @param [Hash] opts the optional parameters
@@ -109,7 +109,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for delete_challenge_activity_template
   # Delete a challenge activity template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -122,7 +122,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for delete_challenge_event
   # Delete a challenge event
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   # @param id The challenge event id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -134,7 +134,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for delete_challenge_template
   # Delete a challenge template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -147,7 +147,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge
   # Retrieve a challenge
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The challenge id
   # @param [Hash] opts the optional parameters
   # @return [ChallengeResource]
@@ -159,7 +159,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge_activities
   # List and search challenge activities
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param challenge_id The challenge id
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -174,7 +174,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge_activity
   # Get a single challenge activity
-  # A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  # A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The challenge_activity id
   # @param challenge_id The challenge id
   # @param [Hash] opts the optional parameters
@@ -187,7 +187,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge_activity_template
   # Get a single challenge activity template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -199,7 +199,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge_activity_templates
   # List and search challenge activity templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -213,7 +213,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge_event
   # Retrieve a single challenge event details
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The challenge event id
   # @param [Hash] opts the optional parameters
   # @return [ChallengeEventResource]
@@ -225,7 +225,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge_events
   # Retrieve a list of challenge events
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_start_date A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   # @option opts [String] :filter_end_date A comma separated string without spaces.  First value is the operator to search on, second value is the event end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -243,7 +243,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge_template
   # Get a single challenge template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -255,7 +255,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenge_templates
   # List and search challenge templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -269,7 +269,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for get_challenges
   # Retrieve a list of challenges
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :filter_active_campaign Filter for challenges that are tied to active campaigns
   # @option opts [String] :filter_start_date A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -286,7 +286,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for update_challenge
   # Update a challenge
-  # If the challenge is a copy, changes will propagate to all the related challenges
+  # If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   # @param id The challenge id
   # @param [Hash] opts the optional parameters
   # @option opts [ChallengeResource] :challenge_resource The challenge resource object
@@ -299,7 +299,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for update_challenge_activity
   # Update a challenge activity
-  # A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  # A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   # @param id The challenge_activity id
   # @param challenge_id The challenge id
   # @param [Hash] opts the optional parameters
@@ -314,7 +314,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for update_challenge_activity_template
   # Update an challenge activity template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :challenge_activity_template_resource The challengeActivity template resource object
@@ -327,7 +327,7 @@ describe 'CampaignsChallengesApi' do
 
   # unit tests for update_challenge_template
   # Update a challenge template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :challenge_template_resource The challenge template resource object

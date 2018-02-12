@@ -1,6 +1,6 @@
 # KnetikCloudClient::MediaModerationApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > FlagResource add_flag(opts)
 
 Add a flag
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -71,6 +73,8 @@ Name | Type | Description  | Notes
 
 Delete a flag
 
+<b>Permissions Needed:</b> MODERATION_ADMIN or owner
+
 ### Example
 ```ruby
 # load the gem
@@ -118,7 +122,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -127,6 +131,8 @@ nil (empty response body)
 > PageResourceFlagResource get_flags(opts)
 
 Returns a page of flags
+
+<b>Permissions Needed:</b> MODERATION_ADMIN or owner
 
 ### Example
 ```ruby
@@ -180,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -189,6 +195,8 @@ Name | Type | Description  | Notes
 > FlagReportResource get_moderation_report(id)
 
 Get a flag report
+
+<b>Permissions Needed:</b> MODERATION_ADMIN
 
 ### Example
 ```ruby
@@ -233,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -243,7 +251,7 @@ Name | Type | Description  | Notes
 
 Returns a page of flag reports
 
-Context can be either a free-form string or a pre-defined context name
+Context can be either a free-form string or a pre-defined context name. <br><br><b>Permissions Needed:</b> MODERATION_ADMIN
 
 ### Example
 ```ruby
@@ -297,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -307,7 +315,7 @@ Name | Type | Description  | Notes
 
 Update a flag report
 
-Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of 'banned' you will need to pass the reason.
+Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of 'banned' you will need to pass the reason. <br><br><b>Permissions Needed:</b> MODERATION_ADMIN
 
 ### Example
 ```ruby

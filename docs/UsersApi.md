@@ -1,18 +1,20 @@
 # KnetikCloudClient::UsersApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_user_tag**](UsersApi.md#add_user_tag) | **POST** /users/{user_id}/tags | Add a tag to a user
 [**create_user_template**](UsersApi.md#create_user_template) | **POST** /users/templates | Create a user template
 [**delete_user_template**](UsersApi.md#delete_user_template) | **DELETE** /users/templates/{id} | Delete a user template
+[**get_direct_messages1**](UsersApi.md#get_direct_messages1) | **GET** /users/users/{recipient_id}/messages | Get a list of direct messages with this user
 [**get_user**](UsersApi.md#get_user) | **GET** /users/{id} | Get a single user
 [**get_user_tags**](UsersApi.md#get_user_tags) | **GET** /users/{user_id}/tags | List tags for a user
 [**get_user_template**](UsersApi.md#get_user_template) | **GET** /users/templates/{id} | Get a single user template
 [**get_user_templates**](UsersApi.md#get_user_templates) | **GET** /users/templates | List and search user templates
 [**get_users**](UsersApi.md#get_users) | **GET** /users | List and search users
 [**password_reset**](UsersApi.md#password_reset) | **PUT** /users/{id}/password-reset | Choose a new password after a reset
+[**post_user_message**](UsersApi.md#post_user_message) | **POST** /users/{recipient_id}/messages | Send a user message
 [**register_user**](UsersApi.md#register_user) | **POST** /users | Register a new user
 [**remove_user_tag**](UsersApi.md#remove_user_tag) | **DELETE** /users/{user_id}/tags/{tag} | Remove a tag from a user
 [**set_password**](UsersApi.md#set_password) | **PUT** /users/{id}/password | Set a user&#39;s password
@@ -26,6 +28,8 @@ Method | HTTP request | Description
 > add_user_tag(user_id, tag)
 
 Add a tag to a user
+
+<b>Permissions Needed:</b> USERS_ADMIN
 
 ### Example
 ```ruby
@@ -82,7 +86,7 @@ nil (empty response body)
 
 Create a user template
 
-User Templates define a type of user and the properties they have
+User Templates define a type of user and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -138,7 +142,7 @@ Name | Type | Description  | Notes
 
 Delete a user template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -186,7 +190,68 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_direct_messages1**
+> PageResourceChatMessageResource get_direct_messages1(recipient_id, opts)
+
+Get a list of direct messages with this user
+
+<b>Permissions Needed:</b> ANY
+
+### Example
+```ruby
+# load the gem
+require 'knetikcloud_client'
+# setup authorization
+KnetikCloudClient.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: oauth2_password_grant
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = KnetikCloudClient::UsersApi.new
+
+recipient_id = 56 # Integer | The user id
+
+opts = { 
+  size: 25, # Integer | The number of objects returned per page
+  page: 1 # Integer | The number of the page returned, starting with 1
+}
+
+begin
+  #Get a list of direct messages with this user
+  result = api_instance.get_direct_messages1(recipient_id, opts)
+  p result
+rescue KnetikCloudClient::ApiError => e
+  puts "Exception when calling UsersApi->get_direct_messages1: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recipient_id** | **Integer**| The user id | 
+ **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
+
+### Return type
+
+[**PageResourceChatMessageResource**](PageResourceChatMessageResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -196,7 +261,7 @@ nil (empty response body)
 
 Get a single user
 
-Additional private info is included as USERS_ADMIN
+Additional private info is included as USERS_ADMIN. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -241,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -250,6 +315,8 @@ Name | Type | Description  | Notes
 > Array&lt;String&gt; get_user_tags(user_id)
 
 List tags for a user
+
+<b>Permissions Needed:</b> USERS_ADMIN
 
 ### Example
 ```ruby
@@ -294,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -303,6 +370,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_user_template(id)
 
 Get a single user template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or USERS_ADMIN
 
 ### Example
 ```ruby
@@ -347,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -356,6 +425,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_user_templates(opts)
 
 List and search user templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or USERS_ADMIN
 
 ### Example
 ```ruby
@@ -405,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -415,7 +486,7 @@ Name | Type | Description  | Notes
 
 List and search users
 
-Additional private info is included as USERS_ADMIN
+Additional private info is included as USERS_ADMIN. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -489,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -499,7 +570,7 @@ Name | Type | Description  | Notes
 
 Choose a new password after a reset
 
-Finish resetting a user's password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+Finish resetting a user's password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -552,12 +623,61 @@ nil (empty response body)
 
 
 
+# **post_user_message**
+> ChatMessageResource post_user_message(recipient_id, opts)
+
+Send a user message
+
+### Example
+```ruby
+# load the gem
+require 'knetikcloud_client'
+
+api_instance = KnetikCloudClient::UsersApi.new
+
+recipient_id = 56 # Integer | The user id
+
+opts = { 
+  chat_message_request: KnetikCloudClient::ChatMessageRequest.new # ChatMessageRequest | The chat message request
+}
+
+begin
+  #Send a user message
+  result = api_instance.post_user_message(recipient_id, opts)
+  p result
+rescue KnetikCloudClient::ApiError => e
+  puts "Exception when calling UsersApi->post_user_message: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recipient_id** | **Integer**| The user id | 
+ **chat_message_request** | [**ChatMessageRequest**](ChatMessageRequest.md)| The chat message request | [optional] 
+
+### Return type
+
+[**ChatMessageResource**](ChatMessageResource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **register_user**
 > UserResource register_user(opts)
 
 Register a new user
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -613,6 +733,8 @@ Name | Type | Description  | Notes
 
 Remove a tag from a user
 
+<b>Permissions Needed:</b> USERS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -658,7 +780,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -668,7 +790,7 @@ nil (empty response body)
 
 Set a user's password
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> USERS_ADMIN or (USERS_USER and owner)
 
 ### Example
 ```ruby
@@ -726,7 +848,7 @@ nil (empty response body)
 
 Reset a user's password
 
-A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -780,7 +902,7 @@ nil (empty response body)
 
 Reset a user's password without user id
 
-A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -835,7 +957,7 @@ nil (empty response body)
 
 Update a user
 
-Password will not be edited on this endpoint, use password specific endpoints.
+Password will not be edited on this endpoint, use password specific endpoints. <br><br><b>Permissions Needed:</b> USERS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -892,6 +1014,8 @@ nil (empty response body)
 > TemplateResource update_user_template(id, opts)
 
 Update a user template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

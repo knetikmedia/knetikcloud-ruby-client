@@ -34,7 +34,7 @@ describe 'AuthTokensApi' do
 
   # unit tests for delete_tokens
   # Delete tokens by username, client id, or both
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :username The username of the user
   # @option opts [String] :client_id The id of the client
@@ -47,7 +47,7 @@ describe 'AuthTokensApi' do
 
   # unit tests for get_token
   # Get a single token by username and client id
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
   # @param username The username of the user
   # @param client_id The id of the client
   # @param [Hash] opts the optional parameters
@@ -60,7 +60,7 @@ describe 'AuthTokensApi' do
 
   # unit tests for get_tokens
   # List usernames and client ids
-  # Token value not shown
+  # Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_client_id Filters for token whose client id matches provided string
   # @option opts [String] :filter_username Filters for token whose username matches provided string

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Add a user log entry
-    # 
+    # <b>Permissions Needed:</b> owner
     # @param [Hash] opts the optional parameters
     # @option opts [UserActionLog] :log_entry The user log entry to be added
     # @return [nil]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Add a user log entry
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
     # @param [Hash] opts the optional parameters
     # @option opts [UserActionLog] :log_entry The user log entry to be added
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -71,7 +71,7 @@ module KnetikCloudClient
     end
 
     # Get an existing BRE event log entry by id
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_ADMIN
     # @param id The BRE event log entry id
     # @param [Hash] opts the optional parameters
     # @return [BreEventLog]
@@ -81,7 +81,7 @@ module KnetikCloudClient
     end
 
     # Get an existing BRE event log entry by id
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
     # @param id The BRE event log entry id
     # @param [Hash] opts the optional parameters
     # @return [Array<(BreEventLog, Fixnum, Hash)>] BreEventLog data, response status code and response headers
@@ -103,8 +103,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Returns a list of BRE event log entries
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_start_date A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
     # @option opts [String] :filter_event_name Filter event logs by event name
@@ -134,6 +132,7 @@ module KnetikCloudClient
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
     # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:DESC)
+    # @option opts [String] :filter_rule_id Filter event logs by request id
     # @return [PageResourceBreEventLog]
     def get_bre_event_logs(opts = {})
       data, _status_code, _headers = get_bre_event_logs_with_http_info(opts)
@@ -141,7 +140,7 @@ module KnetikCloudClient
     end
 
     # Returns a list of BRE event log entries
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_start_date A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
     # @option opts [String] :filter_event_name Filter event logs by event name
@@ -149,6 +148,7 @@ module KnetikCloudClient
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
     # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+    # @option opts [String] :filter_rule_id Filter event logs by request id
     # @return [Array<(PageResourceBreEventLog, Fixnum, Hash)>] PageResourceBreEventLog data, response status code and response headers
     def get_bre_event_logs_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -165,13 +165,12 @@ module KnetikCloudClient
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
+      query_params[:'filter_rule_id'] = opts[:'filter_rule_id'] if !opts[:'filter_rule_id'].nil?
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -193,7 +192,7 @@ module KnetikCloudClient
     end
 
     # Get an existing forward log entry by id
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_ADMIN
     # @param id The forward log entry id
     # @param [Hash] opts the optional parameters
     # @return [ForwardLog]
@@ -203,7 +202,7 @@ module KnetikCloudClient
     end
 
     # Get an existing forward log entry by id
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
     # @param id The forward log entry id
     # @param [Hash] opts the optional parameters
     # @return [Array<(ForwardLog, Fixnum, Hash)>] ForwardLog data, response status code and response headers
@@ -225,8 +224,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -248,11 +245,12 @@ module KnetikCloudClient
     end
 
     # Returns a list of forward log entries
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_start_date A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
     # @option opts [String] :filter_end_date A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
     # @option opts [Integer] :filter_status_code Filter forward logs by http status code
+    # @option opts [Integer] :filter_url Filter forward logs by URL starting with...
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
     # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:DESC)
@@ -263,11 +261,12 @@ module KnetikCloudClient
     end
 
     # Returns a list of forward log entries
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_start_date A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
     # @option opts [String] :filter_end_date A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
     # @option opts [Integer] :filter_status_code Filter forward logs by http status code
+    # @option opts [Integer] :filter_url Filter forward logs by URL starting with...
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
     # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -284,6 +283,7 @@ module KnetikCloudClient
       query_params[:'filter_start_date'] = opts[:'filter_start_date'] if !opts[:'filter_start_date'].nil?
       query_params[:'filter_end_date'] = opts[:'filter_end_date'] if !opts[:'filter_end_date'].nil?
       query_params[:'filter_status_code'] = opts[:'filter_status_code'] if !opts[:'filter_status_code'].nil?
+      query_params[:'filter_url'] = opts[:'filter_url'] if !opts[:'filter_url'].nil?
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
@@ -292,8 +292,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -315,7 +313,7 @@ module KnetikCloudClient
     end
 
     # Returns a user log entry by id
-    # 
+    # <b>Permissions Needed:</b> LOGS_ADMIN or owner
     # @param id The user log entry id
     # @param [Hash] opts the optional parameters
     # @return [UserActionLog]
@@ -325,7 +323,7 @@ module KnetikCloudClient
     end
 
     # Returns a user log entry by id
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
     # @param id The user log entry id
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserActionLog, Fixnum, Hash)>] UserActionLog data, response status code and response headers
@@ -347,8 +345,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -370,7 +366,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of user logs entries
-    # 
+    # <b>Permissions Needed:</b> LOGS_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_user Filter for actions taken by a specific user by id
     # @option opts [String] :filter_action_name Filter for actions of a specific name
@@ -384,7 +380,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of user logs entries
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_user Filter for actions taken by a specific user by id
     # @option opts [String] :filter_action_name Filter for actions of a specific name
@@ -411,8 +407,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

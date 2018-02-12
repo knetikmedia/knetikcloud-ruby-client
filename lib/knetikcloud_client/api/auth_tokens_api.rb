@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Delete tokens by username, client id, or both
-    # 
+    # <b>Permissions Needed:</b> TOKENS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :username The username of the user
     # @option opts [String] :client_id The id of the client
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Delete tokens by username, client id, or both
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :username The username of the user
     # @option opts [String] :client_id The id of the client
@@ -53,8 +53,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -75,7 +73,7 @@ module KnetikCloudClient
     end
 
     # Get a single token by username and client id
-    # 
+    # <b>Permissions Needed:</b> TOKENS_ADMIN
     # @param username The username of the user
     # @param client_id The id of the client
     # @param [Hash] opts the optional parameters
@@ -86,7 +84,7 @@ module KnetikCloudClient
     end
 
     # Get a single token by username and client id
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
     # @param username The username of the user
     # @param client_id The id of the client
     # @param [Hash] opts the optional parameters
@@ -113,8 +111,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -136,7 +132,7 @@ module KnetikCloudClient
     end
 
     # List usernames and client ids
-    # Token value not shown
+    # Token value not shown. <br><br><b>Permissions Needed:</b> TOKENS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_client_id Filters for token whose client id matches provided string
     # @option opts [String] :filter_username Filters for token whose username matches provided string
@@ -150,7 +146,7 @@ module KnetikCloudClient
     end
 
     # List usernames and client ids
-    # Token value not shown
+    # Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_client_id Filters for token whose client id matches provided string
     # @option opts [String] :filter_username Filters for token whose username matches provided string
@@ -177,8 +173,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

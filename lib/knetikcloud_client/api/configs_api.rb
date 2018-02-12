@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new config
-    # 
+    # <b>Permissions Needed:</b> TOPICS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Config] :config The config object
     # @return [Config]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a new config
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Config] :config The config object
     # @return [Array<(Config, Fixnum, Hash)>] Config data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing config
-    # 
+    # <b>Permissions Needed:</b> CONFIGS_ADMIN
     # @param name The config name
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing config
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
     # @param name The config name
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -104,8 +104,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Get a single config
-    # Only configs that are public readable will be shown without admin access
+    # Only configs that are public readable will be shown without admin access. <br><br><b>Permissions Needed:</b> ANY
     # @param name The config name
     # @param [Hash] opts the optional parameters
     # @return [Config]
@@ -136,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Get a single config
-    # Only configs that are public readable will be shown without admin access
+    # Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param name The config name
     # @param [Hash] opts the optional parameters
     # @return [Array<(Config, Fixnum, Hash)>] Config data, response status code and response headers
@@ -158,8 +156,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -181,12 +177,12 @@ module KnetikCloudClient
     end
 
     # List and search configs
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for configs whose name contains the given string
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned (default to 1)
-    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to 1)
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
     # @return [PageResourceConfig]
     def get_configs(opts = {})
       data, _status_code, _headers = get_configs_with_http_info(opts)
@@ -194,7 +190,7 @@ module KnetikCloudClient
     end
 
     # List and search configs
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_search Filter for configs whose name contains the given string
     # @option opts [Integer] :size The number of objects returned per page
@@ -219,8 +215,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -242,7 +236,7 @@ module KnetikCloudClient
     end
 
     # Update an existing config
-    # 
+    # <b>Permissions Needed:</b> CONFIGS_ADMIN
     # @param name The config name
     # @param [Hash] opts the optional parameters
     # @option opts [Config] :config The config object
@@ -253,7 +247,7 @@ module KnetikCloudClient
     end
 
     # Update an existing config
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
     # @param name The config name
     # @param [Hash] opts the optional parameters
     # @option opts [Config] :config The config object

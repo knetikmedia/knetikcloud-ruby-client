@@ -34,7 +34,7 @@ describe 'BRERuleEngineGlobalsApi' do
 
   # unit tests for create_bre_global
   # Create a global definition
-  # Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+  # Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [BreGlobalResource] :bre_global_resource The BRE global resource object
   # @return [BreGlobalResource]
@@ -46,7 +46,7 @@ describe 'BRERuleEngineGlobalsApi' do
 
   # unit tests for delete_bre_global
   # Delete a global
-  # May fail if there are existing rules against it. Cannot delete core globals
+  # May fail if there are existing rules against it. Cannot delete core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
   # @param id The id of the global definition
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'BRERuleEngineGlobalsApi' do
 
   # unit tests for get_bre_global
   # Get a single global definition
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
   # @param id The id of the global definition
   # @param [Hash] opts the optional parameters
   # @return [BreGlobalResource]
@@ -70,7 +70,7 @@ describe 'BRERuleEngineGlobalsApi' do
 
   # unit tests for get_bre_globals
   # List global definitions
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :filter_system Filter for globals that are system globals when true, or not when false. Leave off for both mixed
   # @option opts [Integer] :size The number of objects returned per page
@@ -84,7 +84,7 @@ describe 'BRERuleEngineGlobalsApi' do
 
   # unit tests for update_bre_global
   # Update a global definition
-  # May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+  # May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
   # @param id The id of the global definition
   # @param [Hash] opts the optional parameters
   # @option opts [BreGlobalResource] :bre_global_resource The BRE global resource object

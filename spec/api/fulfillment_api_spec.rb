@@ -34,7 +34,7 @@ describe 'FulfillmentApi' do
 
   # unit tests for create_fulfillment_type
   # Create a fulfillment type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [FulfillmentType] :type The fulfillment type
   # @return [FulfillmentType]
@@ -46,7 +46,7 @@ describe 'FulfillmentApi' do
 
   # unit tests for delete_fulfillment_type
   # Delete a fulfillment type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   # @param id The id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'FulfillmentApi' do
 
   # unit tests for get_fulfillment_type
   # Get a single fulfillment type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id
   # @param [Hash] opts the optional parameters
   # @return [FulfillmentType]
@@ -70,7 +70,7 @@ describe 'FulfillmentApi' do
 
   # unit tests for get_fulfillment_types
   # List and search fulfillment types
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -84,7 +84,7 @@ describe 'FulfillmentApi' do
 
   # unit tests for update_fulfillment_type
   # Update a fulfillment type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   # @param id The id
   # @param [Hash] opts the optional parameters
   # @option opts [FulfillmentType] :fulfillment_type The fulfillment type

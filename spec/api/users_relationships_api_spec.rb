@@ -34,7 +34,7 @@ describe 'UsersRelationshipsApi' do
 
   # unit tests for create_user_relationship
   # Create a user relationship
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [UserRelationshipResource] :relationship The new relationship
   # @return [UserRelationshipResource]
@@ -46,7 +46,7 @@ describe 'UsersRelationshipsApi' do
 
   # unit tests for delete_user_relationship
   # Delete a user relationship
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   # @param id The id of the relationship
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'UsersRelationshipsApi' do
 
   # unit tests for get_user_relationship
   # Get a user relationship
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
   # @param id The id of the relationship
   # @param [Hash] opts the optional parameters
   # @return [UserRelationshipResource]
@@ -70,7 +70,7 @@ describe 'UsersRelationshipsApi' do
 
   # unit tests for get_user_relationships
   # Get a list of user relationships
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned
@@ -84,7 +84,7 @@ describe 'UsersRelationshipsApi' do
 
   # unit tests for update_user_relationship
   # Update a user relationship
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   # @param id The id of the relationship
   # @param [Hash] opts the optional parameters
   # @option opts [UserRelationshipResource] :relationship The new relationship

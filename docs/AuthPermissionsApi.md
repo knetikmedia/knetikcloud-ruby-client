@@ -1,6 +1,6 @@
 # KnetikCloudClient::AuthPermissionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > PermissionResource create_permission(opts)
 
 Create a new permission
+
+<b>Permissions Needed:</b> PERMISSIONS_ADMIN
 
 ### Example
 ```ruby
@@ -70,6 +72,8 @@ Name | Type | Description  | Notes
 
 Delete a permission
 
+<b>Permissions Needed:</b> PERMISSIONS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -116,7 +120,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -125,6 +129,8 @@ nil (empty response body)
 > PermissionResource get_permission(permission)
 
 Get a single permission
+
+<b>Permissions Needed:</b> PERMISSIONS_ADMIN
 
 ### Example
 ```ruby
@@ -169,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -178,6 +184,8 @@ Name | Type | Description  | Notes
 > PageResourcePermissionResource get_permissions(opts)
 
 List and search permissions
+
+<b>Permissions Needed:</b> PERMISSIONS_ADMIN
 
 ### Example
 ```ruby
@@ -227,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -236,6 +244,8 @@ Name | Type | Description  | Notes
 > PermissionResource update_permission(permission, opts)
 
 Update a permission
+
+<b>Permissions Needed:</b> PERMISSIONS_ADMIN
 
 ### Example
 ```ruby

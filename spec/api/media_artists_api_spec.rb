@@ -34,7 +34,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for add_artist
   # Adds a new artist in the system
-  # Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+  # Adds a new artist in the system. Use specific media contributions endpoint to add contributions. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [ArtistResource] :artist_resource The new artist
   # @return [ArtistResource]
@@ -46,7 +46,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for create_artist_template
   # Create an artist template
-  # Artist Templates define a type of artist and the properties they have
+  # Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :artist_template_resource The artist template resource object
   # @return [TemplateResource]
@@ -58,7 +58,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for delete_artist
   # Removes an artist from the system IF no resources are attached to it
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
   # @param id The artist id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -70,7 +70,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for delete_artist_template
   # Delete an artist template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -83,7 +83,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for get_artist
   # Loads a specific artist details
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The artist id
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :show_contributions The number of contributions to show fetch
@@ -96,7 +96,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for get_artist_template
   # Get a single artist template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -108,7 +108,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for get_artist_templates
   # List and search artist templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -122,7 +122,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for get_artists
   # Search for artists
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_artists_by_name Filter for artists which name *STARTS* with the given string
   # @option opts [Integer] :size The number of objects returned per page
@@ -137,7 +137,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for update_artist
   # Modifies an artist details
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
   # @param id The artist id
   # @param [Hash] opts the optional parameters
   # @option opts [ArtistResource] :artist_resource The new artist
@@ -150,7 +150,7 @@ describe 'MediaArtistsApi' do
 
   # unit tests for update_artist_template
   # Update an artist template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :artist_template_resource The artist template resource object

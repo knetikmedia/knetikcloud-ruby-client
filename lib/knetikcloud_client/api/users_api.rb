@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Add a tag to a user
-    # 
+    # <b>Permissions Needed:</b> USERS_ADMIN
     # @param user_id The id of the user
     # @param tag tag
     # @param [Hash] opts the optional parameters
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Add a tag to a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
     # @param user_id The id of the user
     # @param tag tag
     # @param [Hash] opts the optional parameters
@@ -81,7 +81,7 @@ module KnetikCloudClient
     end
 
     # Create a user template
-    # User Templates define a type of user and the properties they have
+    # User Templates define a type of user and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :user_template_resource The user template resource object
     # @return [TemplateResource]
@@ -91,7 +91,7 @@ module KnetikCloudClient
     end
 
     # Create a user template
-    # User Templates define a type of user and the properties they have
+    # User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :user_template_resource The user template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -132,7 +132,7 @@ module KnetikCloudClient
     end
 
     # Delete a user template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -143,7 +143,7 @@ module KnetikCloudClient
     end
 
     # Delete a user template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -167,8 +167,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -188,8 +186,67 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
+    # Get a list of direct messages with this user
+    # <b>Permissions Needed:</b> ANY
+    # @param recipient_id The user id
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :size The number of objects returned per page (default to 25)
+    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
+    # @return [PageResourceChatMessageResource]
+    def get_direct_messages1(recipient_id, opts = {})
+      data, _status_code, _headers = get_direct_messages1_with_http_info(recipient_id, opts)
+      return data
+    end
+
+    # Get a list of direct messages with this user
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+    # @param recipient_id The user id
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :size The number of objects returned per page
+    # @option opts [Integer] :page The number of the page returned, starting with 1
+    # @return [Array<(PageResourceChatMessageResource, Fixnum, Hash)>] PageResourceChatMessageResource data, response status code and response headers
+    def get_direct_messages1_with_http_info(recipient_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersApi.get_direct_messages1 ..."
+      end
+      # verify the required parameter 'recipient_id' is set
+      if @api_client.config.client_side_validation && recipient_id.nil?
+        fail ArgumentError, "Missing the required parameter 'recipient_id' when calling UsersApi.get_direct_messages1"
+      end
+      # resource path
+      local_var_path = "/users/users/{recipient_id}/messages".sub('{' + 'recipient_id' + '}', recipient_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PageResourceChatMessageResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersApi#get_direct_messages1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get a single user
-    # Additional private info is included as USERS_ADMIN
+    # Additional private info is included as USERS_ADMIN. <br><br><b>Permissions Needed:</b> ANY
     # @param id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @return [UserResource]
@@ -199,7 +256,7 @@ module KnetikCloudClient
     end
 
     # Get a single user
-    # Additional private info is included as USERS_ADMIN
+    # Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserResource, Fixnum, Hash)>] UserResource data, response status code and response headers
@@ -221,8 +278,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -244,7 +299,7 @@ module KnetikCloudClient
     end
 
     # List tags for a user
-    # 
+    # <b>Permissions Needed:</b> USERS_ADMIN
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
     # @return [Array<String>]
@@ -254,7 +309,7 @@ module KnetikCloudClient
     end
 
     # List tags for a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<String>, Fixnum, Hash)>] Array<String> data, response status code and response headers
@@ -276,8 +331,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -299,7 +352,7 @@ module KnetikCloudClient
     end
 
     # Get a single user template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or USERS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -309,7 +362,7 @@ module KnetikCloudClient
     end
 
     # Get a single user template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -331,8 +384,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -354,7 +405,7 @@ module KnetikCloudClient
     end
 
     # List and search user templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or USERS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -366,7 +417,7 @@ module KnetikCloudClient
     end
 
     # List and search user templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -389,8 +440,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -412,7 +461,7 @@ module KnetikCloudClient
     end
 
     # List and search users
-    # Additional private info is included as USERS_ADMIN
+    # Additional private info is included as USERS_ADMIN. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_displayname Filter for users whose display name starts with provided string.
     # @option opts [String] :filter_email Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
@@ -436,7 +485,7 @@ module KnetikCloudClient
     end
 
     # List and search users
-    # Additional private info is included as USERS_ADMIN
+    # Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_displayname Filter for users whose display name starts with provided string.
     # @option opts [String] :filter_email Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
@@ -483,8 +532,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -506,7 +553,7 @@ module KnetikCloudClient
     end
 
     # Choose a new password after a reset
-    # Finish resetting a user's password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+    # Finish resetting a user's password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> ANY
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [NewPasswordRequest] :new_password_request The new password request object
@@ -517,7 +564,7 @@ module KnetikCloudClient
     end
 
     # Choose a new password after a reset
-    # Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+    # Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [NewPasswordRequest] :new_password_request The new password request object
@@ -561,8 +608,65 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
+    # Send a user message
+    # 
+    # @param recipient_id The user id
+    # @param [Hash] opts the optional parameters
+    # @option opts [ChatMessageRequest] :chat_message_request The chat message request
+    # @return [ChatMessageResource]
+    def post_user_message(recipient_id, opts = {})
+      data, _status_code, _headers = post_user_message_with_http_info(recipient_id, opts)
+      return data
+    end
+
+    # Send a user message
+    # 
+    # @param recipient_id The user id
+    # @param [Hash] opts the optional parameters
+    # @option opts [ChatMessageRequest] :chat_message_request The chat message request
+    # @return [Array<(ChatMessageResource, Fixnum, Hash)>] ChatMessageResource data, response status code and response headers
+    def post_user_message_with_http_info(recipient_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersApi.post_user_message ..."
+      end
+      # verify the required parameter 'recipient_id' is set
+      if @api_client.config.client_side_validation && recipient_id.nil?
+        fail ArgumentError, "Missing the required parameter 'recipient_id' when calling UsersApi.post_user_message"
+      end
+      # resource path
+      local_var_path = "/users/{recipient_id}/messages".sub('{' + 'recipient_id' + '}', recipient_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'chat_message_request'])
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ChatMessageResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersApi#post_user_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Register a new user
-    # Password should be in plain text and will be encrypted on receipt. Use SSL for security
+    # Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [UserResource] :user_resource The user resource object
     # @return [UserResource]
@@ -572,7 +676,7 @@ module KnetikCloudClient
     end
 
     # Register a new user
-    # Password should be in plain text and will be encrypted on receipt. Use SSL for security
+    # Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [UserResource] :user_resource The user resource object
     # @return [Array<(UserResource, Fixnum, Hash)>] UserResource data, response status code and response headers
@@ -613,7 +717,7 @@ module KnetikCloudClient
     end
 
     # Remove a tag from a user
-    # 
+    # <b>Permissions Needed:</b> USERS_ADMIN
     # @param user_id The id of the user
     # @param tag The tag to remove
     # @param [Hash] opts the optional parameters
@@ -624,7 +728,7 @@ module KnetikCloudClient
     end
 
     # Remove a tag from a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
     # @param user_id The id of the user
     # @param tag The tag to remove
     # @param [Hash] opts the optional parameters
@@ -651,8 +755,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -673,7 +775,7 @@ module KnetikCloudClient
     end
 
     # Set a user's password
-    # Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+    # Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> USERS_ADMIN or (USERS_USER and owner)
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :password The new plain text password
@@ -684,7 +786,7 @@ module KnetikCloudClient
     end
 
     # Set a user&#39;s password
-    # Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+    # Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :password The new plain text password
@@ -729,7 +831,7 @@ module KnetikCloudClient
     end
 
     # Reset a user's password
-    # A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+    # A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. <br><br><b>Permissions Needed:</b> ANY
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -739,7 +841,7 @@ module KnetikCloudClient
     end
 
     # Reset a user&#39;s password
-    # A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+    # A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the user
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -783,7 +885,7 @@ module KnetikCloudClient
     end
 
     # Reset a user's password without user id
-    # A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+    # A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [PasswordResetRequest] :password_reset An object containing one of three methods to look up a user
     # @return [nil]
@@ -793,7 +895,7 @@ module KnetikCloudClient
     end
 
     # Reset a user&#39;s password without user id
-    # A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+    # A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [PasswordResetRequest] :password_reset An object containing one of three methods to look up a user
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -833,7 +935,7 @@ module KnetikCloudClient
     end
 
     # Update a user
-    # Password will not be edited on this endpoint, use password specific endpoints.
+    # Password will not be edited on this endpoint, use password specific endpoints. <br><br><b>Permissions Needed:</b> USERS_ADMIN or owner
     # @param id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [UserResource] :user_resource The user resource object
@@ -844,7 +946,7 @@ module KnetikCloudClient
     end
 
     # Update a user
-    # Password will not be edited on this endpoint, use password specific endpoints.
+    # Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
     # @param id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [UserResource] :user_resource The user resource object
@@ -889,7 +991,7 @@ module KnetikCloudClient
     end
 
     # Update a user template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :user_template_resource The user template resource object
@@ -900,7 +1002,7 @@ module KnetikCloudClient
     end
 
     # Update a user template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :user_template_resource The user template resource object

@@ -1,6 +1,6 @@
 # KnetikCloudClient::StoreSubscriptionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > SubscriptionResource create_subscription(opts)
 
 Creates a subscription item and associated plans
+
+<b>Permissions Needed:</b> SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```ruby
@@ -76,7 +78,7 @@ Name | Type | Description  | Notes
 
 Create a subscription template
 
-Subscription Templates define a type of subscription and the properties they have.
+Subscription Templates define a type of subscription and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -132,7 +134,7 @@ Name | Type | Description  | Notes
 
 Delete a subscription plan
 
-Must not be locked or a migration target
+Must not be locked or a migration target. <br><br><b>Permissions Needed:</b> SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```ruby
@@ -179,7 +181,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -188,6 +190,8 @@ nil (empty response body)
 > delete_subscription_template(id, opts)
 
 Delete a subscription template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -235,7 +239,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -244,6 +248,8 @@ nil (empty response body)
 > SubscriptionResource get_subscription(id)
 
 Retrieve a single subscription item and associated plans
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -288,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -298,7 +304,7 @@ Name | Type | Description  | Notes
 
 Get a single subscription template
 
-Subscription Templates define a type of subscription and the properties they have.
+Subscription Templates define a type of subscription and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -343,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -352,6 +358,8 @@ Name | Type | Description  | Notes
 > PageResourceSubscriptionTemplateResource get_subscription_templates(opts)
 
 List and search subscription templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```ruby
@@ -401,7 +409,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -410,6 +418,8 @@ Name | Type | Description  | Notes
 > PageResourceSubscriptionResource get_subscriptions(opts)
 
 List available subscription items and associated plans
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -459,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -468,6 +478,8 @@ Name | Type | Description  | Notes
 > process_subscriptions
 
 Processes subscriptions and charge dues
+
+<b>Permissions Needed:</b> SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```ruby
@@ -515,7 +527,7 @@ nil (empty response body)
 
 Updates a subscription item and associated plans
 
-Will not remove plans left out
+Will not remove plans left out. <br><br><b>Permissions Needed:</b> SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```ruby
@@ -572,6 +584,8 @@ nil (empty response body)
 > SubscriptionTemplateResource update_subscription_template(id, opts)
 
 Update a subscription template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

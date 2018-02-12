@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Delete maintenance info
-    # 
+    # <b>Permissions Needed:</b> MAINTENANCE_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete_maintenance(opts = {})
@@ -30,7 +30,7 @@ module KnetikCloudClient
     end
 
     # Delete maintenance info
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_maintenance_with_http_info(opts = {})
@@ -47,8 +47,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -69,7 +67,7 @@ module KnetikCloudClient
     end
 
     # Get current maintenance info
-    # Get current maintenance info. 404 if no maintenance.
+    # Get current maintenance info. 404 if no maintenance. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [Maintenance]
     def get_maintenance(opts = {})
@@ -78,7 +76,7 @@ module KnetikCloudClient
     end
 
     # Get current maintenance info
-    # Get current maintenance info. 404 if no maintenance.
+    # Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(Maintenance, Fixnum, Hash)>] Maintenance data, response status code and response headers
     def get_maintenance_with_http_info(opts = {})
@@ -95,8 +93,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -118,7 +114,7 @@ module KnetikCloudClient
     end
 
     # Set current maintenance info
-    # 
+    # <b>Permissions Needed:</b> MAINTENANCE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Maintenance] :maintenance The maintenance object
     # @return [nil]
@@ -128,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Set current maintenance info
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Maintenance] :maintenance The maintenance object
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -168,7 +164,7 @@ module KnetikCloudClient
     end
 
     # Update current maintenance info
-    # 
+    # <b>Permissions Needed:</b> MAINTENANCE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Maintenance] :maintenance The maintenance object
     # @return [nil]
@@ -178,7 +174,7 @@ module KnetikCloudClient
     end
 
     # Update current maintenance info
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Maintenance] :maintenance The maintenance object
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers

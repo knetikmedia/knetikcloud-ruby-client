@@ -34,7 +34,7 @@ describe 'PaymentsPayPalClassicApi' do
 
   # unit tests for create_pay_pal_billing_agreement_url
   # Create a PayPal Classic billing agreement for the user
-  # Returns the token that should be used to forward the user to PayPal so they can accept the agreement.
+  # Returns the token that should be used to forward the user to PayPal so they can accept the agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [CreateBillingAgreementRequest] :request The request to create a PayPal billing agreement
   # @return [String]
@@ -46,7 +46,7 @@ describe 'PaymentsPayPalClassicApi' do
 
   # unit tests for create_pay_pal_express_checkout
   # Create a payment token for PayPal express checkout
-  # Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
+  # Returns the token that should be used to forward the user to PayPal so they can complete the checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [CreatePayPalPaymentRequest] :request The request to create a PayPal payment token
   # @return [String]
@@ -58,7 +58,7 @@ describe 'PaymentsPayPalClassicApi' do
 
   # unit tests for finalize_pay_pal_billing_agreement
   # Finalizes a billing agreement after the user has accepted through PayPal
-  # Returns the ID of the new payment method created for the user for the billing agreement.
+  # Returns the ID of the new payment method created for the user for the billing agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [FinalizeBillingAgreementRequest] :request The request to finalize a PayPal billing agreement
   # @return [Integer]
@@ -70,7 +70,7 @@ describe 'PaymentsPayPalClassicApi' do
 
   # unit tests for finalize_pay_pal_checkout
   # Finalizes a payment after the user has completed checkout with PayPal
-  # The invoice will be marked paid/failed by asynchronous IPN callback.
+  # The invoice will be marked paid/failed by asynchronous IPN callback. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [FinalizePayPalPaymentRequest] :request The request to finalize the payment
   # @return [nil]

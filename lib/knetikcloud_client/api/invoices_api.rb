@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create an invoice
-    # Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
+    # Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor. <br><br><b>Permissions Needed:</b> INVOICES_USER or INVOICES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [InvoiceCreateRequest] :req Invoice to be created
     # @return [Array<InvoiceResource>]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create an invoice
-    # Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
+    # Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER or INVOICES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [InvoiceCreateRequest] :req Invoice to be created
     # @return [Array<(Array<InvoiceResource>, Fixnum, Hash)>] Array<InvoiceResource> data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Lists available fulfillment statuses
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<String>]
     def get_ful_fillment_statuses(opts = {})
@@ -81,7 +81,7 @@ module KnetikCloudClient
     end
 
     # Lists available fulfillment statuses
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<String>, Fixnum, Hash)>] Array<String> data, response status code and response headers
     def get_ful_fillment_statuses_with_http_info(opts = {})
@@ -98,8 +98,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -121,7 +119,7 @@ module KnetikCloudClient
     end
 
     # Retrieve an invoice
-    # 
+    # <b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @return [InvoiceResource]
@@ -131,7 +129,7 @@ module KnetikCloudClient
     end
 
     # Retrieve an invoice
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @return [Array<(InvoiceResource, Fixnum, Hash)>] InvoiceResource data, response status code and response headers
@@ -153,8 +151,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -176,7 +172,7 @@ module KnetikCloudClient
     end
 
     # List invoice logs
-    # 
+    # <b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -188,7 +184,7 @@ module KnetikCloudClient
     end
 
     # List invoice logs
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -214,8 +210,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -237,7 +231,7 @@ module KnetikCloudClient
     end
 
     # Retrieve invoices
-    # Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user's invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
+    # Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user's invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices. <br><br><b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_user The id of a user to get invoices for. Automtically added if not being called with admin permissions.
     # @option opts [String] :filter_email Filters invoices by customer&#39;s email. Admins only.
@@ -255,7 +249,7 @@ module KnetikCloudClient
     # @option opts [String] :filter_sku Filters invoices by item sku
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
-    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to 1)
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
     # @return [PageResourceInvoiceResource]
     def get_invoices(opts = {})
       data, _status_code, _headers = get_invoices_with_http_info(opts)
@@ -263,7 +257,7 @@ module KnetikCloudClient
     end
 
     # Retrieve invoices
-    # Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
+    # Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_user The id of a user to get invoices for. Automtically added if not being called with admin permissions.
     # @option opts [String] :filter_email Filters invoices by customer&#39;s email. Admins only.
@@ -314,8 +308,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -337,7 +329,7 @@ module KnetikCloudClient
     end
 
     # Lists available payment statuses
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<String>]
     def get_payment_statuses(opts = {})
@@ -346,7 +338,7 @@ module KnetikCloudClient
     end
 
     # Lists available payment statuses
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<String>, Fixnum, Hash)>] Array<String> data, response status code and response headers
     def get_payment_statuses_with_http_info(opts = {})
@@ -363,8 +355,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -386,7 +376,7 @@ module KnetikCloudClient
     end
 
     # Pay an invoice using a saved payment method
-    # 
+    # <b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [PayBySavedMethodRequest] :request The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.
@@ -397,7 +387,7 @@ module KnetikCloudClient
     end
 
     # Pay an invoice using a saved payment method
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [PayBySavedMethodRequest] :request The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.
@@ -442,7 +432,7 @@ module KnetikCloudClient
     end
 
     # Set the fulfillment status of a bundled invoice item
-    # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+    # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. <br><br><b>Permissions Needed:</b> INVOICES_ADMIN
     # @param id The id of the invoice
     # @param bundle_sku The sku of the bundle in the invoice that contains the given target
     # @param sku The sku of an item in the bundle in the invoice
@@ -455,7 +445,7 @@ module KnetikCloudClient
     end
 
     # Set the fulfillment status of a bundled invoice item
-    # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+    # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
     # @param id The id of the invoice
     # @param bundle_sku The sku of the bundle in the invoice that contains the given target
     # @param sku The sku of an item in the bundle in the invoice
@@ -514,7 +504,7 @@ module KnetikCloudClient
     end
 
     # Set the external reference of an invoice
-    # 
+    # <b>Permissions Needed:</b> INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :external_ref External reference info
@@ -525,7 +515,7 @@ module KnetikCloudClient
     end
 
     # Set the external reference of an invoice
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :external_ref External reference info
@@ -570,7 +560,7 @@ module KnetikCloudClient
     end
 
     # Set the fulfillment status of an invoice item
-    # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+    # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. <br><br><b>Permissions Needed:</b> INVOICES_ADMIN
     # @param id The id of the invoice
     # @param sku The sku of an item in the invoice
     # @param status The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;
@@ -582,7 +572,7 @@ module KnetikCloudClient
     end
 
     # Set the fulfillment status of an invoice item
-    # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+    # This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
     # @param id The id of the invoice
     # @param sku The sku of an item in the invoice
     # @param status The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;
@@ -636,7 +626,7 @@ module KnetikCloudClient
     end
 
     # Set the order notes of an invoice
-    # 
+    # <b>Permissions Needed:</b> INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :order_notes Payment status info
@@ -647,7 +637,7 @@ module KnetikCloudClient
     end
 
     # Set the order notes of an invoice
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :order_notes Payment status info
@@ -692,7 +682,7 @@ module KnetikCloudClient
     end
 
     # Set the payment status of an invoice
-    # This may trigger fulfillment if setting the status to 'paid'. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
+    # This may trigger fulfillment if setting the status to 'paid'. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which. <br><br><b>Permissions Needed:</b> INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [InvoicePaymentStatusRequest] :request Payment status info
@@ -703,7 +693,7 @@ module KnetikCloudClient
     end
 
     # Set the payment status of an invoice
-    # This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
+    # This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [InvoicePaymentStatusRequest] :request Payment status info
@@ -748,7 +738,7 @@ module KnetikCloudClient
     end
 
     # Set or update billing info
-    # 
+    # <b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [AddressResource] :billing_info_request Address info
@@ -759,7 +749,7 @@ module KnetikCloudClient
     end
 
     # Set or update billing info
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
     # @param id The id of the invoice
     # @param [Hash] opts the optional parameters
     # @option opts [AddressResource] :billing_info_request Address info

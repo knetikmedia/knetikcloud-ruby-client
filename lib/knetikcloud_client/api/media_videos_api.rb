@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Adds a user to a video's whitelist
-    # Whitelisted users can view video regardless of privacy setting.
+    # Whitelisted users can view video regardless of privacy setting. <br><br><b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [IntWrapper] :user_id The user id
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Adds a user to a video&#39;s whitelist
-    # Whitelisted users can view video regardless of privacy setting.
+    # Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [IntWrapper] :user_id The user id
@@ -77,7 +77,7 @@ module KnetikCloudClient
     end
 
     # Adds a new video in the system
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [VideoResource] :video_resource The video object
     # @return [VideoResource]
@@ -87,7 +87,7 @@ module KnetikCloudClient
     end
 
     # Adds a new video in the system
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [VideoResource] :video_resource The video object
     # @return [Array<(VideoResource, Fixnum, Hash)>] VideoResource data, response status code and response headers
@@ -128,7 +128,7 @@ module KnetikCloudClient
     end
 
     # Add a new video comment
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id 
     # @param [Hash] opts the optional parameters
     # @option opts [CommentResource] :comment_resource The comment object
@@ -139,7 +139,7 @@ module KnetikCloudClient
     end
 
     # Add a new video comment
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id 
     # @param [Hash] opts the optional parameters
     # @option opts [CommentResource] :comment_resource The comment object
@@ -185,7 +185,7 @@ module KnetikCloudClient
     end
 
     # Adds a contributor to a video
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [ContributionResource] :contribution_resource The contribution object
@@ -196,7 +196,7 @@ module KnetikCloudClient
     end
 
     # Adds a contributor to a video
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [ContributionResource] :contribution_resource The contribution object
@@ -241,7 +241,7 @@ module KnetikCloudClient
     end
 
     # Add a new flag
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :reason The flag reason
@@ -252,7 +252,7 @@ module KnetikCloudClient
     end
 
     # Add a new flag
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :reason The flag reason
@@ -298,7 +298,7 @@ module KnetikCloudClient
     end
 
     # Adds one or more existing videos as related to this one
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [VideoRelationshipResource] :video_relationship_resource The video relationship object 
@@ -309,7 +309,7 @@ module KnetikCloudClient
     end
 
     # Adds one or more existing videos as related to this one
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [VideoRelationshipResource] :video_relationship_resource The video relationship object 
@@ -355,7 +355,7 @@ module KnetikCloudClient
     end
 
     # Create a video disposition
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [DispositionResource] :disposition_resource The disposition object
@@ -366,7 +366,7 @@ module KnetikCloudClient
     end
 
     # Create a video disposition
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [DispositionResource] :disposition_resource The disposition object
@@ -412,7 +412,7 @@ module KnetikCloudClient
     end
 
     # Create a video template
-    # Video Templates define a type of video and the properties they have
+    # Video Templates define a type of video and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :video_template_resource The video template resource object
     # @return [TemplateResource]
@@ -422,7 +422,7 @@ module KnetikCloudClient
     end
 
     # Create a video template
-    # Video Templates define a type of video and the properties they have
+    # Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :video_template_resource The video template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -463,7 +463,7 @@ module KnetikCloudClient
     end
 
     # Deletes a video from the system if no resources are attached to it
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -473,7 +473,7 @@ module KnetikCloudClient
     end
 
     # Deletes a video from the system if no resources are attached to it
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -495,8 +495,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -517,7 +515,7 @@ module KnetikCloudClient
     end
 
     # Delete a video comment
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The comment id
     # @param [Hash] opts the optional parameters
@@ -528,7 +526,7 @@ module KnetikCloudClient
     end
 
     # Delete a video comment
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The comment id
     # @param [Hash] opts the optional parameters
@@ -555,8 +553,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -577,7 +573,7 @@ module KnetikCloudClient
     end
 
     # Delete a video disposition
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param disposition_id The disposition id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -587,7 +583,7 @@ module KnetikCloudClient
     end
 
     # Delete a video disposition
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param disposition_id The disposition id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -609,8 +605,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -631,7 +625,7 @@ module KnetikCloudClient
     end
 
     # Delete a flag
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -641,7 +635,7 @@ module KnetikCloudClient
     end
 
     # Delete a flag
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -663,8 +657,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -685,7 +677,7 @@ module KnetikCloudClient
     end
 
     # Delete a video's relationship
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The relationship id
     # @param [Hash] opts the optional parameters
@@ -696,7 +688,7 @@ module KnetikCloudClient
     end
 
     # Delete a video&#39;s relationship
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The relationship id
     # @param [Hash] opts the optional parameters
@@ -723,8 +715,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -745,7 +735,7 @@ module KnetikCloudClient
     end
 
     # Delete a video template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -756,7 +746,7 @@ module KnetikCloudClient
     end
 
     # Delete a video template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -780,8 +770,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -802,7 +790,7 @@ module KnetikCloudClient
     end
 
     # Get user videos
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param user_id The user id
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :exclude_flagged Skip videos that have been flagged by the current user (default to true)
@@ -815,7 +803,7 @@ module KnetikCloudClient
     end
 
     # Get user videos
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param user_id The user id
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :exclude_flagged Skip videos that have been flagged by the current user
@@ -843,8 +831,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -866,7 +852,7 @@ module KnetikCloudClient
     end
 
     # Loads a specific video details
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @return [VideoResource]
@@ -876,7 +862,7 @@ module KnetikCloudClient
     end
 
     # Loads a specific video details
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @return [Array<(VideoResource, Fixnum, Hash)>] VideoResource data, response status code and response headers
@@ -898,8 +884,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -921,7 +905,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of comments for a video
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -933,7 +917,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of comments for a video
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -959,8 +943,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -982,7 +964,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of dispositions for a video
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -994,7 +976,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of dispositions for a video
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -1020,8 +1002,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1043,7 +1023,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of video relationships
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -1055,7 +1035,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of video relationships
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param video_id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -1081,8 +1061,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1104,7 +1082,7 @@ module KnetikCloudClient
     end
 
     # Get a single video template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or VIDEOS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -1114,7 +1092,7 @@ module KnetikCloudClient
     end
 
     # Get a single video template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -1136,8 +1114,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1159,7 +1135,7 @@ module KnetikCloudClient
     end
 
     # List and search video templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or VIDEOS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -1171,7 +1147,7 @@ module KnetikCloudClient
     end
 
     # List and search video templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -1194,8 +1170,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1217,7 +1191,7 @@ module KnetikCloudClient
     end
 
     # Search videos using the documented filters
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :exclude_flagged Skip videos that have been flagged by the current user (default to true)
     # @option opts [Integer] :filter_videos_by_uploader Filter for videos by uploader id
@@ -1241,7 +1215,7 @@ module KnetikCloudClient
     end
 
     # Search videos using the documented filters
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :exclude_flagged Skip videos that have been flagged by the current user
     # @option opts [Integer] :filter_videos_by_uploader Filter for videos by uploader id
@@ -1288,8 +1262,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1311,7 +1283,7 @@ module KnetikCloudClient
     end
 
     # Removes a user from a video's whitelist
-    # Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+    # Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. <br><br><b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The user id
     # @param [Hash] opts the optional parameters
@@ -1322,7 +1294,7 @@ module KnetikCloudClient
     end
 
     # Removes a user from a video&#39;s whitelist
-    # Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+    # Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The user id
     # @param [Hash] opts the optional parameters
@@ -1349,8 +1321,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1371,7 +1341,7 @@ module KnetikCloudClient
     end
 
     # Removes a contributor from a video
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The contributor id
     # @param [Hash] opts the optional parameters
@@ -1382,7 +1352,7 @@ module KnetikCloudClient
     end
 
     # Removes a contributor from a video
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The contributor id
     # @param [Hash] opts the optional parameters
@@ -1409,8 +1379,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -1431,7 +1399,7 @@ module KnetikCloudClient
     end
 
     # Modifies a video's details
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [VideoResource] :video_resource The video object
@@ -1442,7 +1410,7 @@ module KnetikCloudClient
     end
 
     # Modifies a video&#39;s details
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @option opts [VideoResource] :video_resource The video object
@@ -1487,7 +1455,7 @@ module KnetikCloudClient
     end
 
     # Update a video comment
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The comment id
     # @param [Hash] opts the optional parameters
@@ -1499,7 +1467,7 @@ module KnetikCloudClient
     end
 
     # Update a video comment
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param id The comment id
     # @param [Hash] opts the optional parameters
@@ -1549,7 +1517,7 @@ module KnetikCloudClient
     end
 
     # Update a video's relationship details
-    # 
+    # <b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param relationship_id The relationship id
     # @param [Hash] opts the optional parameters
@@ -1561,7 +1529,7 @@ module KnetikCloudClient
     end
 
     # Update a video&#39;s relationship details
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
     # @param video_id The video id
     # @param relationship_id The relationship id
     # @param [Hash] opts the optional parameters
@@ -1611,7 +1579,7 @@ module KnetikCloudClient
     end
 
     # Update a video template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :video_template_resource The video template resource object
@@ -1622,7 +1590,7 @@ module KnetikCloudClient
     end
 
     # Update a video template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :video_template_resource The video template resource object
@@ -1668,7 +1636,7 @@ module KnetikCloudClient
     end
 
     # Increment a video's view count
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1678,7 +1646,7 @@ module KnetikCloudClient
     end
 
     # Increment a video&#39;s view count
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The video id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers

@@ -24,6 +24,9 @@ module KnetikCloudClient
     # The id of the challenge
     attr_accessor :challenge_id
 
+    # Defines core settings about the activity that affect how it can be created/played by users. Values may be left null to inherit from parent activity.
+    attr_accessor :core_settings
+
     # The entitlement item needed to participate in the activity as part of this event. Null indicates free entry. When creating/updating only id is used. Item must be pre-existing
     attr_accessor :entitlement
 
@@ -46,6 +49,7 @@ module KnetikCloudClient
         :'activity_id' => :'activity_id',
         :'additional_properties' => :'additional_properties',
         :'challenge_id' => :'challenge_id',
+        :'core_settings' => :'core_settings',
         :'entitlement' => :'entitlement',
         :'id' => :'id',
         :'reward_set' => :'reward_set',
@@ -60,6 +64,7 @@ module KnetikCloudClient
         :'activity_id' => :'Integer',
         :'additional_properties' => :'Hash<String, Property>',
         :'challenge_id' => :'Integer',
+        :'core_settings' => :'CoreChallengeActivitySettings',
         :'entitlement' => :'ActivityEntitlementResource',
         :'id' => :'Integer',
         :'reward_set' => :'RewardSetResource',
@@ -88,6 +93,10 @@ module KnetikCloudClient
 
       if attributes.has_key?(:'challenge_id')
         self.challenge_id = attributes[:'challenge_id']
+      end
+
+      if attributes.has_key?(:'core_settings')
+        self.core_settings = attributes[:'core_settings']
       end
 
       if attributes.has_key?(:'entitlement')
@@ -140,6 +149,7 @@ module KnetikCloudClient
           activity_id == o.activity_id &&
           additional_properties == o.additional_properties &&
           challenge_id == o.challenge_id &&
+          core_settings == o.core_settings &&
           entitlement == o.entitlement &&
           id == o.id &&
           reward_set == o.reward_set &&
@@ -156,7 +166,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [activity_id, additional_properties, challenge_id, entitlement, id, reward_set, settings, template].hash
+      [activity_id, additional_properties, challenge_id, core_settings, entitlement, id, reward_set, settings, template].hash
     end
 
     # Builds the object from hash

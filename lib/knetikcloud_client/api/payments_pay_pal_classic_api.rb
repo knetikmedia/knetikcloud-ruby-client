@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a PayPal Classic billing agreement for the user
-    # Returns the token that should be used to forward the user to PayPal so they can accept the agreement.
+    # Returns the token that should be used to forward the user to PayPal so they can accept the agreement. <br><br><b>Permissions Needed:</b> PAYPAL_CLASSIC_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [CreateBillingAgreementRequest] :request The request to create a PayPal billing agreement
     # @return [String]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a PayPal Classic billing agreement for the user
-    # Returns the token that should be used to forward the user to PayPal so they can accept the agreement.
+    # Returns the token that should be used to forward the user to PayPal so they can accept the agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [CreateBillingAgreementRequest] :request The request to create a PayPal billing agreement
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create a payment token for PayPal express checkout
-    # Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
+    # Returns the token that should be used to forward the user to PayPal so they can complete the checkout. <br><br><b>Permissions Needed:</b> PAYPAL_CLASSIC_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [CreatePayPalPaymentRequest] :request The request to create a PayPal payment token
     # @return [String]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Create a payment token for PayPal express checkout
-    # Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
+    # Returns the token that should be used to forward the user to PayPal so they can complete the checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [CreatePayPalPaymentRequest] :request The request to create a PayPal payment token
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
@@ -123,7 +123,7 @@ module KnetikCloudClient
     end
 
     # Finalizes a billing agreement after the user has accepted through PayPal
-    # Returns the ID of the new payment method created for the user for the billing agreement.
+    # Returns the ID of the new payment method created for the user for the billing agreement. <br><br><b>Permissions Needed:</b> PAYPAL_CLASSIC_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [FinalizeBillingAgreementRequest] :request The request to finalize a PayPal billing agreement
     # @return [Integer]
@@ -133,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Finalizes a billing agreement after the user has accepted through PayPal
-    # Returns the ID of the new payment method created for the user for the billing agreement.
+    # Returns the ID of the new payment method created for the user for the billing agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [FinalizeBillingAgreementRequest] :request The request to finalize a PayPal billing agreement
     # @return [Array<(Integer, Fixnum, Hash)>] Integer data, response status code and response headers
@@ -174,7 +174,7 @@ module KnetikCloudClient
     end
 
     # Finalizes a payment after the user has completed checkout with PayPal
-    # The invoice will be marked paid/failed by asynchronous IPN callback.
+    # The invoice will be marked paid/failed by asynchronous IPN callback. <br><br><b>Permissions Needed:</b> PAYPAL_CLASSIC_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [FinalizePayPalPaymentRequest] :request The request to finalize the payment
     # @return [nil]
@@ -184,7 +184,7 @@ module KnetikCloudClient
     end
 
     # Finalizes a payment after the user has completed checkout with PayPal
-    # The invoice will be marked paid/failed by asynchronous IPN callback.
+    # The invoice will be marked paid/failed by asynchronous IPN callback. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [FinalizePayPalPaymentRequest] :request The request to finalize the payment
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers

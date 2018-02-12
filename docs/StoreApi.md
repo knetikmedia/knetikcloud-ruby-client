@@ -1,6 +1,6 @@
 # KnetikCloudClient::StoreApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 Create an item template
 
-Item Templates define a type of item and the properties they have.
+Item Templates define a type of item and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 Create a store item
 
-SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \"parameters\" field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:<br /> {..., parameters: [[{item: 1, skus: [\"SKU-1\"]}]]}<br /> If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints.
+SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \"parameters\" field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:<br /> {..., parameters: [[{item: 1, skus: [\"SKU-1\"]}]]}<br /> If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints. <br><br><b>Permissions Needed:</b> STORE_ADMIN
 
 ### Example
 ```ruby
@@ -137,6 +137,8 @@ Name | Type | Description  | Notes
 
 Delete an item template
 
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -183,7 +185,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -192,6 +194,8 @@ nil (empty response body)
 > delete_store_item(id)
 
 Delete a store item
+
+<b>Permissions Needed:</b> STORE_ADMIN
 
 ### Example
 ```ruby
@@ -235,7 +239,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -244,6 +248,8 @@ nil (empty response body)
 > Array&lt;BehaviorDefinitionResource&gt; get_behaviors
 
 List available item behaviors
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -282,7 +288,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -292,7 +298,7 @@ This endpoint does not need any parameter.
 
 Get a single item template
 
-Item Templates define a type of item and the properties they have.
+Item Templates define a type of item and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -337,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -346,6 +352,8 @@ Name | Type | Description  | Notes
 > PageResourceStoreItemTemplateResource get_item_templates(opts)
 
 List and search item templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -395,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -404,6 +412,8 @@ Name | Type | Description  | Notes
 > StoreItem get_store_item(id)
 
 Get a single store item
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -448,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -458,7 +468,7 @@ Name | Type | Description  | Notes
 
 List and search store items
 
-If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller's country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase.
+If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller's country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase. br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -536,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -546,7 +556,7 @@ Name | Type | Description  | Notes
 
 One-step purchase and pay for a single SKU item from a user's wallet
 
-Used to create and automatically pay an invoice for a single unit of a single SKU from a user's wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+Used to create and automatically pay an invoice for a single unit of a single SKU from a user's wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted. <br><br><b>Permissions Needed:</b> PAYMENTS_USER and owner, or PAYMENTS_ADMIN
 
 ### Example
 ```ruby
@@ -601,6 +611,8 @@ Name | Type | Description  | Notes
 > StoreItemTemplateResource update_item_template(id, opts)
 
 Update an item template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -658,6 +670,8 @@ Name | Type | Description  | Notes
 > StoreItem update_store_item(id, opts)
 
 Update a store item
+
+<b>Permissions Needed:</b> STORE_ADMIN
 
 ### Example
 ```ruby

@@ -34,7 +34,7 @@ describe 'UsersFriendshipsApi' do
 
   # unit tests for add_friend
   # Add a friend
-  # As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship.
+  # As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   # @param user_id The id of the user or &#39;me&#39; if logged in
   # @param id The id of the user to befriend
   # @param [Hash] opts the optional parameters
@@ -47,7 +47,7 @@ describe 'UsersFriendshipsApi' do
 
   # unit tests for get_friends
   # Get friends list
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   # @param user_id The id of the user or &#39;me&#39;
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_username Filter for friends with the given username
@@ -63,7 +63,7 @@ describe 'UsersFriendshipsApi' do
 
   # unit tests for get_invite_token
   # Returns the invite token
-  # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
+  # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
   # @param user_id The id of the user or &#39;me&#39; if logged in
   # @param [Hash] opts the optional parameters
   # @return [String]
@@ -75,7 +75,7 @@ describe 'UsersFriendshipsApi' do
 
   # unit tests for get_invites
   # Get pending invites
-  # Invites that the specified user received
+  # Invites that the specified user received. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   # @param user_id The id of the user or &#39;me&#39;
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -89,7 +89,7 @@ describe 'UsersFriendshipsApi' do
 
   # unit tests for redeem_friendship_token
   # Redeem friendship token
-  # Immediately connects the requested user with the user mapped by the provided invite token
+  # Immediately connects the requested user with the user mapped by the provided invite token. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   # @param user_id The id of the user or &#39;me&#39; if logged in
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :token The invite token
@@ -102,7 +102,7 @@ describe 'UsersFriendshipsApi' do
 
   # unit tests for remove_or_decline_friend
   # Remove or decline a friend
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   # @param user_id The id of the user or &#39;me&#39; if logged in
   # @param id The id of the user to befriend
   # @param [Hash] opts the optional parameters

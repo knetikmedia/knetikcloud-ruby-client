@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Adds a new artist in the system
-    # Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+    # Adds a new artist in the system. Use specific media contributions endpoint to add contributions. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [ArtistResource] :artist_resource The new artist
     # @return [ArtistResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Adds a new artist in the system
-    # Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+    # Adds a new artist in the system. Use specific media contributions endpoint to add contributions. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [ArtistResource] :artist_resource The new artist
     # @return [Array<(ArtistResource, Fixnum, Hash)>] ArtistResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create an artist template
-    # Artist Templates define a type of artist and the properties they have
+    # Artist Templates define a type of artist and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :artist_template_resource The artist template resource object
     # @return [TemplateResource]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Create an artist template
-    # Artist Templates define a type of artist and the properties they have
+    # Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :artist_template_resource The artist template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -123,7 +123,7 @@ module KnetikCloudClient
     end
 
     # Removes an artist from the system IF no resources are attached to it
-    # 
+    # <b>Permissions Needed:</b> ARTISTS_ADMIN
     # @param id The artist id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -133,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Removes an artist from the system IF no resources are attached to it
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
     # @param id The artist id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -155,8 +155,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -177,7 +175,7 @@ module KnetikCloudClient
     end
 
     # Delete an artist template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -188,7 +186,7 @@ module KnetikCloudClient
     end
 
     # Delete an artist template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -212,8 +210,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -234,7 +230,7 @@ module KnetikCloudClient
     end
 
     # Loads a specific artist details
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The artist id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :show_contributions The number of contributions to show fetch
@@ -245,7 +241,7 @@ module KnetikCloudClient
     end
 
     # Loads a specific artist details
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The artist id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :show_contributions The number of contributions to show fetch
@@ -269,8 +265,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -292,7 +286,7 @@ module KnetikCloudClient
     end
 
     # Get a single artist template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTISTS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -302,7 +296,7 @@ module KnetikCloudClient
     end
 
     # Get a single artist template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -324,8 +318,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -347,7 +339,7 @@ module KnetikCloudClient
     end
 
     # List and search artist templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTISTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -359,7 +351,7 @@ module KnetikCloudClient
     end
 
     # List and search artist templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -382,8 +374,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -405,7 +395,7 @@ module KnetikCloudClient
     end
 
     # Search for artists
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_artists_by_name Filter for artists which name *STARTS* with the given string
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -418,7 +408,7 @@ module KnetikCloudClient
     end
 
     # Search for artists
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_artists_by_name Filter for artists which name *STARTS* with the given string
     # @option opts [Integer] :size The number of objects returned per page
@@ -443,8 +433,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -466,7 +454,7 @@ module KnetikCloudClient
     end
 
     # Modifies an artist details
-    # 
+    # <b>Permissions Needed:</b> ARTISTS_ADMIN
     # @param id The artist id
     # @param [Hash] opts the optional parameters
     # @option opts [ArtistResource] :artist_resource The new artist
@@ -477,7 +465,7 @@ module KnetikCloudClient
     end
 
     # Modifies an artist details
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
     # @param id The artist id
     # @param [Hash] opts the optional parameters
     # @option opts [ArtistResource] :artist_resource The new artist
@@ -522,7 +510,7 @@ module KnetikCloudClient
     end
 
     # Update an artist template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :artist_template_resource The artist template resource object
@@ -533,7 +521,7 @@ module KnetikCloudClient
     end
 
     # Update an artist template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :artist_template_resource The artist template resource object

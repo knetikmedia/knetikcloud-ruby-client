@@ -34,7 +34,7 @@ describe 'PaymentsWalletsApi' do
 
   # unit tests for get_user_wallet
   # Returns the user&#39;s wallet for the given currency code
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   # @param user_id The ID of the user for whom wallet is being retrieved
   # @param currency_code Currency code of the user&#39;s wallet
   # @param [Hash] opts the optional parameters
@@ -47,7 +47,7 @@ describe 'PaymentsWalletsApi' do
 
   # unit tests for get_user_wallet_transactions
   # Retrieve a user&#39;s wallet transactions
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   # @param user_id The ID of the user for whom wallet transactions are being retrieved
   # @param currency_code Currency code of the user&#39;s wallet
   # @param [Hash] opts the optional parameters
@@ -67,7 +67,7 @@ describe 'PaymentsWalletsApi' do
 
   # unit tests for get_user_wallets
   # List all of a user&#39;s wallets
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   # @param user_id The ID of the user for whom wallets are being retrieved
   # @param [Hash] opts the optional parameters
   # @return [Array<SimpleWallet>]
@@ -79,7 +79,7 @@ describe 'PaymentsWalletsApi' do
 
   # unit tests for get_wallet_balances
   # Retrieves a summation of wallet balances by currency code
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   # @param [Hash] opts the optional parameters
   # @return [PageResourceWalletTotalResponse]
   describe 'get_wallet_balances test' do
@@ -90,7 +90,7 @@ describe 'PaymentsWalletsApi' do
 
   # unit tests for get_wallet_transactions
   # Retrieve wallet transactions across the system
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :filter_invoice Filter for transactions from a specific invoice
   # @option opts [String] :filter_type Filter for transactions with specified type
@@ -112,7 +112,7 @@ describe 'PaymentsWalletsApi' do
 
   # unit tests for get_wallets
   # Retrieve a list of wallets across the system
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -126,7 +126,7 @@ describe 'PaymentsWalletsApi' do
 
   # unit tests for update_wallet_balance
   # Updates the balance for a user&#39;s wallet
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   # @param user_id The ID of the user for whom wallet is being modified
   # @param currency_code Currency code of the user&#39;s wallet
   # @param [Hash] opts the optional parameters

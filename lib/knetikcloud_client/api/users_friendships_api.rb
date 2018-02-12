@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Add a friend
-    # As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship.
+    # As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship. <br><br><b>Permissions Needed:</b> FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param id The id of the user to befriend
     # @param [Hash] opts the optional parameters
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Add a friend
-    # As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship.
+    # As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param id The id of the user to befriend
     # @param [Hash] opts the optional parameters
@@ -81,7 +81,7 @@ module KnetikCloudClient
     end
 
     # Get friends list
-    # 
+    # <b>Permissions Needed:</b> FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_username Filter for friends with the given username
@@ -95,7 +95,7 @@ module KnetikCloudClient
     end
 
     # Get friends list
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_username Filter for friends with the given username
@@ -125,8 +125,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -148,7 +146,7 @@ module KnetikCloudClient
     end
 
     # Returns the invite token
-    # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
+    # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. <br><br><b>Permissions Needed:</b> FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param [Hash] opts the optional parameters
     # @return [String]
@@ -158,7 +156,7 @@ module KnetikCloudClient
     end
 
     # Returns the invite token
-    # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
+    # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param [Hash] opts the optional parameters
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
@@ -180,8 +178,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -203,7 +199,7 @@ module KnetikCloudClient
     end
 
     # Get pending invites
-    # Invites that the specified user received
+    # Invites that the specified user received. <br><br><b>Permissions Needed:</b> FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -215,7 +211,7 @@ module KnetikCloudClient
     end
 
     # Get pending invites
-    # Invites that the specified user received
+    # Invites that the specified user received. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -241,8 +237,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -264,7 +258,7 @@ module KnetikCloudClient
     end
 
     # Redeem friendship token
-    # Immediately connects the requested user with the user mapped by the provided invite token
+    # Immediately connects the requested user with the user mapped by the provided invite token. <br><br><b>Permissions Needed:</b> FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :token The invite token
@@ -275,7 +269,7 @@ module KnetikCloudClient
     end
 
     # Redeem friendship token
-    # Immediately connects the requested user with the user mapped by the provided invite token
+    # Immediately connects the requested user with the user mapped by the provided invite token. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :token The invite token
@@ -320,7 +314,7 @@ module KnetikCloudClient
     end
 
     # Remove or decline a friend
-    # 
+    # <b>Permissions Needed:</b> FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param id The id of the user to befriend
     # @param [Hash] opts the optional parameters
@@ -331,7 +325,7 @@ module KnetikCloudClient
     end
 
     # Remove or decline a friend
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param id The id of the user to befriend
     # @param [Hash] opts the optional parameters
@@ -358,8 +352,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

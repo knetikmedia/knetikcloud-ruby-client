@@ -34,7 +34,7 @@ describe 'ReportingUsageApi' do
 
   # unit tests for get_usage_by_day
   # Returns aggregated endpoint usage information by day
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   # @param start_date The beginning of the range being requested, unix timestamp in seconds
   # @param end_date The ending of the range being requested, unix timestamp in seconds
   # @param [Hash] opts the optional parameters
@@ -52,7 +52,7 @@ describe 'ReportingUsageApi' do
 
   # unit tests for get_usage_by_hour
   # Returns aggregated endpoint usage information by hour
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   # @param start_date The beginning of the range being requested, unix timestamp in seconds
   # @param end_date The ending of the range being requested, unix timestamp in seconds
   # @param [Hash] opts the optional parameters
@@ -70,7 +70,7 @@ describe 'ReportingUsageApi' do
 
   # unit tests for get_usage_by_minute
   # Returns aggregated endpoint usage information by minute
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   # @param start_date The beginning of the range being requested, unix timestamp in seconds
   # @param end_date The ending of the range being requested, unix timestamp in seconds
   # @param [Hash] opts the optional parameters
@@ -88,7 +88,7 @@ describe 'ReportingUsageApi' do
 
   # unit tests for get_usage_by_month
   # Returns aggregated endpoint usage information by month
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   # @param start_date The beginning of the range being requested, unix timestamp in seconds
   # @param end_date The ending of the range being requested, unix timestamp in seconds
   # @param [Hash] opts the optional parameters
@@ -106,7 +106,7 @@ describe 'ReportingUsageApi' do
 
   # unit tests for get_usage_by_year
   # Returns aggregated endpoint usage information by year
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   # @param start_date The beginning of the range being requested, unix timestamp in seconds
   # @param end_date The ending of the range being requested, unix timestamp in seconds
   # @param [Hash] opts the optional parameters
@@ -124,7 +124,7 @@ describe 'ReportingUsageApi' do
 
   # unit tests for get_usage_endpoints
   # Returns list of endpoints called (method and url)
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   # @param start_date The beginning of the range being requested, unix timestamp in seconds
   # @param end_date The ending of the range being requested, unix timestamp in seconds
   # @param [Hash] opts the optional parameters

@@ -1,6 +1,6 @@
 # KnetikCloudClient::CategoriesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > CategoryResource create_category(opts)
 
 Create a new category
+
+<b>Permissions Needed:</b> CATEGORIES_ADMIN
 
 ### Example
 ```ruby
@@ -76,7 +78,7 @@ Name | Type | Description  | Notes
 
 Create a category template
 
-Templates define a type of category and the properties they have
+Templates define a type of category and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -132,6 +134,8 @@ Name | Type | Description  | Notes
 
 Delete an existing category
 
+<b>Permissions Needed:</b> CATEGORIES_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -174,7 +178,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -184,7 +188,7 @@ nil (empty response body)
 
 Delete a category template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -232,7 +236,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -241,6 +245,8 @@ nil (empty response body)
 > PageResourceCategoryResource get_categories(opts)
 
 List and search categories with optional filters
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -294,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -303,6 +309,8 @@ Name | Type | Description  | Notes
 > CategoryResource get_category(id)
 
 Get a single category
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -347,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -356,6 +364,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_category_template(id)
 
 Get a single category template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CATEGORIES_ADMIN
 
 ### Example
 ```ruby
@@ -400,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -409,6 +419,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_category_templates(opts)
 
 List and search category templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CATEGORIES_ADMIN
 
 ### Example
 ```ruby
@@ -458,7 +470,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -467,6 +479,8 @@ Name | Type | Description  | Notes
 > PageResourcestring get_tags(opts)
 
 List all trivia tags in the system
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -514,7 +528,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -523,6 +537,8 @@ Name | Type | Description  | Notes
 > CategoryResource update_category(id, opts)
 
 Update an existing category
+
+<b>Permissions Needed:</b> CATEGORIES_ADMIN
 
 ### Example
 ```ruby
@@ -580,6 +596,8 @@ Name | Type | Description  | Notes
 > TemplateResource update_category_template(id, opts)
 
 Update a category template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

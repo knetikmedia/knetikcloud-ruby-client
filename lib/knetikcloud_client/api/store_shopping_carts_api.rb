@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Adds a custom discount to the cart
-    # 
+    # <b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [CouponDefinition] :custom_discount The details of the discount to add
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Adds a custom discount to the cart
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [CouponDefinition] :custom_discount The details of the discount to add
@@ -77,7 +77,7 @@ module KnetikCloudClient
     end
 
     # Adds a discount coupon to the cart
-    # 
+    # <b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [SkuRequest] :sku_request The request of the sku
@@ -88,7 +88,7 @@ module KnetikCloudClient
     end
 
     # Adds a discount coupon to the cart
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [SkuRequest] :sku_request The request of the sku
@@ -133,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Add an item to the cart
-    # Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment
+    # Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment. <br><br><b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [CartItemRequest] :cart_item_request The cart item request object
@@ -144,7 +144,7 @@ module KnetikCloudClient
     end
 
     # Add an item to the cart
-    # Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment
+    # Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [CartItemRequest] :cart_item_request The cart item request object
@@ -189,7 +189,7 @@ module KnetikCloudClient
     end
 
     # Create a cart
-    # You don't have to have a user to create a cart but the API requires authentication to checkout
+    # You don't have to have a user to create a cart but the API requires authentication to checkout. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :owner Set the owner of a cart. If not specified, defaults to the calling user&#39;s id. If specified and is not the calling user&#39;s id, SHOPPING_CARTS_ADMIN permission is required
     # @option opts [String] :currency_code Set the currency for the cart, by currency code. May be disallowed by site settings.
@@ -200,7 +200,7 @@ module KnetikCloudClient
     end
 
     # Create a cart
-    # You don&#39;t have to have a user to create a cart but the API requires authentication to checkout
+    # You don&#39;t have to have a user to create a cart but the API requires authentication to checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :owner Set the owner of a cart. If not specified, defaults to the calling user&#39;s id. If specified and is not the calling user&#39;s id, SHOPPING_CARTS_ADMIN permission is required
     # @option opts [String] :currency_code Set the currency for the cart, by currency code. May be disallowed by site settings.
@@ -244,7 +244,7 @@ module KnetikCloudClient
     end
 
     # Returns the cart with the given GUID
-    # 
+    # <b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @return [Cart]
@@ -254,7 +254,7 @@ module KnetikCloudClient
     end
 
     # Returns the cart with the given GUID
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @return [Array<(Cart, Fixnum, Hash)>] Cart data, response status code and response headers
@@ -276,8 +276,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -299,7 +297,7 @@ module KnetikCloudClient
     end
 
     # Get a list of carts
-    # 
+    # <b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_owner_id Filter by the id of the owner
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -312,7 +310,7 @@ module KnetikCloudClient
     end
 
     # Get a list of carts
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_owner_id Filter by the id of the owner
     # @option opts [Integer] :size The number of objects returned per page
@@ -337,8 +335,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -360,7 +356,7 @@ module KnetikCloudClient
     end
 
     # Returns whether a cart requires shipping
-    # 
+    # <b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @return [CartShippableResponse]
@@ -370,7 +366,7 @@ module KnetikCloudClient
     end
 
     # Returns whether a cart requires shipping
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @return [Array<(CartShippableResponse, Fixnum, Hash)>] CartShippableResponse data, response status code and response headers
@@ -392,8 +388,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -415,7 +409,7 @@ module KnetikCloudClient
     end
 
     # Get the list of available shipping countries per vendor
-    # Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
+    # Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable. <br><br><b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @return [SampleCountriesResponse]
@@ -425,7 +419,7 @@ module KnetikCloudClient
     end
 
     # Get the list of available shipping countries per vendor
-    # Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
+    # Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @return [Array<(SampleCountriesResponse, Fixnum, Hash)>] SampleCountriesResponse data, response status code and response headers
@@ -447,8 +441,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -470,7 +462,7 @@ module KnetikCloudClient
     end
 
     # Removes a discount coupon from the cart
-    # 
+    # <b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param code The SKU code of the coupon to remove
     # @param [Hash] opts the optional parameters
@@ -481,7 +473,7 @@ module KnetikCloudClient
     end
 
     # Removes a discount coupon from the cart
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param code The SKU code of the coupon to remove
     # @param [Hash] opts the optional parameters
@@ -508,8 +500,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -530,7 +520,7 @@ module KnetikCloudClient
     end
 
     # Sets the currency to use for the cart
-    # May be disallowed by site settings.
+    # May be disallowed by site settings. <br><br><b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :currency_code The code of the currency
@@ -541,7 +531,7 @@ module KnetikCloudClient
     end
 
     # Sets the currency to use for the cart
-    # May be disallowed by site settings.
+    # May be disallowed by site settings. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :currency_code The code of the currency
@@ -586,7 +576,7 @@ module KnetikCloudClient
     end
 
     # Sets the owner of a cart if none is set already
-    # 
+    # <b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [IntWrapper] :user_id The id of the user
@@ -597,7 +587,7 @@ module KnetikCloudClient
     end
 
     # Sets the owner of a cart if none is set already
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [IntWrapper] :user_id The id of the user
@@ -642,7 +632,7 @@ module KnetikCloudClient
     end
 
     # Changes the quantity of an item already in the cart
-    # A quantity of zero will remove the item from the cart altogether.
+    # A quantity of zero will remove the item from the cart altogether. <br><br><b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [CartItemRequest] :cart_item_request The cart item request object
@@ -653,7 +643,7 @@ module KnetikCloudClient
     end
 
     # Changes the quantity of an item already in the cart
-    # A quantity of zero will remove the item from the cart altogether.
+    # A quantity of zero will remove the item from the cart altogether. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [CartItemRequest] :cart_item_request The cart item request object
@@ -698,7 +688,7 @@ module KnetikCloudClient
     end
 
     # Modifies or sets the order shipping address
-    # 
+    # <b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [CartShippingAddressRequest] :cart_shipping_address_request The cart shipping address request object
@@ -709,7 +699,7 @@ module KnetikCloudClient
     end
 
     # Modifies or sets the order shipping address
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
     # @param id The id of the cart
     # @param [Hash] opts the optional parameters
     # @option opts [CartShippingAddressRequest] :cart_shipping_address_request The cart shipping address request object

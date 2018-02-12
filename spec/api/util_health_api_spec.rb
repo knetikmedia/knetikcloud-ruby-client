@@ -34,7 +34,7 @@ describe 'UtilHealthApi' do
 
   # unit tests for get_health
   # Get health info
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [Object]
   describe 'get_health test' do

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Mark an invoice paid with Google
-    # Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful.
+    # Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [GooglePaymentRequest] :request The request for paying an invoice through a Google in-app payment
     # @return [Integer]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Mark an invoice paid with Google
-    # Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful.
+    # Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [GooglePaymentRequest] :request The request for paying an invoice through a Google in-app payment
     # @return [Array<(Integer, Fixnum, Hash)>] Integer data, response status code and response headers

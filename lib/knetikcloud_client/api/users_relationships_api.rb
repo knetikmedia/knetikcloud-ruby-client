@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a user relationship
-    # 
+    # <b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [UserRelationshipResource] :relationship The new relationship
     # @return [UserRelationshipResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a user relationship
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [UserRelationshipResource] :relationship The new relationship
     # @return [Array<(UserRelationshipResource, Fixnum, Hash)>] UserRelationshipResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a user relationship
-    # 
+    # <b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
     # @param id The id of the relationship
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete a user relationship
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
     # @param id The id of the relationship
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -104,8 +104,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Get a user relationship
-    # 
+    # <b>Permissions Needed:</b> RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
     # @param id The id of the relationship
     # @param [Hash] opts the optional parameters
     # @return [UserRelationshipResource]
@@ -136,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Get a user relationship
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
     # @param id The id of the relationship
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserRelationshipResource, Fixnum, Hash)>] UserRelationshipResource data, response status code and response headers
@@ -158,8 +156,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -181,7 +177,7 @@ module KnetikCloudClient
     end
 
     # Get a list of user relationships
-    # 
+    # <b>Permissions Needed:</b> RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned (default to 1)
@@ -193,7 +189,7 @@ module KnetikCloudClient
     end
 
     # Get a list of user relationships
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned
@@ -216,8 +212,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -239,7 +233,7 @@ module KnetikCloudClient
     end
 
     # Update a user relationship
-    # 
+    # <b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
     # @param id The id of the relationship
     # @param [Hash] opts the optional parameters
     # @option opts [UserRelationshipResource] :relationship The new relationship
@@ -250,7 +244,7 @@ module KnetikCloudClient
     end
 
     # Update a user relationship
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
     # @param id The id of the relationship
     # @param [Hash] opts the optional parameters
     # @option opts [UserRelationshipResource] :relationship The new relationship

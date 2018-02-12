@@ -34,7 +34,7 @@ describe 'BRERuleEngineCategoriesApi' do
 
   # unit tests for create_bre_category_template
   # Create a BRE category template
-  # Templates define a type of BRE category and the properties they have
+  # Templates define a type of BRE category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :template The category template to create
   # @return [TemplateResource]
@@ -46,7 +46,7 @@ describe 'BRERuleEngineCategoriesApi' do
 
   # unit tests for delete_bre_category_template
   # Delete a BRE category template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -59,7 +59,7 @@ describe 'BRERuleEngineCategoriesApi' do
 
   # unit tests for get_bre_categories
   # List categories
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_USER
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -72,7 +72,7 @@ describe 'BRERuleEngineCategoriesApi' do
 
   # unit tests for get_bre_category
   # Get a single category
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_USER
   # @param name The category name
   # @param [Hash] opts the optional parameters
   # @return [BreCategoryResource]
@@ -84,7 +84,7 @@ describe 'BRERuleEngineCategoriesApi' do
 
   # unit tests for get_bre_category_template
   # Get a single BRE category template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -96,7 +96,7 @@ describe 'BRERuleEngineCategoriesApi' do
 
   # unit tests for get_bre_category_templates
   # List and search BRE category templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -110,7 +110,7 @@ describe 'BRERuleEngineCategoriesApi' do
 
   # unit tests for update_bre_category
   # Update a category
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_ADMIN
   # @param name The category name
   # @param [Hash] opts the optional parameters
   # @option opts [BreCategoryResource] :category The updated BRE category information
@@ -123,7 +123,7 @@ describe 'BRERuleEngineCategoriesApi' do
 
   # unit tests for update_bre_category_template
   # Update a BRE category template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :template The updated category template definition

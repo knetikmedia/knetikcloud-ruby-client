@@ -1,6 +1,6 @@
 # KnetikCloudClient::CampaignsRewardsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > RewardSetResource create_reward_set(opts)
 
 Create a reward set
+
+<b>Permissions Needed:</b> REWARDS_ADMIN
 
 ### Example
 ```ruby
@@ -70,6 +72,8 @@ Name | Type | Description  | Notes
 
 Delete a reward set
 
+<b>Permissions Needed:</b> REWARDS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -112,7 +116,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -121,6 +125,8 @@ nil (empty response body)
 > RewardSetResource get_reward_set(id)
 
 Get a single reward set
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -165,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -174,6 +180,8 @@ Name | Type | Description  | Notes
 > PageResourceRewardSetResource get_reward_sets(opts)
 
 List and search reward sets
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -223,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -232,6 +240,8 @@ Name | Type | Description  | Notes
 > RewardSetResource update_reward_set(id, opts)
 
 Update a reward set
+
+<b>Permissions Needed:</b> REWARDS_ADMIN
 
 ### Example
 ```ruby

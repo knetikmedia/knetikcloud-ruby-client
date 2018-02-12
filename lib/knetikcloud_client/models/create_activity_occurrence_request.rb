@@ -21,11 +21,17 @@ module KnetikCloudClient
     # The id of the challenge activity (required if playing in a challenge/event). Note that this is the challenge_activity_id in case the same activity apears twice in the challenge.
     attr_accessor :challenge_activity_id
 
+    # Defines core settings about the activity that affect how it can be created/played by users.
+    attr_accessor :core_settings
+
     # The entitlement item required to enter the occurrence. Required if not part of an event. Must come from the set of entitlement items listed in the activity
     attr_accessor :entitlement
 
     # The id of the event this occurence is a part of, if any
     attr_accessor :event_id
+
+    # The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of 'non_player' if not admin as well
+    attr_accessor :host
 
     # The values selected from the available settings defined for the activity. Ex: difficulty: hard. Can be left out if the activity is played during an event and the settings are already set at the event level. Ex: every monday, difficulty: hard, number of questions: 10, category: sport. Otherwise, the set must exactly match those of the activity.
     attr_accessor :settings
@@ -66,8 +72,10 @@ module KnetikCloudClient
       {
         :'activity_id' => :'activity_id',
         :'challenge_activity_id' => :'challenge_activity_id',
+        :'core_settings' => :'core_settings',
         :'entitlement' => :'entitlement',
         :'event_id' => :'event_id',
+        :'host' => :'host',
         :'settings' => :'settings',
         :'simulated' => :'simulated',
         :'status' => :'status',
@@ -80,8 +88,10 @@ module KnetikCloudClient
       {
         :'activity_id' => :'Integer',
         :'challenge_activity_id' => :'Integer',
+        :'core_settings' => :'CoreActivityOccurrenceSettings',
         :'entitlement' => :'ItemIdRequest',
         :'event_id' => :'Integer',
+        :'host' => :'Integer',
         :'settings' => :'Array<SelectedSettingRequest>',
         :'simulated' => :'BOOLEAN',
         :'status' => :'String',
@@ -105,12 +115,20 @@ module KnetikCloudClient
         self.challenge_activity_id = attributes[:'challenge_activity_id']
       end
 
+      if attributes.has_key?(:'core_settings')
+        self.core_settings = attributes[:'core_settings']
+      end
+
       if attributes.has_key?(:'entitlement')
         self.entitlement = attributes[:'entitlement']
       end
 
       if attributes.has_key?(:'event_id')
         self.event_id = attributes[:'event_id']
+      end
+
+      if attributes.has_key?(:'host')
+        self.host = attributes[:'host']
       end
 
       if attributes.has_key?(:'settings')
@@ -145,7 +163,7 @@ module KnetikCloudClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["SETUP", "OPEN", "PLAYING", "FINISHED", "ABANDONED"])
+      status_validator = EnumAttributeValidator.new('String', ["SETUP", "OPEN", "LAUNCHING", "PLAYING", "FINISHED", "ABANDONED"])
       return false unless status_validator.valid?(@status)
       return true
     end
@@ -153,7 +171,7 @@ module KnetikCloudClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["SETUP", "OPEN", "PLAYING", "FINISHED", "ABANDONED"])
+      validator = EnumAttributeValidator.new('String', ["SETUP", "OPEN", "LAUNCHING", "PLAYING", "FINISHED", "ABANDONED"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for 'status', must be one of #{validator.allowable_values}."
       end
@@ -167,8 +185,10 @@ module KnetikCloudClient
       self.class == o.class &&
           activity_id == o.activity_id &&
           challenge_activity_id == o.challenge_activity_id &&
+          core_settings == o.core_settings &&
           entitlement == o.entitlement &&
           event_id == o.event_id &&
+          host == o.host &&
           settings == o.settings &&
           simulated == o.simulated &&
           status == o.status &&
@@ -184,7 +204,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [activity_id, challenge_activity_id, entitlement, event_id, settings, simulated, status, users].hash
+      [activity_id, challenge_activity_id, core_settings, entitlement, event_id, host, settings, simulated, status, users].hash
     end
 
     # Builds the object from hash

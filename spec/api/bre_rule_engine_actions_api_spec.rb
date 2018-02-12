@@ -34,7 +34,7 @@ describe 'BRERuleEngineActionsApi' do
 
   # unit tests for get_bre_actions
   # Get a list of available actions
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_ACTIONS_USER
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_category Filter for actions that are within a specific category
   # @option opts [String] :filter_name Filter for actions that have names containing the given string

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a coupon item
-    # SKUs have to be unique in the entire store.
+    # SKUs have to be unique in the entire store. <br><br><b>Permissions Needed:</b> COUPONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
     # @option opts [CouponItem] :coupon_item The coupon item object
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Create a coupon item
-    # SKUs have to be unique in the entire store.
+    # SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
     # @option opts [CouponItem] :coupon_item The coupon item object
@@ -75,7 +75,7 @@ module KnetikCloudClient
     end
 
     # Create a coupon template
-    # Coupon Templates define a type of coupon and the properties they have.
+    # Coupon Templates define a type of coupon and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :coupon_template_resource The new coupon template
     # @return [ItemTemplateResource]
@@ -85,7 +85,7 @@ module KnetikCloudClient
     end
 
     # Create a coupon template
-    # Coupon Templates define a type of coupon and the properties they have.
+    # Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :coupon_template_resource The new coupon template
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -126,7 +126,7 @@ module KnetikCloudClient
     end
 
     # Delete a coupon item
-    # 
+    # <b>Permissions Needed:</b> COUPONS_ADMIN
     # @param id The id of the coupon
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -136,7 +136,7 @@ module KnetikCloudClient
     end
 
     # Delete a coupon item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
     # @param id The id of the coupon
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -158,8 +158,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -180,7 +178,7 @@ module KnetikCloudClient
     end
 
     # Delete a coupon template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -191,7 +189,7 @@ module KnetikCloudClient
     end
 
     # Delete a coupon template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -215,8 +213,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -237,7 +233,7 @@ module KnetikCloudClient
     end
 
     # Get a single coupon item
-    # 
+    # <b>Permissions Needed:</b> COUPONS_ADMIN
     # @param id The id of the coupon
     # @param [Hash] opts the optional parameters
     # @return [CouponItem]
@@ -247,7 +243,7 @@ module KnetikCloudClient
     end
 
     # Get a single coupon item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
     # @param id The id of the coupon
     # @param [Hash] opts the optional parameters
     # @return [Array<(CouponItem, Fixnum, Hash)>] CouponItem data, response status code and response headers
@@ -269,8 +265,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -292,7 +286,7 @@ module KnetikCloudClient
     end
 
     # Get a coupon by sku
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param sku A sku of the coupon
     # @param [Hash] opts the optional parameters
     # @return [CouponItem]
@@ -302,7 +296,7 @@ module KnetikCloudClient
     end
 
     # Get a coupon by sku
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param sku A sku of the coupon
     # @param [Hash] opts the optional parameters
     # @return [Array<(CouponItem, Fixnum, Hash)>] CouponItem data, response status code and response headers
@@ -324,8 +318,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -347,7 +339,7 @@ module KnetikCloudClient
     end
 
     # Get a single coupon template
-    # Coupon Templates define a type of coupon and the properties they have.
+    # Coupon Templates define a type of coupon and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN or COUPONS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [ItemTemplateResource]
@@ -357,7 +349,7 @@ module KnetikCloudClient
     end
 
     # Get a single coupon template
-    # Coupon Templates define a type of coupon and the properties they have.
+    # Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -379,8 +371,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -402,7 +392,7 @@ module KnetikCloudClient
     end
 
     # List and search coupon templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or COUPONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -414,7 +404,7 @@ module KnetikCloudClient
     end
 
     # List and search coupon templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -437,8 +427,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -460,7 +448,7 @@ module KnetikCloudClient
     end
 
     # Update a coupon item
-    # 
+    # <b>Permissions Needed:</b> COUPONS_ADMIN
     # @param id The id of the coupon
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -472,7 +460,7 @@ module KnetikCloudClient
     end
 
     # Update a coupon item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
     # @param id The id of the coupon
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -520,7 +508,7 @@ module KnetikCloudClient
     end
 
     # Update a coupon template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :coupon_template_resource The coupon template resource object
@@ -531,7 +519,7 @@ module KnetikCloudClient
     end
 
     # Update a coupon template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :coupon_template_resource The coupon template resource object

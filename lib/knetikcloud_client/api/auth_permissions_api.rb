@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new permission
-    # 
+    # <b>Permissions Needed:</b> PERMISSIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [PermissionResource] :permission_resource The permission resource object
     # @return [PermissionResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a new permission
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [PermissionResource] :permission_resource The permission resource object
     # @return [Array<(PermissionResource, Fixnum, Hash)>] PermissionResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a permission
-    # 
+    # <b>Permissions Needed:</b> PERMISSIONS_ADMIN
     # @param permission The permission value
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :force If true, removes permission assigned to roles
@@ -83,7 +83,7 @@ module KnetikCloudClient
     end
 
     # Delete a permission
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
     # @param permission The permission value
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :force If true, removes permission assigned to roles
@@ -107,8 +107,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -129,7 +127,7 @@ module KnetikCloudClient
     end
 
     # Get a single permission
-    # 
+    # <b>Permissions Needed:</b> PERMISSIONS_ADMIN
     # @param permission The permission value
     # @param [Hash] opts the optional parameters
     # @return [PermissionResource]
@@ -139,7 +137,7 @@ module KnetikCloudClient
     end
 
     # Get a single permission
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
     # @param permission The permission value
     # @param [Hash] opts the optional parameters
     # @return [Array<(PermissionResource, Fixnum, Hash)>] PermissionResource data, response status code and response headers
@@ -161,8 +159,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -184,7 +180,7 @@ module KnetikCloudClient
     end
 
     # List and search permissions
-    # 
+    # <b>Permissions Needed:</b> PERMISSIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -196,7 +192,7 @@ module KnetikCloudClient
     end
 
     # List and search permissions
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -219,8 +215,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -242,7 +236,7 @@ module KnetikCloudClient
     end
 
     # Update a permission
-    # 
+    # <b>Permissions Needed:</b> PERMISSIONS_ADMIN
     # @param permission The permission value
     # @param [Hash] opts the optional parameters
     # @option opts [PermissionResource] :permission_resource The permission resource object
@@ -253,7 +247,7 @@ module KnetikCloudClient
     end
 
     # Update a permission
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
     # @param permission The permission value
     # @param [Hash] opts the optional parameters
     # @option opts [PermissionResource] :permission_resource The permission resource object

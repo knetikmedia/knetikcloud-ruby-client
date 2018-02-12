@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new article
-    # Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+    # Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.<br><br><b>Permissions:</b> ARTICLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ArticleResource] :article_resource The new article
     # @return [ArticleResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a new article
-    # Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+    # Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ArticleResource] :article_resource The new article
     # @return [Array<(ArticleResource, Fixnum, Hash)>] ArticleResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create an article template
-    # Article Templates define a type of article and the properties they have
+    # Article Templates define a type of article and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :article_template_resource The article template resource object
     # @return [TemplateResource]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Create an article template
-    # Article Templates define a type of article and the properties they have
+    # Article Templates define a type of article and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :article_template_resource The article template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -123,7 +123,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing article
-    # 
+    # <b>Permissions Needed:</b> ARTICLES_ADMIN
     # @param id The article id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -133,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing article
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
     # @param id The article id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -155,8 +155,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -177,7 +175,7 @@ module KnetikCloudClient
     end
 
     # Delete an article template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -188,7 +186,7 @@ module KnetikCloudClient
     end
 
     # Delete an article template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -212,8 +210,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -234,7 +230,7 @@ module KnetikCloudClient
     end
 
     # Get a single article
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The article id
     # @param [Hash] opts the optional parameters
     # @return [ArticleResource]
@@ -244,7 +240,7 @@ module KnetikCloudClient
     end
 
     # Get a single article
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The article id
     # @param [Hash] opts the optional parameters
     # @return [Array<(ArticleResource, Fixnum, Hash)>] ArticleResource data, response status code and response headers
@@ -266,8 +262,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -289,7 +283,7 @@ module KnetikCloudClient
     end
 
     # Get a single article template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTICLES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -299,7 +293,7 @@ module KnetikCloudClient
     end
 
     # Get a single article template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -321,8 +315,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -344,7 +336,7 @@ module KnetikCloudClient
     end
 
     # List and search article templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTICLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -356,7 +348,7 @@ module KnetikCloudClient
     end
 
     # List and search article templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -379,8 +371,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -402,7 +392,7 @@ module KnetikCloudClient
     end
 
     # List and search articles
-    # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single article' to retrieve the full resource with assets for a given item as needed.
+    # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single article' to retrieve the full resource with assets for a given item as needed. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_active_only Filter for articles that are active (true) or inactive (false)
     # @option opts [String] :filter_category Filter for articles from a specific category by id
@@ -420,7 +410,7 @@ module KnetikCloudClient
     end
 
     # List and search articles
-    # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
+    # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_active_only Filter for articles that are active (true) or inactive (false)
     # @option opts [String] :filter_category Filter for articles from a specific category by id
@@ -455,8 +445,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -478,7 +466,7 @@ module KnetikCloudClient
     end
 
     # Update an existing article
-    # 
+    # <b>Permissions Needed:</b> ARTICLES_ADMIN
     # @param id The article id
     # @param [Hash] opts the optional parameters
     # @option opts [ArticleResource] :article_resource The article object
@@ -489,7 +477,7 @@ module KnetikCloudClient
     end
 
     # Update an existing article
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
     # @param id The article id
     # @param [Hash] opts the optional parameters
     # @option opts [ArticleResource] :article_resource The article object
@@ -535,7 +523,7 @@ module KnetikCloudClient
     end
 
     # Update an article template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :article_template_resource The article template resource object
@@ -546,7 +534,7 @@ module KnetikCloudClient
     end
 
     # Update an article template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :article_template_resource The article template resource object

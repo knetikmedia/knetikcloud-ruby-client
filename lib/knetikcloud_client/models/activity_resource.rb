@@ -18,6 +18,9 @@ module KnetikCloudClient
     # A map of additional properties keyed on the property name. Used to further describe an activity. While settings will vary from one activity occurrence (a game) to another, additional properties are shared by all the occurrences of this activity. Ex: Activity Logo, Disclaimer, Greeting, etc. Validated against template if one exists for activities
     attr_accessor :additional_properties
 
+    # Defines core settings about the activity that affect how it can be created/played by users.
+    attr_accessor :core_settings
+
     # The date/time this resource was created in seconds since unix epoch
     attr_accessor :created_date
 
@@ -68,6 +71,7 @@ module KnetikCloudClient
     def self.attribute_map
       {
         :'additional_properties' => :'additional_properties',
+        :'core_settings' => :'core_settings',
         :'created_date' => :'created_date',
         :'entitlements' => :'entitlements',
         :'id' => :'id',
@@ -90,6 +94,7 @@ module KnetikCloudClient
     def self.swagger_types
       {
         :'additional_properties' => :'Hash<String, Property>',
+        :'core_settings' => :'CoreActivitySettings',
         :'created_date' => :'Integer',
         :'entitlements' => :'Array<ActivityEntitlementResource>',
         :'id' => :'Integer',
@@ -120,6 +125,10 @@ module KnetikCloudClient
         if (value = attributes[:'additional_properties']).is_a?(Array)
           self.additional_properties = value
         end
+      end
+
+      if attributes.has_key?(:'core_settings')
+        self.core_settings = attributes[:'core_settings']
       end
 
       if attributes.has_key?(:'created_date')
@@ -196,10 +205,6 @@ module KnetikCloudClient
         invalid_properties.push("invalid value for 'name', name cannot be nil.")
       end
 
-      if @type.nil?
-        invalid_properties.push("invalid value for 'type', type cannot be nil.")
-      end
-
       return invalid_properties
     end
 
@@ -207,7 +212,6 @@ module KnetikCloudClient
     # @return true if the model is valid
     def valid?
       return false if @name.nil?
-      return false if @type.nil?
       return true
     end
 
@@ -217,6 +221,7 @@ module KnetikCloudClient
       return true if self.equal?(o)
       self.class == o.class &&
           additional_properties == o.additional_properties &&
+          core_settings == o.core_settings &&
           created_date == o.created_date &&
           entitlements == o.entitlements &&
           id == o.id &&
@@ -243,7 +248,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [additional_properties, created_date, entitlements, id, launch, leaderboard_strategy, long_description, name, reward_set, settings, short_description, template, template_id, type, unique_key, updated_date].hash
+      [additional_properties, core_settings, created_date, entitlements, id, launch, leaderboard_strategy, long_description, name, reward_set, settings, short_description, template, template_id, type, unique_key, updated_date].hash
     end
 
     # Builds the object from hash

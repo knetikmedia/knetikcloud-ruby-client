@@ -34,7 +34,7 @@ describe 'ReportingUsersApi' do
 
   # unit tests for get_user_registrations
   # Get user registration info
-  # Get user registration counts grouped by time range
+  # Get user registration counts grouped by time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_USER_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :granularity The time duration to aggregate by
   # @option opts [Integer] :start_date The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time

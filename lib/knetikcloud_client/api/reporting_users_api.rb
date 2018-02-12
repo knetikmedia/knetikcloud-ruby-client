@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get user registration info
-    # Get user registration counts grouped by time range
+    # Get user registration counts grouped by time range. <br><br><b>Permissions Needed:</b> REPORTING_USER_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :granularity The time duration to aggregate by (default to day)
     # @option opts [Integer] :start_date The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
@@ -35,7 +35,7 @@ module KnetikCloudClient
     end
 
     # Get user registration info
-    # Get user registration counts grouped by time range
+    # Get user registration counts grouped by time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_USER_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :granularity The time duration to aggregate by
     # @option opts [Integer] :start_date The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
@@ -65,8 +65,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

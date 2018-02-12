@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get details for a template property type
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param type type
     # @param [Hash] opts the optional parameters
     # @return [PropertyFieldListResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Get details for a template property type
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param type type
     # @param [Hash] opts the optional parameters
     # @return [Array<(PropertyFieldListResource, Fixnum, Hash)>] PropertyFieldListResource data, response status code and response headers
@@ -53,8 +53,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -76,7 +74,7 @@ module KnetikCloudClient
     end
 
     # List template property types
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<PropertyFieldListResource>]
     def get_template_property_types(opts = {})
@@ -85,7 +83,7 @@ module KnetikCloudClient
     end
 
     # List template property types
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<PropertyFieldListResource>, Fixnum, Hash)>] Array<PropertyFieldListResource> data, response status code and response headers
     def get_template_property_types_with_http_info(opts = {})
@@ -102,8 +100,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

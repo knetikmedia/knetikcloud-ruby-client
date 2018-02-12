@@ -34,7 +34,7 @@ describe 'ContentCommentsApi' do
 
   # unit tests for add_comment
   # Add a new comment
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [CommentResource] :comment_resource The comment to be added
   # @return [CommentResource]
@@ -46,7 +46,7 @@ describe 'ContentCommentsApi' do
 
   # unit tests for delete_comment
   # Delete a comment
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
   # @param id The comment id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'ContentCommentsApi' do
 
   # unit tests for get_comment
   # Return a comment
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The comment id
   # @param [Hash] opts the optional parameters
   # @return [CommentResource]
@@ -70,7 +70,7 @@ describe 'ContentCommentsApi' do
 
   # unit tests for get_comments
   # Returns a page of comments
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param context Get comments by context type
   # @param context_id Get comments by context id
   # @param [Hash] opts the optional parameters
@@ -85,7 +85,7 @@ describe 'ContentCommentsApi' do
 
   # unit tests for update_comment
   # Update a comment
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
   # @param id The comment id
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :content The comment content

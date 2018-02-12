@@ -34,7 +34,7 @@ describe 'PaymentsGoogleApi' do
 
   # unit tests for handle_google_payment
   # Mark an invoice paid with Google
-  # Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful.
+  # Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [GooglePaymentRequest] :request The request for paying an invoice through a Google in-app payment
   # @return [Integer]

@@ -34,7 +34,7 @@ describe 'TaxesApi' do
 
   # unit tests for create_country_tax
   # Create a country tax
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [CountryTaxResource] :tax_resource The tax object
   # @return [CountryTaxResource]
@@ -46,7 +46,7 @@ describe 'TaxesApi' do
 
   # unit tests for create_state_tax
   # Create a state tax
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   # @param country_code_iso3 The iso3 code of the country
   # @param [Hash] opts the optional parameters
   # @option opts [StateTaxResource] :tax_resource The tax object
@@ -59,7 +59,7 @@ describe 'TaxesApi' do
 
   # unit tests for delete_country_tax
   # Delete an existing tax
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   # @param country_code_iso3 The iso3 code of the country
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -71,7 +71,7 @@ describe 'TaxesApi' do
 
   # unit tests for delete_state_tax
   # Delete an existing state tax
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   # @param country_code_iso3 The iso3 code of the country
   # @param state_code The code of the state
   # @param [Hash] opts the optional parameters
@@ -84,7 +84,7 @@ describe 'TaxesApi' do
 
   # unit tests for get_country_tax
   # Get a single tax
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param country_code_iso3 The iso3 code of the country
   # @param [Hash] opts the optional parameters
   # @return [CountryTaxResource]
@@ -96,7 +96,7 @@ describe 'TaxesApi' do
 
   # unit tests for get_country_taxes
   # List and search taxes
-  # Get a list of taxes
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned
@@ -110,7 +110,7 @@ describe 'TaxesApi' do
 
   # unit tests for get_state_tax
   # Get a single state tax
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param country_code_iso3 The iso3 code of the country
   # @param state_code The code of the state
   # @param [Hash] opts the optional parameters
@@ -123,7 +123,7 @@ describe 'TaxesApi' do
 
   # unit tests for get_state_taxes_for_countries
   # List and search taxes across all countries
-  # Get a list of taxes
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned
@@ -137,7 +137,7 @@ describe 'TaxesApi' do
 
   # unit tests for get_state_taxes_for_country
   # List and search taxes within a country
-  # Get a list of taxes
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param country_code_iso3 The iso3 code of the country
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -152,7 +152,7 @@ describe 'TaxesApi' do
 
   # unit tests for update_country_tax
   # Create or update a tax
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   # @param country_code_iso3 The iso3 code of the country
   # @param [Hash] opts the optional parameters
   # @option opts [CountryTaxResource] :tax_resource The tax object
@@ -165,7 +165,7 @@ describe 'TaxesApi' do
 
   # unit tests for update_state_tax
   # Create or update a state tax
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   # @param country_code_iso3 The iso3 code of the country
   # @param state_code The code of the state
   # @param [Hash] opts the optional parameters

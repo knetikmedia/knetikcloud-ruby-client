@@ -103,11 +103,12 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *KnetikCloudClient::AccessTokenApi* | [**get_o_auth_token**](docs/AccessTokenApi.md#get_o_auth_token) | **POST** /oauth/token | Get access token
+*KnetikCloudClient::ActivitiesApi* | [**add_user**](docs/ActivitiesApi.md#add_user) | **POST** /activity-occurrences/{activity_occurrence_id}/users | Add a user to an occurrence
 *KnetikCloudClient::ActivitiesApi* | [**create_activity**](docs/ActivitiesApi.md#create_activity) | **POST** /activities | Create an activity
 *KnetikCloudClient::ActivitiesApi* | [**create_activity_occurrence**](docs/ActivitiesApi.md#create_activity_occurrence) | **POST** /activity-occurrences | Create a new activity occurrence. Ex: start a game
 *KnetikCloudClient::ActivitiesApi* | [**create_activity_template**](docs/ActivitiesApi.md#create_activity_template) | **POST** /activities/templates | Create a activity template
@@ -119,9 +120,12 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::ActivitiesApi* | [**get_activity_template**](docs/ActivitiesApi.md#get_activity_template) | **GET** /activities/templates/{id} | Get a single activity template
 *KnetikCloudClient::ActivitiesApi* | [**get_activity_templates**](docs/ActivitiesApi.md#get_activity_templates) | **GET** /activities/templates | List and search activity templates
 *KnetikCloudClient::ActivitiesApi* | [**list_activity_occurrences**](docs/ActivitiesApi.md#list_activity_occurrences) | **GET** /activity-occurrences | List activity occurrences
+*KnetikCloudClient::ActivitiesApi* | [**remove_user**](docs/ActivitiesApi.md#remove_user) | **DELETE** /activity-occurrences/{activity_occurrence_id}/users/{user_id} | Remove a user from an occurrence
 *KnetikCloudClient::ActivitiesApi* | [**set_activity_occurrence_results**](docs/ActivitiesApi.md#set_activity_occurrence_results) | **POST** /activity-occurrences/{activity_occurrence_id}/results | Sets the status of an activity occurrence to FINISHED and logs metrics
+*KnetikCloudClient::ActivitiesApi* | [**set_activity_occurrence_settings**](docs/ActivitiesApi.md#set_activity_occurrence_settings) | **PUT** /activity-occurrences/{activity_occurrence_id}/settings | Sets the settings of an activity occurrence
+*KnetikCloudClient::ActivitiesApi* | [**set_user_status**](docs/ActivitiesApi.md#set_user_status) | **PUT** /activity-occurrences/{activity_occurrence_id}/users/{user_id}/status | Set a user's status within an occurrence
 *KnetikCloudClient::ActivitiesApi* | [**update_activity**](docs/ActivitiesApi.md#update_activity) | **PUT** /activities/{id} | Update an activity
-*KnetikCloudClient::ActivitiesApi* | [**update_activity_occurrence**](docs/ActivitiesApi.md#update_activity_occurrence) | **PUT** /activity-occurrences/{activity_occurrence_id}/status | Updated the status of an activity occurrence
+*KnetikCloudClient::ActivitiesApi* | [**update_activity_occurrence_status**](docs/ActivitiesApi.md#update_activity_occurrence_status) | **PUT** /activity-occurrences/{activity_occurrence_id}/status | Update the status of an activity occurrence
 *KnetikCloudClient::ActivitiesApi* | [**update_activity_template**](docs/ActivitiesApi.md#update_activity_template) | **PUT** /activities/templates/{id} | Update an activity template
 *KnetikCloudClient::AmazonWebServicesS3Api* | [**get_download_url**](docs/AmazonWebServicesS3Api.md#get_download_url) | **GET** /amazon/s3/downloadurl | Get a temporary signed S3 URL for download
 *KnetikCloudClient::AmazonWebServicesS3Api* | [**get_signed_s3_url**](docs/AmazonWebServicesS3Api.md#get_signed_s3_url) | **GET** /amazon/s3/signedposturl | Get a signed S3 URL for upload
@@ -162,7 +166,7 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::BRERuleEngineCategoriesApi* | [**update_bre_category_template**](docs/BRERuleEngineCategoriesApi.md#update_bre_category_template) | **PUT** /bre/categories/templates/{id} | Update a BRE category template
 *KnetikCloudClient::BRERuleEngineEventsApi* | [**send_bre_event**](docs/BRERuleEngineEventsApi.md#send_bre_event) | **POST** /bre/events | Fire a new event, based on an existing trigger
 *KnetikCloudClient::BRERuleEngineExpressionsApi* | [**get_bre_expression**](docs/BRERuleEngineExpressionsApi.md#get_bre_expression) | **GET** /bre/expressions/{type} | Lookup a specific expression
-*KnetikCloudClient::BRERuleEngineExpressionsApi* | [**get_bre_expressions**](docs/BRERuleEngineExpressionsApi.md#get_bre_expressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions.
+*KnetikCloudClient::BRERuleEngineExpressionsApi* | [**get_bre_expressions**](docs/BRERuleEngineExpressionsApi.md#get_bre_expressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions
 *KnetikCloudClient::BRERuleEngineExpressionsApi* | [**get_expression_as_text**](docs/BRERuleEngineExpressionsApi.md#get_expression_as_text) | **POST** /bre/expressions | Returns the textual representation of an expression
 *KnetikCloudClient::BRERuleEngineGlobalsApi* | [**create_bre_global**](docs/BRERuleEngineGlobalsApi.md#create_bre_global) | **POST** /bre/globals/definitions | Create a global definition
 *KnetikCloudClient::BRERuleEngineGlobalsApi* | [**delete_bre_global**](docs/BRERuleEngineGlobalsApi.md#delete_bre_global) | **DELETE** /bre/globals/definitions/{id} | Delete a global
@@ -235,6 +239,18 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::CategoriesApi* | [**get_tags**](docs/CategoriesApi.md#get_tags) | **GET** /tags | List all trivia tags in the system
 *KnetikCloudClient::CategoriesApi* | [**update_category**](docs/CategoriesApi.md#update_category) | **PUT** /categories/{id} | Update an existing category
 *KnetikCloudClient::CategoriesApi* | [**update_category_template**](docs/CategoriesApi.md#update_category_template) | **PUT** /categories/templates/{id} | Update a category template
+*KnetikCloudClient::ChatApi* | [**acknowledge_chat_message**](docs/ChatApi.md#acknowledge_chat_message) | **PUT** /chat/threads/{id}/acknowledge | Acknowledge number of messages in a thread
+*KnetikCloudClient::ChatApi* | [**add_chat_message_blacklist**](docs/ChatApi.md#add_chat_message_blacklist) | **POST** /chat/users/{id}/blacklist/{blacklisted_user_id} | Add a user to a chat message blacklist
+*KnetikCloudClient::ChatApi* | [**delete_chat_message**](docs/ChatApi.md#delete_chat_message) | **DELETE** /chat/messages/{id} | Delete a message
+*KnetikCloudClient::ChatApi* | [**edit_chat_message**](docs/ChatApi.md#edit_chat_message) | **PUT** /chat/messages/{id} | Edit your message
+*KnetikCloudClient::ChatApi* | [**get_chat_message**](docs/ChatApi.md#get_chat_message) | **GET** /chat/messages/{id} | Get a message
+*KnetikCloudClient::ChatApi* | [**get_chat_message_blacklist**](docs/ChatApi.md#get_chat_message_blacklist) | **GET** /chat/users/{id}/blacklist | Get a list of blocked users for chat messaging
+*KnetikCloudClient::ChatApi* | [**get_chat_threads**](docs/ChatApi.md#get_chat_threads) | **GET** /chat/threads | List your threads
+*KnetikCloudClient::ChatApi* | [**get_direct_messages**](docs/ChatApi.md#get_direct_messages) | **GET** /chat/users/{id}/messages | List messages with a user
+*KnetikCloudClient::ChatApi* | [**get_thread_messages**](docs/ChatApi.md#get_thread_messages) | **GET** /chat/threads/{id}/messages | List messages in a thread
+*KnetikCloudClient::ChatApi* | [**get_topic_messages**](docs/ChatApi.md#get_topic_messages) | **GET** /chat/topics/{id}/messages | List messages in a topic
+*KnetikCloudClient::ChatApi* | [**remove_chat_blacklist**](docs/ChatApi.md#remove_chat_blacklist) | **DELETE** /chat/users/{id}/blacklist/{blacklisted_user_id} | Remove a user from a blacklist
+*KnetikCloudClient::ChatApi* | [**send_message**](docs/ChatApi.md#send_message) | **POST** /chat/messages | Send a message
 *KnetikCloudClient::ConfigsApi* | [**create_config**](docs/ConfigsApi.md#create_config) | **POST** /configs | Create a new config
 *KnetikCloudClient::ConfigsApi* | [**delete_config**](docs/ConfigsApi.md#delete_config) | **DELETE** /configs/{name} | Delete an existing config
 *KnetikCloudClient::ConfigsApi* | [**get_config**](docs/ConfigsApi.md#get_config) | **GET** /configs/{name} | Get a single config
@@ -426,12 +442,35 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::MediaVideosApi* | [**update_video_relationship**](docs/MediaVideosApi.md#update_video_relationship) | **PUT** /media/videos/{video_id}/related/{id}/relationship_details | Update a video's relationship details
 *KnetikCloudClient::MediaVideosApi* | [**update_video_template**](docs/MediaVideosApi.md#update_video_template) | **PUT** /media/videos/templates/{id} | Update a video template
 *KnetikCloudClient::MediaVideosApi* | [**view_video**](docs/MediaVideosApi.md#view_video) | **POST** /media/videos/{id}/views | Increment a video's view count
+*KnetikCloudClient::MessagingApi* | [**compile_message_template**](docs/MessagingApi.md#compile_message_template) | **POST** /messaging/templates/compilations | Compile a message template
+*KnetikCloudClient::MessagingApi* | [**create_message_template**](docs/MessagingApi.md#create_message_template) | **POST** /messaging/templates | Create a message template
+*KnetikCloudClient::MessagingApi* | [**delete_message_template**](docs/MessagingApi.md#delete_message_template) | **DELETE** /messaging/templates/{id} | Delete an existing message template
+*KnetikCloudClient::MessagingApi* | [**get_message_template**](docs/MessagingApi.md#get_message_template) | **GET** /messaging/templates/{id} | Get a single message template
+*KnetikCloudClient::MessagingApi* | [**get_message_templates**](docs/MessagingApi.md#get_message_templates) | **GET** /messaging/templates | List and search message templates
+*KnetikCloudClient::MessagingApi* | [**send_message1**](docs/MessagingApi.md#send_message1) | **POST** /messaging/message | Send a message
 *KnetikCloudClient::MessagingApi* | [**send_raw_email**](docs/MessagingApi.md#send_raw_email) | **POST** /messaging/raw-email | Send a raw email to one or more users
 *KnetikCloudClient::MessagingApi* | [**send_raw_push**](docs/MessagingApi.md#send_raw_push) | **POST** /messaging/raw-push | Send a raw push notification
 *KnetikCloudClient::MessagingApi* | [**send_raw_sms**](docs/MessagingApi.md#send_raw_sms) | **POST** /messaging/raw-sms | Send a raw SMS
 *KnetikCloudClient::MessagingApi* | [**send_templated_email**](docs/MessagingApi.md#send_templated_email) | **POST** /messaging/templated-email | Send a templated email to one or more users
 *KnetikCloudClient::MessagingApi* | [**send_templated_push**](docs/MessagingApi.md#send_templated_push) | **POST** /messaging/templated-push | Send a templated push notification
 *KnetikCloudClient::MessagingApi* | [**send_templated_sms**](docs/MessagingApi.md#send_templated_sms) | **POST** /messaging/templated-sms | Send a new templated SMS
+*KnetikCloudClient::MessagingApi* | [**send_websocket**](docs/MessagingApi.md#send_websocket) | **POST** /messaging/websocket-message | Send a websocket message
+*KnetikCloudClient::MessagingApi* | [**update_message_template**](docs/MessagingApi.md#update_message_template) | **PUT** /messaging/templates/{id} | Update an existing message template
+*KnetikCloudClient::MessagingTopicsApi* | [**disable_topic_subscriber**](docs/MessagingTopicsApi.md#disable_topic_subscriber) | **PUT** /messaging/topics/{id}/subscribers/{user_id}/disabled | Enable or disable messages for a user
+*KnetikCloudClient::MessagingTopicsApi* | [**get_topic_subscriber**](docs/MessagingTopicsApi.md#get_topic_subscriber) | **GET** /messaging/topics/{id}/subscribers/{user_id} | Get a subscriber to a topic
+*KnetikCloudClient::MessagingTopicsApi* | [**get_topic_subscribers**](docs/MessagingTopicsApi.md#get_topic_subscribers) | **GET** /messaging/topics/{id}/subscribers | Get all subscribers to a topic
+*KnetikCloudClient::MessagingTopicsApi* | [**get_user_topics**](docs/MessagingTopicsApi.md#get_user_topics) | **GET** /users/{id}/topics | Get all messaging topics for a given user
+*KnetikCloudClient::NotificationsApi* | [**create_notification_type**](docs/NotificationsApi.md#create_notification_type) | **POST** /notifications/types | Create a notification type
+*KnetikCloudClient::NotificationsApi* | [**delete_notification_type**](docs/NotificationsApi.md#delete_notification_type) | **DELETE** /notifications/types/{id} | Delete a notification type
+*KnetikCloudClient::NotificationsApi* | [**get_notification_type**](docs/NotificationsApi.md#get_notification_type) | **GET** /notifications/types/{id} | Get a single notification type
+*KnetikCloudClient::NotificationsApi* | [**get_notification_types**](docs/NotificationsApi.md#get_notification_types) | **GET** /notifications/types | List and search notification types
+*KnetikCloudClient::NotificationsApi* | [**get_user_notification_info**](docs/NotificationsApi.md#get_user_notification_info) | **GET** /users/{user_id}/notifications/types/{type_id} | View a user's notification settings for a type
+*KnetikCloudClient::NotificationsApi* | [**get_user_notification_info_list**](docs/NotificationsApi.md#get_user_notification_info_list) | **GET** /users/{user_id}/notifications/types | View a user's notification settings
+*KnetikCloudClient::NotificationsApi* | [**get_user_notifications**](docs/NotificationsApi.md#get_user_notifications) | **GET** /users/{id}/notifications | Get notifications
+*KnetikCloudClient::NotificationsApi* | [**send_notification**](docs/NotificationsApi.md#send_notification) | **POST** /notifications | Send a notification
+*KnetikCloudClient::NotificationsApi* | [**set_user_notification_status**](docs/NotificationsApi.md#set_user_notification_status) | **PUT** /users/{user_id}/notifications/{notification_id}/status | Set notification status
+*KnetikCloudClient::NotificationsApi* | [**silence_direct_notifications**](docs/NotificationsApi.md#silence_direct_notifications) | **PUT** /users/{user_id}/notifications/types/{type_id}/silenced | Enable or disable direct notifications for a user
+*KnetikCloudClient::NotificationsApi* | [**update_notification_type**](docs/NotificationsApi.md#update_notification_type) | **PUT** /notifications/types/{id} | Update a notificationType
 *KnetikCloudClient::ObjectsApi* | [**create_object_item**](docs/ObjectsApi.md#create_object_item) | **POST** /objects/{template_id} | Create an object
 *KnetikCloudClient::ObjectsApi* | [**create_object_template**](docs/ObjectsApi.md#create_object_template) | **POST** /objects/templates | Create an object template
 *KnetikCloudClient::ObjectsApi* | [**delete_object_item**](docs/ObjectsApi.md#delete_object_item) | **DELETE** /objects/{template_id}/{object_id} | Delete an object
@@ -606,12 +645,14 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::UsersApi* | [**add_user_tag**](docs/UsersApi.md#add_user_tag) | **POST** /users/{user_id}/tags | Add a tag to a user
 *KnetikCloudClient::UsersApi* | [**create_user_template**](docs/UsersApi.md#create_user_template) | **POST** /users/templates | Create a user template
 *KnetikCloudClient::UsersApi* | [**delete_user_template**](docs/UsersApi.md#delete_user_template) | **DELETE** /users/templates/{id} | Delete a user template
+*KnetikCloudClient::UsersApi* | [**get_direct_messages1**](docs/UsersApi.md#get_direct_messages1) | **GET** /users/users/{recipient_id}/messages | Get a list of direct messages with this user
 *KnetikCloudClient::UsersApi* | [**get_user**](docs/UsersApi.md#get_user) | **GET** /users/{id} | Get a single user
 *KnetikCloudClient::UsersApi* | [**get_user_tags**](docs/UsersApi.md#get_user_tags) | **GET** /users/{user_id}/tags | List tags for a user
 *KnetikCloudClient::UsersApi* | [**get_user_template**](docs/UsersApi.md#get_user_template) | **GET** /users/templates/{id} | Get a single user template
 *KnetikCloudClient::UsersApi* | [**get_user_templates**](docs/UsersApi.md#get_user_templates) | **GET** /users/templates | List and search user templates
 *KnetikCloudClient::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List and search users
 *KnetikCloudClient::UsersApi* | [**password_reset**](docs/UsersApi.md#password_reset) | **PUT** /users/{id}/password-reset | Choose a new password after a reset
+*KnetikCloudClient::UsersApi* | [**post_user_message**](docs/UsersApi.md#post_user_message) | **POST** /users/{recipient_id}/messages | Send a user message
 *KnetikCloudClient::UsersApi* | [**register_user**](docs/UsersApi.md#register_user) | **POST** /users | Register a new user
 *KnetikCloudClient::UsersApi* | [**remove_user_tag**](docs/UsersApi.md#remove_user_tag) | **DELETE** /users/{user_id}/tags/{tag} | Remove a tag from a user
 *KnetikCloudClient::UsersApi* | [**set_password**](docs/UsersApi.md#set_password) | **PUT** /users/{id}/password | Set a user's password
@@ -638,16 +679,19 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::UsersGroupsApi* | [**delete_group**](docs/UsersGroupsApi.md#delete_group) | **DELETE** /users/groups/{unique_name} | Removes a group from the system
 *KnetikCloudClient::UsersGroupsApi* | [**delete_group_member_template**](docs/UsersGroupsApi.md#delete_group_member_template) | **DELETE** /users/groups/members/templates/{id} | Delete an group member template
 *KnetikCloudClient::UsersGroupsApi* | [**delete_group_template**](docs/UsersGroupsApi.md#delete_group_template) | **DELETE** /users/groups/templates/{id} | Delete a group template
+*KnetikCloudClient::UsersGroupsApi* | [**disable_group_notification**](docs/UsersGroupsApi.md#disable_group_notification) | **PUT** /users/groups/{unique_name}/members/{user_id}/messages/disabled | Enable or disable notification of group messages
 *KnetikCloudClient::UsersGroupsApi* | [**get_group**](docs/UsersGroupsApi.md#get_group) | **GET** /users/groups/{unique_name} | Loads a specific group's details
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_ancestors**](docs/UsersGroupsApi.md#get_group_ancestors) | **GET** /users/groups/{unique_name}/ancestors | Get group ancestors
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_member**](docs/UsersGroupsApi.md#get_group_member) | **GET** /users/groups/{unique_name}/members/{user_id} | Get a user from a group
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_member_template**](docs/UsersGroupsApi.md#get_group_member_template) | **GET** /users/groups/members/templates/{id} | Get a single group member template
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_member_templates**](docs/UsersGroupsApi.md#get_group_member_templates) | **GET** /users/groups/members/templates | List and search group member templates
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_members**](docs/UsersGroupsApi.md#get_group_members) | **GET** /users/groups/{unique_name}/members | Lists members of the group
+*KnetikCloudClient::UsersGroupsApi* | [**get_group_messages**](docs/UsersGroupsApi.md#get_group_messages) | **GET** /users/groups/{unique_name}/messages | Get a list of group messages
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_template**](docs/UsersGroupsApi.md#get_group_template) | **GET** /users/groups/templates/{id} | Get a single group template
 *KnetikCloudClient::UsersGroupsApi* | [**get_group_templates**](docs/UsersGroupsApi.md#get_group_templates) | **GET** /users/groups/templates | List and search group templates
 *KnetikCloudClient::UsersGroupsApi* | [**get_groups_for_user**](docs/UsersGroupsApi.md#get_groups_for_user) | **GET** /users/{user_id}/groups | List groups a user is in
 *KnetikCloudClient::UsersGroupsApi* | [**list_groups**](docs/UsersGroupsApi.md#list_groups) | **GET** /users/groups | List and search groups
+*KnetikCloudClient::UsersGroupsApi* | [**post_group_message**](docs/UsersGroupsApi.md#post_group_message) | **POST** /users/groups/{unique_name}/messages | Send a group message
 *KnetikCloudClient::UsersGroupsApi* | [**remove_group_member**](docs/UsersGroupsApi.md#remove_group_member) | **DELETE** /users/groups/{unique_name}/members/{user_id} | Removes a user from a group
 *KnetikCloudClient::UsersGroupsApi* | [**update_group**](docs/UsersGroupsApi.md#update_group) | **PUT** /users/groups/{unique_name} | Update a group
 *KnetikCloudClient::UsersGroupsApi* | [**update_group_member_properties**](docs/UsersGroupsApi.md#update_group_member_properties) | **PUT** /users/groups/{unique_name}/members/{user_id}/order | Change a user's order
@@ -713,6 +757,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::ActivityOccurrenceResource](docs/ActivityOccurrenceResource.md)
  - [KnetikCloudClient::ActivityOccurrenceResults](docs/ActivityOccurrenceResults.md)
  - [KnetikCloudClient::ActivityOccurrenceResultsResource](docs/ActivityOccurrenceResultsResource.md)
+ - [KnetikCloudClient::ActivityOccurrenceSettingsResource](docs/ActivityOccurrenceSettingsResource.md)
  - [KnetikCloudClient::ActivityResource](docs/ActivityResource.md)
  - [KnetikCloudClient::ActivityUserResource](docs/ActivityUserResource.md)
  - [KnetikCloudClient::AddressResource](docs/AddressResource.md)
@@ -735,6 +780,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::BehaviorDefinitionResource](docs/BehaviorDefinitionResource.md)
  - [KnetikCloudClient::BillingReport](docs/BillingReport.md)
  - [KnetikCloudClient::BooleanResource](docs/BooleanResource.md)
+ - [KnetikCloudClient::BreActionLog](docs/BreActionLog.md)
  - [KnetikCloudClient::BreCategoryResource](docs/BreCategoryResource.md)
  - [KnetikCloudClient::BreEvent](docs/BreEvent.md)
  - [KnetikCloudClient::BreEventLog](docs/BreEventLog.md)
@@ -760,12 +806,20 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::ChallengeEventParticipantResource](docs/ChallengeEventParticipantResource.md)
  - [KnetikCloudClient::ChallengeEventResource](docs/ChallengeEventResource.md)
  - [KnetikCloudClient::ChallengeResource](docs/ChallengeResource.md)
+ - [KnetikCloudClient::ChatBlacklistResource](docs/ChatBlacklistResource.md)
+ - [KnetikCloudClient::ChatMessageRequest](docs/ChatMessageRequest.md)
+ - [KnetikCloudClient::ChatMessageResource](docs/ChatMessageResource.md)
+ - [KnetikCloudClient::ChatThreadResource](docs/ChatThreadResource.md)
+ - [KnetikCloudClient::ChatUserThreadResource](docs/ChatUserThreadResource.md)
  - [KnetikCloudClient::ClientResource](docs/ClientResource.md)
  - [KnetikCloudClient::CommentResource](docs/CommentResource.md)
  - [KnetikCloudClient::Config](docs/Config.md)
  - [KnetikCloudClient::ConfigLookupResource](docs/ConfigLookupResource.md)
  - [KnetikCloudClient::ConstantResource](docs/ConstantResource.md)
  - [KnetikCloudClient::ContributionResource](docs/ContributionResource.md)
+ - [KnetikCloudClient::CoreActivityOccurrenceSettings](docs/CoreActivityOccurrenceSettings.md)
+ - [KnetikCloudClient::CoreActivitySettings](docs/CoreActivitySettings.md)
+ - [KnetikCloudClient::CoreChallengeActivitySettings](docs/CoreChallengeActivitySettings.md)
  - [KnetikCloudClient::Country](docs/Country.md)
  - [KnetikCloudClient::CountryResource](docs/CountryResource.md)
  - [KnetikCloudClient::CountryTaxResource](docs/CountryTaxResource.md)
@@ -805,7 +859,6 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::GrantTypeResource](docs/GrantTypeResource.md)
  - [KnetikCloudClient::GroupMemberResource](docs/GroupMemberResource.md)
  - [KnetikCloudClient::GroupResource](docs/GroupResource.md)
- - [KnetikCloudClient::IOConfig](docs/IOConfig.md)
  - [KnetikCloudClient::IdRef](docs/IdRef.md)
  - [KnetikCloudClient::ImportJobOutputResource](docs/ImportJobOutputResource.md)
  - [KnetikCloudClient::ImportJobResource](docs/ImportJobResource.md)
@@ -830,10 +883,17 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::LookupResource](docs/LookupResource.md)
  - [KnetikCloudClient::Maintenance](docs/Maintenance.md)
  - [KnetikCloudClient::MapResource](docs/MapResource.md)
+ - [KnetikCloudClient::MessageContentResource](docs/MessageContentResource.md)
+ - [KnetikCloudClient::MessageResource](docs/MessageResource.md)
+ - [KnetikCloudClient::MessageTemplateBulkRequest](docs/MessageTemplateBulkRequest.md)
+ - [KnetikCloudClient::MessageTemplateResource](docs/MessageTemplateResource.md)
  - [KnetikCloudClient::MetricResource](docs/MetricResource.md)
  - [KnetikCloudClient::MongoDatabaseConfig](docs/MongoDatabaseConfig.md)
  - [KnetikCloudClient::NestedCategory](docs/NestedCategory.md)
  - [KnetikCloudClient::NewPasswordRequest](docs/NewPasswordRequest.md)
+ - [KnetikCloudClient::NotificationResource](docs/NotificationResource.md)
+ - [KnetikCloudClient::NotificationTypeResource](docs/NotificationTypeResource.md)
+ - [KnetikCloudClient::NotificationUserTypeResource](docs/NotificationUserTypeResource.md)
  - [KnetikCloudClient::OAuth2Resource](docs/OAuth2Resource.md)
  - [KnetikCloudClient::OauthAccessTokenResource](docs/OauthAccessTokenResource.md)
  - [KnetikCloudClient::ObjectResource](docs/ObjectResource.md)
@@ -863,6 +923,8 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::PageResourceChallengeEventParticipantResource](docs/PageResourceChallengeEventParticipantResource.md)
  - [KnetikCloudClient::PageResourceChallengeEventResource](docs/PageResourceChallengeEventResource.md)
  - [KnetikCloudClient::PageResourceChallengeResource](docs/PageResourceChallengeResource.md)
+ - [KnetikCloudClient::PageResourceChatMessageResource](docs/PageResourceChatMessageResource.md)
+ - [KnetikCloudClient::PageResourceChatUserThreadResource](docs/PageResourceChatUserThreadResource.md)
  - [KnetikCloudClient::PageResourceClientResource](docs/PageResourceClientResource.md)
  - [KnetikCloudClient::PageResourceCommentResource](docs/PageResourceCommentResource.md)
  - [KnetikCloudClient::PageResourceConfig](docs/PageResourceConfig.md)
@@ -883,6 +945,9 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::PageResourceItemTemplateResource](docs/PageResourceItemTemplateResource.md)
  - [KnetikCloudClient::PageResourceLevelingResource](docs/PageResourceLevelingResource.md)
  - [KnetikCloudClient::PageResourceLocationLogResource](docs/PageResourceLocationLogResource.md)
+ - [KnetikCloudClient::PageResourceMessageTemplateResource](docs/PageResourceMessageTemplateResource.md)
+ - [KnetikCloudClient::PageResourceNotificationTypeResource](docs/PageResourceNotificationTypeResource.md)
+ - [KnetikCloudClient::PageResourceNotificationUserTypeResource](docs/PageResourceNotificationUserTypeResource.md)
  - [KnetikCloudClient::PageResourceOauthAccessTokenResource](docs/PageResourceOauthAccessTokenResource.md)
  - [KnetikCloudClient::PageResourceObjectResource](docs/PageResourceObjectResource.md)
  - [KnetikCloudClient::PageResourcePaymentMethodTypeResource](docs/PageResourcePaymentMethodTypeResource.md)
@@ -904,6 +969,8 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::PageResourceSubscriptionResource](docs/PageResourceSubscriptionResource.md)
  - [KnetikCloudClient::PageResourceSubscriptionTemplateResource](docs/PageResourceSubscriptionTemplateResource.md)
  - [KnetikCloudClient::PageResourceTemplateResource](docs/PageResourceTemplateResource.md)
+ - [KnetikCloudClient::PageResourceTopicResource](docs/PageResourceTopicResource.md)
+ - [KnetikCloudClient::PageResourceTopicSubscriberResource](docs/PageResourceTopicSubscriberResource.md)
  - [KnetikCloudClient::PageResourceTransactionResource](docs/PageResourceTransactionResource.md)
  - [KnetikCloudClient::PageResourceUsageInfo](docs/PageResourceUsageInfo.md)
  - [KnetikCloudClient::PageResourceUserAchievementGroupResource](docs/PageResourceUserAchievementGroupResource.md)
@@ -912,6 +979,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::PageResourceUserInventoryResource](docs/PageResourceUserInventoryResource.md)
  - [KnetikCloudClient::PageResourceUserItemLogResource](docs/PageResourceUserItemLogResource.md)
  - [KnetikCloudClient::PageResourceUserLevelingResource](docs/PageResourceUserLevelingResource.md)
+ - [KnetikCloudClient::PageResourceUserNotificationResource](docs/PageResourceUserNotificationResource.md)
  - [KnetikCloudClient::PageResourceUserRelationshipResource](docs/PageResourceUserRelationshipResource.md)
  - [KnetikCloudClient::PageResourceVendorResource](docs/PageResourceVendorResource.md)
  - [KnetikCloudClient::PageResourceVideoRelationshipResource](docs/PageResourceVideoRelationshipResource.md)
@@ -987,8 +1055,13 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::TemplatePushResource](docs/TemplatePushResource.md)
  - [KnetikCloudClient::TemplateResource](docs/TemplateResource.md)
  - [KnetikCloudClient::TemplateSMSResource](docs/TemplateSMSResource.md)
+ - [KnetikCloudClient::TemplatedEmail](docs/TemplatedEmail.md)
  - [KnetikCloudClient::TierResource](docs/TierResource.md)
  - [KnetikCloudClient::TokenDetailsResource](docs/TokenDetailsResource.md)
+ - [KnetikCloudClient::Topic](docs/Topic.md)
+ - [KnetikCloudClient::TopicResource](docs/TopicResource.md)
+ - [KnetikCloudClient::TopicSubscriber](docs/TopicSubscriber.md)
+ - [KnetikCloudClient::TopicSubscriberResource](docs/TopicSubscriberResource.md)
  - [KnetikCloudClient::TransactionResource](docs/TransactionResource.md)
  - [KnetikCloudClient::TypeHintLookupResource](docs/TypeHintLookupResource.md)
  - [KnetikCloudClient::UsageInfo](docs/UsageInfo.md)
@@ -1002,10 +1075,13 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::UserInventoryResource](docs/UserInventoryResource.md)
  - [KnetikCloudClient::UserItemLogResource](docs/UserItemLogResource.md)
  - [KnetikCloudClient::UserLevelingResource](docs/UserLevelingResource.md)
+ - [KnetikCloudClient::UserNotificationResource](docs/UserNotificationResource.md)
  - [KnetikCloudClient::UserRelationshipReferenceResource](docs/UserRelationshipReferenceResource.md)
  - [KnetikCloudClient::UserRelationshipResource](docs/UserRelationshipResource.md)
  - [KnetikCloudClient::UserResource](docs/UserResource.md)
  - [KnetikCloudClient::UsernameLookupResource](docs/UsernameLookupResource.md)
+ - [KnetikCloudClient::ValueWrapperboolean](docs/ValueWrapperboolean.md)
+ - [KnetikCloudClient::ValueWrapperstring](docs/ValueWrapperstring.md)
  - [KnetikCloudClient::VariableTypeResource](docs/VariableTypeResource.md)
  - [KnetikCloudClient::VendorEmailLookupResource](docs/VendorEmailLookupResource.md)
  - [KnetikCloudClient::VendorResource](docs/VendorResource.md)
@@ -1015,6 +1091,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::WalletAlterRequest](docs/WalletAlterRequest.md)
  - [KnetikCloudClient::WalletTotalResponse](docs/WalletTotalResponse.md)
  - [KnetikCloudClient::WalletTransactionResource](docs/WalletTransactionResource.md)
+ - [KnetikCloudClient::WebsocketMessageResource](docs/WebsocketMessageResource.md)
  - [KnetikCloudClient::XsollaPaymentRequest](docs/XsollaPaymentRequest.md)
  - [KnetikCloudClient::AudioPropertyDefinitionResource](docs/AudioPropertyDefinitionResource.md)
  - [KnetikCloudClient::BooleanProperty](docs/BooleanProperty.md)
@@ -1058,6 +1135,11 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::TimePeriodGettable](docs/TimePeriodGettable.md)
  - [KnetikCloudClient::TimePeriodUsable](docs/TimePeriodUsable.md)
  - [KnetikCloudClient::VideoPropertyDefinitionResource](docs/VideoPropertyDefinitionResource.md)
+ - [KnetikCloudClient::WebsocketRemoveTopicEvent](docs/WebsocketRemoveTopicEvent.md)
+ - [KnetikCloudClient::WebsocketSendMessageEvent](docs/WebsocketSendMessageEvent.md)
+ - [KnetikCloudClient::WebsocketSendTopicMessageEvent](docs/WebsocketSendTopicMessageEvent.md)
+ - [KnetikCloudClient::WebsocketSubscribeEvent](docs/WebsocketSubscribeEvent.md)
+ - [KnetikCloudClient::WebsocketUnsubscribeEvent](docs/WebsocketUnsubscribeEvent.md)
  - [KnetikCloudClient::AudioGroupProperty](docs/AudioGroupProperty.md)
  - [KnetikCloudClient::AudioGroupPropertyDefinitionResource](docs/AudioGroupPropertyDefinitionResource.md)
  - [KnetikCloudClient::AudioProperty](docs/AudioProperty.md)

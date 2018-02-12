@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get batch result with token
-    # Tokens expire in 24 hours
+    # Tokens expire in 24 hours. <br><br><b>Permissions Needed:</b> ANY
     # @param token token
     # @param [Hash] opts the optional parameters
     # @return [Array<BatchReturn>]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Get batch result with token
-    # Tokens expire in 24 hours
+    # Tokens expire in 24 hours. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param token token
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<BatchReturn>, Fixnum, Hash)>] Array<BatchReturn> data, response status code and response headers
@@ -53,8 +53,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -76,7 +74,7 @@ module KnetikCloudClient
     end
 
     # Request to run API call given the method, content type, path url, and body of request
-    # Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
+    # Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Batch] :batch The batch object
     # @return [Array<BatchReturn>]
@@ -86,7 +84,7 @@ module KnetikCloudClient
     end
 
     # Request to run API call given the method, content type, path url, and body of request
-    # Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
+    # Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Batch] :batch The batch object
     # @return [Array<(Array<BatchReturn>, Fixnum, Hash)>] Array<BatchReturn> data, response status code and response headers

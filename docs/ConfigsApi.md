@@ -1,6 +1,6 @@
 # KnetikCloudClient::ConfigsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > Config create_config(opts)
 
 Create a new config
+
+<b>Permissions Needed:</b> TOPICS_ADMIN
 
 ### Example
 ```ruby
@@ -70,6 +72,8 @@ Name | Type | Description  | Notes
 
 Delete an existing config
 
+<b>Permissions Needed:</b> CONFIGS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -112,7 +116,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -122,7 +126,7 @@ nil (empty response body)
 
 Get a single config
 
-Only configs that are public readable will be shown without admin access
+Only configs that are public readable will be shown without admin access. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -167,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -176,6 +180,8 @@ Name | Type | Description  | Notes
 > PageResourceConfig get_configs(opts)
 
 List and search configs
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -196,7 +202,7 @@ opts = {
   filter_search: "filter_search_example", # String | Filter for configs whose name contains the given string
   size: 25, # Integer | The number of objects returned per page
   page: 1, # Integer | The number of the page returned
-  order: "1" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  order: "order_example" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 }
 
 begin
@@ -215,7 +221,7 @@ Name | Type | Description  | Notes
  **filter_search** | **String**| Filter for configs whose name contains the given string | [optional] 
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 
@@ -227,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -236,6 +242,8 @@ Name | Type | Description  | Notes
 > update_config(name, opts)
 
 Update an existing config
+
+<b>Permissions Needed:</b> CONFIGS_ADMIN
 
 ### Example
 ```ruby

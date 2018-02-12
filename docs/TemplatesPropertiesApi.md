@@ -1,6 +1,6 @@
 # KnetikCloudClient::TemplatesPropertiesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,6 +12,8 @@ Method | HTTP request | Description
 > PropertyFieldListResource get_template_property_type(type)
 
 Get details for a template property type
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -56,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -65,6 +67,8 @@ Name | Type | Description  | Notes
 > Array&lt;PropertyFieldListResource&gt; get_template_property_types
 
 List template property types
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -103,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

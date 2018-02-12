@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get a list of variable types available
-    # Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+    # Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_VARIABLES_USER
     # @param [Hash] opts the optional parameters
     # @return [Array<VariableTypeResource>]
     def get_bre_variable_types(opts = {})
@@ -30,7 +30,7 @@ module KnetikCloudClient
     end
 
     # Get a list of variable types available
-    # Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+    # Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<VariableTypeResource>, Fixnum, Hash)>] Array<VariableTypeResource> data, response status code and response headers
     def get_bre_variable_types_with_http_info(opts = {})
@@ -47,8 +47,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -70,7 +68,7 @@ module KnetikCloudClient
     end
 
     # List valid values for a type
-    # Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+    # Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_VARIABLES_USER
     # @param name The name of the type
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter results by those with names starting with this string
@@ -83,7 +81,7 @@ module KnetikCloudClient
     end
 
     # List valid values for a type
-    # Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+    # Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
     # @param name The name of the type
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter results by those with names starting with this string
@@ -111,8 +109,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

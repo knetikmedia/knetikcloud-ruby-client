@@ -15,7 +15,7 @@ require 'date'
 module KnetikCloudClient
 
   class Config
-    # The description of the config.  Max 140 characters
+    # The description of the config.  Max 255 characters
     attr_accessor :description
 
     # The name of the config

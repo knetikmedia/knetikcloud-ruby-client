@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a challenge event leaderboard details
-    # Lists all leaderboard entries with additional user details
+    # Lists all leaderboard entries with additional user details. <br><br><b>Permissions Needed:</b> REPORTING_CHALLENGES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_event A sepecific challenge event id
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -34,7 +34,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a challenge event leaderboard details
-    # Lists all leaderboard entries with additional user details
+    # Lists all leaderboard entries with additional user details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_event A sepecific challenge event id
     # @option opts [Integer] :size The number of objects returned per page
@@ -59,8 +59,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -82,7 +80,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a challenge event participant details
-    # Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation
+    # Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation. <br><br><b>Permissions Needed:</b> REPORTING_CHALLENGES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_event A sepecific challenge event id
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -95,7 +93,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a challenge event participant details
-    # Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation
+    # Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :filter_event A sepecific challenge event id
     # @option opts [Integer] :size The number of objects returned per page
@@ -120,8 +118,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

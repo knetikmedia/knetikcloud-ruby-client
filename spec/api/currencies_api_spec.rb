@@ -34,7 +34,7 @@ describe 'CurrenciesApi' do
 
   # unit tests for create_currency
   # Create a currency
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [CurrencyResource] :currency The currency object
   # @return [CurrencyResource]
@@ -46,7 +46,7 @@ describe 'CurrenciesApi' do
 
   # unit tests for delete_currency
   # Delete a currency
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
   # @param code The currency code
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'CurrenciesApi' do
 
   # unit tests for get_currencies
   # List and search currencies
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :filter_default Filter for the one currency that is set as default (true), or all that are not (false)
   # @option opts [BOOLEAN] :filter_enabled_currencies Filter for alternate currencies setup explicitely in system config
@@ -75,7 +75,7 @@ describe 'CurrenciesApi' do
 
   # unit tests for get_currency
   # Get a single currency
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param code The currency code
   # @param [Hash] opts the optional parameters
   # @return [CurrencyResource]
@@ -87,7 +87,7 @@ describe 'CurrenciesApi' do
 
   # unit tests for update_currency
   # Update a currency
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
   # @param code The currency code
   # @param [Hash] opts the optional parameters
   # @option opts [CurrencyResource] :currency The currency object

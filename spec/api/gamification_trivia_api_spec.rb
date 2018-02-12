@@ -34,7 +34,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for add_question_answers
   # Add an answer to a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param question_id The id of the question
   # @param [Hash] opts the optional parameters
   # @option opts [AnswerResource] :answer The new answer
@@ -47,7 +47,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for add_question_tag
   # Add a tag to a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the question
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :tag The new tag
@@ -60,7 +60,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for add_tag_to_questions_batch
   # Add a tag to a batch of questions
-  # All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+  # All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :tag The tag to add
   # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
@@ -80,7 +80,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for create_import_job
   # Create an import job
-  # Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+  # Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [ImportJobResource] :request The new import job
   # @return [ImportJobResource]
@@ -92,7 +92,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for create_question
   # Create a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [QuestionResource] :question The new question
   # @return [QuestionResource]
@@ -104,7 +104,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for create_question_template
   # Create a question template
-  # Question templates define a type of question and the properties they have
+  # Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [QuestionTemplateResource] :question_template_resource The question template resource object
   # @return [QuestionTemplateResource]
@@ -116,7 +116,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for delete_import_job
   # Delete an import job
-  # Also deletes all questions that were imported by it
+  # Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the job
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -128,7 +128,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for delete_question
   # Delete a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the question
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -140,7 +140,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for delete_question_answers
   # Remove an answer from a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param question_id The id of the question
   # @param id The id of the answer
   # @param [Hash] opts the optional parameters
@@ -153,7 +153,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for delete_question_template
   # Delete a question template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -166,7 +166,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_import_job
   # Get an import job
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the job
   # @param [Hash] opts the optional parameters
   # @return [ImportJobResource]
@@ -178,7 +178,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_import_jobs
   # Get a list of import job
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_vendor Filter for jobs by vendor id
   # @option opts [String] :filter_category Filter for jobs by category id
@@ -196,7 +196,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_question
   # Get a single question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the question
   # @param [Hash] opts the optional parameters
   # @return [QuestionResource]
@@ -208,7 +208,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_question_answer
   # Get an answer for a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param question_id The id of the question
   # @param id The id of the answer
   # @param [Hash] opts the optional parameters
@@ -221,7 +221,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_question_answers
   # List the answers available for a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param question_id The id of the question
   # @param [Hash] opts the optional parameters
   # @return [Array<AnswerResource>]
@@ -233,7 +233,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_question_deltas
   # List question deltas in ascending order of updated date
-  # The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+  # The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :since Timestamp in seconds
   # @return [Array<DeltaResource>]
@@ -245,7 +245,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_question_tags
   # List the tags for a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the question
   # @param [Hash] opts the optional parameters
   # @return [Array<String>]
@@ -257,7 +257,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_question_template
   # Get a single question template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [QuestionTemplateResource]
@@ -269,7 +269,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_question_templates
   # List and search question templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -283,7 +283,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_questions
   # List and search questions
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -305,7 +305,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for get_questions_count
   # Count questions based on filters
-  # This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+  # This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
   # @option opts [String] :filter_idset Filter for documents whose id is in the comma separated list provided
@@ -323,7 +323,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for process_import_job
   # Start processing an import job
-  # Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+  # Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the job
   # @param publish_now Whether the new questions should be published live immediately
   # @param [Hash] opts the optional parameters
@@ -336,7 +336,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for remove_question_tag
   # Remove a tag from a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the question
   # @param tag The tag to remove
   # @param [Hash] opts the optional parameters
@@ -349,7 +349,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for remove_tag_to_questions_batch
   # Remove a tag from a batch of questions
-  # ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+  # ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param tag The tag to remove
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string
@@ -369,7 +369,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for search_question_tags
   # List and search tags by the beginning of the string
-  # For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+  # For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_search Filter for tags starting with the given text
   # @option opts [String] :filter_category Filter for tags on questions from a specific category
@@ -383,7 +383,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for update_import_job
   # Update an import job
-  # Changes should be made before process is started for there to be any effect.
+  # Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the job
   # @param [Hash] opts the optional parameters
   # @option opts [ImportJobResource] :request The updated job
@@ -396,7 +396,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for update_question
   # Update a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param id The id of the question
   # @param [Hash] opts the optional parameters
   # @option opts [QuestionResource] :question The updated question
@@ -409,7 +409,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for update_question_answer
   # Update an answer for a question
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param question_id The id of the question
   # @param id The id of the answer
   # @param [Hash] opts the optional parameters
@@ -423,7 +423,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for update_question_template
   # Update a question template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [QuestionTemplateResource] :question_template_resource The question template resource object
@@ -436,7 +436,7 @@ describe 'GamificationTriviaApi' do
 
   # unit tests for update_questions_in_bulk
   # Bulk update questions
-  # Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+  # Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [QuestionResource] :question New values for a set of question fields
   # @option opts [String] :filter_search Filter for documents whose question, answers or tags contains provided string

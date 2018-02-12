@@ -44,6 +44,12 @@ describe 'CreateActivityOccurrenceRequest' do
     end
   end
 
+  describe 'test attribute "core_settings"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "entitlement"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -51,6 +57,12 @@ describe 'CreateActivityOccurrenceRequest' do
   end
 
   describe 'test attribute "event_id"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "host"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -71,7 +83,7 @@ describe 'CreateActivityOccurrenceRequest' do
   describe 'test attribute "status"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["SETUP", "OPEN", "PLAYING", "FINISHED", "ABANDONED"])
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["SETUP", "OPEN", "LAUNCHING", "PLAYING", "FINISHED", "ABANDONED"])
        #validator.allowable_values.each do |value|
        #  expect { @instance.status = value }.not_to raise_error
        #end

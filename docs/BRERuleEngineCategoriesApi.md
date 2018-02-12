@@ -1,6 +1,6 @@
 # KnetikCloudClient::BRERuleEngineCategoriesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Create a BRE category template
 
-Templates define a type of BRE category and the properties they have
+Templates define a type of BRE category and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 Delete a BRE category template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -123,7 +123,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -132,6 +132,8 @@ nil (empty response body)
 > PageResourceBreCategoryResource get_bre_categories(opts)
 
 List categories
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_CATEGORIES_USER
 
 ### Example
 ```ruby
@@ -179,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -188,6 +190,8 @@ Name | Type | Description  | Notes
 > BreCategoryResource get_bre_category(name)
 
 Get a single category
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_CATEGORIES_USER
 
 ### Example
 ```ruby
@@ -232,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -241,6 +245,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_bre_category_template(id)
 
 Get a single BRE category template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
 
 ### Example
 ```ruby
@@ -285,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -294,6 +300,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_bre_category_templates(opts)
 
 List and search BRE category templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
 
 ### Example
 ```ruby
@@ -343,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -352,6 +360,8 @@ Name | Type | Description  | Notes
 > BreCategoryResource update_bre_category(name, opts)
 
 Update a category
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_CATEGORIES_ADMIN
 
 ### Example
 ```ruby
@@ -409,6 +419,8 @@ Name | Type | Description  | Notes
 > TemplateResource update_bre_category_template(id, opts)
 
 Update a BRE category template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

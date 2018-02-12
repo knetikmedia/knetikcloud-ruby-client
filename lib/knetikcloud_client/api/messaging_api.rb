@@ -20,8 +20,330 @@ module KnetikCloudClient
       @api_client = api_client
     end
 
+    # Compile a message template
+    # Processes a set of input data against the template and returnes the compiled result. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [MessageTemplateBulkRequest] :request request
+    # @return [Hash<String, String>]
+    def compile_message_template(opts = {})
+      data, _status_code, _headers = compile_message_template_with_http_info(opts)
+      return data
+    end
+
+    # Compile a message template
+    # Processes a set of input data against the template and returnes the compiled result. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [MessageTemplateBulkRequest] :request request
+    # @return [Array<(Hash<String, String>, Fixnum, Hash)>] Hash<String, String> data, response status code and response headers
+    def compile_message_template_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MessagingApi.compile_message_template ..."
+      end
+      # resource path
+      local_var_path = "/messaging/templates/compilations"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'request'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Hash<String, String>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessagingApi#compile_message_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create a message template
+    # <b>Permissions Needed:</b> MESSAGING_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [MessageTemplateResource] :message_template The new template email to be sent
+    # @return [MessageTemplateResource]
+    def create_message_template(opts = {})
+      data, _status_code, _headers = create_message_template_with_http_info(opts)
+      return data
+    end
+
+    # Create a message template
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [MessageTemplateResource] :message_template The new template email to be sent
+    # @return [Array<(MessageTemplateResource, Fixnum, Hash)>] MessageTemplateResource data, response status code and response headers
+    def create_message_template_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MessagingApi.create_message_template ..."
+      end
+      # resource path
+      local_var_path = "/messaging/templates"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'message_template'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MessageTemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessagingApi#create_message_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete an existing message template
+    # <b>Permissions Needed:</b> ARTICLES_ADMIN
+    # @param id The message_template id
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_message_template(id, opts = {})
+      delete_message_template_with_http_info(id, opts)
+      return nil
+    end
+
+    # Delete an existing message template
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+    # @param id The message_template id
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_message_template_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MessagingApi.delete_message_template ..."
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling MessagingApi.delete_message_template"
+      end
+      # resource path
+      local_var_path = "/messaging/templates/{id}".sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessagingApi#delete_message_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a single message template
+    # <b>Permissions Needed:</b> ARTICLES_ADMIN
+    # @param id The message_template id
+    # @param [Hash] opts the optional parameters
+    # @return [MessageTemplateResource]
+    def get_message_template(id, opts = {})
+      data, _status_code, _headers = get_message_template_with_http_info(id, opts)
+      return data
+    end
+
+    # Get a single message template
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+    # @param id The message_template id
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(MessageTemplateResource, Fixnum, Hash)>] MessageTemplateResource data, response status code and response headers
+    def get_message_template_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MessagingApi.get_message_template ..."
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling MessagingApi.get_message_template"
+      end
+      # resource path
+      local_var_path = "/messaging/templates/{id}".sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MessageTemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessagingApi#get_message_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List and search message templates
+    # Get a list of message templates with optional filtering. <br><br><b>Permissions Needed:</b> ARTICLES_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :filter_tagset Filter for message templates with at least one of a specified set of tags (separated by comma)
+    # @option opts [String] :filter_tag_intersection Filter for message templates with all of a specified set of tags (separated by comma)
+    # @option opts [String] :filter_tag_exclusion Filter for message templates with none of a specified set of tags (separated by comma)
+    # @option opts [Integer] :size The number of objects returned per page (default to 25)
+    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
+    # @return [PageResourceMessageTemplateResource]
+    def get_message_templates(opts = {})
+      data, _status_code, _headers = get_message_templates_with_http_info(opts)
+      return data
+    end
+
+    # List and search message templates
+    # Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :filter_tagset Filter for message templates with at least one of a specified set of tags (separated by comma)
+    # @option opts [String] :filter_tag_intersection Filter for message templates with all of a specified set of tags (separated by comma)
+    # @option opts [String] :filter_tag_exclusion Filter for message templates with none of a specified set of tags (separated by comma)
+    # @option opts [Integer] :size The number of objects returned per page
+    # @option opts [Integer] :page The number of the page returned, starting with 1
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+    # @return [Array<(PageResourceMessageTemplateResource, Fixnum, Hash)>] PageResourceMessageTemplateResource data, response status code and response headers
+    def get_message_templates_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MessagingApi.get_message_templates ..."
+      end
+      # resource path
+      local_var_path = "/messaging/templates"
+
+      # query parameters
+      query_params = {}
+      query_params[:'filter_tagset'] = opts[:'filter_tagset'] if !opts[:'filter_tagset'].nil?
+      query_params[:'filter_tag_intersection'] = opts[:'filter_tag_intersection'] if !opts[:'filter_tag_intersection'].nil?
+      query_params[:'filter_tag_exclusion'] = opts[:'filter_tag_exclusion'] if !opts[:'filter_tag_exclusion'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PageResourceMessageTemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessagingApi#get_message_templates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Send a message
+    # Sends a message with one or more formats to one or more users. Fill in any message formats desired (email, sms, websockets) and each user will recieve all valid formats. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [MessageResource] :message_resource The message to be sent
+    # @return [nil]
+    def send_message1(opts = {})
+      send_message1_with_http_info(opts)
+      return nil
+    end
+
+    # Send a message
+    # Sends a message with one or more formats to one or more users. Fill in any message formats desired (email, sms, websockets) and each user will recieve all valid formats. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [MessageResource] :message_resource The message to be sent
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def send_message1_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MessagingApi.send_message1 ..."
+      end
+      # resource path
+      local_var_path = "/messaging/message"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'message_resource'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessagingApi#send_message1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Send a raw email to one or more users
-    # 
+    # <b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RawEmailResource] :raw_email_resource The new raw email to be sent
     # @return [nil]
@@ -31,7 +353,7 @@ module KnetikCloudClient
     end
 
     # Send a raw email to one or more users
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RawEmailResource] :raw_email_resource The new raw email to be sent
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -71,7 +393,7 @@ module KnetikCloudClient
     end
 
     # Send a raw push notification
-    # Sends a raw push notification message to one or more users. User's without registered mobile device for the application will be skipped.
+    # Sends a raw push notification message to one or more users. User's without registered mobile device for the application will be skipped. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RawPushResource] :raw_push_resource The new raw push notification to be sent
     # @return [nil]
@@ -81,7 +403,7 @@ module KnetikCloudClient
     end
 
     # Send a raw push notification
-    # Sends a raw push notification message to one or more users. User&#39;s without registered mobile device for the application will be skipped.
+    # Sends a raw push notification message to one or more users. User&#39;s without registered mobile device for the application will be skipped. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RawPushResource] :raw_push_resource The new raw push notification to be sent
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -121,7 +443,7 @@ module KnetikCloudClient
     end
 
     # Send a raw SMS
-    # Sends a raw SMS text message to one or more users. User's without registered mobile numbers will be skipped.
+    # Sends a raw SMS text message to one or more users. User's without registered mobile numbers will be skipped. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RawSMSResource] :raw_sms_resource The new raw SMS to be sent
     # @return [nil]
@@ -131,7 +453,7 @@ module KnetikCloudClient
     end
 
     # Send a raw SMS
-    # Sends a raw SMS text message to one or more users. User&#39;s without registered mobile numbers will be skipped.
+    # Sends a raw SMS text message to one or more users. User&#39;s without registered mobile numbers will be skipped. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RawSMSResource] :raw_sms_resource The new raw SMS to be sent
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -171,7 +493,7 @@ module KnetikCloudClient
     end
 
     # Send a templated email to one or more users
-    # 
+    # <b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateEmailResource] :message_resource The new template email to be sent
     # @return [nil]
@@ -181,7 +503,7 @@ module KnetikCloudClient
     end
 
     # Send a templated email to one or more users
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateEmailResource] :message_resource The new template email to be sent
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -221,7 +543,7 @@ module KnetikCloudClient
     end
 
     # Send a templated push notification
-    # Sends a templated push notification message to one or more users. User's without registered mobile device for the application will be skipped.
+    # Sends a templated push notification message to one or more users. User's without registered mobile device for the application will be skipped. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplatePushResource] :template_push_resource The new templated push notification to be sent
     # @return [nil]
@@ -231,7 +553,7 @@ module KnetikCloudClient
     end
 
     # Send a templated push notification
-    # Sends a templated push notification message to one or more users. User&#39;s without registered mobile device for the application will be skipped.
+    # Sends a templated push notification message to one or more users. User&#39;s without registered mobile device for the application will be skipped. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplatePushResource] :template_push_resource The new templated push notification to be sent
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -271,7 +593,7 @@ module KnetikCloudClient
     end
 
     # Send a new templated SMS
-    # Sends a templated SMS text message to one or more users. User's without registered mobile numbers will be skipped.
+    # Sends a templated SMS text message to one or more users. User's without registered mobile numbers will be skipped. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateSMSResource] :template_sms_resource The new template SMS to be sent
     # @return [nil]
@@ -281,7 +603,7 @@ module KnetikCloudClient
     end
 
     # Send a new templated SMS
-    # Sends a templated SMS text message to one or more users. User&#39;s without registered mobile numbers will be skipped.
+    # Sends a templated SMS text message to one or more users. User&#39;s without registered mobile numbers will be skipped. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateSMSResource] :template_sms_resource The new template SMS to be sent
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -316,6 +638,113 @@ module KnetikCloudClient
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MessagingApi#send_templated_sms\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Send a websocket message
+    # Sends a websocket message to one or more users. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [WebsocketMessageResource] :websocket_resource The new websocket message to be sent
+    # @return [nil]
+    def send_websocket(opts = {})
+      send_websocket_with_http_info(opts)
+      return nil
+    end
+
+    # Send a websocket message
+    # Sends a websocket message to one or more users. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
+    # @param [Hash] opts the optional parameters
+    # @option opts [WebsocketMessageResource] :websocket_resource The new websocket message to be sent
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def send_websocket_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MessagingApi.send_websocket ..."
+      end
+      # resource path
+      local_var_path = "/messaging/websocket-message"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'websocket_resource'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessagingApi#send_websocket\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update an existing message template
+    # <b>Permissions Needed:</b> ARTICLES_ADMIN
+    # @param id The message_template id
+    # @param [Hash] opts the optional parameters
+    # @option opts [MessageTemplateResource] :message_template_resource The message template
+    # @return [MessageTemplateResource]
+    def update_message_template(id, opts = {})
+      data, _status_code, _headers = update_message_template_with_http_info(id, opts)
+      return data
+    end
+
+    # Update an existing message template
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+    # @param id The message_template id
+    # @param [Hash] opts the optional parameters
+    # @option opts [MessageTemplateResource] :message_template_resource The message template
+    # @return [Array<(MessageTemplateResource, Fixnum, Hash)>] MessageTemplateResource data, response status code and response headers
+    def update_message_template_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MessagingApi.update_message_template ..."
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling MessagingApi.update_message_template"
+      end
+      # resource path
+      local_var_path = "/messaging/templates/{id}".sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'message_template_resource'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MessageTemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessagingApi#update_message_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

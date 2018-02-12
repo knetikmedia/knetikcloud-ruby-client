@@ -1,6 +1,6 @@
 # KnetikCloudClient::StoreSalesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > CatalogSale create_catalog_sale(opts)
 
 Create a sale
+
+<b>Permissions Needed:</b> SALES_ADMIN
 
 ### Example
 ```ruby
@@ -70,6 +72,8 @@ Name | Type | Description  | Notes
 
 Delete a sale
 
+<b>Permissions Needed:</b> SALES_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -112,7 +116,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -121,6 +125,8 @@ nil (empty response body)
 > CatalogSale get_catalog_sale(id)
 
 Get a single sale
+
+<b>Permissions Needed:</b> SALES_USER or SALES_ADMIN
 
 ### Example
 ```ruby
@@ -165,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -174,6 +180,8 @@ Name | Type | Description  | Notes
 > PageResourceCatalogSale get_catalog_sales(opts)
 
 List and search sales
+
+<b>Permissions Needed:</b> SALES_USER or SALES_ADMIN
 
 ### Example
 ```ruby
@@ -223,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -232,6 +240,8 @@ Name | Type | Description  | Notes
 > CatalogSale update_catalog_sale(id, opts)
 
 Update a sale
+
+<b>Permissions Needed:</b> SALES_ADMIN
 
 ### Example
 ```ruby

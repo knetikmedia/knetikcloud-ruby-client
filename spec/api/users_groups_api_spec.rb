@@ -34,7 +34,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for add_member_to_group
   # Adds a new member to the group
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN or self if open
   # @param unique_name The group unique name
   # @param user The id and status for a user to add to the group
   # @param [Hash] opts the optional parameters
@@ -47,7 +47,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for add_members_to_group
   # Adds multiple members to the group
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
   # @param unique_name The group unique name
   # @param users The id and status for a list of users to add to the group
   # @param [Hash] opts the optional parameters
@@ -60,7 +60,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for create_group
   # Create a group
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [GroupResource] :group_resource The new group
   # @return [GroupResource]
@@ -72,7 +72,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for create_group_member_template
   # Create an group member template
-  # GroupMember Templates define a type of group member and the properties they have
+  # GroupMember Templates define a type of group member and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :group_member_template_resource The group member template resource object
   # @return [TemplateResource]
@@ -84,7 +84,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for create_group_template
   # Create a group template
-  # Group Templates define a type of group and the properties they have
+  # Group Templates define a type of group and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :group_template_resource The group template resource object
   # @return [TemplateResource]
@@ -96,7 +96,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for delete_group
   # Removes a group from the system
-  # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
+  # All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
   # @param unique_name The group unique name
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -108,7 +108,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for delete_group_member_template
   # Delete an group member template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -121,7 +121,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for delete_group_template
   # Delete a group template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -132,9 +132,23 @@ describe 'UsersGroupsApi' do
     end
   end
 
+  # unit tests for disable_group_notification
+  # Enable or disable notification of group messages
+  # 
+  # @param unique_name The group unique name
+  # @param user_id The user id of the member or &#39;me&#39;
+  # @param disabled disabled
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'disable_group_notification test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_group
   # Loads a specific group&#39;s details
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param unique_name The group unique name
   # @param [Hash] opts the optional parameters
   # @return [GroupResource]
@@ -146,7 +160,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for get_group_ancestors
   # Get group ancestors
-  # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+  # Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param unique_name The group unique name
   # @param [Hash] opts the optional parameters
   # @return [Array<GroupResource>]
@@ -158,7 +172,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for get_group_member
   # Get a user from a group
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param unique_name The group unique name
   # @param user_id The id of the user
   # @param [Hash] opts the optional parameters
@@ -171,7 +185,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for get_group_member_template
   # Get a single group member template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -183,7 +197,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for get_group_member_templates
   # List and search group member templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -197,7 +211,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for get_group_members
   # Lists members of the group
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param unique_name The group unique name
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -210,9 +224,23 @@ describe 'UsersGroupsApi' do
     end
   end
 
+  # unit tests for get_group_messages
+  # Get a list of group messages
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+  # @param unique_name The group unique name
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :size The number of objects returned per page
+  # @option opts [Integer] :page The number of the page returned, starting with 1
+  # @return [PageResourceChatMessageResource]
+  describe 'get_group_messages test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_group_template
   # Get a single group template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -224,7 +252,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for get_group_templates
   # List and search group templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -238,7 +266,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for get_groups_for_user
   # List groups a user is in
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param user_id The id of the user
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :filter_children Whether to limit group list to children of groups only. If true, shows only groups with parents. If false, shows only groups with no parent.
@@ -251,7 +279,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for list_groups
   # List and search groups
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_template Filter for groups using a specific template, by id
   # @option opts [String] :filter_member_count Filters groups by member count. Multiple values possible for range search. Format: filter_member_count&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_member_count&#x3D;GT,14,LT,17
@@ -269,9 +297,22 @@ describe 'UsersGroupsApi' do
     end
   end
 
+  # unit tests for post_group_message
+  # Send a group message
+  # 
+  # @param unique_name The group unique name
+  # @param [Hash] opts the optional parameters
+  # @option opts [ChatMessageRequest] :chat_message_request The chat message request
+  # @return [ChatMessageResource]
+  describe 'post_group_message test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for remove_group_member
   # Removes a user from a group
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN or self if open
   # @param unique_name The group unique name
   # @param user_id The id of the user to remove
   # @param [Hash] opts the optional parameters
@@ -284,7 +325,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for update_group
   # Update a group
-  # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
+  # If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN or admin of the group
   # @param unique_name The group unique name
   # @param [Hash] opts the optional parameters
   # @option opts [GroupResource] :group_resource The updated group
@@ -297,7 +338,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for update_group_member_properties
   # Change a user&#39;s order
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
   # @param unique_name The group unique name
   # @param user_id The user id of the member to modify
   # @param order The new order for the membership
@@ -311,7 +352,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for update_group_member_properties1
   # Change a user&#39;s membership properties
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
   # @param unique_name The group unique name
   # @param user_id The user id of the member to modify
   # @param properties The new properties for the membership
@@ -325,7 +366,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for update_group_member_status
   # Change a user&#39;s status
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
   # @param unique_name The group unique name
   # @param user_id The user id of the member to modify
   # @param status The new status for the user
@@ -339,7 +380,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for update_group_member_template
   # Update an group member template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :group_member_template_resource The group member template resource object
@@ -352,7 +393,7 @@ describe 'UsersGroupsApi' do
 
   # unit tests for update_group_template
   # Update a group template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :group_template_resource The group template resource object

@@ -34,7 +34,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for create_bundle_item
   # Create a bundle item
-  # The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+  # The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   # @option opts [BundleItem] :bundle_item The bundle item object
@@ -47,7 +47,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for create_bundle_template
   # Create a bundle template
-  # Bundle Templates define a type of bundle and the properties they have.
+  # Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :bundle_template_resource The new bundle template
   # @return [ItemTemplateResource]
@@ -59,7 +59,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for delete_bundle_item
   # Delete a bundle item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   # @param id The id of the bundle
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -71,7 +71,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for delete_bundle_template
   # Delete a bundle template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -84,7 +84,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for get_bundle_item
   # Get a single bundle item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the bundle
   # @param [Hash] opts the optional parameters
   # @return [BundleItem]
@@ -96,7 +96,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for get_bundle_template
   # Get a single bundle template
-  # Bundle Templates define a type of bundle and the properties they have.
+  # Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [ItemTemplateResource]
@@ -108,7 +108,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for get_bundle_templates
   # List and search bundle templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -122,7 +122,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for update_bundle_item
   # Update a bundle item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   # @param id The id of the bundle
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -136,7 +136,7 @@ describe 'StoreBundlesApi' do
 
   # unit tests for update_bundle_template
   # Update a bundle template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :bundle_template_resource The bundle template resource object

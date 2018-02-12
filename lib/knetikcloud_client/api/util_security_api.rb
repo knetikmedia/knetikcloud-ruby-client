@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Returns the authentication log for a user
-    # A log entry is recorded everytime a user requests a new token. Standard pagination available
+    # A log entry is recorded everytime a user requests a new token. Standard pagination available. <br><br><b>Permissions Needed:</b> SECURITY_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :user_id The user id
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -34,7 +34,7 @@ module KnetikCloudClient
     end
 
     # Returns the authentication log for a user
-    # A log entry is recorded everytime a user requests a new token. Standard pagination available
+    # A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :user_id The user id
     # @option opts [Integer] :size The number of objects returned per page
@@ -59,8 +59,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -82,7 +80,7 @@ module KnetikCloudClient
     end
 
     # Returns the authentication token details. Use /users endpoint for detailed user's info
-    # 
+    # <b>Permissions Needed:</b> SECURITY_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [TokenDetailsResource]
     def get_user_token_details(opts = {})
@@ -91,7 +89,7 @@ module KnetikCloudClient
     end
 
     # Returns the authentication token details. Use /users endpoint for detailed user&#39;s info
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [Array<(TokenDetailsResource, Fixnum, Hash)>] TokenDetailsResource data, response status code and response headers
     def get_user_token_details_with_http_info(opts = {})
@@ -108,8 +106,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

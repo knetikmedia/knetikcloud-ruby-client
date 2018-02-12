@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Add device users
-    # 
+    # <b>Permissions Needed:</b> DEVICES_ADMIN or owner
     # @param user_resources userResources
     # @param id id
     # @param [Hash] opts the optional parameters
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Add device users
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
     # @param user_resources userResources
     # @param id id
     # @param [Hash] opts the optional parameters
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Create a device
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param device device
     # @param [Hash] opts the optional parameters
     # @return [DeviceResource]
@@ -92,7 +92,7 @@ module KnetikCloudClient
     end
 
     # Create a device
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param device device
     # @param [Hash] opts the optional parameters
     # @return [Array<(DeviceResource, Fixnum, Hash)>] DeviceResource data, response status code and response headers
@@ -137,7 +137,7 @@ module KnetikCloudClient
     end
 
     # Create a device template
-    # Device Templates define a type of device and the properties they have
+    # Device Templates define a type of device and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :device_template_resource The device template resource object
     # @return [TemplateResource]
@@ -147,7 +147,7 @@ module KnetikCloudClient
     end
 
     # Create a device template
-    # Device Templates define a type of device and the properties they have
+    # Device Templates define a type of device and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :device_template_resource The device template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -188,7 +188,7 @@ module KnetikCloudClient
     end
 
     # Delete a device
-    # 
+    # <b>Permissions Needed:</b> DEVICES_ADMIN or owner
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -198,7 +198,7 @@ module KnetikCloudClient
     end
 
     # Delete a device
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -220,8 +220,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -242,7 +240,7 @@ module KnetikCloudClient
     end
 
     # Delete an device template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -253,7 +251,7 @@ module KnetikCloudClient
     end
 
     # Delete an device template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -277,8 +275,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -299,7 +295,7 @@ module KnetikCloudClient
     end
 
     # Delete a device user
-    # 
+    # <b>Permissions Needed:</b> DEVICES_ADMIN or owner
     # @param id The id of the device
     # @param user_id The user id of the device user
     # @param [Hash] opts the optional parameters
@@ -310,7 +306,7 @@ module KnetikCloudClient
     end
 
     # Delete a device user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
     # @param id The id of the device
     # @param user_id The user id of the device user
     # @param [Hash] opts the optional parameters
@@ -337,8 +333,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -359,7 +353,7 @@ module KnetikCloudClient
     end
 
     # Delete all device users
-    # 
+    # <b>Permissions Needed:</b> DEVICES_ADMIN or owner
     # @param id The id of the device
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_id Filter for device users to delete with a user id in a given comma separated list of ids
@@ -370,7 +364,7 @@ module KnetikCloudClient
     end
 
     # Delete all device users
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
     # @param id The id of the device
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_id Filter for device users to delete with a user id in a given comma separated list of ids
@@ -394,8 +388,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -416,7 +408,7 @@ module KnetikCloudClient
     end
 
     # Get a single device
-    # 
+    # <b>Permissions Needed:</b> DEVICES_ADMIN or owner
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [DeviceResource]
@@ -426,7 +418,7 @@ module KnetikCloudClient
     end
 
     # Get a single device
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [Array<(DeviceResource, Fixnum, Hash)>] DeviceResource data, response status code and response headers
@@ -448,8 +440,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -471,7 +461,7 @@ module KnetikCloudClient
     end
 
     # Get a single device template
-    # 
+    # <b>Permissions Needed:</b> description
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -481,7 +471,7 @@ module KnetikCloudClient
     end
 
     # Get a single device template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; description
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -503,8 +493,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -526,7 +514,7 @@ module KnetikCloudClient
     end
 
     # List and search device templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or DEVICES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -538,7 +526,7 @@ module KnetikCloudClient
     end
 
     # List and search device templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or DEVICES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -561,8 +549,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -584,7 +570,7 @@ module KnetikCloudClient
     end
 
     # List and search devices
-    # Get a list of devices with optional filtering
+    # Get a list of devices with optional filtering. <br><br><b>Permissions Needed:</b> DEVICES_ADMIN or user
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_make Filter for devices with specified make
     # @option opts [String] :filter_model Filter for devices with specified model
@@ -602,7 +588,7 @@ module KnetikCloudClient
     end
 
     # List and search devices
-    # Get a list of devices with optional filtering
+    # Get a list of devices with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or user
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_make Filter for devices with specified make
     # @option opts [String] :filter_model Filter for devices with specified model
@@ -637,8 +623,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -660,7 +644,7 @@ module KnetikCloudClient
     end
 
     # Update a device
-    # 
+    # <b>Permissions Needed:</b> CUSTOMERS_ADMIN
     # @param device device
     # @param id id
     # @param [Hash] opts the optional parameters
@@ -671,7 +655,7 @@ module KnetikCloudClient
     end
 
     # Update a device
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CUSTOMERS_ADMIN
     # @param device device
     # @param id id
     # @param [Hash] opts the optional parameters
@@ -721,7 +705,7 @@ module KnetikCloudClient
     end
 
     # Update an device template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :device_template_resource The device template resource object
@@ -732,7 +716,7 @@ module KnetikCloudClient
     end
 
     # Update an device template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :device_template_resource The device template resource object

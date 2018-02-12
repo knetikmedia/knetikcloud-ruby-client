@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create an item template
-    # Item Templates define a type of item and the properties they have.
+    # Item Templates define a type of item and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [StoreItemTemplateResource] :item_template_resource The new item template
     # @return [StoreItemTemplateResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create an item template
-    # Item Templates define a type of item and the properties they have.
+    # Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [StoreItemTemplateResource] :item_template_resource The new item template
     # @return [Array<(StoreItemTemplateResource, Fixnum, Hash)>] StoreItemTemplateResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create a store item
-    # SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \"parameters\" field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:<br /> {..., parameters: [[{item: 1, skus: [\"SKU-1\"]}]]}<br /> If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints.
+    # SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \"parameters\" field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:<br /> {..., parameters: [[{item: 1, skus: [\"SKU-1\"]}]]}<br /> If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints. <br><br><b>Permissions Needed:</b> STORE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
     # @option opts [StoreItem] :store_item The store item object
@@ -83,7 +83,7 @@ module KnetikCloudClient
     end
 
     # Create a store item
-    # SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints.
+    # SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
     # @option opts [StoreItem] :store_item The store item object
@@ -126,7 +126,7 @@ module KnetikCloudClient
     end
 
     # Delete an item template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -137,7 +137,7 @@ module KnetikCloudClient
     end
 
     # Delete an item template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -161,8 +161,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -183,7 +181,7 @@ module KnetikCloudClient
     end
 
     # Delete a store item
-    # 
+    # <b>Permissions Needed:</b> STORE_ADMIN
     # @param id The id of the item
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -193,7 +191,7 @@ module KnetikCloudClient
     end
 
     # Delete a store item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
     # @param id The id of the item
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -215,8 +213,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -237,7 +233,7 @@ module KnetikCloudClient
     end
 
     # List available item behaviors
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<BehaviorDefinitionResource>]
     def get_behaviors(opts = {})
@@ -246,7 +242,7 @@ module KnetikCloudClient
     end
 
     # List available item behaviors
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<BehaviorDefinitionResource>, Fixnum, Hash)>] Array<BehaviorDefinitionResource> data, response status code and response headers
     def get_behaviors_with_http_info(opts = {})
@@ -263,8 +259,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -286,7 +280,7 @@ module KnetikCloudClient
     end
 
     # Get a single item template
-    # Item Templates define a type of item and the properties they have.
+    # Item Templates define a type of item and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [StoreItemTemplateResource]
@@ -296,7 +290,7 @@ module KnetikCloudClient
     end
 
     # Get a single item template
-    # Item Templates define a type of item and the properties they have.
+    # Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(StoreItemTemplateResource, Fixnum, Hash)>] StoreItemTemplateResource data, response status code and response headers
@@ -318,8 +312,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -341,7 +333,7 @@ module KnetikCloudClient
     end
 
     # List and search item templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -353,7 +345,7 @@ module KnetikCloudClient
     end
 
     # List and search item templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -376,8 +368,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -399,7 +389,7 @@ module KnetikCloudClient
     end
 
     # Get a single store item
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The id of the item
     # @param [Hash] opts the optional parameters
     # @return [StoreItem]
@@ -409,7 +399,7 @@ module KnetikCloudClient
     end
 
     # Get a single store item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the item
     # @param [Hash] opts the optional parameters
     # @return [Array<(StoreItem, Fixnum, Hash)>] StoreItem data, response status code and response headers
@@ -431,8 +421,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -454,7 +442,7 @@ module KnetikCloudClient
     end
 
     # List and search store items
-    # If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller's country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase.
+    # If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller's country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase. br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name_search Filter for items whose name starts with a given string.
     # @option opts [String] :filter_unique_key Filter for items whose unique_key is a given string.
@@ -480,7 +468,7 @@ module KnetikCloudClient
     end
 
     # List and search store items
-    # If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase.
+    # If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase. br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name_search Filter for items whose name starts with a given string.
     # @option opts [String] :filter_unique_key Filter for items whose unique_key is a given string.
@@ -531,8 +519,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -554,7 +540,7 @@ module KnetikCloudClient
     end
 
     # One-step purchase and pay for a single SKU item from a user's wallet
-    # Used to create and automatically pay an invoice for a single unit of a single SKU from a user's wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+    # Used to create and automatically pay an invoice for a single unit of a single SKU from a user's wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted. <br><br><b>Permissions Needed:</b> PAYMENTS_USER and owner, or PAYMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [QuickBuyRequest] :quick_buy_request Quick buy details
     # @return [InvoiceResource]
@@ -564,7 +550,7 @@ module KnetikCloudClient
     end
 
     # One-step purchase and pay for a single SKU item from a user&#39;s wallet
-    # Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+    # Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_USER and owner, or PAYMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [QuickBuyRequest] :quick_buy_request Quick buy details
     # @return [Array<(InvoiceResource, Fixnum, Hash)>] InvoiceResource data, response status code and response headers
@@ -605,7 +591,7 @@ module KnetikCloudClient
     end
 
     # Update an item template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [StoreItemTemplateResource] :item_template_resource The item template resource object
@@ -616,7 +602,7 @@ module KnetikCloudClient
     end
 
     # Update an item template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [StoreItemTemplateResource] :item_template_resource The item template resource object
@@ -662,7 +648,7 @@ module KnetikCloudClient
     end
 
     # Update a store item
-    # 
+    # <b>Permissions Needed:</b> STORE_ADMIN
     # @param id The id of the item
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -674,7 +660,7 @@ module KnetikCloudClient
     end
 
     # Update a store item
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
     # @param id The id of the item
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.

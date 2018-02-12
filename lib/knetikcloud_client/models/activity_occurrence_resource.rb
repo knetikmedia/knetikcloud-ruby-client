@@ -18,8 +18,14 @@ module KnetikCloudClient
     # The id of the activity
     attr_accessor :activity_id
 
+    # The ids of banned users that cannot join the occurrence. See occurrence-user delete endpoint
+    attr_accessor :bans
+
     # The id of the challenge activity (as part of the event, required if eventId set)
     attr_accessor :challenge_activity_id
+
+    # Defines core settings about the activity occurrence that affect how it behaves in the system. Validated against core settings in activity/challenge-activity.
+    attr_accessor :core_settings
 
     # The date this occurrence was created, unix timestamp in seconds
     attr_accessor :created_date
@@ -29,6 +35,9 @@ module KnetikCloudClient
 
     # The id of the event
     attr_accessor :event_id
+
+    # The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of 'non_player' if not admin as well
+    attr_accessor :host
 
     # The id of the activity occurrence
     attr_accessor :id
@@ -80,10 +89,13 @@ module KnetikCloudClient
     def self.attribute_map
       {
         :'activity_id' => :'activity_id',
+        :'bans' => :'bans',
         :'challenge_activity_id' => :'challenge_activity_id',
+        :'core_settings' => :'core_settings',
         :'created_date' => :'created_date',
         :'entitlement' => :'entitlement',
         :'event_id' => :'event_id',
+        :'host' => :'host',
         :'id' => :'id',
         :'reward_status' => :'reward_status',
         :'settings' => :'settings',
@@ -99,10 +111,13 @@ module KnetikCloudClient
     def self.swagger_types
       {
         :'activity_id' => :'Integer',
+        :'bans' => :'Array<Integer>',
         :'challenge_activity_id' => :'Integer',
+        :'core_settings' => :'CoreActivityOccurrenceSettings',
         :'created_date' => :'Integer',
         :'entitlement' => :'ActivityEntitlementResource',
         :'event_id' => :'Integer',
+        :'host' => :'SimpleUserResource',
         :'id' => :'Integer',
         :'reward_status' => :'String',
         :'settings' => :'Array<SelectedSettingResource>',
@@ -126,8 +141,18 @@ module KnetikCloudClient
         self.activity_id = attributes[:'activity_id']
       end
 
+      if attributes.has_key?(:'bans')
+        if (value = attributes[:'bans']).is_a?(Array)
+          self.bans = value
+        end
+      end
+
       if attributes.has_key?(:'challenge_activity_id')
         self.challenge_activity_id = attributes[:'challenge_activity_id']
+      end
+
+      if attributes.has_key?(:'core_settings')
+        self.core_settings = attributes[:'core_settings']
       end
 
       if attributes.has_key?(:'created_date')
@@ -140,6 +165,10 @@ module KnetikCloudClient
 
       if attributes.has_key?(:'event_id')
         self.event_id = attributes[:'event_id']
+      end
+
+      if attributes.has_key?(:'host')
+        self.host = attributes[:'host']
       end
 
       if attributes.has_key?(:'id')
@@ -197,7 +226,7 @@ module KnetikCloudClient
       return false if @activity_id.nil?
       reward_status_validator = EnumAttributeValidator.new('String', ["pending", "failed", "complete", "partial"])
       return false unless reward_status_validator.valid?(@reward_status)
-      status_validator = EnumAttributeValidator.new('String', ["SETUP", "OPEN", "PLAYING", "FINISHED", "ABANDONED"])
+      status_validator = EnumAttributeValidator.new('String', ["SETUP", "OPEN", "LAUNCHING", "PLAYING", "FINISHED", "ABANDONED"])
       return false unless status_validator.valid?(@status)
       return true
     end
@@ -215,7 +244,7 @@ module KnetikCloudClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["SETUP", "OPEN", "PLAYING", "FINISHED", "ABANDONED"])
+      validator = EnumAttributeValidator.new('String', ["SETUP", "OPEN", "LAUNCHING", "PLAYING", "FINISHED", "ABANDONED"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for 'status', must be one of #{validator.allowable_values}."
       end
@@ -228,10 +257,13 @@ module KnetikCloudClient
       return true if self.equal?(o)
       self.class == o.class &&
           activity_id == o.activity_id &&
+          bans == o.bans &&
           challenge_activity_id == o.challenge_activity_id &&
+          core_settings == o.core_settings &&
           created_date == o.created_date &&
           entitlement == o.entitlement &&
           event_id == o.event_id &&
+          host == o.host &&
           id == o.id &&
           reward_status == o.reward_status &&
           settings == o.settings &&
@@ -251,7 +283,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [activity_id, challenge_activity_id, created_date, entitlement, event_id, id, reward_status, settings, simulated, start_date, status, updated_date, users].hash
+      [activity_id, bans, challenge_activity_id, core_settings, created_date, entitlement, event_id, host, id, reward_status, settings, simulated, start_date, status, updated_date, users].hash
     end
 
     # Builds the object from hash

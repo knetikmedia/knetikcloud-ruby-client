@@ -21,6 +21,9 @@ module KnetikCloudClient
     # A list of user ids to send the message to.
     attr_accessor :recipients
 
+    # The subject for email
+    attr_accessor :subject
+
     # The key for the template
     attr_accessor :template_key
 
@@ -33,6 +36,7 @@ module KnetikCloudClient
       {
         :'from' => :'from',
         :'recipients' => :'recipients',
+        :'subject' => :'subject',
         :'template_key' => :'template_key',
         :'template_vars' => :'template_vars'
       }
@@ -43,6 +47,7 @@ module KnetikCloudClient
       {
         :'from' => :'String',
         :'recipients' => :'Array<Integer>',
+        :'subject' => :'String',
         :'template_key' => :'String',
         :'template_vars' => :'Array<KeyValuePairstringstring>'
       }
@@ -64,6 +69,10 @@ module KnetikCloudClient
         if (value = attributes[:'recipients']).is_a?(Array)
           self.recipients = value
         end
+      end
+
+      if attributes.has_key?(:'subject')
+        self.subject = attributes[:'subject']
       end
 
       if attributes.has_key?(:'template_key')
@@ -108,6 +117,7 @@ module KnetikCloudClient
       self.class == o.class &&
           from == o.from &&
           recipients == o.recipients &&
+          subject == o.subject &&
           template_key == o.template_key &&
           template_vars == o.template_vars
     end
@@ -121,7 +131,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [from, recipients, template_key, template_vars].hash
+      [from, recipients, subject, template_key, template_vars].hash
     end
 
     # Builds the object from hash

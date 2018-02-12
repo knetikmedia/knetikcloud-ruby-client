@@ -34,7 +34,7 @@ describe 'TemplatesPropertiesApi' do
 
   # unit tests for get_template_property_type
   # Get details for a template property type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param type type
   # @param [Hash] opts the optional parameters
   # @return [PropertyFieldListResource]
@@ -46,7 +46,7 @@ describe 'TemplatesPropertiesApi' do
 
   # unit tests for get_template_property_types
   # List template property types
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [Array<PropertyFieldListResource>]
   describe 'get_template_property_types test' do

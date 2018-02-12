@@ -34,7 +34,7 @@ describe 'DispositionsApi' do
 
   # unit tests for add_disposition
   # Add a new disposition
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [DispositionResource] :disposition The new disposition record
   # @return [DispositionResource]
@@ -46,7 +46,7 @@ describe 'DispositionsApi' do
 
   # unit tests for delete_disposition
   # Delete a disposition
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
   # @param id The id of the disposition record
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'DispositionsApi' do
 
   # unit tests for get_disposition
   # Returns a disposition
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the disposition record
   # @param [Hash] opts the optional parameters
   # @return [DispositionResource]
@@ -70,7 +70,7 @@ describe 'DispositionsApi' do
 
   # unit tests for get_disposition_counts
   # Returns a list of disposition counts
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_context Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
   # @option opts [String] :filter_owner Filter for dispositions from a specific user by id or &#39;me&#39;
@@ -83,7 +83,7 @@ describe 'DispositionsApi' do
 
   # unit tests for get_dispositions
   # Returns a page of dispositions
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_context Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
   # @option opts [String] :filter_owner Filter for dispositions from a specific user by id or &#39;me&#39;

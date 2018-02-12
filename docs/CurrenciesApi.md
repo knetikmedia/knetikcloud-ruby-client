@@ -1,6 +1,6 @@
 # KnetikCloudClient::CurrenciesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > CurrencyResource create_currency(opts)
 
 Create a currency
+
+<b>Permissions Needed:</b> CURRENCIES_ADMIN
 
 ### Example
 ```ruby
@@ -70,6 +72,8 @@ Name | Type | Description  | Notes
 
 Delete a currency
 
+<b>Permissions Needed:</b> CURRENCIES_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -112,7 +116,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -121,6 +125,8 @@ nil (empty response body)
 > PageResourceCurrencyResource get_currencies(opts)
 
 List and search currencies
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -176,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -185,6 +191,8 @@ Name | Type | Description  | Notes
 > CurrencyResource get_currency(code)
 
 Get a single currency
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -229,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -238,6 +246,8 @@ Name | Type | Description  | Notes
 > update_currency(code, opts)
 
 Update a currency
+
+<b>Permissions Needed:</b> CURRENCIES_ADMIN
 
 ### Example
 ```ruby

@@ -34,7 +34,7 @@ describe 'AuthPermissionsApi' do
 
   # unit tests for create_permission
   # Create a new permission
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [PermissionResource] :permission_resource The permission resource object
   # @return [PermissionResource]
@@ -46,7 +46,7 @@ describe 'AuthPermissionsApi' do
 
   # unit tests for delete_permission
   # Delete a permission
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   # @param permission The permission value
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :force If true, removes permission assigned to roles
@@ -59,7 +59,7 @@ describe 'AuthPermissionsApi' do
 
   # unit tests for get_permission
   # Get a single permission
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   # @param permission The permission value
   # @param [Hash] opts the optional parameters
   # @return [PermissionResource]
@@ -71,7 +71,7 @@ describe 'AuthPermissionsApi' do
 
   # unit tests for get_permissions
   # List and search permissions
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -85,7 +85,7 @@ describe 'AuthPermissionsApi' do
 
   # unit tests for update_permission
   # Update a permission
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   # @param permission The permission value
   # @param [Hash] opts the optional parameters
   # @option opts [PermissionResource] :permission_resource The permission resource object

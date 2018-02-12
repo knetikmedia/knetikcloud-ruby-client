@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Fire a new event, based on an existing trigger
-    # Parameters within the event must match names and types from the trigger. Actual rule execution is asynchornous.  Returns request id, which will be used as the event id
+    # Parameters within the event must match names and types from the trigger. Actual rule execution is asynchornous.  Returns request id, which will be used as the event id. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_EVENTS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [BreEvent] :bre_event The BRE event object
     # @return [String]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Fire a new event, based on an existing trigger
-    # Parameters within the event must match names and types from the trigger. Actual rule execution is asynchornous.  Returns request id, which will be used as the event id
+    # Parameters within the event must match names and types from the trigger. Actual rule execution is asynchornous.  Returns request id, which will be used as the event id. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [BreEvent] :bre_event The BRE event object
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers

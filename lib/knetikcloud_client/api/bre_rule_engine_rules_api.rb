@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a rule
-    # Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/
+    # Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_RULES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BreRule] :bre_rule The BRE rule object
     # @return [BreRule]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a rule
-    # Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/
+    # Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BreRule] :bre_rule The BRE rule object
     # @return [Array<(BreRule, Fixnum, Hash)>] BreRule data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a rule
-    # May fail if there are existing rules against it. Cannot delete core rules
+    # May fail if there are existing rules against it. Cannot delete core rules. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_RULES_ADMIN
     # @param id The id of the rule
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete a rule
-    # May fail if there are existing rules against it. Cannot delete core rules
+    # May fail if there are existing rules against it. Cannot delete core rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
     # @param id The id of the rule
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -104,8 +104,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Returns a string representation of the provided expression
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_RULES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Expressionobject] :expression The expression
     # @return [String]
@@ -136,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Returns a string representation of the provided expression
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Expressionobject] :expression The expression
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
@@ -177,7 +175,7 @@ module KnetikCloudClient
     end
 
     # Get a single rule
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_RULES_ADMIN
     # @param id The id of the rule
     # @param [Hash] opts the optional parameters
     # @return [BreRule]
@@ -187,7 +185,7 @@ module KnetikCloudClient
     end
 
     # Get a single rule
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
     # @param id The id of the rule
     # @param [Hash] opts the optional parameters
     # @return [Array<(BreRule, Fixnum, Hash)>] BreRule data, response status code and response headers
@@ -209,8 +207,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -232,7 +228,7 @@ module KnetikCloudClient
     end
 
     # List rules
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_RULES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for rules containing the given name
     # @option opts [BOOLEAN] :filter_enabled Filter for rules by active status, null for both (default to null)
@@ -249,7 +245,7 @@ module KnetikCloudClient
     end
 
     # List rules
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for rules containing the given name
     # @option opts [BOOLEAN] :filter_enabled Filter for rules by active status, null for both
@@ -282,8 +278,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -305,7 +299,7 @@ module KnetikCloudClient
     end
 
     # Enable or disable a rule
-    # This is helpful for turning off systems rules which cannot be deleted or modified otherwise
+    # This is helpful for turning off systems rules which cannot be deleted or modified otherwise. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_RULES_ADMIN
     # @param id The id of the rule
     # @param [Hash] opts the optional parameters
     # @option opts [BooleanResource] :enabled The boolean value
@@ -316,7 +310,7 @@ module KnetikCloudClient
     end
 
     # Enable or disable a rule
-    # This is helpful for turning off systems rules which cannot be deleted or modified otherwise
+    # This is helpful for turning off systems rules which cannot be deleted or modified otherwise. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
     # @param id The id of the rule
     # @param [Hash] opts the optional parameters
     # @option opts [BooleanResource] :enabled The boolean value
@@ -361,7 +355,7 @@ module KnetikCloudClient
     end
 
     # Update a rule
-    # Cannot update system rules
+    # Cannot update system rules. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_RULES_ADMIN
     # @param id The id of the rule
     # @param [Hash] opts the optional parameters
     # @option opts [BreRule] :bre_rule The BRE rule object
@@ -372,7 +366,7 @@ module KnetikCloudClient
     end
 
     # Update a rule
-    # Cannot update system rules
+    # Cannot update system rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
     # @param id The id of the rule
     # @param [Hash] opts the optional parameters
     # @option opts [BreRule] :bre_rule The BRE rule object

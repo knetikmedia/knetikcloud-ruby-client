@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create an object
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param template_id The id of the template this object is to be part of
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -33,7 +33,7 @@ module KnetikCloudClient
     end
 
     # Create an object
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param template_id The id of the template this object is to be part of
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -81,7 +81,7 @@ module KnetikCloudClient
     end
 
     # Create an object template
-    # Object templates define a type of entitlement and the properties they have
+    # Object templates define a type of entitlement and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :template The entitlement template to be created
     # @return [ItemTemplateResource]
@@ -91,7 +91,7 @@ module KnetikCloudClient
     end
 
     # Create an object template
-    # Object templates define a type of entitlement and the properties they have
+    # Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :template The entitlement template to be created
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -132,7 +132,7 @@ module KnetikCloudClient
     end
 
     # Delete an object
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param template_id The id of the template this object is part of
     # @param object_id The id of the object
     # @param [Hash] opts the optional parameters
@@ -143,7 +143,7 @@ module KnetikCloudClient
     end
 
     # Delete an object
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param template_id The id of the template this object is part of
     # @param object_id The id of the object
     # @param [Hash] opts the optional parameters
@@ -170,8 +170,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -192,7 +190,7 @@ module KnetikCloudClient
     end
 
     # Delete an entitlement template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -203,7 +201,7 @@ module KnetikCloudClient
     end
 
     # Delete an entitlement template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -227,8 +225,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -249,7 +245,7 @@ module KnetikCloudClient
     end
 
     # Get a single object
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param template_id The id of the template this object is part of
     # @param object_id The id of the object
     # @param [Hash] opts the optional parameters
@@ -260,7 +256,7 @@ module KnetikCloudClient
     end
 
     # Get a single object
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param template_id The id of the template this object is part of
     # @param object_id The id of the object
     # @param [Hash] opts the optional parameters
@@ -287,8 +283,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -310,7 +304,7 @@ module KnetikCloudClient
     end
 
     # List and search objects
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param template_id The id of the template to get objects for
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -323,7 +317,7 @@ module KnetikCloudClient
     end
 
     # List and search objects
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param template_id The id of the template to get objects for
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -351,8 +345,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -374,7 +366,7 @@ module KnetikCloudClient
     end
 
     # Get a single entitlement template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [ItemTemplateResource]
@@ -384,7 +376,7 @@ module KnetikCloudClient
     end
 
     # Get a single entitlement template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(ItemTemplateResource, Fixnum, Hash)>] ItemTemplateResource data, response status code and response headers
@@ -406,8 +398,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -429,7 +419,7 @@ module KnetikCloudClient
     end
 
     # List and search entitlement templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -441,7 +431,7 @@ module KnetikCloudClient
     end
 
     # List and search entitlement templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -464,8 +454,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -487,7 +475,7 @@ module KnetikCloudClient
     end
 
     # Update an object
-    # 
+    # <b>Permissions Needed:</b> INVENTORY_ADMIN
     # @param template_id The id of the template this object is part of
     # @param object_id The id of the object
     # @param [Hash] opts the optional parameters
@@ -500,7 +488,7 @@ module KnetikCloudClient
     end
 
     # Update an object
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
     # @param template_id The id of the template this object is part of
     # @param object_id The id of the object
     # @param [Hash] opts the optional parameters
@@ -552,7 +540,7 @@ module KnetikCloudClient
     end
 
     # Update an entitlement template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :template The updated template
@@ -563,7 +551,7 @@ module KnetikCloudClient
     end
 
     # Update an entitlement template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [ItemTemplateResource] :template The updated template

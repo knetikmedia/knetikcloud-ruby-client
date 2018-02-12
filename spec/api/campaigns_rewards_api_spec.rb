@@ -34,7 +34,7 @@ describe 'CampaignsRewardsApi' do
 
   # unit tests for create_reward_set
   # Create a reward set
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [RewardSetResource] :reward_set_resource The reward set resource object
   # @return [RewardSetResource]
@@ -46,7 +46,7 @@ describe 'CampaignsRewardsApi' do
 
   # unit tests for delete_reward_set
   # Delete a reward set
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
   # @param id The reward id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'CampaignsRewardsApi' do
 
   # unit tests for get_reward_set
   # Get a single reward set
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The reward id
   # @param [Hash] opts the optional parameters
   # @return [RewardSetResource]
@@ -70,7 +70,7 @@ describe 'CampaignsRewardsApi' do
 
   # unit tests for get_reward_sets
   # List and search reward sets
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -84,7 +84,7 @@ describe 'CampaignsRewardsApi' do
 
   # unit tests for update_reward_set
   # Update a reward set
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
   # @param id The reward id
   # @param [Hash] opts the optional parameters
   # @option opts [RewardSetResource] :reward_set_resource The reward set resource object

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Add a new comment
-    # 
+    # <b>Permissions Needed:</b> COMMENTS_USER or COMMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [CommentResource] :comment_resource The comment to be added
     # @return [CommentResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Add a new comment
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [CommentResource] :comment_resource The comment to be added
     # @return [Array<(CommentResource, Fixnum, Hash)>] CommentResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a comment
-    # 
+    # <b>Permissions Needed:</b> COMMENTS_USER or COMMENTS_ADMIN
     # @param id The comment id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete a comment
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
     # @param id The comment id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -104,8 +104,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Return a comment
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The comment id
     # @param [Hash] opts the optional parameters
     # @return [CommentResource]
@@ -136,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Return a comment
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The comment id
     # @param [Hash] opts the optional parameters
     # @return [Array<(CommentResource, Fixnum, Hash)>] CommentResource data, response status code and response headers
@@ -158,8 +156,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -181,7 +177,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of comments
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param context Get comments by context type
     # @param context_id Get comments by context id
     # @param [Hash] opts the optional parameters
@@ -194,7 +190,7 @@ module KnetikCloudClient
     end
 
     # Returns a page of comments
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param context Get comments by context type
     # @param context_id Get comments by context id
     # @param [Hash] opts the optional parameters
@@ -227,8 +223,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -250,7 +244,7 @@ module KnetikCloudClient
     end
 
     # Update a comment
-    # 
+    # <b>Permissions Needed:</b> COMMENTS_USER or COMMENTS_ADMIN
     # @param id The comment id
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :content The comment content
@@ -261,7 +255,7 @@ module KnetikCloudClient
     end
 
     # Update a comment
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
     # @param id The comment id
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :content The comment content

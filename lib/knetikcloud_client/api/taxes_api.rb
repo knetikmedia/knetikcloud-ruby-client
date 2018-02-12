@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a country tax
-    # 
+    # <b>Permissions Needed:</b> TAX_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [CountryTaxResource] :tax_resource The tax object
     # @return [CountryTaxResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a country tax
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [CountryTaxResource] :tax_resource The tax object
     # @return [Array<(CountryTaxResource, Fixnum, Hash)>] CountryTaxResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create a state tax
-    # 
+    # <b>Permissions Needed:</b> TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @option opts [StateTaxResource] :tax_resource The tax object
@@ -83,7 +83,7 @@ module KnetikCloudClient
     end
 
     # Create a state tax
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @option opts [StateTaxResource] :tax_resource The tax object
@@ -129,7 +129,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing tax
-    # 
+    # <b>Permissions Needed:</b> TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -139,7 +139,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing tax
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -161,8 +161,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -183,7 +181,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing state tax
-    # 
+    # <b>Permissions Needed:</b> TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param state_code The code of the state
     # @param [Hash] opts the optional parameters
@@ -194,7 +192,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing state tax
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param state_code The code of the state
     # @param [Hash] opts the optional parameters
@@ -221,8 +219,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -243,7 +239,7 @@ module KnetikCloudClient
     end
 
     # Get a single tax
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @return [CountryTaxResource]
@@ -253,7 +249,7 @@ module KnetikCloudClient
     end
 
     # Get a single tax
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @return [Array<(CountryTaxResource, Fixnum, Hash)>] CountryTaxResource data, response status code and response headers
@@ -275,8 +271,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -298,7 +292,7 @@ module KnetikCloudClient
     end
 
     # List and search taxes
-    # Get a list of taxes
+    # <b>Permissions Needed:</b> TAX_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned (default to 1)
@@ -310,7 +304,7 @@ module KnetikCloudClient
     end
 
     # List and search taxes
-    # Get a list of taxes
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned
@@ -333,8 +327,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -356,7 +348,7 @@ module KnetikCloudClient
     end
 
     # Get a single state tax
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param country_code_iso3 The iso3 code of the country
     # @param state_code The code of the state
     # @param [Hash] opts the optional parameters
@@ -367,7 +359,7 @@ module KnetikCloudClient
     end
 
     # Get a single state tax
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param country_code_iso3 The iso3 code of the country
     # @param state_code The code of the state
     # @param [Hash] opts the optional parameters
@@ -394,8 +386,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -417,7 +407,7 @@ module KnetikCloudClient
     end
 
     # List and search taxes across all countries
-    # Get a list of taxes
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned (default to 1)
@@ -429,7 +419,7 @@ module KnetikCloudClient
     end
 
     # List and search taxes across all countries
-    # Get a list of taxes
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned
@@ -452,8 +442,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -475,7 +463,7 @@ module KnetikCloudClient
     end
 
     # List and search taxes within a country
-    # Get a list of taxes
+    # <b>Permissions Needed:</b> ANY
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -488,7 +476,7 @@ module KnetikCloudClient
     end
 
     # List and search taxes within a country
-    # Get a list of taxes
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -516,8 +504,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -539,7 +525,7 @@ module KnetikCloudClient
     end
 
     # Create or update a tax
-    # 
+    # <b>Permissions Needed:</b> TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @option opts [CountryTaxResource] :tax_resource The tax object
@@ -550,7 +536,7 @@ module KnetikCloudClient
     end
 
     # Create or update a tax
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param [Hash] opts the optional parameters
     # @option opts [CountryTaxResource] :tax_resource The tax object
@@ -596,7 +582,7 @@ module KnetikCloudClient
     end
 
     # Create or update a state tax
-    # 
+    # <b>Permissions Needed:</b> TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param state_code The code of the state
     # @param [Hash] opts the optional parameters
@@ -608,7 +594,7 @@ module KnetikCloudClient
     end
 
     # Create or update a state tax
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
     # @param country_code_iso3 The iso3 code of the country
     # @param state_code The code of the state
     # @param [Hash] opts the optional parameters

@@ -1,6 +1,6 @@
 # KnetikCloudClient::CampaignsChallengesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,7 +34,7 @@ Method | HTTP request | Description
 
 Create a challenge
 
-Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+Challenges do not run on their own.  They must be added to a campaign before events will spawn. <br><br><b>Permissions Needed:</b> CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -89,6 +89,8 @@ Name | Type | Description  | Notes
 > ChallengeActivityResource create_challenge_activity(challenge_id, opts)
 
 Create a challenge activity
+
+<b>Permissions Needed:</b> CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -149,7 +151,7 @@ Name | Type | Description  | Notes
 
 Create a challenge activity template
 
-Challenge Activity Templates define a type of challenge activity and the properties they have
+Challenge Activity Templates define a type of challenge activity and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -205,7 +207,7 @@ Name | Type | Description  | Notes
 
 Create a challenge template
 
-Challenge Templates define a type of challenge and the properties they have
+Challenge Templates define a type of challenge and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -261,6 +263,8 @@ Name | Type | Description  | Notes
 
 Delete a challenge
 
+<b>Permissions Needed:</b> CHALLENGES_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -303,7 +307,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -313,7 +317,7 @@ nil (empty response body)
 
 Delete a challenge activity
 
-A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. <br><br><b>Permissions Needed:</b> CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -360,7 +364,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -370,7 +374,7 @@ nil (empty response body)
 
 Delete a challenge activity template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -418,7 +422,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -427,6 +431,8 @@ nil (empty response body)
 > delete_challenge_event(id)
 
 Delete a challenge event
+
+<b>Permissions Needed:</b> CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -470,7 +476,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -480,7 +486,7 @@ nil (empty response body)
 
 Delete a challenge template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -528,7 +534,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -537,6 +543,8 @@ nil (empty response body)
 > ChallengeResource get_challenge(id)
 
 Retrieve a challenge
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -581,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -590,6 +598,8 @@ Name | Type | Description  | Notes
 > PageResourceBareChallengeActivityResource get_challenge_activities(challenge_id, opts)
 
 List and search challenge activities
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -642,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -652,7 +662,7 @@ Name | Type | Description  | Notes
 
 Get a single challenge activity
 
-A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -700,7 +710,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -709,6 +719,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_challenge_activity_template(id)
 
 Get a single challenge activity template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -753,7 +765,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -762,6 +774,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_challenge_activity_templates(opts)
 
 List and search challenge activity templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -811,7 +825,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -820,6 +834,8 @@ Name | Type | Description  | Notes
 > ChallengeEventResource get_challenge_event(id)
 
 Retrieve a single challenge event details
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -864,7 +880,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -873,6 +889,8 @@ Name | Type | Description  | Notes
 > PageResourceChallengeEventResource get_challenge_events(opts)
 
 Retrieve a list of challenge events
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -930,7 +948,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -939,6 +957,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_challenge_template(id)
 
 Get a single challenge template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -983,7 +1003,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -992,6 +1012,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_challenge_templates(opts)
 
 List and search challenge templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -1041,7 +1063,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1050,6 +1072,8 @@ Name | Type | Description  | Notes
 > PageResourceChallengeResource get_challenges(opts)
 
 Retrieve a list of challenges
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -1105,7 +1129,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1115,7 +1139,7 @@ Name | Type | Description  | Notes
 
 Update a challenge
 
-If the challenge is a copy, changes will propagate to all the related challenges
+If the challenge is a copy, changes will propagate to all the related challenges. <br><br><b>Permissions Needed:</b> CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -1174,7 +1198,7 @@ Name | Type | Description  | Notes
 
 Update a challenge activity
 
-A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. <br><br><b>Permissions Needed:</b> CHALLENGES_ADMIN
 
 ### Example
 ```ruby
@@ -1238,6 +1262,8 @@ Name | Type | Description  | Notes
 
 Update an challenge activity template
 
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -1294,6 +1320,8 @@ Name | Type | Description  | Notes
 > TemplateResource update_challenge_template(id, opts)
 
 Update a challenge template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

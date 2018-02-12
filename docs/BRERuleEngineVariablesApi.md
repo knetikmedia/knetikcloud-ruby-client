@@ -1,6 +1,6 @@
 # KnetikCloudClient::BRERuleEngineVariablesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get a list of variable types available
 
-Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_VARIABLES_USER
 
 ### Example
 ```ruby
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 
 List valid values for a type
 
-Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_VARIABLES_USER
 
 ### Example
 ```ruby
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

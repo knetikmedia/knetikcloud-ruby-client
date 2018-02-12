@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get a temporary signed S3 URL for download
-    # To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+    # To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. <br><br><b>Permissions Needed:</b> S3_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :bucket S3 bucket name
     # @option opts [String] :path The path to the file relative the bucket (the s3 object key)
@@ -33,7 +33,7 @@ module KnetikCloudClient
     end
 
     # Get a temporary signed S3 URL for download
-    # To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+    # To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :bucket S3 bucket name
     # @option opts [String] :path The path to the file relative the bucket (the s3 object key)
@@ -56,8 +56,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -79,7 +77,7 @@ module KnetikCloudClient
     end
 
     # Get a signed S3 URL for upload
-    # Requires the file name and file content type (i.e., 'video/mpeg'). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
+    # Requires the file name and file content type (i.e., 'video/mpeg'). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after. <br><br><b>Permissions Needed:</b> S3_USER or S3_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filename The file name
     # @option opts [String] :content_type The content type
@@ -90,7 +88,7 @@ module KnetikCloudClient
     end
 
     # Get a signed S3 URL for upload
-    # Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
+    # Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_USER or S3_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filename The file name
     # @option opts [String] :content_type The content type
@@ -111,8 +109,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

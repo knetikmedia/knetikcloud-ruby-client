@@ -129,7 +129,7 @@ module KnetikCloudClient
 
     def initialize
       @scheme = 'https'
-      @host = 'devsandbox.knetikcloud.com'
+      @host = 'sandbox.knetikcloud.com'
       @base_path = '/'
       @api_key = {}
       @api_key_prefix = {}

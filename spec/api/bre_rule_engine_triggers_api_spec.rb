@@ -34,7 +34,7 @@ describe 'BRERuleEngineTriggersApi' do
 
   # unit tests for create_bre_trigger
   # Create a trigger
-  # Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
+  # Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [BreTriggerResource] :bre_trigger_resource The BRE trigger resource object
   # @return [BreTriggerResource]
@@ -46,7 +46,7 @@ describe 'BRERuleEngineTriggersApi' do
 
   # unit tests for delete_bre_trigger
   # Delete a trigger
-  # May fail if there are existing rules against it. Cannot delete core triggers
+  # May fail if there are existing rules against it. Cannot delete core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   # @param event_name The trigger event name
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'BRERuleEngineTriggersApi' do
 
   # unit tests for get_bre_trigger
   # Get a single trigger
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
   # @param event_name The trigger event name
   # @param [Hash] opts the optional parameters
   # @return [BreTriggerResource]
@@ -70,7 +70,7 @@ describe 'BRERuleEngineTriggersApi' do
 
   # unit tests for get_bre_triggers
   # List triggers
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :filter_system Filter for triggers that are system triggers when true, or not when false. Leave off for both mixed
   # @option opts [String] :filter_category Filter for triggers that are within a specific category
@@ -88,7 +88,7 @@ describe 'BRERuleEngineTriggersApi' do
 
   # unit tests for update_bre_trigger
   # Update a trigger
-  # May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
+  # May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   # @param event_name The trigger event name
   # @param [Hash] opts the optional parameters
   # @option opts [BreTriggerResource] :bre_trigger_resource The BRE trigger resource object

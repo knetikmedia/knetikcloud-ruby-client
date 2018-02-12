@@ -34,7 +34,7 @@ describe 'ReportingSubscriptionsApi' do
 
   # unit tests for get_subscription_reports
   # Get a list of available subscription reports in most recent first order
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1

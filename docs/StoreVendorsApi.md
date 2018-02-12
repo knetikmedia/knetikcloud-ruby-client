@@ -1,6 +1,6 @@
 # KnetikCloudClient::StoreVendorsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,6 +20,8 @@ Method | HTTP request | Description
 > VendorResource create_vendor(opts)
 
 Create a vendor
+
+<b>Permissions Needed:</b> VENDORS_ADMIN
 
 ### Example
 ```ruby
@@ -75,7 +77,7 @@ Name | Type | Description  | Notes
 
 Create a vendor template
 
-Vendor Templates define a type of vendor and the properties they have.
+Vendor Templates define a type of vendor and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -131,6 +133,8 @@ Name | Type | Description  | Notes
 
 Delete a vendor
 
+<b>Permissions Needed:</b> VENDORS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -173,7 +177,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -182,6 +186,8 @@ nil (empty response body)
 > delete_vendor_template(id, opts)
 
 Delete a vendor template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -229,7 +235,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -238,6 +244,8 @@ nil (empty response body)
 > VendorResource get_vendor(id)
 
 Get a single vendor
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -282,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -292,7 +300,7 @@ Name | Type | Description  | Notes
 
 Get a single vendor template
 
-Vendor Templates define a type of vendor and the properties they have.
+Vendor Templates define a type of vendor and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -337,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -346,6 +354,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource get_vendor_templates(opts)
 
 List and search vendor templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -365,7 +375,7 @@ api_instance = KnetikCloudClient::StoreVendorsApi.new
 opts = { 
   size: 25, # Integer | The number of objects returned per page
   page: 1, # Integer | The number of the page returned, starting with 1
-  order: "1" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  order: "order_example" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 }
 
 begin
@@ -383,7 +393,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 
@@ -395,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -404,6 +414,8 @@ Name | Type | Description  | Notes
 > PageResourceVendorResource get_vendors(opts)
 
 List and search vendors
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -455,7 +467,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -464,6 +476,8 @@ Name | Type | Description  | Notes
 > VendorResource update_vendor(id, opts)
 
 Update a vendor
+
+<b>Permissions Needed:</b> VENDORS_ADMIN
 
 ### Example
 ```ruby
@@ -521,6 +535,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource update_vendor_template(id, opts)
 
 Update a vendor template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

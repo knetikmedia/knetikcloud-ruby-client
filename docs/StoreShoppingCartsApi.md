@@ -1,6 +1,6 @@
 # KnetikCloudClient::StoreShoppingCartsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,6 +23,8 @@ Method | HTTP request | Description
 > add_custom_discount(id, opts)
 
 Adds a custom discount to the cart
+
+<b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN
 
 ### Example
 ```ruby
@@ -80,6 +82,8 @@ nil (empty response body)
 
 Adds a discount coupon to the cart
 
+<b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
+
 ### Example
 ```ruby
 # load the gem
@@ -136,7 +140,7 @@ nil (empty response body)
 
 Add an item to the cart
 
-Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment
+Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment. <br><br><b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -194,7 +198,7 @@ nil (empty response body)
 
 Create a cart
 
-You don't have to have a user to create a cart but the API requires authentication to checkout
+You don't have to have a user to create a cart but the API requires authentication to checkout. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -252,6 +256,8 @@ Name | Type | Description  | Notes
 
 Returns the cart with the given GUID
 
+<b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
+
 ### Example
 ```ruby
 # load the gem
@@ -295,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -304,6 +310,8 @@ Name | Type | Description  | Notes
 > PageResourceCartSummary get_carts(opts)
 
 Get a list of carts
+
+<b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -355,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -364,6 +372,8 @@ Name | Type | Description  | Notes
 > CartShippableResponse get_shippable(id)
 
 Returns whether a cart requires shipping
+
+<b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -408,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -418,7 +428,7 @@ Name | Type | Description  | Notes
 
 Get the list of available shipping countries per vendor
 
-Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
+Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable. <br><br><b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -463,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -472,6 +482,8 @@ Name | Type | Description  | Notes
 > remove_discount_from_cart(id, code)
 
 Removes a discount coupon from the cart
+
+<b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -518,7 +530,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -528,7 +540,7 @@ nil (empty response body)
 
 Sets the currency to use for the cart
 
-May be disallowed by site settings.
+May be disallowed by site settings. <br><br><b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -586,6 +598,8 @@ nil (empty response body)
 
 Sets the owner of a cart if none is set already
 
+<b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
+
 ### Example
 ```ruby
 # load the gem
@@ -642,7 +656,7 @@ nil (empty response body)
 
 Changes the quantity of an item already in the cart
 
-A quantity of zero will remove the item from the cart altogether.
+A quantity of zero will remove the item from the cart altogether. <br><br><b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -699,6 +713,8 @@ nil (empty response body)
 > update_shipping_address(id, opts)
 
 Modifies or sets the order shipping address
+
+<b>Permissions Needed:</b> SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```ruby

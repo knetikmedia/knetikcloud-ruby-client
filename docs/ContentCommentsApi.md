@@ -1,6 +1,6 @@
 # KnetikCloudClient::ContentCommentsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > CommentResource add_comment(opts)
 
 Add a new comment
+
+<b>Permissions Needed:</b> COMMENTS_USER or COMMENTS_ADMIN
 
 ### Example
 ```ruby
@@ -70,6 +72,8 @@ Name | Type | Description  | Notes
 
 Delete a comment
 
+<b>Permissions Needed:</b> COMMENTS_USER or COMMENTS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -112,7 +116,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -121,6 +125,8 @@ nil (empty response body)
 > CommentResource get_comment(id)
 
 Return a comment
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -165,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -174,6 +180,8 @@ Name | Type | Description  | Notes
 > PageResourceCommentResource get_comments(context, context_id, opts)
 
 Returns a page of comments
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -227,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -236,6 +244,8 @@ Name | Type | Description  | Notes
 > update_comment(id, opts)
 
 Update a comment
+
+<b>Permissions Needed:</b> COMMENTS_USER or COMMENTS_ADMIN
 
 ### Example
 ```ruby

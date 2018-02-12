@@ -34,7 +34,7 @@ describe 'LocationsApi' do
 
   # unit tests for get_countries
   # Get a list of countries
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [Array<CountryResource>]
   describe 'get_countries test' do
@@ -45,7 +45,7 @@ describe 'LocationsApi' do
 
   # unit tests for get_country_by_geo_location
   # Get the iso3 code of your country
-  # Determined by geo ip location
+  # Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [String]
   describe 'get_country_by_geo_location test' do
@@ -56,7 +56,7 @@ describe 'LocationsApi' do
 
   # unit tests for get_country_states
   # Get a list of a country&#39;s states
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param country_code_iso3 The iso3 code of the country
   # @param [Hash] opts the optional parameters
   # @return [Array<StateResource>]
@@ -68,7 +68,7 @@ describe 'LocationsApi' do
 
   # unit tests for get_currency_by_geo_location
   # Get the currency information of your country
-  # Determined by geo ip location, currency to country mapping and a fallback setting
+  # Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [CurrencyResource]
   describe 'get_currency_by_geo_location test' do

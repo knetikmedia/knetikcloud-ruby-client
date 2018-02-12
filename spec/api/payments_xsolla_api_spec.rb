@@ -34,7 +34,7 @@ describe 'PaymentsXsollaApi' do
 
   # unit tests for create_xsolla_token_url
   # Create a payment token that should be used to forward the user to Xsolla so they can complete payment
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [XsollaPaymentRequest] :request The payment request to be sent to XSolla
   # @return [String]

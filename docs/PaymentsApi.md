@@ -1,6 +1,6 @@
 # KnetikCloudClient::PaymentsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,6 +19,8 @@ Method | HTTP request | Description
 > PaymentMethodResource create_payment_method(user_id, opts)
 
 Create a new payment method for a user
+
+<b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -77,6 +79,8 @@ Name | Type | Description  | Notes
 
 Delete an existing payment method for a user
 
+<b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
+
 ### Example
 ```ruby
 # load the gem
@@ -122,7 +126,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -131,6 +135,8 @@ nil (empty response body)
 > PaymentMethodResource get_payment_method(user_id, id)
 
 Get a single payment method for a user
+
+<b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -178,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -187,6 +193,8 @@ Name | Type | Description  | Notes
 > PaymentMethodTypeResource get_payment_method_type(id)
 
 Get a single payment method type
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -231,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -240,6 +248,8 @@ Name | Type | Description  | Notes
 > PageResourcePaymentMethodTypeResource get_payment_method_types(opts)
 
 Get all payment method types
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -291,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -300,6 +310,8 @@ Name | Type | Description  | Notes
 > Array&lt;PaymentMethodResource&gt; get_payment_methods(user_id, opts)
 
 Get all payment methods for a user
+
+<b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -360,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -369,6 +381,8 @@ Name | Type | Description  | Notes
 > PaymentAuthorizationResource payment_authorization(opts)
 
 Authorize payment of an invoice for later capture
+
+<b>Permissions Needed:</b> PAYMENTS_ADMIN or PAYMENTS_USER
 
 ### Example
 ```ruby
@@ -424,6 +438,8 @@ Name | Type | Description  | Notes
 
 Capture an existing invoice payment authorization
 
+<b>Permissions Needed:</b> PAYMENTS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -475,6 +491,8 @@ nil (empty response body)
 > PaymentMethodResource update_payment_method(user_id, id, opts)
 
 Update an existing payment method for a user
+
+<b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
 
 ### Example
 ```ruby

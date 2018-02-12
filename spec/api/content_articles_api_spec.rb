@@ -34,7 +34,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for create_article
   # Create a new article
-  # Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+  # Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [ArticleResource] :article_resource The new article
   # @return [ArticleResource]
@@ -46,7 +46,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for create_article_template
   # Create an article template
-  # Article Templates define a type of article and the properties they have
+  # Article Templates define a type of article and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :article_template_resource The article template resource object
   # @return [TemplateResource]
@@ -58,7 +58,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for delete_article
   # Delete an existing article
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
   # @param id The article id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -70,7 +70,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for delete_article_template
   # Delete an article template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -83,7 +83,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for get_article
   # Get a single article
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The article id
   # @param [Hash] opts the optional parameters
   # @return [ArticleResource]
@@ -95,7 +95,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for get_article_template
   # Get a single article template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -107,7 +107,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for get_article_templates
   # List and search article templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -121,7 +121,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for get_articles
   # List and search articles
-  # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
+  # Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :filter_active_only Filter for articles that are active (true) or inactive (false)
   # @option opts [String] :filter_category Filter for articles from a specific category by id
@@ -141,7 +141,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for update_article
   # Update an existing article
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
   # @param id The article id
   # @param [Hash] opts the optional parameters
   # @option opts [ArticleResource] :article_resource The article object
@@ -154,7 +154,7 @@ describe 'ContentArticlesApi' do
 
   # unit tests for update_article_template
   # Update an article template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :article_template_resource The article template resource object

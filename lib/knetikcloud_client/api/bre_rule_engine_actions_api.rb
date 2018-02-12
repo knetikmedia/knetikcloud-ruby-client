@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Get a list of available actions
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_ACTIONS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_category Filter for actions that are within a specific category
     # @option opts [String] :filter_name Filter for actions that have names containing the given string
@@ -34,7 +34,7 @@ module KnetikCloudClient
     end
 
     # Get a list of available actions
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_ACTIONS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_category Filter for actions that are within a specific category
     # @option opts [String] :filter_name Filter for actions that have names containing the given string
@@ -62,8 +62,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}

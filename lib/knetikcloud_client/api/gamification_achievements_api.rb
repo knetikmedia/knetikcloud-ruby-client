@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new achievement definition
-    # If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user's achievement status must manually be updated via the API.
+    # If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user's achievement status must manually be updated via the API. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [AchievementDefinitionResource] :achievement The achievement definition
     # @return [AchievementDefinitionResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a new achievement definition
-    # If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API.
+    # If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [AchievementDefinitionResource] :achievement The achievement definition
     # @return [Array<(AchievementDefinitionResource, Fixnum, Hash)>] AchievementDefinitionResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Create an achievement template
-    # Achievement templates define a type of achievement and the properties they have
+    # Achievement templates define a type of achievement and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The achievement template to be created
     # @return [TemplateResource]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Create an achievement template
-    # Achievement templates define a type of achievement and the properties they have
+    # Achievement templates define a type of achievement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The achievement template to be created
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -123,7 +123,7 @@ module KnetikCloudClient
     end
 
     # Delete an achievement definition
-    # Will also disable the associated generated rule, if any.
+    # Will also disable the associated generated rule, if any. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param name The name of the achievement
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -133,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Delete an achievement definition
-    # Will also disable the associated generated rule, if any.
+    # Will also disable the associated generated rule, if any. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param name The name of the achievement
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -155,8 +155,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -177,7 +175,7 @@ module KnetikCloudClient
     end
 
     # Delete an achievement template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -188,7 +186,7 @@ module KnetikCloudClient
     end
 
     # Delete an achievement template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -212,8 +210,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -234,7 +230,7 @@ module KnetikCloudClient
     end
 
     # Get a single achievement definition
-    # 
+    # <b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
     # @param name The name of the achievement
     # @param [Hash] opts the optional parameters
     # @return [AchievementDefinitionResource]
@@ -244,7 +240,7 @@ module KnetikCloudClient
     end
 
     # Get a single achievement definition
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
     # @param name The name of the achievement
     # @param [Hash] opts the optional parameters
     # @return [Array<(AchievementDefinitionResource, Fixnum, Hash)>] AchievementDefinitionResource data, response status code and response headers
@@ -266,8 +262,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -289,7 +283,7 @@ module KnetikCloudClient
     end
 
     # Get a single achievement template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -299,7 +293,7 @@ module KnetikCloudClient
     end
 
     # Get a single achievement template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -321,8 +315,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -344,7 +336,7 @@ module KnetikCloudClient
     end
 
     # List and search achievement templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -356,7 +348,7 @@ module KnetikCloudClient
     end
 
     # List and search achievement templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -379,8 +371,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -402,7 +392,7 @@ module KnetikCloudClient
     end
 
     # Get the list of triggers that can be used to trigger an achievement progress update
-    # 
+    # <b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [Array<BreTriggerResource>]
     def get_achievement_triggers(opts = {})
@@ -411,7 +401,7 @@ module KnetikCloudClient
     end
 
     # Get the list of triggers that can be used to trigger an achievement progress update
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<BreTriggerResource>, Fixnum, Hash)>] Array<BreTriggerResource> data, response status code and response headers
     def get_achievement_triggers_with_http_info(opts = {})
@@ -428,8 +418,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -451,7 +439,7 @@ module KnetikCloudClient
     end
 
     # Get all achievement definitions in the system
-    # 
+    # <b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_tagset Filter for achievements with specified tags (separated by comma)
     # @option opts [String] :filter_name Filter for achievements whose name contains a string
@@ -467,7 +455,7 @@ module KnetikCloudClient
     end
 
     # Get all achievement definitions in the system
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_tagset Filter for achievements with specified tags (separated by comma)
     # @option opts [String] :filter_name Filter for achievements whose name contains a string
@@ -498,8 +486,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -521,7 +507,7 @@ module KnetikCloudClient
     end
 
     # Get a list of derived achievements
-    # Used by other services that depend on achievements
+    # Used by other services that depend on achievements.  <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param name The name of the derived achievement
     # @param [Hash] opts the optional parameters
     # @return [Array<AchievementDefinitionResource>]
@@ -531,7 +517,7 @@ module KnetikCloudClient
     end
 
     # Get a list of derived achievements
-    # Used by other services that depend on achievements
+    # Used by other services that depend on achievements.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param name The name of the derived achievement
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<AchievementDefinitionResource>, Fixnum, Hash)>] Array<AchievementDefinitionResource> data, response status code and response headers
@@ -553,8 +539,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -576,7 +560,7 @@ module KnetikCloudClient
     end
 
     # Retrieve progress on a given achievement for a given user
-    # Assets will not be filled in on the resources returned. Use 'Get a single poll' to retrieve the full resource with assets for a given item as needed.
+    # Assets will not be filled in on the resources returned. Use 'Get a single poll' to retrieve the full resource with assets for a given item as needed. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param user_id The user&#39;s id
     # @param achievement_name The achievement&#39;s name
     # @param [Hash] opts the optional parameters
@@ -587,7 +571,7 @@ module KnetikCloudClient
     end
 
     # Retrieve progress on a given achievement for a given user
-    # Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+    # Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param user_id The user&#39;s id
     # @param achievement_name The achievement&#39;s name
     # @param [Hash] opts the optional parameters
@@ -614,8 +598,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -637,7 +619,7 @@ module KnetikCloudClient
     end
 
     # Retrieve progress on achievements for a given user
-    # Assets will not be filled in on the resources returned. Use 'Get a single poll' to retrieve the full resource with assets for a given item as needed.
+    # Assets will not be filled in on the resources returned. Use 'Get a single poll' to retrieve the full resource with assets for a given item as needed. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param user_id The user&#39;s id
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_achievement_derived Filter for achievements that are derived from other services
@@ -652,7 +634,7 @@ module KnetikCloudClient
     end
 
     # Retrieve progress on achievements for a given user
-    # Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+    # Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param user_id The user&#39;s id
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_achievement_derived Filter for achievements that are derived from other services
@@ -684,8 +666,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -707,7 +687,7 @@ module KnetikCloudClient
     end
 
     # Retrieve progress on a given achievement for all users
-    # Assets will not be filled in on the resources returned. Use 'Get single achievement progress for user' to retrieve the full resource with assets for a given user as needed.
+    # Assets will not be filled in on the resources returned. Use 'Get single achievement progress for user' to retrieve the full resource with assets for a given user as needed. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param achievement_name The achievement&#39;s name
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_achievement_derived Filter for achievements that are derived from other services
@@ -722,7 +702,7 @@ module KnetikCloudClient
     end
 
     # Retrieve progress on a given achievement for all users
-    # Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+    # Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param achievement_name The achievement&#39;s name
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_achievement_derived Filter for achievements that are derived from other services
@@ -754,8 +734,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -777,7 +755,7 @@ module KnetikCloudClient
     end
 
     # Retrieve progress on achievements for all users
-    # Assets will not be filled in on the resources returned. Use 'Get single achievement progress for user' to retrieve the full resource with assets for a given user as needed.
+    # Assets will not be filled in on the resources returned. Use 'Get single achievement progress for user' to retrieve the full resource with assets for a given user as needed. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_achievement_derived Filter for achievements that are derived from other services
     # @option opts [String] :filter_achievement_tagset Filter for achievements with specified tags (separated by comma)
@@ -791,7 +769,7 @@ module KnetikCloudClient
     end
 
     # Retrieve progress on achievements for all users
-    # Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+    # Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_achievement_derived Filter for achievements that are derived from other services
     # @option opts [String] :filter_achievement_tagset Filter for achievements with specified tags (separated by comma)
@@ -818,8 +796,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -841,7 +817,7 @@ module KnetikCloudClient
     end
 
     # Increment an achievement progress record for a user
-    # If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement's max_value it will be marked as earned and a BRE event will be triggered for the <code>BreAchievementEarnedTrigger</code>.
+    # If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement's max_value it will be marked as earned and a BRE event will be triggered for the <code>BreAchievementEarnedTrigger</code>. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param user_id The user&#39;s id
     # @param achievement_name The achievement&#39;s name
     # @param [Hash] opts the optional parameters
@@ -853,7 +829,7 @@ module KnetikCloudClient
     end
 
     # Increment an achievement progress record for a user
-    # If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+    # If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param user_id The user&#39;s id
     # @param achievement_name The achievement&#39;s name
     # @param [Hash] opts the optional parameters
@@ -904,7 +880,7 @@ module KnetikCloudClient
     end
 
     # Set an achievement progress record for a user
-    # If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement's max_value it will be marked as earned and a BRE event will be triggered for the <code>BreAchievementEarnedTrigger</code>.
+    # If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement's max_value it will be marked as earned and a BRE event will be triggered for the <code>BreAchievementEarnedTrigger</code>. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param user_id The user&#39;s id
     # @param achievement_name The achievement&#39;s name
     # @param [Hash] opts the optional parameters
@@ -916,7 +892,7 @@ module KnetikCloudClient
     end
 
     # Set an achievement progress record for a user
-    # If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+    # If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param user_id The user&#39;s id
     # @param achievement_name The achievement&#39;s name
     # @param [Hash] opts the optional parameters
@@ -967,7 +943,7 @@ module KnetikCloudClient
     end
 
     # Update an achievement definition
-    # The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version.
+    # The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version. <br><br><b>Permissions Needed:</b> ACHIEVEMENTS_ADMIN
     # @param name The name of the achievement
     # @param [Hash] opts the optional parameters
     # @option opts [AchievementDefinitionResource] :achievement The achievement definition
@@ -978,7 +954,7 @@ module KnetikCloudClient
     end
 
     # Update an achievement definition
-    # The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version.
+    # The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
     # @param name The name of the achievement
     # @param [Hash] opts the optional parameters
     # @option opts [AchievementDefinitionResource] :achievement The achievement definition
@@ -1024,7 +1000,7 @@ module KnetikCloudClient
     end
 
     # Update an achievement template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The updated template
@@ -1035,7 +1011,7 @@ module KnetikCloudClient
     end
 
     # Update an achievement template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The updated template

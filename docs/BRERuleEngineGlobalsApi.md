@@ -1,6 +1,6 @@
 # KnetikCloudClient::BRERuleEngineGlobalsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create a global definition
 
-Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
 
 ### Example
 ```ruby
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 Delete a global
 
-May fail if there are existing rules against it. Cannot delete core globals
+May fail if there are existing rules against it. Cannot delete core globals. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
 
 ### Example
 ```ruby
@@ -116,7 +116,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -125,6 +125,8 @@ nil (empty response body)
 > BreGlobalResource get_bre_global(id)
 
 Get a single global definition
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_USER
 
 ### Example
 ```ruby
@@ -169,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -178,6 +180,8 @@ Name | Type | Description  | Notes
 > PageResourceBreGlobalResource get_bre_globals(opts)
 
 List global definitions
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_USER
 
 ### Example
 ```ruby
@@ -227,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -237,7 +241,7 @@ Name | Type | Description  | Notes
 
 Update a global definition
 
-May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
 
 ### Example
 ```ruby

@@ -136,10 +136,6 @@ module KnetikCloudClient
         invalid_properties.push("invalid value for 'name', name cannot be nil.")
       end
 
-      if @type.nil?
-        invalid_properties.push("invalid value for 'type', type cannot be nil.")
-      end
-
       return invalid_properties
     end
 
@@ -147,7 +143,6 @@ module KnetikCloudClient
     # @return true if the model is valid
     def valid?
       return false if @name.nil?
-      return false if @type.nil?
       return true
     end
 

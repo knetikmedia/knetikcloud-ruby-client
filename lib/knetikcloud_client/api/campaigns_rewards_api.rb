@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a reward set
-    # 
+    # <b>Permissions Needed:</b> REWARDS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RewardSetResource] :reward_set_resource The reward set resource object
     # @return [RewardSetResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a reward set
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RewardSetResource] :reward_set_resource The reward set resource object
     # @return [Array<(RewardSetResource, Fixnum, Hash)>] RewardSetResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a reward set
-    # 
+    # <b>Permissions Needed:</b> REWARDS_ADMIN
     # @param id The reward id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete a reward set
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
     # @param id The reward id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -104,8 +104,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -126,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Get a single reward set
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The reward id
     # @param [Hash] opts the optional parameters
     # @return [RewardSetResource]
@@ -136,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Get a single reward set
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The reward id
     # @param [Hash] opts the optional parameters
     # @return [Array<(RewardSetResource, Fixnum, Hash)>] RewardSetResource data, response status code and response headers
@@ -158,8 +156,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -181,7 +177,7 @@ module KnetikCloudClient
     end
 
     # List and search reward sets
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -193,7 +189,7 @@ module KnetikCloudClient
     end
 
     # List and search reward sets
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -216,8 +212,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -239,7 +233,7 @@ module KnetikCloudClient
     end
 
     # Update a reward set
-    # 
+    # <b>Permissions Needed:</b> REWARDS_ADMIN
     # @param id The reward id
     # @param [Hash] opts the optional parameters
     # @option opts [RewardSetResource] :reward_set_resource The reward set resource object
@@ -250,7 +244,7 @@ module KnetikCloudClient
     end
 
     # Update a reward set
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
     # @param id The reward id
     # @param [Hash] opts the optional parameters
     # @option opts [RewardSetResource] :reward_set_resource The reward set resource object

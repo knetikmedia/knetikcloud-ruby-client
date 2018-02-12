@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Add your vote to a poll
-    # 
+    # <b>Permissions Needed:</b> POLLS_ADMIN or POLLS_USER
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :answer_key The answer key
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Add your vote to a poll
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @option opts [StringWrapper] :answer_key The answer key
@@ -78,7 +78,7 @@ module KnetikCloudClient
     end
 
     # Create a new poll
-    # Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+    # Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. <br><br><b>Permissions Needed:</b> POLLS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [PollResource] :poll_resource The poll object
     # @return [PollResource]
@@ -88,7 +88,7 @@ module KnetikCloudClient
     end
 
     # Create a new poll
-    # Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+    # Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [PollResource] :poll_resource The poll object
     # @return [Array<(PollResource, Fixnum, Hash)>] PollResource data, response status code and response headers
@@ -129,7 +129,7 @@ module KnetikCloudClient
     end
 
     # Create a poll template
-    # Poll templates define a type of poll and the properties they have
+    # Poll templates define a type of poll and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :poll_template_resource The poll template resource object
     # @return [TemplateResource]
@@ -139,7 +139,7 @@ module KnetikCloudClient
     end
 
     # Create a poll template
-    # Poll templates define a type of poll and the properties they have
+    # Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :poll_template_resource The poll template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -180,7 +180,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing poll
-    # 
+    # <b>Permissions Needed:</b> POLLS_ADMIN
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -190,7 +190,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing poll
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -212,8 +212,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -234,7 +232,7 @@ module KnetikCloudClient
     end
 
     # Delete a poll template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -245,7 +243,7 @@ module KnetikCloudClient
     end
 
     # Delete a poll template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -269,8 +267,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -291,7 +287,7 @@ module KnetikCloudClient
     end
 
     # Get a single poll
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @return [PollResource]
@@ -301,7 +297,7 @@ module KnetikCloudClient
     end
 
     # Get a single poll
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @return [Array<(PollResource, Fixnum, Hash)>] PollResource data, response status code and response headers
@@ -323,8 +319,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -346,7 +340,7 @@ module KnetikCloudClient
     end
 
     # Get poll answer
-    # 
+    # <b>Permissions Needed:</b> POLLS_ADMIN or POLLS_USER
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @return [PollResponseResource]
@@ -356,7 +350,7 @@ module KnetikCloudClient
     end
 
     # Get poll answer
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @return [Array<(PollResponseResource, Fixnum, Hash)>] PollResponseResource data, response status code and response headers
@@ -378,8 +372,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -401,7 +393,7 @@ module KnetikCloudClient
     end
 
     # Get a single poll template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or POLLS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -411,7 +403,7 @@ module KnetikCloudClient
     end
 
     # Get a single poll template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -433,8 +425,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -456,7 +446,7 @@ module KnetikCloudClient
     end
 
     # List and search poll templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or POLLS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -468,7 +458,7 @@ module KnetikCloudClient
     end
 
     # List and search poll templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -491,8 +481,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -514,7 +502,7 @@ module KnetikCloudClient
     end
 
     # List and search polls
-    # Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single poll' to retrieve the full resource with assets for a given item as needed.
+    # Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single poll' to retrieve the full resource with assets for a given item as needed. <br><br><b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_category Filter for polls from a specific category by id
     # @option opts [String] :filter_tagset Filter for polls with specified tags (separated by comma)
@@ -529,7 +517,7 @@ module KnetikCloudClient
     end
 
     # List and search polls
-    # Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+    # Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_category Filter for polls from a specific category by id
     # @option opts [String] :filter_tagset Filter for polls with specified tags (separated by comma)
@@ -558,8 +546,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -581,7 +567,7 @@ module KnetikCloudClient
     end
 
     # Update an existing poll
-    # 
+    # <b>Permissions Needed:</b> POLLS_ADMIN
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @option opts [PollResource] :poll_resource The poll object
@@ -592,7 +578,7 @@ module KnetikCloudClient
     end
 
     # Update an existing poll
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
     # @param id The poll id
     # @param [Hash] opts the optional parameters
     # @option opts [PollResource] :poll_resource The poll object
@@ -638,7 +624,7 @@ module KnetikCloudClient
     end
 
     # Update a poll template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :poll_template_resource The poll template resource object
@@ -649,7 +635,7 @@ module KnetikCloudClient
     end
 
     # Update a poll template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :poll_template_resource The poll template resource object

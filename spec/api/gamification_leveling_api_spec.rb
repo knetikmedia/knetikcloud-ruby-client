@@ -34,7 +34,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for create_level
   # Create a level schema
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [LevelingResource] :level The level schema definition
   # @return [LevelingResource]
@@ -46,7 +46,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for delete_level
   # Delete a level
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
   # @param name The level schema name
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for get_level
   # Retrieve a level
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
   # @param name The level schema name
   # @param [Hash] opts the optional parameters
   # @return [LevelingResource]
@@ -70,7 +70,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for get_level_triggers
   # Get the list of triggers that can be used to trigger a leveling progress update
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
   # @param [Hash] opts the optional parameters
   # @return [Array<BreTriggerResource>]
   describe 'get_level_triggers test' do
@@ -81,7 +81,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for get_levels
   # List and search levels
-  # Get a list of levels schemas with optional filtering
+  # Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_name Filter for level schemas whose name contains a given string
   # @option opts [Integer] :size The number of objects returned per page
@@ -96,7 +96,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for get_user_level
   # Get a user&#39;s progress for a given level schema
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
   # @param user_id The id of the user or &#39;me&#39;
   # @param name The level schema name
   # @param [Hash] opts the optional parameters
@@ -109,7 +109,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for get_user_levels
   # Get a user&#39;s progress for all level schemas
-  # Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here.
+  # Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
   # @param user_id The id of the user or &#39;me&#39;
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_name Filter for level schemas whose name contains a given string
@@ -125,7 +125,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for increment_progress
   # Update or create a leveling progress record for a user
-  # If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+  # If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
   # @param user_id The id of the user
   # @param name The level schema name
   # @param [Hash] opts the optional parameters
@@ -139,7 +139,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for set_progress
   # Set leveling progress for a user
-  # If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+  # If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
   # @param user_id The id of the user
   # @param name The level schema name
   # @param [Hash] opts the optional parameters
@@ -153,7 +153,7 @@ describe 'GamificationLevelingApi' do
 
   # unit tests for update_level
   # Update a level
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
   # @param name The level schema name
   # @param [Hash] opts the optional parameters
   # @option opts [LevelingResource] :new_level The level schema definition

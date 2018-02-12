@@ -34,7 +34,7 @@ describe 'DevicesApi' do
 
   # unit tests for add_device_users
   # Add device users
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   # @param user_resources userResources
   # @param id id
   # @param [Hash] opts the optional parameters
@@ -47,7 +47,7 @@ describe 'DevicesApi' do
 
   # unit tests for create_device
   # Create a device
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param device device
   # @param [Hash] opts the optional parameters
   # @return [DeviceResource]
@@ -59,7 +59,7 @@ describe 'DevicesApi' do
 
   # unit tests for create_device_template
   # Create a device template
-  # Device Templates define a type of device and the properties they have
+  # Device Templates define a type of device and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :device_template_resource The device template resource object
   # @return [TemplateResource]
@@ -71,7 +71,7 @@ describe 'DevicesApi' do
 
   # unit tests for delete_device
   # Delete a device
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   # @param id id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -83,7 +83,7 @@ describe 'DevicesApi' do
 
   # unit tests for delete_device_template
   # Delete an device template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -96,7 +96,7 @@ describe 'DevicesApi' do
 
   # unit tests for delete_device_user
   # Delete a device user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   # @param id The id of the device
   # @param user_id The user id of the device user
   # @param [Hash] opts the optional parameters
@@ -109,7 +109,7 @@ describe 'DevicesApi' do
 
   # unit tests for delete_device_users
   # Delete all device users
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   # @param id The id of the device
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_id Filter for device users to delete with a user id in a given comma separated list of ids
@@ -122,7 +122,7 @@ describe 'DevicesApi' do
 
   # unit tests for get_device
   # Get a single device
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   # @param id id
   # @param [Hash] opts the optional parameters
   # @return [DeviceResource]
@@ -134,7 +134,7 @@ describe 'DevicesApi' do
 
   # unit tests for get_device_template
   # Get a single device template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; description
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -146,7 +146,7 @@ describe 'DevicesApi' do
 
   # unit tests for get_device_templates
   # List and search device templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or DEVICES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -160,7 +160,7 @@ describe 'DevicesApi' do
 
   # unit tests for get_devices
   # List and search devices
-  # Get a list of devices with optional filtering
+  # Get a list of devices with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or user
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_make Filter for devices with specified make
   # @option opts [String] :filter_model Filter for devices with specified model
@@ -180,7 +180,7 @@ describe 'DevicesApi' do
 
   # unit tests for update_device
   # Update a device
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CUSTOMERS_ADMIN
   # @param device device
   # @param id id
   # @param [Hash] opts the optional parameters
@@ -193,7 +193,7 @@ describe 'DevicesApi' do
 
   # unit tests for update_device_template
   # Update an device template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :device_template_resource The device template resource object

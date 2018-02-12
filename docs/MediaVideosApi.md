@@ -1,6 +1,6 @@
 # KnetikCloudClient::MediaVideosApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -40,7 +40,7 @@ Method | HTTP request | Description
 
 Adds a user to a video's whitelist
 
-Whitelisted users can view video regardless of privacy setting.
+Whitelisted users can view video regardless of privacy setting. <br><br><b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -98,6 +98,8 @@ nil (empty response body)
 
 Adds a new video in the system
 
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -151,6 +153,8 @@ Name | Type | Description  | Notes
 > CommentResource add_video_comment(video_id, opts)
 
 Add a new video comment
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -209,6 +213,8 @@ Name | Type | Description  | Notes
 
 Adds a contributor to a video
 
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -264,6 +270,8 @@ nil (empty response body)
 > FlagResource add_video_flag(video_id, opts)
 
 Add a new flag
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -322,6 +330,8 @@ Name | Type | Description  | Notes
 
 Adds one or more existing videos as related to this one
 
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -378,6 +388,8 @@ Name | Type | Description  | Notes
 > DispositionResource create_video_disposition(video_id, opts)
 
 Create a video disposition
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -436,7 +448,7 @@ Name | Type | Description  | Notes
 
 Create a video template
 
-Video Templates define a type of video and the properties they have
+Video Templates define a type of video and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -492,6 +504,8 @@ Name | Type | Description  | Notes
 
 Deletes a video from the system if no resources are attached to it
 
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -534,7 +548,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -543,6 +557,8 @@ nil (empty response body)
 > delete_video_comment(video_id, id)
 
 Delete a video comment
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -589,7 +605,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -598,6 +614,8 @@ nil (empty response body)
 > delete_video_disposition(disposition_id)
 
 Delete a video disposition
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -641,7 +659,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -650,6 +668,8 @@ nil (empty response body)
 > delete_video_flag(video_id)
 
 Delete a flag
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -693,7 +713,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -702,6 +722,8 @@ nil (empty response body)
 > delete_video_relationship(video_id, id)
 
 Delete a video's relationship
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -748,7 +770,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -758,7 +780,7 @@ nil (empty response body)
 
 Delete a video template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -806,7 +828,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -815,6 +837,8 @@ nil (empty response body)
 > PageResourceVideoResource get_user_videos(user_id, opts)
 
 Get user videos
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -867,7 +891,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -876,6 +900,8 @@ Name | Type | Description  | Notes
 > VideoResource get_video(id)
 
 Loads a specific video details
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -920,7 +946,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -929,6 +955,8 @@ Name | Type | Description  | Notes
 > PageResourceCommentResource get_video_comments(video_id, opts)
 
 Returns a page of comments for a video
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -979,7 +1007,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -988,6 +1016,8 @@ Name | Type | Description  | Notes
 > PageResourceDispositionResource get_video_dispositions(video_id, opts)
 
 Returns a page of dispositions for a video
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -1038,7 +1068,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1047,6 +1077,8 @@ Name | Type | Description  | Notes
 > PageResourceVideoRelationshipResource get_video_relationships(video_id, opts)
 
 Returns a page of video relationships
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -1097,7 +1129,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1106,6 +1138,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_video_template(id)
 
 Get a single video template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -1150,7 +1184,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1159,6 +1193,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_video_templates(opts)
 
 List and search video templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -1208,7 +1244,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1217,6 +1253,8 @@ Name | Type | Description  | Notes
 > PageResourceVideoResource get_videos(opts)
 
 Search videos using the documented filters
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -1290,7 +1328,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1300,7 +1338,7 @@ Name | Type | Description  | Notes
 
 Removes a user from a video's whitelist
 
-Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. <br><br><b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -1347,7 +1385,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1356,6 +1394,8 @@ nil (empty response body)
 > remove_video_contributor(video_id, id)
 
 Removes a contributor from a video
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -1402,7 +1442,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1411,6 +1451,8 @@ nil (empty response body)
 > update_video(id, opts)
 
 Modifies a video's details
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -1467,6 +1509,8 @@ nil (empty response body)
 > update_video_comment(video_id, id, opts)
 
 Update a video comment
+
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
 
 ### Example
 ```ruby
@@ -1527,6 +1571,8 @@ nil (empty response body)
 
 Update a video's relationship details
 
+<b>Permissions Needed:</b> VIDEOS_USER or VIDEOS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -1586,6 +1632,8 @@ nil (empty response body)
 
 Update a video template
 
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -1642,6 +1690,8 @@ Name | Type | Description  | Notes
 > view_video(id)
 
 Increment a video's view count
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby

@@ -34,7 +34,7 @@ describe 'UtilSecurityApi' do
 
   # unit tests for get_user_location_log
   # Returns the authentication log for a user
-  # A log entry is recorded everytime a user requests a new token. Standard pagination available
+  # A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :user_id The user id
   # @option opts [Integer] :size The number of objects returned per page
@@ -49,7 +49,7 @@ describe 'UtilSecurityApi' do
 
   # unit tests for get_user_token_details
   # Returns the authentication token details. Use /users endpoint for detailed user&#39;s info
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
   # @param [Hash] opts the optional parameters
   # @return [TokenDetailsResource]
   describe 'get_user_token_details test' do

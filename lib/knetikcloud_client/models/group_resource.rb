@@ -18,7 +18,7 @@ module KnetikCloudClient
     # A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type
     attr_accessor :additional_properties
 
-    # A description of the group. Max 250 characters
+    # A description of the group
     attr_accessor :description
 
     # The number of users in the group

@@ -1,6 +1,6 @@
 # KnetikCloudClient::PaymentsWalletsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > SimpleWallet get_user_wallet(user_id, currency_code)
 
 Returns the user's wallet for the given currency code
+
+<b>Permissions Needed:</b> WALLETS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -64,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -73,6 +75,8 @@ Name | Type | Description  | Notes
 > PageResourceWalletTransactionResource get_user_wallet_transactions(user_id, currency_code, opts)
 
 Retrieve a user's wallet transactions
+
+<b>Permissions Needed:</b> WALLETS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -136,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -145,6 +149,8 @@ Name | Type | Description  | Notes
 > Array&lt;SimpleWallet&gt; get_user_wallets(user_id)
 
 List all of a user's wallets
+
+<b>Permissions Needed:</b> WALLETS_ADMIN or owner
 
 ### Example
 ```ruby
@@ -189,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -198,6 +204,8 @@ Name | Type | Description  | Notes
 > PageResourceWalletTotalResponse get_wallet_balances
 
 Retrieves a summation of wallet balances by currency code
+
+<b>Permissions Needed:</b> WALLETS_ADMIN
 
 ### Example
 ```ruby
@@ -236,7 +244,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -245,6 +253,8 @@ This endpoint does not need any parameter.
 > PageResourceWalletTransactionResource get_wallet_transactions(opts)
 
 Retrieve wallet transactions across the system
+
+<b>Permissions Needed:</b> WALLETS_ADMIN
 
 ### Example
 ```ruby
@@ -310,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -319,6 +329,8 @@ Name | Type | Description  | Notes
 > PageResourceSimpleWallet get_wallets(opts)
 
 Retrieve a list of wallets across the system
+
+<b>Permissions Needed:</b> WALLETS_ADMIN
 
 ### Example
 ```ruby
@@ -368,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -377,6 +389,8 @@ Name | Type | Description  | Notes
 > WalletTransactionResource update_wallet_balance(user_id, currency_code, opts)
 
 Updates the balance for a user's wallet
+
+<b>Permissions Needed:</b> WALLETS_ADMIN
 
 ### Example
 ```ruby

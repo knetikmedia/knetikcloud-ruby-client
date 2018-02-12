@@ -34,7 +34,7 @@ describe 'LogsApi' do
 
   # unit tests for add_user_log
   # Add a user log entry
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
   # @param [Hash] opts the optional parameters
   # @option opts [UserActionLog] :log_entry The user log entry to be added
   # @return [nil]
@@ -46,7 +46,7 @@ describe 'LogsApi' do
 
   # unit tests for get_bre_event_log
   # Get an existing BRE event log entry by id
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
   # @param id The BRE event log entry id
   # @param [Hash] opts the optional parameters
   # @return [BreEventLog]
@@ -58,7 +58,7 @@ describe 'LogsApi' do
 
   # unit tests for get_bre_event_logs
   # Returns a list of BRE event log entries
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_start_date A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   # @option opts [String] :filter_event_name Filter event logs by event name
@@ -66,6 +66,7 @@ describe 'LogsApi' do
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
   # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  # @option opts [String] :filter_rule_id Filter event logs by request id
   # @return [PageResourceBreEventLog]
   describe 'get_bre_event_logs test' do
     it "should work" do
@@ -75,7 +76,7 @@ describe 'LogsApi' do
 
   # unit tests for get_bre_forward_log
   # Get an existing forward log entry by id
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
   # @param id The forward log entry id
   # @param [Hash] opts the optional parameters
   # @return [ForwardLog]
@@ -87,11 +88,12 @@ describe 'LogsApi' do
 
   # unit tests for get_bre_forward_logs
   # Returns a list of forward log entries
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_start_date A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   # @option opts [String] :filter_end_date A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   # @option opts [Integer] :filter_status_code Filter forward logs by http status code
+  # @option opts [Integer] :filter_url Filter forward logs by URL starting with...
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
   # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -104,7 +106,7 @@ describe 'LogsApi' do
 
   # unit tests for get_user_log
   # Returns a user log entry by id
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
   # @param id The user log entry id
   # @param [Hash] opts the optional parameters
   # @return [UserActionLog]
@@ -116,7 +118,7 @@ describe 'LogsApi' do
 
   # unit tests for get_user_logs
   # Returns a page of user logs entries
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :filter_user Filter for actions taken by a specific user by id
   # @option opts [String] :filter_action_name Filter for actions of a specific name

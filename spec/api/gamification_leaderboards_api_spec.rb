@@ -34,7 +34,7 @@ describe 'GamificationLeaderboardsApi' do
 
   # unit tests for get_leaderboard
   # Retrieves leaderboard details and paginated entries
-  # The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource.
+  # The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param context_type The context type for the leaderboard
   # @param context_id The context id for the leaderboard
   # @param [Hash] opts the optional parameters
@@ -50,7 +50,7 @@ describe 'GamificationLeaderboardsApi' do
 
   # unit tests for get_leaderboard_rank
   # Retrieves a specific user entry with rank
-  # The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard
+  # The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param context_type The context type for the leaderboard
   # @param context_id The context id for the leaderboard
   # @param id The id of a user
@@ -64,7 +64,7 @@ describe 'GamificationLeaderboardsApi' do
 
   # unit tests for get_leaderboard_strategies
   # Get a list of available leaderboard strategy names
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [Array<String>]
   describe 'get_leaderboard_strategies test' do

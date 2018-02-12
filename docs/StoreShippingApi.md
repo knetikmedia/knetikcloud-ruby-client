@@ -1,6 +1,6 @@
 # KnetikCloudClient::StoreShippingApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Create a shipping item
 
-A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. <br><br><b>Permissions Needed:</b> SHIPPING_ADMIN
 
 ### Example
 ```ruby
@@ -134,6 +134,8 @@ Name | Type | Description  | Notes
 
 Delete a shipping item
 
+<b>Permissions Needed:</b> SHIPPING_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -176,7 +178,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -185,6 +187,8 @@ nil (empty response body)
 > delete_shipping_template(id, opts)
 
 Delete a shipping template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -232,7 +236,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -241,6 +245,8 @@ nil (empty response body)
 > ShippingItem get_shipping_item(id)
 
 Get a single shipping item
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -285,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -295,7 +301,7 @@ Name | Type | Description  | Notes
 
 Get a single shipping template
 
-Shipping Templates define a type of shipping and the properties they have.
+Shipping Templates define a type of shipping and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN or SHIPPING_ADMIN
 
 ### Example
 ```ruby
@@ -340,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -349,6 +355,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource get_shipping_templates(opts)
 
 List and search shipping templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or SHIPPING_ADMIN
 
 ### Example
 ```ruby
@@ -398,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -407,6 +415,8 @@ Name | Type | Description  | Notes
 > ShippingItem update_shipping_item(id, opts)
 
 Update a shipping item
+
+<b>Permissions Needed:</b> SHIPPING_ADMIN
 
 ### Example
 ```ruby
@@ -466,6 +476,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource update_shipping_template(id, opts)
 
 Update a shipping template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

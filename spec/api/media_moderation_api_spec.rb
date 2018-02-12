@@ -34,7 +34,7 @@ describe 'MediaModerationApi' do
 
   # unit tests for add_flag
   # Add a flag
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [FlagResource] :flag_resource The flag resource object
   # @return [FlagResource]
@@ -46,7 +46,7 @@ describe 'MediaModerationApi' do
 
   # unit tests for delete_flag
   # Delete a flag
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [String] :context_name The name of the context
   # @option opts [String] :context_id The id of the context
@@ -60,7 +60,7 @@ describe 'MediaModerationApi' do
 
   # unit tests for get_flags
   # Returns a page of flags
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_context Filter by flag context
   # @option opts [String] :filter_context_id Filter by flag context ID
@@ -76,7 +76,7 @@ describe 'MediaModerationApi' do
 
   # unit tests for get_moderation_report
   # Get a flag report
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   # @param id The flag report id
   # @param [Hash] opts the optional parameters
   # @return [FlagReportResource]
@@ -88,7 +88,7 @@ describe 'MediaModerationApi' do
 
   # unit tests for get_moderation_reports
   # Returns a page of flag reports
-  # Context can be either a free-form string or a pre-defined context name
+  # Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :exclude_resolved Ignore resolved context
   # @option opts [String] :filter_context Filter by moderation context
@@ -104,7 +104,7 @@ describe 'MediaModerationApi' do
 
   # unit tests for update_moderation_report
   # Update a flag report
-  # Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+  # Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   # @param id The flag report id
   # @param [Hash] opts the optional parameters
   # @option opts [FlagReportResource] :flag_report_resource The new flag report

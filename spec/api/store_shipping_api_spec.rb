@@ -34,7 +34,7 @@ describe 'StoreShippingApi' do
 
   # unit tests for create_shipping_item
   # Create a shipping item
-  # A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+  # A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   # @option opts [ShippingItem] :shipping_item The shipping item object
@@ -59,7 +59,7 @@ describe 'StoreShippingApi' do
 
   # unit tests for delete_shipping_item
   # Delete a shipping item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   # @param id The id of the shipping item
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -71,7 +71,7 @@ describe 'StoreShippingApi' do
 
   # unit tests for delete_shipping_template
   # Delete a shipping template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -84,7 +84,7 @@ describe 'StoreShippingApi' do
 
   # unit tests for get_shipping_item
   # Get a single shipping item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the shipping item
   # @param [Hash] opts the optional parameters
   # @return [ShippingItem]
@@ -96,7 +96,7 @@ describe 'StoreShippingApi' do
 
   # unit tests for get_shipping_template
   # Get a single shipping template
-  # Shipping Templates define a type of shipping and the properties they have.
+  # Shipping Templates define a type of shipping and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [ItemTemplateResource]
@@ -108,7 +108,7 @@ describe 'StoreShippingApi' do
 
   # unit tests for get_shipping_templates
   # List and search shipping templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -122,7 +122,7 @@ describe 'StoreShippingApi' do
 
   # unit tests for update_shipping_item
   # Update a shipping item
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   # @param id The id of the shipping item
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -136,7 +136,7 @@ describe 'StoreShippingApi' do
 
   # unit tests for update_shipping_template
   # Update a shipping template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :shipping_template_resource The shipping template resource object

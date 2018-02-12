@@ -34,7 +34,7 @@ describe 'PaymentsApi' do
 
   # unit tests for create_payment_method
   # Create a new payment method for a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   # @param user_id ID of the user for whom the payment method is being created
   # @param [Hash] opts the optional parameters
   # @option opts [PaymentMethodResource] :payment_method Payment method being created
@@ -47,7 +47,7 @@ describe 'PaymentsApi' do
 
   # unit tests for delete_payment_method
   # Delete an existing payment method for a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   # @param user_id ID of the user for whom the payment method is being updated
   # @param id ID of the payment method being deleted
   # @param [Hash] opts the optional parameters
@@ -60,7 +60,7 @@ describe 'PaymentsApi' do
 
   # unit tests for get_payment_method
   # Get a single payment method for a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   # @param user_id ID of the user for whom the payment method is being retrieved
   # @param id ID of the payment method being retrieved
   # @param [Hash] opts the optional parameters
@@ -73,7 +73,7 @@ describe 'PaymentsApi' do
 
   # unit tests for get_payment_method_type
   # Get a single payment method type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id ID of the payment method type being retrieved
   # @param [Hash] opts the optional parameters
   # @return [PaymentMethodTypeResource]
@@ -85,7 +85,7 @@ describe 'PaymentsApi' do
 
   # unit tests for get_payment_method_types
   # Get all payment method types
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_name Filter for payment method types whose name matches a given string
   # @option opts [Integer] :size The number of objects returned per page
@@ -100,7 +100,7 @@ describe 'PaymentsApi' do
 
   # unit tests for get_payment_methods
   # Get all payment methods for a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   # @param user_id ID of the user for whom the payment methods are being retrieved
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_name Filter for payment methods whose name starts with a given string
@@ -119,7 +119,7 @@ describe 'PaymentsApi' do
 
   # unit tests for payment_authorization
   # Authorize payment of an invoice for later capture
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
   # @param [Hash] opts the optional parameters
   # @option opts [PaymentAuthorizationResource] :request Payment authorization request
   # @return [PaymentAuthorizationResource]
@@ -131,7 +131,7 @@ describe 'PaymentsApi' do
 
   # unit tests for payment_capture
   # Capture an existing invoice payment authorization
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
   # @param id ID of the payment authorization to capture
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -143,7 +143,7 @@ describe 'PaymentsApi' do
 
   # unit tests for update_payment_method
   # Update an existing payment method for a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   # @param user_id ID of the user for whom the payment method is being updated
   # @param id ID of the payment method being updated
   # @param [Hash] opts the optional parameters

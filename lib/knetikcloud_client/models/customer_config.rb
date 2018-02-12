@@ -19,8 +19,6 @@ module KnetikCloudClient
 
     attr_accessor :database
 
-    attr_accessor :io
-
     attr_accessor :name
 
     attr_accessor :s3_config
@@ -31,7 +29,6 @@ module KnetikCloudClient
       {
         :'aliases' => :'aliases',
         :'database' => :'database',
-        :'io' => :'io',
         :'name' => :'name',
         :'s3_config' => :'s3_config'
       }
@@ -42,7 +39,6 @@ module KnetikCloudClient
       {
         :'aliases' => :'String',
         :'database' => :'DatabaseConfig',
-        :'io' => :'IOConfig',
         :'name' => :'String',
         :'s3_config' => :'S3Config'
       }
@@ -62,10 +58,6 @@ module KnetikCloudClient
 
       if attributes.has_key?(:'database')
         self.database = attributes[:'database']
-      end
-
-      if attributes.has_key?(:'io')
-        self.io = attributes[:'io']
       end
 
       if attributes.has_key?(:'name')
@@ -98,7 +90,6 @@ module KnetikCloudClient
       self.class == o.class &&
           aliases == o.aliases &&
           database == o.database &&
-          io == o.io &&
           name == o.name &&
           s3_config == o.s3_config
     end
@@ -112,7 +103,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [aliases, database, io, name, s3_config].hash
+      [aliases, database, name, s3_config].hash
     end
 
     # Builds the object from hash

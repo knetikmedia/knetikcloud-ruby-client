@@ -34,7 +34,7 @@ describe 'UtilMaintenanceApi' do
 
   # unit tests for delete_maintenance
   # Delete maintenance info
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_maintenance test' do
@@ -45,7 +45,7 @@ describe 'UtilMaintenanceApi' do
 
   # unit tests for get_maintenance
   # Get current maintenance info
-  # Get current maintenance info. 404 if no maintenance.
+  # Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @return [Maintenance]
   describe 'get_maintenance test' do
@@ -56,7 +56,7 @@ describe 'UtilMaintenanceApi' do
 
   # unit tests for set_maintenance
   # Set current maintenance info
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Maintenance] :maintenance The maintenance object
   # @return [nil]
@@ -68,7 +68,7 @@ describe 'UtilMaintenanceApi' do
 
   # unit tests for update_maintenance
   # Update current maintenance info
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Maintenance] :maintenance The maintenance object
   # @return [nil]

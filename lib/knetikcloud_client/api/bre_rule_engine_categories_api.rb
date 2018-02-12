@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a BRE category template
-    # Templates define a type of BRE category and the properties they have
+    # Templates define a type of BRE category and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The category template to create
     # @return [TemplateResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a BRE category template
-    # Templates define a type of BRE category and the properties they have
+    # Templates define a type of BRE category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The category template to create
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a BRE category template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -83,7 +83,7 @@ module KnetikCloudClient
     end
 
     # Delete a BRE category template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -107,8 +107,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -129,7 +127,7 @@ module KnetikCloudClient
     end
 
     # List categories
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_CATEGORIES_USER
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -140,7 +138,7 @@ module KnetikCloudClient
     end
 
     # List categories
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_USER
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -161,8 +159,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -184,7 +180,7 @@ module KnetikCloudClient
     end
 
     # Get a single category
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_CATEGORIES_USER
     # @param name The category name
     # @param [Hash] opts the optional parameters
     # @return [BreCategoryResource]
@@ -194,7 +190,7 @@ module KnetikCloudClient
     end
 
     # Get a single category
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_USER
     # @param name The category name
     # @param [Hash] opts the optional parameters
     # @return [Array<(BreCategoryResource, Fixnum, Hash)>] BreCategoryResource data, response status code and response headers
@@ -216,8 +212,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -239,7 +233,7 @@ module KnetikCloudClient
     end
 
     # Get a single BRE category template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -249,7 +243,7 @@ module KnetikCloudClient
     end
 
     # Get a single BRE category template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -271,8 +265,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -294,7 +286,7 @@ module KnetikCloudClient
     end
 
     # List and search BRE category templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -306,7 +298,7 @@ module KnetikCloudClient
     end
 
     # List and search BRE category templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -329,8 +321,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -352,7 +342,7 @@ module KnetikCloudClient
     end
 
     # Update a category
-    # 
+    # <b>Permissions Needed:</b> BRE_RULE_ENGINE_CATEGORIES_ADMIN
     # @param name The category name
     # @param [Hash] opts the optional parameters
     # @option opts [BreCategoryResource] :category The updated BRE category information
@@ -363,7 +353,7 @@ module KnetikCloudClient
     end
 
     # Update a category
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_ADMIN
     # @param name The category name
     # @param [Hash] opts the optional parameters
     # @option opts [BreCategoryResource] :category The updated BRE category information
@@ -409,7 +399,7 @@ module KnetikCloudClient
     end
 
     # Update a BRE category template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The updated category template definition
@@ -420,7 +410,7 @@ module KnetikCloudClient
     end
 
     # Update a BRE category template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :template The updated category template definition

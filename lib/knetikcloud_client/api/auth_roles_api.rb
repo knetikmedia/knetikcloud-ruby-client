@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new role
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RoleResource] :role_resource The role resource object
     # @return [RoleResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a new role
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [RoleResource] :role_resource The role resource object
     # @return [Array<(RoleResource, Fixnum, Hash)>] RoleResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a role
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param role The role value
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :force If true, removes role from users/clients
@@ -83,7 +83,7 @@ module KnetikCloudClient
     end
 
     # Delete a role
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param role The role value
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :force If true, removes role from users/clients
@@ -107,8 +107,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -129,7 +127,7 @@ module KnetikCloudClient
     end
 
     # Get roles for a client
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param client_key The client key
     # @param [Hash] opts the optional parameters
     # @return [Array<RoleResource>]
@@ -139,7 +137,7 @@ module KnetikCloudClient
     end
 
     # Get roles for a client
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param client_key The client key
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<RoleResource>, Fixnum, Hash)>] Array<RoleResource> data, response status code and response headers
@@ -161,8 +159,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -184,7 +180,7 @@ module KnetikCloudClient
     end
 
     # Get a single role
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param role The role value
     # @param [Hash] opts the optional parameters
     # @return [RoleResource]
@@ -194,7 +190,7 @@ module KnetikCloudClient
     end
 
     # Get a single role
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param role The role value
     # @param [Hash] opts the optional parameters
     # @return [Array<(RoleResource, Fixnum, Hash)>] RoleResource data, response status code and response headers
@@ -216,8 +212,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -239,7 +233,7 @@ module KnetikCloudClient
     end
 
     # List and search roles
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for roles that have a name starting with specified string
     # @option opts [String] :filter_role Filter for roles that have a role starting with specified string
@@ -253,7 +247,7 @@ module KnetikCloudClient
     end
 
     # List and search roles
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for roles that have a name starting with specified string
     # @option opts [String] :filter_role Filter for roles that have a role starting with specified string
@@ -280,8 +274,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -303,7 +295,7 @@ module KnetikCloudClient
     end
 
     # Get roles for a user
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param user_id The user&#39;s id
     # @param [Hash] opts the optional parameters
     # @return [Array<RoleResource>]
@@ -313,7 +305,7 @@ module KnetikCloudClient
     end
 
     # Get roles for a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param user_id The user&#39;s id
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<RoleResource>, Fixnum, Hash)>] Array<RoleResource> data, response status code and response headers
@@ -335,8 +327,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -358,7 +348,7 @@ module KnetikCloudClient
     end
 
     # Set roles for a client
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param client_key The client key
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :roles_list The list of unique roles
@@ -369,7 +359,7 @@ module KnetikCloudClient
     end
 
     # Set roles for a client
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param client_key The client key
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :roles_list The list of unique roles
@@ -415,7 +405,7 @@ module KnetikCloudClient
     end
 
     # Set permissions for a role
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param role The role value
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :permissions_list The list of unique permissions
@@ -426,7 +416,7 @@ module KnetikCloudClient
     end
 
     # Set permissions for a role
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param role The role value
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :permissions_list The list of unique permissions
@@ -472,7 +462,7 @@ module KnetikCloudClient
     end
 
     # Set roles for a user
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param user_id The user&#39;s id
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :roles_list The list of unique roles
@@ -483,7 +473,7 @@ module KnetikCloudClient
     end
 
     # Set roles for a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param user_id The user&#39;s id
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :roles_list The list of unique roles
@@ -529,7 +519,7 @@ module KnetikCloudClient
     end
 
     # Update a role
-    # 
+    # <b>Permissions Needed:</b> ROLES_ADMIN
     # @param role The role value
     # @param [Hash] opts the optional parameters
     # @option opts [RoleResource] :role_resource The role resource object
@@ -540,7 +530,7 @@ module KnetikCloudClient
     end
 
     # Update a role
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
     # @param role The role value
     # @param [Hash] opts the optional parameters
     # @option opts [RoleResource] :role_resource The role resource object

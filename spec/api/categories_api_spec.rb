@@ -34,7 +34,7 @@ describe 'CategoriesApi' do
 
   # unit tests for create_category
   # Create a new category
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [CategoryResource] :category The category to create
   # @return [CategoryResource]
@@ -46,7 +46,7 @@ describe 'CategoriesApi' do
 
   # unit tests for create_category_template
   # Create a category template
-  # Templates define a type of category and the properties they have
+  # Templates define a type of category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :template The template to create
   # @return [TemplateResource]
@@ -58,7 +58,7 @@ describe 'CategoriesApi' do
 
   # unit tests for delete_category
   # Delete an existing category
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   # @param id The id of the category to be deleted
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -70,7 +70,7 @@ describe 'CategoriesApi' do
 
   # unit tests for delete_category_template
   # Delete a category template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -83,7 +83,7 @@ describe 'CategoriesApi' do
 
   # unit tests for get_categories
   # List and search categories with optional filters
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_search Filter for categories whose names begin with provided string
   # @option opts [BOOLEAN] :filter_active Filter for categories that are specifically active or inactive
@@ -99,7 +99,7 @@ describe 'CategoriesApi' do
 
   # unit tests for get_category
   # Get a single category
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the category to retrieve
   # @param [Hash] opts the optional parameters
   # @return [CategoryResource]
@@ -111,7 +111,7 @@ describe 'CategoriesApi' do
 
   # unit tests for get_category_template
   # Get a single category template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -123,7 +123,7 @@ describe 'CategoriesApi' do
 
   # unit tests for get_category_templates
   # List and search category templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -137,7 +137,7 @@ describe 'CategoriesApi' do
 
   # unit tests for get_tags
   # List all trivia tags in the system
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -150,7 +150,7 @@ describe 'CategoriesApi' do
 
   # unit tests for update_category
   # Update an existing category
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   # @param id The id of the category
   # @param [Hash] opts the optional parameters
   # @option opts [CategoryResource] :category The category to update
@@ -163,7 +163,7 @@ describe 'CategoriesApi' do
 
   # unit tests for update_category_template
   # Update a category template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :template The updated template information

@@ -20,8 +20,71 @@ module KnetikCloudClient
       @api_client = api_client
     end
 
+    # Add a user to an occurrence
+    # If called with no body, defaults to the user making the call.
+    # @param activity_occurrence_id The id of the activity occurrence
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :test if true, indicates that the user should NOT be added. This can be used to test for eligibility (default to false)
+    # @option opts [BOOLEAN] :bypass_restrictions if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN (default to false)
+    # @option opts [IntWrapper] :user_id The id of the user, or null for &#39;caller&#39;
+    # @return [ActivityOccurrenceResource]
+    def add_user(activity_occurrence_id, opts = {})
+      data, _status_code, _headers = add_user_with_http_info(activity_occurrence_id, opts)
+      return data
+    end
+
+    # Add a user to an occurrence
+    # If called with no body, defaults to the user making the call.
+    # @param activity_occurrence_id The id of the activity occurrence
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :test if true, indicates that the user should NOT be added. This can be used to test for eligibility
+    # @option opts [BOOLEAN] :bypass_restrictions if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN
+    # @option opts [IntWrapper] :user_id The id of the user, or null for &#39;caller&#39;
+    # @return [Array<(ActivityOccurrenceResource, Fixnum, Hash)>] ActivityOccurrenceResource data, response status code and response headers
+    def add_user_with_http_info(activity_occurrence_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ActivitiesApi.add_user ..."
+      end
+      # verify the required parameter 'activity_occurrence_id' is set
+      if @api_client.config.client_side_validation && activity_occurrence_id.nil?
+        fail ArgumentError, "Missing the required parameter 'activity_occurrence_id' when calling ActivitiesApi.add_user"
+      end
+      # resource path
+      local_var_path = "/activity-occurrences/{activity_occurrence_id}/users".sub('{' + 'activity_occurrence_id' + '}', activity_occurrence_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'test'] = opts[:'test'] if !opts[:'test'].nil?
+      query_params[:'bypass_restrictions'] = opts[:'bypass_restrictions'] if !opts[:'bypass_restrictions'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'user_id'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ActivityOccurrenceResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ActivitiesApi#add_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Create an activity
-    # 
+    # <b>Permissions Needed:</b> ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityResource] :activity_resource The activity resource object
     # @return [ActivityResource]
@@ -31,7 +94,7 @@ module KnetikCloudClient
     end
 
     # Create an activity
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityResource] :activity_resource The activity resource object
     # @return [Array<(ActivityResource, Fixnum, Hash)>] ActivityResource data, response status code and response headers
@@ -72,7 +135,7 @@ module KnetikCloudClient
     end
 
     # Create a new activity occurrence. Ex: start a game
-    # Has to enforce extra rules if not used as an admin
+    # Has to enforce extra rules if not used as an admin. <br><br><b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :test if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings (default to false)
     # @option opts [CreateActivityOccurrenceRequest] :activity_occurrence_resource The activity occurrence object
@@ -83,7 +146,7 @@ module KnetikCloudClient
     end
 
     # Create a new activity occurrence. Ex: start a game
-    # Has to enforce extra rules if not used as an admin
+    # Has to enforce extra rules if not used as an admin. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :test if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings
     # @option opts [CreateActivityOccurrenceRequest] :activity_occurrence_resource The activity occurrence object
@@ -126,7 +189,7 @@ module KnetikCloudClient
     end
 
     # Create a activity template
-    # Activity Templates define a type of activity and the properties they have
+    # Activity Templates define a type of activity and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :activity_template_resource The activity template resource object
     # @return [TemplateResource]
@@ -136,7 +199,7 @@ module KnetikCloudClient
     end
 
     # Create a activity template
-    # Activity Templates define a type of activity and the properties they have
+    # Activity Templates define a type of activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :activity_template_resource The activity template resource object
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -177,7 +240,7 @@ module KnetikCloudClient
     end
 
     # Delete an activity
-    # 
+    # <b>Permissions Needed:</b> ACTIVITIES_ADMIN
     # @param id The id of the activity
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -187,7 +250,7 @@ module KnetikCloudClient
     end
 
     # Delete an activity
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
     # @param id The id of the activity
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -209,8 +272,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -231,7 +292,7 @@ module KnetikCloudClient
     end
 
     # Delete a activity template
-    # If cascade = 'detach', it will force delete the template even if it's attached to other objects
+    # If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -242,7 +303,7 @@ module KnetikCloudClient
     end
 
     # Delete a activity template
-    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+    # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cascade The value needed to delete used templates
@@ -266,8 +327,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -288,7 +347,7 @@ module KnetikCloudClient
     end
 
     # List activity definitions
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_template Filter for activities that are templates, or specifically not if false
     # @option opts [String] :filter_name Filter for activities that have a name starting with specified string
@@ -303,7 +362,7 @@ module KnetikCloudClient
     end
 
     # List activity definitions
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :filter_template Filter for activities that are templates, or specifically not if false
     # @option opts [String] :filter_name Filter for activities that have a name starting with specified string
@@ -332,8 +391,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -355,7 +412,7 @@ module KnetikCloudClient
     end
 
     # Get a single activity
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id The id of the activity
     # @param [Hash] opts the optional parameters
     # @return [ActivityResource]
@@ -365,7 +422,7 @@ module KnetikCloudClient
     end
 
     # Get a single activity
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id The id of the activity
     # @param [Hash] opts the optional parameters
     # @return [Array<(ActivityResource, Fixnum, Hash)>] ActivityResource data, response status code and response headers
@@ -387,8 +444,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -410,7 +465,7 @@ module KnetikCloudClient
     end
 
     # Load a single activity occurrence details
-    # 
+    # <b>Permissions Needed:</b> ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @return [ActivityOccurrenceResource]
@@ -420,7 +475,7 @@ module KnetikCloudClient
     end
 
     # Load a single activity occurrence details
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @return [Array<(ActivityOccurrenceResource, Fixnum, Hash)>] ActivityOccurrenceResource data, response status code and response headers
@@ -442,8 +497,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -465,7 +518,7 @@ module KnetikCloudClient
     end
 
     # Get a single activity template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ACTIVITIES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [TemplateResource]
@@ -475,7 +528,7 @@ module KnetikCloudClient
     end
 
     # Get a single activity template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
@@ -497,8 +550,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -520,7 +571,7 @@ module KnetikCloudClient
     end
 
     # List and search activity templates
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN or ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -532,7 +583,7 @@ module KnetikCloudClient
     end
 
     # List and search activity templates
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -555,8 +606,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -578,10 +627,10 @@ module KnetikCloudClient
     end
 
     # List activity occurrences
-    # 
+    # <b>Permissions Needed:</b> ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_activity Filter for occurrences of the given activity ID
-    # @option opts [String] :filter_status Filter for occurrences of the given activity ID
+    # @option opts [String] :filter_status Filter for occurrences in the given status
     # @option opts [Integer] :filter_event Filter for occurrences played during the given event
     # @option opts [Integer] :filter_challenge Filter for occurrences played within the given challenge
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -594,10 +643,10 @@ module KnetikCloudClient
     end
 
     # List activity occurrences
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_activity Filter for occurrences of the given activity ID
-    # @option opts [String] :filter_status Filter for occurrences of the given activity ID
+    # @option opts [String] :filter_status Filter for occurrences in the given status
     # @option opts [Integer] :filter_event Filter for occurrences played during the given event
     # @option opts [Integer] :filter_challenge Filter for occurrences played within the given challenge
     # @option opts [Integer] :size The number of objects returned per page
@@ -625,8 +674,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -647,8 +694,72 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
-    # Sets the status of an activity occurrence to FINISHED and logs metrics
+    # Remove a user from an occurrence
     # 
+    # @param activity_occurrence_id The id of the activity occurrence
+    # @param user_id The id of the user, or &#39;me&#39;
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :ban if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin (default to false)
+    # @option opts [BOOLEAN] :bypass_restrictions if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN (default to false)
+    # @return [nil]
+    def remove_user(activity_occurrence_id, user_id, opts = {})
+      remove_user_with_http_info(activity_occurrence_id, user_id, opts)
+      return nil
+    end
+
+    # Remove a user from an occurrence
+    # 
+    # @param activity_occurrence_id The id of the activity occurrence
+    # @param user_id The id of the user, or &#39;me&#39;
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :ban if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin
+    # @option opts [BOOLEAN] :bypass_restrictions if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def remove_user_with_http_info(activity_occurrence_id, user_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ActivitiesApi.remove_user ..."
+      end
+      # verify the required parameter 'activity_occurrence_id' is set
+      if @api_client.config.client_side_validation && activity_occurrence_id.nil?
+        fail ArgumentError, "Missing the required parameter 'activity_occurrence_id' when calling ActivitiesApi.remove_user"
+      end
+      # verify the required parameter 'user_id' is set
+      if @api_client.config.client_side_validation && user_id.nil?
+        fail ArgumentError, "Missing the required parameter 'user_id' when calling ActivitiesApi.remove_user"
+      end
+      # resource path
+      local_var_path = "/activity-occurrences/{activity_occurrence_id}/users/{user_id}".sub('{' + 'activity_occurrence_id' + '}', activity_occurrence_id.to_s).sub('{' + 'user_id' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'ban'] = opts[:'ban'] if !opts[:'ban'].nil?
+      query_params[:'bypass_restrictions'] = opts[:'bypass_restrictions'] if !opts[:'bypass_restrictions'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ActivitiesApi#remove_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Sets the status of an activity occurrence to FINISHED and logs metrics
+    # In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityOccurrenceResultsResource] :activity_occurrence_results The activity occurrence object
@@ -659,7 +770,7 @@ module KnetikCloudClient
     end
 
     # Sets the status of an activity occurrence to FINISHED and logs metrics
-    # 
+    # In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityOccurrenceResultsResource] :activity_occurrence_results The activity occurrence object
@@ -704,8 +815,128 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
-    # Update an activity
+    # Sets the settings of an activity occurrence
     # 
+    # @param activity_occurrence_id The id of the activity occurrence
+    # @param [Hash] opts the optional parameters
+    # @option opts [ActivityOccurrenceSettingsResource] :settings The new settings
+    # @return [ActivityOccurrenceResource]
+    def set_activity_occurrence_settings(activity_occurrence_id, opts = {})
+      data, _status_code, _headers = set_activity_occurrence_settings_with_http_info(activity_occurrence_id, opts)
+      return data
+    end
+
+    # Sets the settings of an activity occurrence
+    # 
+    # @param activity_occurrence_id The id of the activity occurrence
+    # @param [Hash] opts the optional parameters
+    # @option opts [ActivityOccurrenceSettingsResource] :settings The new settings
+    # @return [Array<(ActivityOccurrenceResource, Fixnum, Hash)>] ActivityOccurrenceResource data, response status code and response headers
+    def set_activity_occurrence_settings_with_http_info(activity_occurrence_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ActivitiesApi.set_activity_occurrence_settings ..."
+      end
+      # verify the required parameter 'activity_occurrence_id' is set
+      if @api_client.config.client_side_validation && activity_occurrence_id.nil?
+        fail ArgumentError, "Missing the required parameter 'activity_occurrence_id' when calling ActivitiesApi.set_activity_occurrence_settings"
+      end
+      # resource path
+      local_var_path = "/activity-occurrences/{activity_occurrence_id}/settings".sub('{' + 'activity_occurrence_id' + '}', activity_occurrence_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'settings'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ActivityOccurrenceResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ActivitiesApi#set_activity_occurrence_settings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Set a user's status within an occurrence
+    # 
+    # @param activity_occurrence_id The id of the activity occurrence
+    # @param user_id The id of the user
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :status The new status
+    # @return [ActivityUserResource]
+    def set_user_status(activity_occurrence_id, user_id, opts = {})
+      data, _status_code, _headers = set_user_status_with_http_info(activity_occurrence_id, user_id, opts)
+      return data
+    end
+
+    # Set a user&#39;s status within an occurrence
+    # 
+    # @param activity_occurrence_id The id of the activity occurrence
+    # @param user_id The id of the user
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :status The new status
+    # @return [Array<(ActivityUserResource, Fixnum, Hash)>] ActivityUserResource data, response status code and response headers
+    def set_user_status_with_http_info(activity_occurrence_id, user_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ActivitiesApi.set_user_status ..."
+      end
+      # verify the required parameter 'activity_occurrence_id' is set
+      if @api_client.config.client_side_validation && activity_occurrence_id.nil?
+        fail ArgumentError, "Missing the required parameter 'activity_occurrence_id' when calling ActivitiesApi.set_user_status"
+      end
+      # verify the required parameter 'user_id' is set
+      if @api_client.config.client_side_validation && user_id.nil?
+        fail ArgumentError, "Missing the required parameter 'user_id' when calling ActivitiesApi.set_user_status"
+      end
+      # resource path
+      local_var_path = "/activity-occurrences/{activity_occurrence_id}/users/{user_id}/status".sub('{' + 'activity_occurrence_id' + '}', activity_occurrence_id.to_s).sub('{' + 'user_id' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'status'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ActivityUserResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ActivitiesApi#set_user_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update an activity
+    # <b>Permissions Needed:</b> ACTIVITIES_ADMIN
     # @param id The id of the activity
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityResource] :activity_resource The activity resource object
@@ -716,7 +947,7 @@ module KnetikCloudClient
     end
 
     # Update an activity
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
     # @param id The id of the activity
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityResource] :activity_resource The activity resource object
@@ -761,30 +992,30 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
-    # Updated the status of an activity occurrence
-    # If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Aternatively, see results endpoint to finish and record all metrics at once.
+    # Update the status of an activity occurrence
+    # If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :activity_occurrence_status The activity occurrence status object
+    # @option opts [ValueWrapperstring] :activity_occurrence_status The activity occurrence status object
     # @return [nil]
-    def update_activity_occurrence(activity_occurrence_id, opts = {})
-      update_activity_occurrence_with_http_info(activity_occurrence_id, opts)
+    def update_activity_occurrence_status(activity_occurrence_id, opts = {})
+      update_activity_occurrence_status_with_http_info(activity_occurrence_id, opts)
       return nil
     end
 
-    # Updated the status of an activity occurrence
-    # If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Aternatively, see results endpoint to finish and record all metrics at once.
+    # Update the status of an activity occurrence
+    # If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :activity_occurrence_status The activity occurrence status object
+    # @option opts [ValueWrapperstring] :activity_occurrence_status The activity occurrence status object
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_activity_occurrence_with_http_info(activity_occurrence_id, opts = {})
+    def update_activity_occurrence_status_with_http_info(activity_occurrence_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ActivitiesApi.update_activity_occurrence ..."
+        @api_client.config.logger.debug "Calling API: ActivitiesApi.update_activity_occurrence_status ..."
       end
       # verify the required parameter 'activity_occurrence_id' is set
       if @api_client.config.client_side_validation && activity_occurrence_id.nil?
-        fail ArgumentError, "Missing the required parameter 'activity_occurrence_id' when calling ActivitiesApi.update_activity_occurrence"
+        fail ArgumentError, "Missing the required parameter 'activity_occurrence_id' when calling ActivitiesApi.update_activity_occurrence_status"
       end
       # resource path
       local_var_path = "/activity-occurrences/{activity_occurrence_id}/status".sub('{' + 'activity_occurrence_id' + '}', activity_occurrence_id.to_s)
@@ -812,13 +1043,13 @@ module KnetikCloudClient
         :body => post_body,
         :auth_names => auth_names)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ActivitiesApi#update_activity_occurrence\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ActivitiesApi#update_activity_occurrence_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Update an activity template
-    # 
+    # <b>Permissions Needed:</b> TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :activity_template_resource The activity template resource object
@@ -829,7 +1060,7 @@ module KnetikCloudClient
     end
 
     # Update an activity template
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
     # @param id The id of the template
     # @param [Hash] opts the optional parameters
     # @option opts [TemplateResource] :activity_template_resource The activity template resource object

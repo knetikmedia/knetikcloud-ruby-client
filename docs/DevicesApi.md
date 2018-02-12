@@ -1,6 +1,6 @@
 # KnetikCloudClient::DevicesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,6 +23,8 @@ Method | HTTP request | Description
 > DeviceResource add_device_users(user_resources, id)
 
 Add device users
+
+<b>Permissions Needed:</b> DEVICES_ADMIN or owner
 
 ### Example
 ```ruby
@@ -80,6 +82,8 @@ Name | Type | Description  | Notes
 
 Create a device
 
+<b>Permissions Needed:</b> ANY
+
 ### Example
 ```ruby
 # load the gem
@@ -133,7 +137,7 @@ Name | Type | Description  | Notes
 
 Create a device template
 
-Device Templates define a type of device and the properties they have
+Device Templates define a type of device and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -189,6 +193,8 @@ Name | Type | Description  | Notes
 
 Delete a device
 
+<b>Permissions Needed:</b> DEVICES_ADMIN or owner
+
 ### Example
 ```ruby
 # load the gem
@@ -231,7 +237,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -241,7 +247,7 @@ nil (empty response body)
 
 Delete an device template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -289,7 +295,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -298,6 +304,8 @@ nil (empty response body)
 > delete_device_user(id, user_id)
 
 Delete a device user
+
+<b>Permissions Needed:</b> DEVICES_ADMIN or owner
 
 ### Example
 ```ruby
@@ -344,7 +352,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -353,6 +361,8 @@ nil (empty response body)
 > delete_device_users(id, opts)
 
 Delete all device users
+
+<b>Permissions Needed:</b> DEVICES_ADMIN or owner
 
 ### Example
 ```ruby
@@ -400,7 +410,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -409,6 +419,8 @@ nil (empty response body)
 > DeviceResource get_device(id)
 
 Get a single device
+
+<b>Permissions Needed:</b> DEVICES_ADMIN or owner
 
 ### Example
 ```ruby
@@ -453,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -462,6 +474,8 @@ Name | Type | Description  | Notes
 > TemplateResource get_device_template(id)
 
 Get a single device template
+
+<b>Permissions Needed:</b> description
 
 ### Example
 ```ruby
@@ -506,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -515,6 +529,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource get_device_templates(opts)
 
 List and search device templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or DEVICES_ADMIN
 
 ### Example
 ```ruby
@@ -564,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -574,7 +590,7 @@ Name | Type | Description  | Notes
 
 List and search devices
 
-Get a list of devices with optional filtering
+Get a list of devices with optional filtering. <br><br><b>Permissions Needed:</b> DEVICES_ADMIN or user
 
 ### Example
 ```ruby
@@ -636,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -645,6 +661,8 @@ Name | Type | Description  | Notes
 > DeviceResource update_device(device, id)
 
 Update a device
+
+<b>Permissions Needed:</b> CUSTOMERS_ADMIN
 
 ### Example
 ```ruby
@@ -701,6 +719,8 @@ Name | Type | Description  | Notes
 > TemplateResource update_device_template(id, opts)
 
 Update an device template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

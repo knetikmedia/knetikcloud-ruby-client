@@ -33,7 +33,7 @@ module KnetikCloudClient
     # Where this global came from. System globals cannot be removed or updated
     attr_accessor :system_global
 
-    # The variable type the global stores. See the See Bre Variables enpoint for list
+    # The variable type the global stores. See the BRE variables endpoint for list
     attr_accessor :type
 
 

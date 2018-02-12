@@ -1,6 +1,6 @@
 # KnetikCloudClient::UtilVersionApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,6 +11,8 @@ Method | HTTP request | Description
 > Version get_version
 
 Get current version info
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -49,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

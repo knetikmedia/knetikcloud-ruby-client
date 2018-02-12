@@ -34,7 +34,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for create_role
   # Create a new role
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [RoleResource] :role_resource The role resource object
   # @return [RoleResource]
@@ -46,7 +46,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for delete_role
   # Delete a role
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param role The role value
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :force If true, removes role from users/clients
@@ -59,7 +59,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for get_client_roles
   # Get roles for a client
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param client_key The client key
   # @param [Hash] opts the optional parameters
   # @return [Array<RoleResource>]
@@ -71,7 +71,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for get_role
   # Get a single role
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param role The role value
   # @param [Hash] opts the optional parameters
   # @return [RoleResource]
@@ -83,7 +83,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for get_roles
   # List and search roles
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_name Filter for roles that have a name starting with specified string
   # @option opts [String] :filter_role Filter for roles that have a role starting with specified string
@@ -99,7 +99,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for get_user_roles
   # Get roles for a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param user_id The user&#39;s id
   # @param [Hash] opts the optional parameters
   # @return [Array<RoleResource>]
@@ -111,7 +111,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for set_client_roles
   # Set roles for a client
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param client_key The client key
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :roles_list The list of unique roles
@@ -124,7 +124,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for set_permissions_for_role
   # Set permissions for a role
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param role The role value
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :permissions_list The list of unique permissions
@@ -137,7 +137,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for set_user_roles
   # Set roles for a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param user_id The user&#39;s id
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :roles_list The list of unique roles
@@ -150,7 +150,7 @@ describe 'AuthRolesApi' do
 
   # unit tests for update_role
   # Update a role
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   # @param role The role value
   # @param [Hash] opts the optional parameters
   # @option opts [RoleResource] :role_resource The role resource object

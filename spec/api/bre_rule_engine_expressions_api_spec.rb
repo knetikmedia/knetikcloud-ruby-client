@@ -34,7 +34,7 @@ describe 'BRERuleEngineExpressionsApi' do
 
   # unit tests for get_bre_expression
   # Lookup a specific expression
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
   # @param type Specifiy the type of expression as returned by the listing endpoint
   # @param [Hash] opts the optional parameters
   # @return [ExpressionResource]
@@ -45,8 +45,8 @@ describe 'BRERuleEngineExpressionsApi' do
   end
 
   # unit tests for get_bre_expressions
-  # Get a list of supported expressions to use in conditions or actions.
-  # Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+  # Get a list of supported expressions to use in conditions or actions
+  # Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_type_group Filter for expressions by type group
   # @return [Array<ExpressionResource>]
@@ -58,7 +58,7 @@ describe 'BRERuleEngineExpressionsApi' do
 
   # unit tests for get_expression_as_text
   # Returns the textual representation of an expression
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
   # @param [Hash] opts the optional parameters
   # @option opts [ExpressionResource] :expression The expression resource to be converted
   # @return [StringWrapper]

@@ -34,7 +34,7 @@ describe 'UsersApi' do
 
   # unit tests for add_user_tag
   # Add a tag to a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
   # @param user_id The id of the user
   # @param tag tag
   # @param [Hash] opts the optional parameters
@@ -47,7 +47,7 @@ describe 'UsersApi' do
 
   # unit tests for create_user_template
   # Create a user template
-  # User Templates define a type of user and the properties they have
+  # User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :user_template_resource The user template resource object
   # @return [TemplateResource]
@@ -59,7 +59,7 @@ describe 'UsersApi' do
 
   # unit tests for delete_user_template
   # Delete a user template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -70,9 +70,23 @@ describe 'UsersApi' do
     end
   end
 
+  # unit tests for get_direct_messages1
+  # Get a list of direct messages with this user
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+  # @param recipient_id The user id
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :size The number of objects returned per page
+  # @option opts [Integer] :page The number of the page returned, starting with 1
+  # @return [PageResourceChatMessageResource]
+  describe 'get_direct_messages1 test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_user
   # Get a single user
-  # Additional private info is included as USERS_ADMIN
+  # Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the user or &#39;me&#39;
   # @param [Hash] opts the optional parameters
   # @return [UserResource]
@@ -84,7 +98,7 @@ describe 'UsersApi' do
 
   # unit tests for get_user_tags
   # List tags for a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
   # @param user_id The id of the user
   # @param [Hash] opts the optional parameters
   # @return [Array<String>]
@@ -96,7 +110,7 @@ describe 'UsersApi' do
 
   # unit tests for get_user_template
   # Get a single user template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [TemplateResource]
@@ -108,7 +122,7 @@ describe 'UsersApi' do
 
   # unit tests for get_user_templates
   # List and search user templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -122,7 +136,7 @@ describe 'UsersApi' do
 
   # unit tests for get_users
   # List and search users
-  # Additional private info is included as USERS_ADMIN
+  # Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_displayname Filter for users whose display name starts with provided string.
   # @option opts [String] :filter_email Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
@@ -148,7 +162,7 @@ describe 'UsersApi' do
 
   # unit tests for password_reset
   # Choose a new password after a reset
-  # Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+  # Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the user
   # @param [Hash] opts the optional parameters
   # @option opts [NewPasswordRequest] :new_password_request The new password request object
@@ -159,9 +173,22 @@ describe 'UsersApi' do
     end
   end
 
+  # unit tests for post_user_message
+  # Send a user message
+  # 
+  # @param recipient_id The user id
+  # @param [Hash] opts the optional parameters
+  # @option opts [ChatMessageRequest] :chat_message_request The chat message request
+  # @return [ChatMessageResource]
+  describe 'post_user_message test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for register_user
   # Register a new user
-  # Password should be in plain text and will be encrypted on receipt. Use SSL for security
+  # Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [UserResource] :user_resource The user resource object
   # @return [UserResource]
@@ -173,7 +200,7 @@ describe 'UsersApi' do
 
   # unit tests for remove_user_tag
   # Remove a tag from a user
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
   # @param user_id The id of the user
   # @param tag The tag to remove
   # @param [Hash] opts the optional parameters
@@ -186,7 +213,7 @@ describe 'UsersApi' do
 
   # unit tests for set_password
   # Set a user&#39;s password
-  # Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+  # Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
   # @param id The id of the user
   # @param [Hash] opts the optional parameters
   # @option opts [StringWrapper] :password The new plain text password
@@ -199,7 +226,7 @@ describe 'UsersApi' do
 
   # unit tests for start_password_reset
   # Reset a user&#39;s password
-  # A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+  # A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param id The id of the user
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -211,7 +238,7 @@ describe 'UsersApi' do
 
   # unit tests for submit_password_reset
   # Reset a user&#39;s password without user id
-  # A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+  # A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [PasswordResetRequest] :password_reset An object containing one of three methods to look up a user
   # @return [nil]
@@ -223,7 +250,7 @@ describe 'UsersApi' do
 
   # unit tests for update_user
   # Update a user
-  # Password will not be edited on this endpoint, use password specific endpoints.
+  # Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
   # @param id The id of the user or &#39;me&#39;
   # @param [Hash] opts the optional parameters
   # @option opts [UserResource] :user_resource The user resource object
@@ -236,7 +263,7 @@ describe 'UsersApi' do
 
   # unit tests for update_user_template
   # Update a user template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [TemplateResource] :user_template_resource The user template resource object

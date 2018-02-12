@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new payment method for a user
-    # 
+    # <b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment method is being created
     # @param [Hash] opts the optional parameters
     # @option opts [PaymentMethodResource] :payment_method Payment method being created
@@ -32,7 +32,7 @@ module KnetikCloudClient
     end
 
     # Create a new payment method for a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment method is being created
     # @param [Hash] opts the optional parameters
     # @option opts [PaymentMethodResource] :payment_method Payment method being created
@@ -78,7 +78,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing payment method for a user
-    # 
+    # <b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment method is being updated
     # @param id ID of the payment method being deleted
     # @param [Hash] opts the optional parameters
@@ -89,7 +89,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing payment method for a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment method is being updated
     # @param id ID of the payment method being deleted
     # @param [Hash] opts the optional parameters
@@ -116,8 +116,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -138,7 +136,7 @@ module KnetikCloudClient
     end
 
     # Get a single payment method for a user
-    # 
+    # <b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment method is being retrieved
     # @param id ID of the payment method being retrieved
     # @param [Hash] opts the optional parameters
@@ -149,7 +147,7 @@ module KnetikCloudClient
     end
 
     # Get a single payment method for a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment method is being retrieved
     # @param id ID of the payment method being retrieved
     # @param [Hash] opts the optional parameters
@@ -176,8 +174,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -199,7 +195,7 @@ module KnetikCloudClient
     end
 
     # Get a single payment method type
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param id ID of the payment method type being retrieved
     # @param [Hash] opts the optional parameters
     # @return [PaymentMethodTypeResource]
@@ -209,7 +205,7 @@ module KnetikCloudClient
     end
 
     # Get a single payment method type
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param id ID of the payment method type being retrieved
     # @param [Hash] opts the optional parameters
     # @return [Array<(PaymentMethodTypeResource, Fixnum, Hash)>] PaymentMethodTypeResource data, response status code and response headers
@@ -231,8 +227,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -254,7 +248,7 @@ module KnetikCloudClient
     end
 
     # Get all payment method types
-    # 
+    # <b>Permissions Needed:</b> ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for payment method types whose name matches a given string
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -267,7 +261,7 @@ module KnetikCloudClient
     end
 
     # Get all payment method types
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for payment method types whose name matches a given string
     # @option opts [Integer] :size The number of objects returned per page
@@ -292,8 +286,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -315,7 +307,7 @@ module KnetikCloudClient
     end
 
     # Get all payment methods for a user
-    # 
+    # <b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment methods are being retrieved
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for payment methods whose name starts with a given string
@@ -332,7 +324,7 @@ module KnetikCloudClient
     end
 
     # Get all payment methods for a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment methods are being retrieved
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for payment methods whose name starts with a given string
@@ -371,8 +363,6 @@ module KnetikCloudClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -394,7 +384,7 @@ module KnetikCloudClient
     end
 
     # Authorize payment of an invoice for later capture
-    # 
+    # <b>Permissions Needed:</b> PAYMENTS_ADMIN or PAYMENTS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [PaymentAuthorizationResource] :request Payment authorization request
     # @return [PaymentAuthorizationResource]
@@ -404,7 +394,7 @@ module KnetikCloudClient
     end
 
     # Authorize payment of an invoice for later capture
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
     # @param [Hash] opts the optional parameters
     # @option opts [PaymentAuthorizationResource] :request Payment authorization request
     # @return [Array<(PaymentAuthorizationResource, Fixnum, Hash)>] PaymentAuthorizationResource data, response status code and response headers
@@ -445,7 +435,7 @@ module KnetikCloudClient
     end
 
     # Capture an existing invoice payment authorization
-    # 
+    # <b>Permissions Needed:</b> PAYMENTS_ADMIN
     # @param id ID of the payment authorization to capture
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -455,7 +445,7 @@ module KnetikCloudClient
     end
 
     # Capture an existing invoice payment authorization
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
     # @param id ID of the payment authorization to capture
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -499,7 +489,7 @@ module KnetikCloudClient
     end
 
     # Update an existing payment method for a user
-    # 
+    # <b>Permissions Needed:</b> PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment method is being updated
     # @param id ID of the payment method being updated
     # @param [Hash] opts the optional parameters
@@ -511,7 +501,7 @@ module KnetikCloudClient
     end
 
     # Update an existing payment method for a user
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
     # @param user_id ID of the user for whom the payment method is being updated
     # @param id ID of the payment method being updated
     # @param [Hash] opts the optional parameters

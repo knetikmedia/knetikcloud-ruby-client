@@ -1,6 +1,6 @@
 # KnetikCloudClient::ObjectsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,6 +20,8 @@ Method | HTTP request | Description
 > ObjectResource create_object_item(template_id, opts)
 
 Create an object
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```ruby
@@ -80,7 +82,7 @@ Name | Type | Description  | Notes
 
 Create an object template
 
-Object templates define a type of entitlement and the properties they have
+Object templates define a type of entitlement and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -136,6 +138,8 @@ Name | Type | Description  | Notes
 
 Delete an object
 
+<b>Permissions Needed:</b> INVENTORY_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -181,7 +185,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -191,7 +195,7 @@ nil (empty response body)
 
 Delete an entitlement template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby
@@ -239,7 +243,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -248,6 +252,8 @@ nil (empty response body)
 > ObjectResource get_object_item(template_id, object_id)
 
 Get a single object
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -295,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -304,6 +310,8 @@ Name | Type | Description  | Notes
 > PageResourceObjectResource get_object_items(template_id, opts)
 
 List and search objects
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```ruby
@@ -356,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -365,6 +373,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource get_object_template(id)
 
 Get a single entitlement template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example
 ```ruby
@@ -409,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -418,6 +428,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource get_object_templates(opts)
 
 List and search entitlement templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example
 ```ruby
@@ -467,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -476,6 +488,8 @@ Name | Type | Description  | Notes
 > update_object_item(template_id, object_id, opts)
 
 Update an object
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```ruby
@@ -537,6 +551,8 @@ nil (empty response body)
 > ItemTemplateResource update_object_template(id, opts)
 
 Update an entitlement template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```ruby

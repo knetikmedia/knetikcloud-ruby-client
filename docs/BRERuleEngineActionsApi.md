@@ -1,6 +1,6 @@
 # KnetikCloudClient::BRERuleEngineActionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,6 +11,8 @@ Method | HTTP request | Description
 > Array&lt;ActionResource&gt; get_bre_actions(opts)
 
 Get a list of available actions
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_ACTIONS_USER
 
 ### Example
 ```ruby
@@ -62,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

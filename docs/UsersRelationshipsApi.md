@@ -1,6 +1,6 @@
 # KnetikCloudClient::UsersRelationshipsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > UserRelationshipResource create_user_relationship(opts)
 
 Create a user relationship
+
+<b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
 
 ### Example
 ```ruby
@@ -70,6 +72,8 @@ Name | Type | Description  | Notes
 
 Delete a user relationship
 
+<b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -112,7 +116,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -121,6 +125,8 @@ nil (empty response body)
 > UserRelationshipResource get_user_relationship(id)
 
 Get a user relationship
+
+<b>Permissions Needed:</b> RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
 
 ### Example
 ```ruby
@@ -165,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -174,6 +180,8 @@ Name | Type | Description  | Notes
 > PageResourceUserRelationshipResource get_user_relationships(opts)
 
 Get a list of user relationships
+
+<b>Permissions Needed:</b> RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
 
 ### Example
 ```ruby
@@ -223,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -232,6 +240,8 @@ Name | Type | Description  | Notes
 > UserRelationshipResource update_user_relationship(id, opts)
 
 Update a user relationship
+
+<b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
 
 ### Example
 ```ruby

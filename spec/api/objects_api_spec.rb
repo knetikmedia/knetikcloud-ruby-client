@@ -34,7 +34,7 @@ describe 'ObjectsApi' do
 
   # unit tests for create_object_item
   # Create an object
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   # @param template_id The id of the template this object is to be part of
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -48,7 +48,7 @@ describe 'ObjectsApi' do
 
   # unit tests for create_object_template
   # Create an object template
-  # Object templates define a type of entitlement and the properties they have
+  # Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :template The entitlement template to be created
   # @return [ItemTemplateResource]
@@ -60,7 +60,7 @@ describe 'ObjectsApi' do
 
   # unit tests for delete_object_item
   # Delete an object
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   # @param template_id The id of the template this object is part of
   # @param object_id The id of the object
   # @param [Hash] opts the optional parameters
@@ -73,7 +73,7 @@ describe 'ObjectsApi' do
 
   # unit tests for delete_object_template
   # Delete an entitlement template
-  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  # If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cascade The value needed to delete used templates
@@ -86,7 +86,7 @@ describe 'ObjectsApi' do
 
   # unit tests for get_object_item
   # Get a single object
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param template_id The id of the template this object is part of
   # @param object_id The id of the object
   # @param [Hash] opts the optional parameters
@@ -99,7 +99,7 @@ describe 'ObjectsApi' do
 
   # unit tests for get_object_items
   # List and search objects
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param template_id The id of the template to get objects for
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -114,7 +114,7 @@ describe 'ObjectsApi' do
 
   # unit tests for get_object_template
   # Get a single entitlement template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @return [ItemTemplateResource]
@@ -126,7 +126,7 @@ describe 'ObjectsApi' do
 
   # unit tests for get_object_templates
   # List and search entitlement templates
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -140,7 +140,7 @@ describe 'ObjectsApi' do
 
   # unit tests for update_object_item
   # Update an object
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   # @param template_id The id of the template this object is part of
   # @param object_id The id of the object
   # @param [Hash] opts the optional parameters
@@ -155,7 +155,7 @@ describe 'ObjectsApi' do
 
   # unit tests for update_object_template
   # Update an entitlement template
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   # @param id The id of the template
   # @param [Hash] opts the optional parameters
   # @option opts [ItemTemplateResource] :template The updated template

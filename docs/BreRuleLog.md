@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**actions** | [**Array&lt;BreActionLog&gt;**](BreActionLog.md) | The actions of the BRE rule | [optional] 
 **ran** | **BOOLEAN** | Whether the rule ran | [optional] 
 **reason** | **String** | The reason for the rule | [optional] 
 **rule_end_date** | **Integer** | The end date of the rule in seconds | [optional] 
