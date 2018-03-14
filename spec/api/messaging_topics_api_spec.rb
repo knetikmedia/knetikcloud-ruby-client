@@ -34,7 +34,7 @@ describe 'MessagingTopicsApi' do
 
   # unit tests for disable_topic_subscriber
   # Enable or disable messages for a user
-  # Useful for opt-out options on a single topic. Consider multiple topics for multiple opt-out options.
+  # Useful for opt-out options on a single topic. Consider multiple topics for multiple opt-out options. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
   # @param id The id of the topic
   # @param user_id The id of the subscriber or &#39;me&#39;
   # @param disabled disabled
@@ -48,7 +48,7 @@ describe 'MessagingTopicsApi' do
 
   # unit tests for get_topic_subscriber
   # Get a subscriber to a topic
-  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
   # @param id The id of the topic
   # @param user_id The id of the subscriber or &#39;me&#39;
   # @param [Hash] opts the optional parameters
@@ -59,21 +59,9 @@ describe 'MessagingTopicsApi' do
     end
   end
 
-  # unit tests for get_topic_subscribers
-  # Get all subscribers to a topic
-  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
-  # @param id The id of the topic
-  # @param [Hash] opts the optional parameters
-  # @return [PageResourceTopicSubscriberResource]
-  describe 'get_topic_subscribers test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_user_topics
   # Get all messaging topics for a given user
-  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
   # @param id The id of the user or &#39;me&#39;
   # @param [Hash] opts the optional parameters
   # @return [PageResourceTopicResource]

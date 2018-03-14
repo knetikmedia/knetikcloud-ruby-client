@@ -1148,7 +1148,7 @@ module KnetikCloudClient
     # @param user_id The id of the user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :inventory_status The inventory status object
+    # @option opts [InventoryStatusWrapper] :inventory_status The inventory status object
     # @return [nil]
     def update_user_inventory_status(user_id, id, opts = {})
       update_user_inventory_status_with_http_info(user_id, id, opts)
@@ -1160,7 +1160,7 @@ module KnetikCloudClient
     # @param user_id The id of the user
     # @param id The id of the user inventory
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :inventory_status The inventory status object
+    # @option opts [InventoryStatusWrapper] :inventory_status The inventory status object
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_user_inventory_status_with_http_info(user_id, id, opts = {})
       if @api_client.config.debugging

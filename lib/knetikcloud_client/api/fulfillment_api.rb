@@ -234,7 +234,7 @@ module KnetikCloudClient
 
     # Update a fulfillment type
     # <b>Permissions Needed:</b> FULFILLMENT_ADMIN
-    # @param id The id
+    # @param id The fulfillment id
     # @param [Hash] opts the optional parameters
     # @option opts [FulfillmentType] :fulfillment_type The fulfillment type
     # @return [nil]
@@ -245,7 +245,7 @@ module KnetikCloudClient
 
     # Update a fulfillment type
     # &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
-    # @param id The id
+    # @param id The fulfillment id
     # @param [Hash] opts the optional parameters
     # @option opts [FulfillmentType] :fulfillment_type The fulfillment type
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers

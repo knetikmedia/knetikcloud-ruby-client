@@ -1,6 +1,6 @@
 # KnetikCloudClient::UsersGroupsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -492,6 +492,8 @@ nil (empty response body)
 > disable_group_notification(unique_name, user_id, disabled)
 
 Enable or disable notification of group messages
+
+<b>Permissions Needed:</b> TOPICS_ADMIN or self
 
 ### Example
 ```ruby
@@ -1509,7 +1511,7 @@ unique_name = "unique_name_example" # String | The group unique name
 
 user_id = 56 # Integer | The user id of the member to modify
 
-status = "status_example" # String | The new status for the user
+status = KnetikCloudClient::GroupMemberStatusWrapper.new # GroupMemberStatusWrapper | The new status for the user
 
 
 begin
@@ -1526,7 +1528,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unique_name** | **String**| The group unique name | 
  **user_id** | **Integer**| The user id of the member to modify | 
- **status** | **String**| The new status for the user | 
+ **status** | [**GroupMemberStatusWrapper**](GroupMemberStatusWrapper.md)| The new status for the user | 
 
 ### Return type
 

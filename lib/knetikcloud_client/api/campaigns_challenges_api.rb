@@ -1147,10 +1147,10 @@ module KnetikCloudClient
     # @param [Hash] opts the optional parameters
     # @option opts [ChallengeActivityResource] :challenge_activity_resource The challenge activity resource object
     # @option opts [BOOLEAN] :validate_settings Whether to validate the settings being sent against the available settings on the base activity. (default to false)
-    # @return [ChallengeActivityResource]
+    # @return [nil]
     def update_challenge_activity(id, challenge_id, opts = {})
-      data, _status_code, _headers = update_challenge_activity_with_http_info(id, challenge_id, opts)
-      return data
+      update_challenge_activity_with_http_info(id, challenge_id, opts)
+      return nil
     end
 
     # Update a challenge activity
@@ -1160,7 +1160,7 @@ module KnetikCloudClient
     # @param [Hash] opts the optional parameters
     # @option opts [ChallengeActivityResource] :challenge_activity_resource The challenge activity resource object
     # @option opts [BOOLEAN] :validate_settings Whether to validate the settings being sent against the available settings on the base activity.
-    # @return [Array<(ChallengeActivityResource, Fixnum, Hash)>] ChallengeActivityResource data, response status code and response headers
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_challenge_activity_with_http_info(id, challenge_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CampaignsChallengesApi.update_challenge_activity ..."
@@ -1198,8 +1198,7 @@ module KnetikCloudClient
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'ChallengeActivityResource')
+        :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CampaignsChallengesApi#update_challenge_activity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

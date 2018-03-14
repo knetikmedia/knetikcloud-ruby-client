@@ -56,6 +56,19 @@ describe 'ContentArticlesApi' do
     end
   end
 
+  # unit tests for create_template
+  # Create a template
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+  # @param type_hint The type for the resource this template applies to
+  # @param [Hash] opts the optional parameters
+  # @option opts [TemplateResource] :template The template
+  # @return [TemplateResource]
+  describe 'create_template test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for delete_article
   # Delete an existing article
   # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
@@ -76,6 +89,20 @@ describe 'ContentArticlesApi' do
   # @option opts [String] :cascade The value needed to delete used templates
   # @return [nil]
   describe 'delete_article_template test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_template
+  # Delete a template
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+  # @param type_hint The type for the resource this template applies to
+  # @param id The id of the template
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :cascade How to cascade the delete
+  # @return [nil]
+  describe 'delete_template test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -139,6 +166,34 @@ describe 'ContentArticlesApi' do
     end
   end
 
+  # unit tests for get_template
+  # Get a template
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+  # @param type_hint The type for the resource this template applies to
+  # @param id The id of the template
+  # @param [Hash] opts the optional parameters
+  # @return [TemplateResource]
+  describe 'get_template test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_templates
+  # List and search templates
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+  # @param type_hint The type for the resource this template applies to
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :size The number of objects returned per page
+  # @option opts [Integer] :page The number of the page returned, starting with 1
+  # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  # @return [PageResourceTemplateResource]
+  describe 'get_templates test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for update_article
   # Update an existing article
   # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
@@ -160,6 +215,33 @@ describe 'ContentArticlesApi' do
   # @option opts [TemplateResource] :article_template_resource The article template resource object
   # @return [TemplateResource]
   describe 'update_article_template test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for update_template
+  # Update a template
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+  # @param type_hint The type for the resource this template applies to
+  # @param id The id of the template
+  # @param [Hash] opts the optional parameters
+  # @option opts [TemplateResource] :template The template
+  # @return [TemplateResource]
+  describe 'update_template test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for validate
+  # Validate a templated resource
+  # Error code thrown if invalid.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+  # @param type_hint The type for the resource this template applies to
+  # @param [Hash] opts the optional parameters
+  # @option opts [BasicTemplatedResource] :resource The resource to validate
+  # @return [nil]
+  describe 'validate test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

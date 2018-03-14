@@ -95,6 +95,7 @@ describe 'MediaModerationApi' do
   # @option opts [String] :filter_context_id Filter by moderation context ID
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
+  # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
   # @return [PageResourceFlagReportResource]
   describe 'get_moderation_reports test' do
     it "should work" do

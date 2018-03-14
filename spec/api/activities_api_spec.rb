@@ -140,7 +140,7 @@ describe 'ActivitiesApi' do
 
   # unit tests for get_activity_occurrence_details
   # Load a single activity occurrence details
-  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   # @param activity_occurrence_id The id of the activity occurrence
   # @param [Hash] opts the optional parameters
   # @return [ActivityOccurrenceResource]
@@ -178,7 +178,7 @@ describe 'ActivitiesApi' do
 
   # unit tests for list_activity_occurrences
   # List activity occurrences
-  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_activity Filter for occurrences of the given activity ID
   # @option opts [String] :filter_status Filter for occurrences in the given status
@@ -211,7 +211,7 @@ describe 'ActivitiesApi' do
 
   # unit tests for set_activity_occurrence_results
   # Sets the status of an activity occurrence to FINISHED and logs metrics
-  # In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+  # In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   # @param activity_occurrence_id The id of the activity occurrence
   # @param [Hash] opts the optional parameters
   # @option opts [ActivityOccurrenceResultsResource] :activity_occurrence_results The activity occurrence object
@@ -224,7 +224,7 @@ describe 'ActivitiesApi' do
 
   # unit tests for set_activity_occurrence_settings
   # Sets the settings of an activity occurrence
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
   # @param activity_occurrence_id The id of the activity occurrence
   # @param [Hash] opts the optional parameters
   # @option opts [ActivityOccurrenceSettingsResource] :settings The new settings
@@ -241,7 +241,7 @@ describe 'ActivitiesApi' do
   # @param activity_occurrence_id The id of the activity occurrence
   # @param user_id The id of the user
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :status The new status
+  # @option opts [ActivityUserStatusWrapper] :status The new status
   # @return [ActivityUserResource]
   describe 'set_user_status test' do
     it "should work" do
@@ -264,10 +264,10 @@ describe 'ActivitiesApi' do
 
   # unit tests for update_activity_occurrence_status
   # Update the status of an activity occurrence
-  # If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+  # If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
   # @param activity_occurrence_id The id of the activity occurrence
   # @param [Hash] opts the optional parameters
-  # @option opts [ValueWrapperstring] :activity_occurrence_status The activity occurrence status object
+  # @option opts [ActivityOccurrenceStatusWrapper] :activity_occurrence_status The activity occurrence status object
   # @return [nil]
   describe 'update_activity_occurrence_status test' do
     it "should work" do

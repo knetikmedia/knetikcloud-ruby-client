@@ -458,7 +458,7 @@ module KnetikCloudClient
     end
 
     # Enable or disable notification of group messages
-    # 
+    # <b>Permissions Needed:</b> TOPICS_ADMIN or self
     # @param unique_name The group unique name
     # @param user_id The user id of the member or &#39;me&#39;
     # @param disabled disabled
@@ -470,7 +470,7 @@ module KnetikCloudClient
     end
 
     # Enable or disable notification of group messages
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
     # @param unique_name The group unique name
     # @param user_id The user id of the member or &#39;me&#39;
     # @param disabled disabled

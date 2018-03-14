@@ -34,7 +34,7 @@ describe 'NotificationsApi' do
 
   # unit tests for create_notification_type
   # Create a notification type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [NotificationTypeResource] :notification_type notificationType
   # @return [NotificationTypeResource]
@@ -46,7 +46,7 @@ describe 'NotificationsApi' do
 
   # unit tests for delete_notification_type
   # Delete a notification type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   # @param id id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'NotificationsApi' do
 
   # unit tests for get_notification_type
   # Get a single notification type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   # @param id id
   # @param [Hash] opts the optional parameters
   # @return [NotificationTypeResource]
@@ -70,7 +70,7 @@ describe 'NotificationsApi' do
 
   # unit tests for get_notification_types
   # List and search notification types
-  # Get a list of notification type with optional filtering
+  # Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
   # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -84,7 +84,7 @@ describe 'NotificationsApi' do
 
   # unit tests for get_user_notification_info
   # View a user&#39;s notification settings for a type
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   # @param type_id The id of the topic
   # @param user_id The id of the subscriber or &#39;me&#39;
   # @param [Hash] opts the optional parameters
@@ -97,7 +97,7 @@ describe 'NotificationsApi' do
 
   # unit tests for get_user_notification_info_list
   # View a user&#39;s notification settings
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   # @param user_id The id of the subscriber or &#39;me&#39;
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :size The number of objects returned per page
@@ -112,7 +112,7 @@ describe 'NotificationsApi' do
 
   # unit tests for get_user_notifications
   # Get notifications
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   # @param id The id of the user or &#39;me&#39;
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_status filter for notifications with a given status
@@ -128,7 +128,7 @@ describe 'NotificationsApi' do
 
   # unit tests for send_notification
   # Send a notification
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [NotificationResource] :notification notification
   # @return [NotificationResource]
@@ -140,11 +140,11 @@ describe 'NotificationsApi' do
 
   # unit tests for set_user_notification_status
   # Set notification status
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   # @param user_id The id of the user or &#39;me&#39;
   # @param notification_id The id of the notification
   # @param [Hash] opts the optional parameters
-  # @option opts [ValueWrapperstring] :notification status
+  # @option opts [UserNotificationStatusWrapper] :notification status
   # @return [nil]
   describe 'set_user_notification_status test' do
     it "should work" do
@@ -154,7 +154,7 @@ describe 'NotificationsApi' do
 
   # unit tests for silence_direct_notifications
   # Enable or disable direct notifications for a user
-  # Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+  # Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   # @param type_id The id of the topic
   # @param user_id The id of the subscriber or &#39;me&#39;
   # @param silenced silenced
@@ -168,7 +168,7 @@ describe 'NotificationsApi' do
 
   # unit tests for update_notification_type
   # Update a notificationType
-  # 
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   # @param id id
   # @param [Hash] opts the optional parameters
   # @option opts [NotificationTypeResource] :notification_type notificationType

@@ -1,6 +1,6 @@
 # KnetikCloudClient::MessagingApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**delete_message_template**](MessagingApi.md#delete_message_template) | **DELETE** /messaging/templates/{id} | Delete an existing message template
 [**get_message_template**](MessagingApi.md#get_message_template) | **GET** /messaging/templates/{id} | Get a single message template
 [**get_message_templates**](MessagingApi.md#get_message_templates) | **GET** /messaging/templates | List and search message templates
-[**send_message1**](MessagingApi.md#send_message1) | **POST** /messaging/message | Send a message
+[**send_message**](MessagingApi.md#send_message) | **POST** /messaging/message | Send a message
 [**send_raw_email**](MessagingApi.md#send_raw_email) | **POST** /messaging/raw-email | Send a raw email to one or more users
 [**send_raw_push**](MessagingApi.md#send_raw_push) | **POST** /messaging/raw-push | Send a raw push notification
 [**send_raw_sms**](MessagingApi.md#send_raw_sms) | **POST** /messaging/raw-sms | Send a raw SMS
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 Delete an existing message template
 
-<b>Permissions Needed:</b> ARTICLES_ADMIN
+<b>Permissions Needed:</b> MESSAGING_ADMIN
 
 ### Example
 ```ruby
@@ -191,7 +191,7 @@ nil (empty response body)
 
 Get a single message template
 
-<b>Permissions Needed:</b> ARTICLES_ADMIN
+<b>Permissions Needed:</b> MESSAGING_ADMIN
 
 ### Example
 ```ruby
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 List and search message templates
 
-Get a list of message templates with optional filtering. <br><br><b>Permissions Needed:</b> ARTICLES_ADMIN
+Get a list of message templates with optional filtering. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
 
 ### Example
 ```ruby
@@ -307,8 +307,8 @@ Name | Type | Description  | Notes
 
 
 
-# **send_message1**
-> send_message1(opts)
+# **send_message**
+> send_message(opts)
 
 Send a message
 
@@ -335,9 +335,9 @@ opts = {
 
 begin
   #Send a message
-  api_instance.send_message1(opts)
+  api_instance.send_message(opts)
 rescue KnetikCloudClient::ApiError => e
-  puts "Exception when calling MessagingApi->send_message1: #{e}"
+  puts "Exception when calling MessagingApi->send_message: #{e}"
 end
 ```
 
@@ -752,7 +752,7 @@ nil (empty response body)
 
 Update an existing message template
 
-<b>Permissions Needed:</b> ARTICLES_ADMIN
+<b>Permissions Needed:</b> MESSAGING_ADMIN
 
 ### Example
 ```ruby

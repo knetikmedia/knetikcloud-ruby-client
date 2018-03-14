@@ -249,6 +249,7 @@ module KnetikCloudClient
     # @option opts [String] :filter_context_id Filter by moderation context ID
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
     # @return [PageResourceFlagReportResource]
     def get_moderation_reports(opts = {})
       data, _status_code, _headers = get_moderation_reports_with_http_info(opts)
@@ -263,6 +264,7 @@ module KnetikCloudClient
     # @option opts [String] :filter_context_id Filter by moderation context ID
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
     # @return [Array<(PageResourceFlagReportResource, Fixnum, Hash)>] PageResourceFlagReportResource data, response status code and response headers
     def get_moderation_reports_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -278,6 +280,7 @@ module KnetikCloudClient
       query_params[:'filter_context_id'] = opts[:'filter_context_id'] if !opts[:'filter_context_id'].nil?
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
 
       # header parameters
       header_params = {}

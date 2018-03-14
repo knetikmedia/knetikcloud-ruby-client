@@ -179,13 +179,13 @@ describe 'ChatApi' do
     end
   end
 
-  # unit tests for send_message
+  # unit tests for send_chat_message
   # Send a message
   # &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   # @param [Hash] opts the optional parameters
   # @option opts [ChatMessageResource] :chat_message_resource The chat message resource
   # @return [ChatMessageResource]
-  describe 'send_message test' do
+  describe 'send_chat_message test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

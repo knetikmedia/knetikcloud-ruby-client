@@ -124,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a level
-    # <b>Permissions Needed:</b> LEVELING_ADMIN
+    # <b>Permissions Needed:</b> LEVELING_USER
     # @param name The level schema name
     # @param [Hash] opts the optional parameters
     # @return [LevelingResource]
@@ -134,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Retrieve a level
-    # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
     # @param name The level schema name
     # @param [Hash] opts the optional parameters
     # @return [Array<(LevelingResource, Fixnum, Hash)>] LevelingResource data, response status code and response headers
@@ -224,7 +224,7 @@ module KnetikCloudClient
     end
 
     # List and search levels
-    # Get a list of levels schemas with optional filtering. <br><br><b>Permissions Needed:</b> LEVELING_ADMIN
+    # Get a list of levels schemas with optional filtering. <br><br><b>Permissions Needed:</b> LEVELING_USER
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for level schemas whose name contains a given string
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -237,7 +237,7 @@ module KnetikCloudClient
     end
 
     # List and search levels
-    # Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+    # Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for level schemas whose name contains a given string
     # @option opts [Integer] :size The number of objects returned per page
@@ -283,7 +283,7 @@ module KnetikCloudClient
     end
 
     # Get a user's progress for a given level schema
-    # <b>Permissions Needed:</b> LEVELING_ADMIN or self
+    # <b>Permissions Needed:</b> LEVELING_USER or self
     # @param user_id The id of the user or &#39;me&#39;
     # @param name The level schema name
     # @param [Hash] opts the optional parameters
@@ -294,7 +294,7 @@ module KnetikCloudClient
     end
 
     # Get a user&#39;s progress for a given level schema
-    # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
     # @param user_id The id of the user or &#39;me&#39;
     # @param name The level schema name
     # @param [Hash] opts the optional parameters
@@ -342,7 +342,7 @@ module KnetikCloudClient
     end
 
     # Get a user's progress for all level schemas
-    # Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. <br><br><b>Permissions Needed:</b> LEVELING_ADMIN or self
+    # Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. <br><br><b>Permissions Needed:</b> LEVELING_USER or self
     # @param user_id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for level schemas whose name contains a given string
@@ -356,7 +356,7 @@ module KnetikCloudClient
     end
 
     # Get a user&#39;s progress for all level schemas
-    # Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+    # Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
     # @param user_id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_name Filter for level schemas whose name contains a given string

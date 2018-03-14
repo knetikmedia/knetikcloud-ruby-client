@@ -303,7 +303,7 @@ describe 'UsersInventoryApi' do
   # @param user_id The id of the user
   # @param id The id of the user inventory
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :inventory_status The inventory status object
+  # @option opts [InventoryStatusWrapper] :inventory_status The inventory status object
   # @return [nil]
   describe 'update_user_inventory_status test' do
     it "should work" do

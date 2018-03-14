@@ -1,6 +1,6 @@
 # KnetikCloudClient::FulfillmentApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -258,7 +258,7 @@ end
 
 api_instance = KnetikCloudClient::FulfillmentApi.new
 
-id = 56 # Integer | The id
+id = 56 # Integer | The fulfillment id
 
 opts = { 
   fulfillment_type: KnetikCloudClient::FulfillmentType.new # FulfillmentType | The fulfillment type
@@ -276,7 +276,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| The id | 
+ **id** | **Integer**| The fulfillment id | 
  **fulfillment_type** | [**FulfillmentType**](FulfillmentType.md)| The fulfillment type | [optional] 
 
 ### Return type

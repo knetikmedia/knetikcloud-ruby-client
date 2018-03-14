@@ -1,6 +1,6 @@
 # KnetikCloudClient::ActivitiesApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 
 Load a single activity occurrence details
 
-<b>Permissions Needed:</b> ACTIVITIES_ADMIN
+<b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```ruby
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 List activity occurrences
 
-<b>Permissions Needed:</b> ACTIVITIES_ADMIN
+<b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```ruby
@@ -795,7 +795,7 @@ nil (empty response body)
 
 Sets the status of an activity occurrence to FINISHED and logs metrics
 
-In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+In addition to user permissions requirements there is security based on the core_settings.results_trust setting. <br><br><b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```ruby
@@ -853,6 +853,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResource set_activity_occurrence_settings(activity_occurrence_id, opts)
 
 Sets the settings of an activity occurrence
+
+<b>Permissions Needed:</b> ACTIVITIES_USER and host or ACTIVITIES_ADMIN
 
 ### Example
 ```ruby
@@ -931,7 +933,7 @@ activity_occurrence_id = 789 # Integer | The id of the activity occurrence
 user_id = "user_id_example" # String | The id of the user
 
 opts = { 
-  status: "status_example" # String | The new status
+  status: KnetikCloudClient::ActivityUserStatusWrapper.new # ActivityUserStatusWrapper | The new status
 }
 
 begin
@@ -949,7 +951,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activity_occurrence_id** | **Integer**| The id of the activity occurrence | 
  **user_id** | **String**| The id of the user | 
- **status** | **String**| The new status | [optional] 
+ **status** | [**ActivityUserStatusWrapper**](ActivityUserStatusWrapper.md)| The new status | [optional] 
 
 ### Return type
 
@@ -1030,7 +1032,7 @@ Name | Type | Description  | Notes
 
 Update the status of an activity occurrence
 
-If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. <br><br><b>Permissions Needed:</b> ACTIVITIES_USER and host or ACTIVITIES_ADMIN
 
 ### Example
 ```ruby
@@ -1050,7 +1052,7 @@ api_instance = KnetikCloudClient::ActivitiesApi.new
 activity_occurrence_id = 789 # Integer | The id of the activity occurrence
 
 opts = { 
-  activity_occurrence_status: KnetikCloudClient::ValueWrapperstring.new # ValueWrapperstring | The activity occurrence status object
+  activity_occurrence_status: KnetikCloudClient::ActivityOccurrenceStatusWrapper.new # ActivityOccurrenceStatusWrapper | The activity occurrence status object
 }
 
 begin
@@ -1066,7 +1068,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activity_occurrence_id** | **Integer**| The id of the activity occurrence | 
- **activity_occurrence_status** | [**ValueWrapperstring**](ValueWrapperstring.md)| The activity occurrence status object | [optional] 
+ **activity_occurrence_status** | [**ActivityOccurrenceStatusWrapper**](ActivityOccurrenceStatusWrapper.md)| The activity occurrence status object | [optional] 
 
 ### Return type
 

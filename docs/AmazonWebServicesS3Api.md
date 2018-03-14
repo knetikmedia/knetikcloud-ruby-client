@@ -1,6 +1,6 @@
 # KnetikCloudClient::AmazonWebServicesS3Api
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ api_instance = KnetikCloudClient::AmazonWebServicesS3Api.new
 
 opts = { 
   bucket: "bucket_example", # String | S3 bucket name
-  path: "path_example", # String | The path to the file relative the bucket (the s3 object key)
+  path: "path_example", # String | The path to the file relative to the bucket (the s3 object key)
   expiration: 60 # Integer | The number of seconds this URL will be valid. Default to 60
 }
 
@@ -50,7 +50,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucket** | **String**| S3 bucket name | [optional] 
- **path** | **String**| The path to the file relative the bucket (the s3 object key) | [optional] 
+ **path** | **String**| The path to the file relative to the bucket (the s3 object key) | [optional] 
  **expiration** | **Integer**| The number of seconds this URL will be valid. Default to 60 | [optional] [default to 60]
 
 ### Return type

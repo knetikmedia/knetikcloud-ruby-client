@@ -1,6 +1,6 @@
 # KnetikCloudClient::CampaignsChallengesApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1194,7 +1194,7 @@ Name | Type | Description  | Notes
 
 
 # **update_challenge_activity**
-> ChallengeActivityResource update_challenge_activity(id, challenge_id, opts)
+> update_challenge_activity(id, challenge_id, opts)
 
 Update a challenge activity
 
@@ -1226,8 +1226,7 @@ opts = {
 
 begin
   #Update a challenge activity
-  result = api_instance.update_challenge_activity(id, challenge_id, opts)
-  p result
+  api_instance.update_challenge_activity(id, challenge_id, opts)
 rescue KnetikCloudClient::ApiError => e
   puts "Exception when calling CampaignsChallengesApi->update_challenge_activity: #{e}"
 end
@@ -1244,7 +1243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ChallengeActivityResource**](ChallengeActivityResource.md)
+nil (empty response body)
 
 ### Authorization
 

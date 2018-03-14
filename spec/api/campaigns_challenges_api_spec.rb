@@ -305,7 +305,7 @@ describe 'CampaignsChallengesApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [ChallengeActivityResource] :challenge_activity_resource The challenge activity resource object
   # @option opts [BOOLEAN] :validate_settings Whether to validate the settings being sent against the available settings on the base activity.
-  # @return [ChallengeActivityResource]
+  # @return [nil]
   describe 'update_challenge_activity test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

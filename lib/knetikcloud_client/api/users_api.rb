@@ -214,7 +214,7 @@ module KnetikCloudClient
         fail ArgumentError, "Missing the required parameter 'recipient_id' when calling UsersApi.get_direct_messages1"
       end
       # resource path
-      local_var_path = "/users/users/{recipient_id}/messages".sub('{' + 'recipient_id' + '}', recipient_id.to_s)
+      local_var_path = "/users/{recipient_id}/messages".sub('{' + 'recipient_id' + '}', recipient_id.to_s)
 
       # query parameters
       query_params = {}

@@ -123,7 +123,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing message template
-    # <b>Permissions Needed:</b> ARTICLES_ADMIN
+    # <b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param id The message_template id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -133,7 +133,7 @@ module KnetikCloudClient
     end
 
     # Delete an existing message template
-    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param id The message_template id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -175,7 +175,7 @@ module KnetikCloudClient
     end
 
     # Get a single message template
-    # <b>Permissions Needed:</b> ARTICLES_ADMIN
+    # <b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param id The message_template id
     # @param [Hash] opts the optional parameters
     # @return [MessageTemplateResource]
@@ -185,7 +185,7 @@ module KnetikCloudClient
     end
 
     # Get a single message template
-    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param id The message_template id
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageTemplateResource, Fixnum, Hash)>] MessageTemplateResource data, response status code and response headers
@@ -228,7 +228,7 @@ module KnetikCloudClient
     end
 
     # List and search message templates
-    # Get a list of message templates with optional filtering. <br><br><b>Permissions Needed:</b> ARTICLES_ADMIN
+    # Get a list of message templates with optional filtering. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_tagset Filter for message templates with at least one of a specified set of tags (separated by comma)
     # @option opts [String] :filter_tag_intersection Filter for message templates with all of a specified set of tags (separated by comma)
@@ -243,7 +243,7 @@ module KnetikCloudClient
     end
 
     # List and search message templates
-    # Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+    # Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_tagset Filter for message templates with at least one of a specified set of tags (separated by comma)
     # @option opts [String] :filter_tag_intersection Filter for message templates with all of a specified set of tags (separated by comma)
@@ -297,8 +297,8 @@ module KnetikCloudClient
     # @param [Hash] opts the optional parameters
     # @option opts [MessageResource] :message_resource The message to be sent
     # @return [nil]
-    def send_message1(opts = {})
-      send_message1_with_http_info(opts)
+    def send_message(opts = {})
+      send_message_with_http_info(opts)
       return nil
     end
 
@@ -307,9 +307,9 @@ module KnetikCloudClient
     # @param [Hash] opts the optional parameters
     # @option opts [MessageResource] :message_resource The message to be sent
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def send_message1_with_http_info(opts = {})
+    def send_message_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: MessagingApi.send_message1 ..."
+        @api_client.config.logger.debug "Calling API: MessagingApi.send_message ..."
       end
       # resource path
       local_var_path = "/messaging/message"
@@ -337,7 +337,7 @@ module KnetikCloudClient
         :body => post_body,
         :auth_names => auth_names)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MessagingApi#send_message1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MessagingApi#send_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -693,7 +693,7 @@ module KnetikCloudClient
     end
 
     # Update an existing message template
-    # <b>Permissions Needed:</b> ARTICLES_ADMIN
+    # <b>Permissions Needed:</b> MESSAGING_ADMIN
     # @param id The message_template id
     # @param [Hash] opts the optional parameters
     # @option opts [MessageTemplateResource] :message_template_resource The message template
@@ -704,7 +704,7 @@ module KnetikCloudClient
     end
 
     # Update an existing message template
-    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
     # @param id The message_template id
     # @param [Hash] opts the optional parameters
     # @option opts [MessageTemplateResource] :message_template_resource The message template

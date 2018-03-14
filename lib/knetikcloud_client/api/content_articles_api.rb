@@ -122,6 +122,63 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
+    # Create a template
+    # <b>Permissions Needed:</b> TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param [Hash] opts the optional parameters
+    # @option opts [TemplateResource] :template The template
+    # @return [TemplateResource]
+    def create_template(type_hint, opts = {})
+      data, _status_code, _headers = create_template_with_http_info(type_hint, opts)
+      return data
+    end
+
+    # Create a template
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param [Hash] opts the optional parameters
+    # @option opts [TemplateResource] :template The template
+    # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
+    def create_template_with_http_info(type_hint, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContentArticlesApi.create_template ..."
+      end
+      # verify the required parameter 'type_hint' is set
+      if @api_client.config.client_side_validation && type_hint.nil?
+        fail ArgumentError, "Missing the required parameter 'type_hint' when calling ContentArticlesApi.create_template"
+      end
+      # resource path
+      local_var_path = "/templates/{type_hint}".sub('{' + 'type_hint' + '}', type_hint.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'template'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContentArticlesApi#create_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Delete an existing article
     # <b>Permissions Needed:</b> ARTICLES_ADMIN
     # @param id The article id
@@ -225,6 +282,66 @@ module KnetikCloudClient
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContentArticlesApi#delete_article_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a template
+    # <b>Permissions Needed:</b> TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :cascade How to cascade the delete
+    # @return [nil]
+    def delete_template(type_hint, id, opts = {})
+      delete_template_with_http_info(type_hint, id, opts)
+      return nil
+    end
+
+    # Delete a template
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :cascade How to cascade the delete
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_template_with_http_info(type_hint, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContentArticlesApi.delete_template ..."
+      end
+      # verify the required parameter 'type_hint' is set
+      if @api_client.config.client_side_validation && type_hint.nil?
+        fail ArgumentError, "Missing the required parameter 'type_hint' when calling ContentArticlesApi.delete_template"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling ContentArticlesApi.delete_template"
+      end
+      # resource path
+      local_var_path = "/templates/{type_hint}/{id}".sub('{' + 'type_hint' + '}', type_hint.to_s).sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'cascade'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContentArticlesApi#delete_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -465,6 +582,127 @@ module KnetikCloudClient
       return data, status_code, headers
     end
 
+    # Get a template
+    # <b>Permissions Needed:</b> TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @return [TemplateResource]
+    def get_template(type_hint, id, opts = {})
+      data, _status_code, _headers = get_template_with_http_info(type_hint, id, opts)
+      return data
+    end
+
+    # Get a template
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
+    def get_template_with_http_info(type_hint, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContentArticlesApi.get_template ..."
+      end
+      # verify the required parameter 'type_hint' is set
+      if @api_client.config.client_side_validation && type_hint.nil?
+        fail ArgumentError, "Missing the required parameter 'type_hint' when calling ContentArticlesApi.get_template"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling ContentArticlesApi.get_template"
+      end
+      # resource path
+      local_var_path = "/templates/{type_hint}/{id}".sub('{' + 'type_hint' + '}', type_hint.to_s).sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContentArticlesApi#get_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List and search templates
+    # <b>Permissions Needed:</b> TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :size The number of objects returned per page (default to 25)
+    # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
+    # @return [PageResourceTemplateResource]
+    def get_templates(type_hint, opts = {})
+      data, _status_code, _headers = get_templates_with_http_info(type_hint, opts)
+      return data
+    end
+
+    # List and search templates
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :size The number of objects returned per page
+    # @option opts [Integer] :page The number of the page returned, starting with 1
+    # @option opts [String] :order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+    # @return [Array<(PageResourceTemplateResource, Fixnum, Hash)>] PageResourceTemplateResource data, response status code and response headers
+    def get_templates_with_http_info(type_hint, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContentArticlesApi.get_templates ..."
+      end
+      # verify the required parameter 'type_hint' is set
+      if @api_client.config.client_side_validation && type_hint.nil?
+        fail ArgumentError, "Missing the required parameter 'type_hint' when calling ContentArticlesApi.get_templates"
+      end
+      # resource path
+      local_var_path = "/templates/{type_hint}".sub('{' + 'type_hint' + '}', type_hint.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PageResourceTemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContentArticlesApi#get_templates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Update an existing article
     # <b>Permissions Needed:</b> ARTICLES_ADMIN
     # @param id The article id
@@ -575,6 +813,125 @@ module KnetikCloudClient
         :return_type => 'TemplateResource')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContentArticlesApi#update_article_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a template
+    # <b>Permissions Needed:</b> TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @option opts [TemplateResource] :template The template
+    # @return [TemplateResource]
+    def update_template(type_hint, id, opts = {})
+      data, _status_code, _headers = update_template_with_http_info(type_hint, id, opts)
+      return data
+    end
+
+    # Update a template
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param id The id of the template
+    # @param [Hash] opts the optional parameters
+    # @option opts [TemplateResource] :template The template
+    # @return [Array<(TemplateResource, Fixnum, Hash)>] TemplateResource data, response status code and response headers
+    def update_template_with_http_info(type_hint, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContentArticlesApi.update_template ..."
+      end
+      # verify the required parameter 'type_hint' is set
+      if @api_client.config.client_side_validation && type_hint.nil?
+        fail ArgumentError, "Missing the required parameter 'type_hint' when calling ContentArticlesApi.update_template"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling ContentArticlesApi.update_template"
+      end
+      # resource path
+      local_var_path = "/templates/{type_hint}/{id}".sub('{' + 'type_hint' + '}', type_hint.to_s).sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'template'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TemplateResource')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContentArticlesApi#update_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Validate a templated resource
+    # Error code thrown if invalid.<br><br><b>Permissions Needed:</b> TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param [Hash] opts the optional parameters
+    # @option opts [BasicTemplatedResource] :resource The resource to validate
+    # @return [nil]
+    def validate(type_hint, opts = {})
+      validate_with_http_info(type_hint, opts)
+      return nil
+    end
+
+    # Validate a templated resource
+    # Error code thrown if invalid.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+    # @param type_hint The type for the resource this template applies to
+    # @param [Hash] opts the optional parameters
+    # @option opts [BasicTemplatedResource] :resource The resource to validate
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def validate_with_http_info(type_hint, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContentArticlesApi.validate ..."
+      end
+      # verify the required parameter 'type_hint' is set
+      if @api_client.config.client_side_validation && type_hint.nil?
+        fail ArgumentError, "Missing the required parameter 'type_hint' when calling ContentArticlesApi.validate"
+      end
+      # resource path
+      local_var_path = "/templates/{type_hint}/validate".sub('{' + 'type_hint' + '}', type_hint.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'resource'])
+      auth_names = ['oauth2_client_credentials_grant', 'oauth2_password_grant']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContentArticlesApi#validate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

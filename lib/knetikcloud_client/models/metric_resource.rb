@@ -18,7 +18,7 @@ module KnetikCloudClient
     # The id of the activity occurence where this score/metric occurred
     attr_accessor :activity_occurence_id
 
-    # Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each
+    # Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each
     attr_accessor :tags
 
     # The id of the user this metric is for. Default to caller and requires METRICS_ADMIN permission to specify another

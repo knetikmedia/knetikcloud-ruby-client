@@ -655,8 +655,8 @@ module KnetikCloudClient
     # @param [Hash] opts the optional parameters
     # @option opts [ChatMessageResource] :chat_message_resource The chat message resource
     # @return [ChatMessageResource]
-    def send_message(opts = {})
-      data, _status_code, _headers = send_message_with_http_info(opts)
+    def send_chat_message(opts = {})
+      data, _status_code, _headers = send_chat_message_with_http_info(opts)
       return data
     end
 
@@ -665,9 +665,9 @@ module KnetikCloudClient
     # @param [Hash] opts the optional parameters
     # @option opts [ChatMessageResource] :chat_message_resource The chat message resource
     # @return [Array<(ChatMessageResource, Fixnum, Hash)>] ChatMessageResource data, response status code and response headers
-    def send_message_with_http_info(opts = {})
+    def send_chat_message_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ChatApi.send_message ..."
+        @api_client.config.logger.debug "Calling API: ChatApi.send_chat_message ..."
       end
       # resource path
       local_var_path = "/chat/messages"
@@ -696,7 +696,7 @@ module KnetikCloudClient
         :auth_names => auth_names,
         :return_type => 'ChatMessageResource')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ChatApi#send_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ChatApi#send_chat_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

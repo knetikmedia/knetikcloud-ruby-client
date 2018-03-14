@@ -1,6 +1,6 @@
 # KnetikCloudClient::MediaModerationApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -273,7 +273,8 @@ opts = {
   filter_context: "filter_context_example", # String | Filter by moderation context
   filter_context_id: "filter_context_id_example", # String | Filter by moderation context ID
   size: 25, # Integer | The number of objects returned per page
-  page: 1 # Integer | The number of the page returned, starting with 1
+  page: 1, # Integer | The number of the page returned, starting with 1
+  order: "order_example" # String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 }
 
 begin
@@ -294,6 +295,7 @@ Name | Type | Description  | Notes
  **filter_context_id** | **String**| Filter by moderation context ID | [optional] 
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 

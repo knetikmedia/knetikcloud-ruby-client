@@ -103,7 +103,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -155,38 +155,6 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::AuthTokensApi* | [**delete_tokens**](docs/AuthTokensApi.md#delete_tokens) | **DELETE** /auth/tokens | Delete tokens by username, client id, or both
 *KnetikCloudClient::AuthTokensApi* | [**get_token**](docs/AuthTokensApi.md#get_token) | **GET** /auth/tokens/{username}/{client_id} | Get a single token by username and client id
 *KnetikCloudClient::AuthTokensApi* | [**get_tokens**](docs/AuthTokensApi.md#get_tokens) | **GET** /auth/tokens | List usernames and client ids
-*KnetikCloudClient::BRERuleEngineActionsApi* | [**get_bre_actions**](docs/BRERuleEngineActionsApi.md#get_bre_actions) | **GET** /bre/actions | Get a list of available actions
-*KnetikCloudClient::BRERuleEngineCategoriesApi* | [**create_bre_category_template**](docs/BRERuleEngineCategoriesApi.md#create_bre_category_template) | **POST** /bre/categories/templates | Create a BRE category template
-*KnetikCloudClient::BRERuleEngineCategoriesApi* | [**delete_bre_category_template**](docs/BRERuleEngineCategoriesApi.md#delete_bre_category_template) | **DELETE** /bre/categories/templates/{id} | Delete a BRE category template
-*KnetikCloudClient::BRERuleEngineCategoriesApi* | [**get_bre_categories**](docs/BRERuleEngineCategoriesApi.md#get_bre_categories) | **GET** /bre/categories | List categories
-*KnetikCloudClient::BRERuleEngineCategoriesApi* | [**get_bre_category**](docs/BRERuleEngineCategoriesApi.md#get_bre_category) | **GET** /bre/categories/{name} | Get a single category
-*KnetikCloudClient::BRERuleEngineCategoriesApi* | [**get_bre_category_template**](docs/BRERuleEngineCategoriesApi.md#get_bre_category_template) | **GET** /bre/categories/templates/{id} | Get a single BRE category template
-*KnetikCloudClient::BRERuleEngineCategoriesApi* | [**get_bre_category_templates**](docs/BRERuleEngineCategoriesApi.md#get_bre_category_templates) | **GET** /bre/categories/templates | List and search BRE category templates
-*KnetikCloudClient::BRERuleEngineCategoriesApi* | [**update_bre_category**](docs/BRERuleEngineCategoriesApi.md#update_bre_category) | **PUT** /bre/categories/{name} | Update a category
-*KnetikCloudClient::BRERuleEngineCategoriesApi* | [**update_bre_category_template**](docs/BRERuleEngineCategoriesApi.md#update_bre_category_template) | **PUT** /bre/categories/templates/{id} | Update a BRE category template
-*KnetikCloudClient::BRERuleEngineEventsApi* | [**send_bre_event**](docs/BRERuleEngineEventsApi.md#send_bre_event) | **POST** /bre/events | Fire a new event, based on an existing trigger
-*KnetikCloudClient::BRERuleEngineExpressionsApi* | [**get_bre_expression**](docs/BRERuleEngineExpressionsApi.md#get_bre_expression) | **GET** /bre/expressions/{type} | Lookup a specific expression
-*KnetikCloudClient::BRERuleEngineExpressionsApi* | [**get_bre_expressions**](docs/BRERuleEngineExpressionsApi.md#get_bre_expressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions
-*KnetikCloudClient::BRERuleEngineExpressionsApi* | [**get_expression_as_text**](docs/BRERuleEngineExpressionsApi.md#get_expression_as_text) | **POST** /bre/expressions | Returns the textual representation of an expression
-*KnetikCloudClient::BRERuleEngineGlobalsApi* | [**create_bre_global**](docs/BRERuleEngineGlobalsApi.md#create_bre_global) | **POST** /bre/globals/definitions | Create a global definition
-*KnetikCloudClient::BRERuleEngineGlobalsApi* | [**delete_bre_global**](docs/BRERuleEngineGlobalsApi.md#delete_bre_global) | **DELETE** /bre/globals/definitions/{id} | Delete a global
-*KnetikCloudClient::BRERuleEngineGlobalsApi* | [**get_bre_global**](docs/BRERuleEngineGlobalsApi.md#get_bre_global) | **GET** /bre/globals/definitions/{id} | Get a single global definition
-*KnetikCloudClient::BRERuleEngineGlobalsApi* | [**get_bre_globals**](docs/BRERuleEngineGlobalsApi.md#get_bre_globals) | **GET** /bre/globals/definitions | List global definitions
-*KnetikCloudClient::BRERuleEngineGlobalsApi* | [**update_bre_global**](docs/BRERuleEngineGlobalsApi.md#update_bre_global) | **PUT** /bre/globals/definitions/{id} | Update a global definition
-*KnetikCloudClient::BRERuleEngineRulesApi* | [**create_bre_rule**](docs/BRERuleEngineRulesApi.md#create_bre_rule) | **POST** /bre/rules | Create a rule
-*KnetikCloudClient::BRERuleEngineRulesApi* | [**delete_bre_rule**](docs/BRERuleEngineRulesApi.md#delete_bre_rule) | **DELETE** /bre/rules/{id} | Delete a rule
-*KnetikCloudClient::BRERuleEngineRulesApi* | [**get_bre_expression_as_string**](docs/BRERuleEngineRulesApi.md#get_bre_expression_as_string) | **POST** /bre/rules/expression-as-string | Returns a string representation of the provided expression
-*KnetikCloudClient::BRERuleEngineRulesApi* | [**get_bre_rule**](docs/BRERuleEngineRulesApi.md#get_bre_rule) | **GET** /bre/rules/{id} | Get a single rule
-*KnetikCloudClient::BRERuleEngineRulesApi* | [**get_bre_rules**](docs/BRERuleEngineRulesApi.md#get_bre_rules) | **GET** /bre/rules | List rules
-*KnetikCloudClient::BRERuleEngineRulesApi* | [**set_bre_rule**](docs/BRERuleEngineRulesApi.md#set_bre_rule) | **PUT** /bre/rules/{id}/enabled | Enable or disable a rule
-*KnetikCloudClient::BRERuleEngineRulesApi* | [**update_bre_rule**](docs/BRERuleEngineRulesApi.md#update_bre_rule) | **PUT** /bre/rules/{id} | Update a rule
-*KnetikCloudClient::BRERuleEngineTriggersApi* | [**create_bre_trigger**](docs/BRERuleEngineTriggersApi.md#create_bre_trigger) | **POST** /bre/triggers | Create a trigger
-*KnetikCloudClient::BRERuleEngineTriggersApi* | [**delete_bre_trigger**](docs/BRERuleEngineTriggersApi.md#delete_bre_trigger) | **DELETE** /bre/triggers/{event_name} | Delete a trigger
-*KnetikCloudClient::BRERuleEngineTriggersApi* | [**get_bre_trigger**](docs/BRERuleEngineTriggersApi.md#get_bre_trigger) | **GET** /bre/triggers/{event_name} | Get a single trigger
-*KnetikCloudClient::BRERuleEngineTriggersApi* | [**get_bre_triggers**](docs/BRERuleEngineTriggersApi.md#get_bre_triggers) | **GET** /bre/triggers | List triggers
-*KnetikCloudClient::BRERuleEngineTriggersApi* | [**update_bre_trigger**](docs/BRERuleEngineTriggersApi.md#update_bre_trigger) | **PUT** /bre/triggers/{event_name} | Update a trigger
-*KnetikCloudClient::BRERuleEngineVariablesApi* | [**get_bre_variable_types**](docs/BRERuleEngineVariablesApi.md#get_bre_variable_types) | **GET** /bre/variable-types | Get a list of variable types available
-*KnetikCloudClient::BRERuleEngineVariablesApi* | [**get_bre_variable_values**](docs/BRERuleEngineVariablesApi.md#get_bre_variable_values) | **GET** /bre/variable-types/{name}/values | List valid values for a type
 *KnetikCloudClient::CampaignsApi* | [**add_challenge_to_campaign**](docs/CampaignsApi.md#add_challenge_to_campaign) | **POST** /campaigns/{id}/challenges | Add a challenge to a campaign
 *KnetikCloudClient::CampaignsApi* | [**create_campaign**](docs/CampaignsApi.md#create_campaign) | **POST** /campaigns | Create a campaign
 *KnetikCloudClient::CampaignsApi* | [**create_campaign_template**](docs/CampaignsApi.md#create_campaign_template) | **POST** /campaigns/templates | Create a campaign template
@@ -250,7 +218,7 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::ChatApi* | [**get_thread_messages**](docs/ChatApi.md#get_thread_messages) | **GET** /chat/threads/{id}/messages | List messages in a thread
 *KnetikCloudClient::ChatApi* | [**get_topic_messages**](docs/ChatApi.md#get_topic_messages) | **GET** /chat/topics/{id}/messages | List messages in a topic
 *KnetikCloudClient::ChatApi* | [**remove_chat_blacklist**](docs/ChatApi.md#remove_chat_blacklist) | **DELETE** /chat/users/{id}/blacklist/{blacklisted_user_id} | Remove a user from a blacklist
-*KnetikCloudClient::ChatApi* | [**send_message**](docs/ChatApi.md#send_message) | **POST** /chat/messages | Send a message
+*KnetikCloudClient::ChatApi* | [**send_chat_message**](docs/ChatApi.md#send_chat_message) | **POST** /chat/messages | Send a message
 *KnetikCloudClient::ConfigsApi* | [**create_config**](docs/ConfigsApi.md#create_config) | **POST** /configs | Create a new config
 *KnetikCloudClient::ConfigsApi* | [**delete_config**](docs/ConfigsApi.md#delete_config) | **DELETE** /configs/{name} | Delete an existing config
 *KnetikCloudClient::ConfigsApi* | [**get_config**](docs/ConfigsApi.md#get_config) | **GET** /configs/{name} | Get a single config
@@ -258,31 +226,25 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::ConfigsApi* | [**update_config**](docs/ConfigsApi.md#update_config) | **PUT** /configs/{name} | Update an existing config
 *KnetikCloudClient::ContentArticlesApi* | [**create_article**](docs/ContentArticlesApi.md#create_article) | **POST** /content/articles | Create a new article
 *KnetikCloudClient::ContentArticlesApi* | [**create_article_template**](docs/ContentArticlesApi.md#create_article_template) | **POST** /content/articles/templates | Create an article template
+*KnetikCloudClient::ContentArticlesApi* | [**create_template**](docs/ContentArticlesApi.md#create_template) | **POST** /templates/{type_hint} | Create a template
 *KnetikCloudClient::ContentArticlesApi* | [**delete_article**](docs/ContentArticlesApi.md#delete_article) | **DELETE** /content/articles/{id} | Delete an existing article
 *KnetikCloudClient::ContentArticlesApi* | [**delete_article_template**](docs/ContentArticlesApi.md#delete_article_template) | **DELETE** /content/articles/templates/{id} | Delete an article template
+*KnetikCloudClient::ContentArticlesApi* | [**delete_template**](docs/ContentArticlesApi.md#delete_template) | **DELETE** /templates/{type_hint}/{id} | Delete a template
 *KnetikCloudClient::ContentArticlesApi* | [**get_article**](docs/ContentArticlesApi.md#get_article) | **GET** /content/articles/{id} | Get a single article
 *KnetikCloudClient::ContentArticlesApi* | [**get_article_template**](docs/ContentArticlesApi.md#get_article_template) | **GET** /content/articles/templates/{id} | Get a single article template
 *KnetikCloudClient::ContentArticlesApi* | [**get_article_templates**](docs/ContentArticlesApi.md#get_article_templates) | **GET** /content/articles/templates | List and search article templates
 *KnetikCloudClient::ContentArticlesApi* | [**get_articles**](docs/ContentArticlesApi.md#get_articles) | **GET** /content/articles | List and search articles
+*KnetikCloudClient::ContentArticlesApi* | [**get_template**](docs/ContentArticlesApi.md#get_template) | **GET** /templates/{type_hint}/{id} | Get a template
+*KnetikCloudClient::ContentArticlesApi* | [**get_templates**](docs/ContentArticlesApi.md#get_templates) | **GET** /templates/{type_hint} | List and search templates
 *KnetikCloudClient::ContentArticlesApi* | [**update_article**](docs/ContentArticlesApi.md#update_article) | **PUT** /content/articles/{id} | Update an existing article
 *KnetikCloudClient::ContentArticlesApi* | [**update_article_template**](docs/ContentArticlesApi.md#update_article_template) | **PUT** /content/articles/templates/{id} | Update an article template
+*KnetikCloudClient::ContentArticlesApi* | [**update_template**](docs/ContentArticlesApi.md#update_template) | **PUT** /templates/{type_hint}/{id} | Update a template
+*KnetikCloudClient::ContentArticlesApi* | [**validate**](docs/ContentArticlesApi.md#validate) | **POST** /templates/{type_hint}/validate | Validate a templated resource
 *KnetikCloudClient::ContentCommentsApi* | [**add_comment**](docs/ContentCommentsApi.md#add_comment) | **POST** /comments | Add a new comment
 *KnetikCloudClient::ContentCommentsApi* | [**delete_comment**](docs/ContentCommentsApi.md#delete_comment) | **DELETE** /comments/{id} | Delete a comment
 *KnetikCloudClient::ContentCommentsApi* | [**get_comment**](docs/ContentCommentsApi.md#get_comment) | **GET** /comments/{id} | Return a comment
 *KnetikCloudClient::ContentCommentsApi* | [**get_comments**](docs/ContentCommentsApi.md#get_comments) | **GET** /comments | Returns a page of comments
 *KnetikCloudClient::ContentCommentsApi* | [**update_comment**](docs/ContentCommentsApi.md#update_comment) | **PUT** /comments/{id}/content | Update a comment
-*KnetikCloudClient::ContentPollsApi* | [**answer_poll**](docs/ContentPollsApi.md#answer_poll) | **POST** /media/polls/{id}/response | Add your vote to a poll
-*KnetikCloudClient::ContentPollsApi* | [**create_poll**](docs/ContentPollsApi.md#create_poll) | **POST** /media/polls | Create a new poll
-*KnetikCloudClient::ContentPollsApi* | [**create_poll_template**](docs/ContentPollsApi.md#create_poll_template) | **POST** /media/polls/templates | Create a poll template
-*KnetikCloudClient::ContentPollsApi* | [**delete_poll**](docs/ContentPollsApi.md#delete_poll) | **DELETE** /media/polls/{id} | Delete an existing poll
-*KnetikCloudClient::ContentPollsApi* | [**delete_poll_template**](docs/ContentPollsApi.md#delete_poll_template) | **DELETE** /media/polls/templates/{id} | Delete a poll template
-*KnetikCloudClient::ContentPollsApi* | [**get_poll**](docs/ContentPollsApi.md#get_poll) | **GET** /media/polls/{id} | Get a single poll
-*KnetikCloudClient::ContentPollsApi* | [**get_poll_answer**](docs/ContentPollsApi.md#get_poll_answer) | **GET** /media/polls/{id}/response | Get poll answer
-*KnetikCloudClient::ContentPollsApi* | [**get_poll_template**](docs/ContentPollsApi.md#get_poll_template) | **GET** /media/polls/templates/{id} | Get a single poll template
-*KnetikCloudClient::ContentPollsApi* | [**get_poll_templates**](docs/ContentPollsApi.md#get_poll_templates) | **GET** /media/polls/templates | List and search poll templates
-*KnetikCloudClient::ContentPollsApi* | [**get_polls**](docs/ContentPollsApi.md#get_polls) | **GET** /media/polls | List and search polls
-*KnetikCloudClient::ContentPollsApi* | [**update_poll**](docs/ContentPollsApi.md#update_poll) | **PUT** /media/polls/{id} | Update an existing poll
-*KnetikCloudClient::ContentPollsApi* | [**update_poll_template**](docs/ContentPollsApi.md#update_poll_template) | **PUT** /media/polls/templates/{id} | Update a poll template
 *KnetikCloudClient::CurrenciesApi* | [**create_currency**](docs/CurrenciesApi.md#create_currency) | **POST** /currencies | Create a currency
 *KnetikCloudClient::CurrenciesApi* | [**delete_currency**](docs/CurrenciesApi.md#delete_currency) | **DELETE** /currencies/{code} | Delete a currency
 *KnetikCloudClient::CurrenciesApi* | [**get_currencies**](docs/CurrenciesApi.md#get_currencies) | **GET** /currencies | List and search currencies
@@ -413,6 +375,18 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::MediaModerationApi* | [**get_moderation_report**](docs/MediaModerationApi.md#get_moderation_report) | **GET** /moderation/reports/{id} | Get a flag report
 *KnetikCloudClient::MediaModerationApi* | [**get_moderation_reports**](docs/MediaModerationApi.md#get_moderation_reports) | **GET** /moderation/reports | Returns a page of flag reports
 *KnetikCloudClient::MediaModerationApi* | [**update_moderation_report**](docs/MediaModerationApi.md#update_moderation_report) | **PUT** /moderation/reports/{id} | Update a flag report
+*KnetikCloudClient::MediaPollsApi* | [**answer_poll**](docs/MediaPollsApi.md#answer_poll) | **POST** /media/polls/{id}/response | Add your vote to a poll
+*KnetikCloudClient::MediaPollsApi* | [**create_poll**](docs/MediaPollsApi.md#create_poll) | **POST** /media/polls | Create a new poll
+*KnetikCloudClient::MediaPollsApi* | [**create_poll_template**](docs/MediaPollsApi.md#create_poll_template) | **POST** /media/polls/templates | Create a poll template
+*KnetikCloudClient::MediaPollsApi* | [**delete_poll**](docs/MediaPollsApi.md#delete_poll) | **DELETE** /media/polls/{id} | Delete an existing poll
+*KnetikCloudClient::MediaPollsApi* | [**delete_poll_template**](docs/MediaPollsApi.md#delete_poll_template) | **DELETE** /media/polls/templates/{id} | Delete a poll template
+*KnetikCloudClient::MediaPollsApi* | [**get_poll**](docs/MediaPollsApi.md#get_poll) | **GET** /media/polls/{id} | Get a single poll
+*KnetikCloudClient::MediaPollsApi* | [**get_poll_answer**](docs/MediaPollsApi.md#get_poll_answer) | **GET** /media/polls/{id}/response | Get poll answer
+*KnetikCloudClient::MediaPollsApi* | [**get_poll_template**](docs/MediaPollsApi.md#get_poll_template) | **GET** /media/polls/templates/{id} | Get a single poll template
+*KnetikCloudClient::MediaPollsApi* | [**get_poll_templates**](docs/MediaPollsApi.md#get_poll_templates) | **GET** /media/polls/templates | List and search poll templates
+*KnetikCloudClient::MediaPollsApi* | [**get_polls**](docs/MediaPollsApi.md#get_polls) | **GET** /media/polls | List and search polls
+*KnetikCloudClient::MediaPollsApi* | [**update_poll**](docs/MediaPollsApi.md#update_poll) | **PUT** /media/polls/{id} | Update an existing poll
+*KnetikCloudClient::MediaPollsApi* | [**update_poll_template**](docs/MediaPollsApi.md#update_poll_template) | **PUT** /media/polls/templates/{id} | Update a poll template
 *KnetikCloudClient::MediaVideosApi* | [**add_user_to_video_whitelist**](docs/MediaVideosApi.md#add_user_to_video_whitelist) | **POST** /media/videos/{id}/whitelist | Adds a user to a video's whitelist
 *KnetikCloudClient::MediaVideosApi* | [**add_video**](docs/MediaVideosApi.md#add_video) | **POST** /media/videos | Adds a new video in the system
 *KnetikCloudClient::MediaVideosApi* | [**add_video_comment**](docs/MediaVideosApi.md#add_video_comment) | **POST** /media/videos/{video_id}/comments | Add a new video comment
@@ -447,7 +421,7 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::MessagingApi* | [**delete_message_template**](docs/MessagingApi.md#delete_message_template) | **DELETE** /messaging/templates/{id} | Delete an existing message template
 *KnetikCloudClient::MessagingApi* | [**get_message_template**](docs/MessagingApi.md#get_message_template) | **GET** /messaging/templates/{id} | Get a single message template
 *KnetikCloudClient::MessagingApi* | [**get_message_templates**](docs/MessagingApi.md#get_message_templates) | **GET** /messaging/templates | List and search message templates
-*KnetikCloudClient::MessagingApi* | [**send_message1**](docs/MessagingApi.md#send_message1) | **POST** /messaging/message | Send a message
+*KnetikCloudClient::MessagingApi* | [**send_message**](docs/MessagingApi.md#send_message) | **POST** /messaging/message | Send a message
 *KnetikCloudClient::MessagingApi* | [**send_raw_email**](docs/MessagingApi.md#send_raw_email) | **POST** /messaging/raw-email | Send a raw email to one or more users
 *KnetikCloudClient::MessagingApi* | [**send_raw_push**](docs/MessagingApi.md#send_raw_push) | **POST** /messaging/raw-push | Send a raw push notification
 *KnetikCloudClient::MessagingApi* | [**send_raw_sms**](docs/MessagingApi.md#send_raw_sms) | **POST** /messaging/raw-sms | Send a raw SMS
@@ -458,7 +432,6 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::MessagingApi* | [**update_message_template**](docs/MessagingApi.md#update_message_template) | **PUT** /messaging/templates/{id} | Update an existing message template
 *KnetikCloudClient::MessagingTopicsApi* | [**disable_topic_subscriber**](docs/MessagingTopicsApi.md#disable_topic_subscriber) | **PUT** /messaging/topics/{id}/subscribers/{user_id}/disabled | Enable or disable messages for a user
 *KnetikCloudClient::MessagingTopicsApi* | [**get_topic_subscriber**](docs/MessagingTopicsApi.md#get_topic_subscriber) | **GET** /messaging/topics/{id}/subscribers/{user_id} | Get a subscriber to a topic
-*KnetikCloudClient::MessagingTopicsApi* | [**get_topic_subscribers**](docs/MessagingTopicsApi.md#get_topic_subscribers) | **GET** /messaging/topics/{id}/subscribers | Get all subscribers to a topic
 *KnetikCloudClient::MessagingTopicsApi* | [**get_user_topics**](docs/MessagingTopicsApi.md#get_user_topics) | **GET** /users/{id}/topics | Get all messaging topics for a given user
 *KnetikCloudClient::NotificationsApi* | [**create_notification_type**](docs/NotificationsApi.md#create_notification_type) | **POST** /notifications/types | Create a notification type
 *KnetikCloudClient::NotificationsApi* | [**delete_notification_type**](docs/NotificationsApi.md#delete_notification_type) | **DELETE** /notifications/types/{id} | Delete a notification type
@@ -492,7 +465,6 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::PaymentsApi* | [**update_payment_method**](docs/PaymentsApi.md#update_payment_method) | **PUT** /users/{user_id}/payment-methods/{id} | Update an existing payment method for a user
 *KnetikCloudClient::PaymentsAppleApi* | [**verify_apple_receipt**](docs/PaymentsAppleApi.md#verify_apple_receipt) | **POST** /payment/provider/apple/receipt | Pay invoice with Apple receipt
 *KnetikCloudClient::PaymentsFattMerchantApi* | [**create_or_update_fatt_merchant_payment_method**](docs/PaymentsFattMerchantApi.md#create_or_update_fatt_merchant_payment_method) | **PUT** /payment/provider/fattmerchant/payment-methods | Create or update a FattMerchant payment method for a user
-*KnetikCloudClient::PaymentsGoogleApi* | [**handle_google_payment**](docs/PaymentsGoogleApi.md#handle_google_payment) | **POST** /payment/provider/google/payments | Mark an invoice paid with Google
 *KnetikCloudClient::PaymentsOptimalApi* | [**silent_post_optimal**](docs/PaymentsOptimalApi.md#silent_post_optimal) | **POST** /payment/provider/optimal/silent | Initiate silent post with Optimal
 *KnetikCloudClient::PaymentsPayPalClassicApi* | [**create_pay_pal_billing_agreement_url**](docs/PaymentsPayPalClassicApi.md#create_pay_pal_billing_agreement_url) | **POST** /payment/provider/paypal/classic/agreements/start | Create a PayPal Classic billing agreement for the user
 *KnetikCloudClient::PaymentsPayPalClassicApi* | [**create_pay_pal_express_checkout**](docs/PaymentsPayPalClassicApi.md#create_pay_pal_express_checkout) | **POST** /payment/provider/paypal/classic/checkout/start | Create a payment token for PayPal express checkout
@@ -527,6 +499,30 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::ReportingUsageApi* | [**get_usage_by_year**](docs/ReportingUsageApi.md#get_usage_by_year) | **GET** /reporting/usage/year | Returns aggregated endpoint usage information by year
 *KnetikCloudClient::ReportingUsageApi* | [**get_usage_endpoints**](docs/ReportingUsageApi.md#get_usage_endpoints) | **GET** /reporting/usage/endpoints | Returns list of endpoints called (method and url)
 *KnetikCloudClient::ReportingUsersApi* | [**get_user_registrations**](docs/ReportingUsersApi.md#get_user_registrations) | **GET** /reporting/users/registrations | Get user registration info
+*KnetikCloudClient::RuleEngineActionsApi* | [**get_bre_actions**](docs/RuleEngineActionsApi.md#get_bre_actions) | **GET** /bre/actions | Get a list of available actions
+*KnetikCloudClient::RuleEngineEventsApi* | [**send_bre_event**](docs/RuleEngineEventsApi.md#send_bre_event) | **POST** /bre/events | Fire a new event, based on an existing trigger
+*KnetikCloudClient::RuleEngineExpressionsApi* | [**get_bre_expression**](docs/RuleEngineExpressionsApi.md#get_bre_expression) | **GET** /bre/expressions/{type} | Lookup a specific expression
+*KnetikCloudClient::RuleEngineExpressionsApi* | [**get_bre_expressions**](docs/RuleEngineExpressionsApi.md#get_bre_expressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions.
+*KnetikCloudClient::RuleEngineExpressionsApi* | [**get_expression_as_text**](docs/RuleEngineExpressionsApi.md#get_expression_as_text) | **POST** /bre/expressions | Returns the textual representation of an expression
+*KnetikCloudClient::RuleEngineGlobalsApi* | [**create_bre_global**](docs/RuleEngineGlobalsApi.md#create_bre_global) | **POST** /bre/globals/definitions | Create a global definition
+*KnetikCloudClient::RuleEngineGlobalsApi* | [**delete_bre_global**](docs/RuleEngineGlobalsApi.md#delete_bre_global) | **DELETE** /bre/globals/definitions/{id} | Delete a global
+*KnetikCloudClient::RuleEngineGlobalsApi* | [**get_bre_global**](docs/RuleEngineGlobalsApi.md#get_bre_global) | **GET** /bre/globals/definitions/{id} | Get a single global definition
+*KnetikCloudClient::RuleEngineGlobalsApi* | [**get_bre_globals**](docs/RuleEngineGlobalsApi.md#get_bre_globals) | **GET** /bre/globals/definitions | List global definitions
+*KnetikCloudClient::RuleEngineGlobalsApi* | [**update_bre_global**](docs/RuleEngineGlobalsApi.md#update_bre_global) | **PUT** /bre/globals/definitions/{id} | Update a global definition
+*KnetikCloudClient::RuleEngineRulesApi* | [**create_bre_rule**](docs/RuleEngineRulesApi.md#create_bre_rule) | **POST** /bre/rules | Create a rule
+*KnetikCloudClient::RuleEngineRulesApi* | [**delete_bre_rule**](docs/RuleEngineRulesApi.md#delete_bre_rule) | **DELETE** /bre/rules/{id} | Delete a rule
+*KnetikCloudClient::RuleEngineRulesApi* | [**get_bre_expression_as_string**](docs/RuleEngineRulesApi.md#get_bre_expression_as_string) | **POST** /bre/rules/expression-as-string | Returns a string representation of the provided expression
+*KnetikCloudClient::RuleEngineRulesApi* | [**get_bre_rule**](docs/RuleEngineRulesApi.md#get_bre_rule) | **GET** /bre/rules/{id} | Get a single rule
+*KnetikCloudClient::RuleEngineRulesApi* | [**get_bre_rules**](docs/RuleEngineRulesApi.md#get_bre_rules) | **GET** /bre/rules | List rules
+*KnetikCloudClient::RuleEngineRulesApi* | [**set_bre_rule**](docs/RuleEngineRulesApi.md#set_bre_rule) | **PUT** /bre/rules/{id}/enabled | Enable or disable a rule
+*KnetikCloudClient::RuleEngineRulesApi* | [**update_bre_rule**](docs/RuleEngineRulesApi.md#update_bre_rule) | **PUT** /bre/rules/{id} | Update a rule
+*KnetikCloudClient::RuleEngineTriggersApi* | [**create_bre_trigger**](docs/RuleEngineTriggersApi.md#create_bre_trigger) | **POST** /bre/triggers | Create a trigger
+*KnetikCloudClient::RuleEngineTriggersApi* | [**delete_bre_trigger**](docs/RuleEngineTriggersApi.md#delete_bre_trigger) | **DELETE** /bre/triggers/{event_name} | Delete a trigger
+*KnetikCloudClient::RuleEngineTriggersApi* | [**get_bre_trigger**](docs/RuleEngineTriggersApi.md#get_bre_trigger) | **GET** /bre/triggers/{event_name} | Get a single trigger
+*KnetikCloudClient::RuleEngineTriggersApi* | [**get_bre_triggers**](docs/RuleEngineTriggersApi.md#get_bre_triggers) | **GET** /bre/triggers | List triggers
+*KnetikCloudClient::RuleEngineTriggersApi* | [**update_bre_trigger**](docs/RuleEngineTriggersApi.md#update_bre_trigger) | **PUT** /bre/triggers/{event_name} | Update a trigger
+*KnetikCloudClient::RuleEngineVariablesApi* | [**get_bre_variable_types**](docs/RuleEngineVariablesApi.md#get_bre_variable_types) | **GET** /bre/variable-types | Get a list of variable types available
+*KnetikCloudClient::RuleEngineVariablesApi* | [**get_bre_variable_values**](docs/RuleEngineVariablesApi.md#get_bre_variable_values) | **GET** /bre/variable-types/{name}/values | List valid values for a type
 *KnetikCloudClient::SearchApi* | [**search_count_get**](docs/SearchApi.md#search_count_get) | **GET** /search/count/{type} | Count matches with no template
 *KnetikCloudClient::SearchApi* | [**search_count_post**](docs/SearchApi.md#search_count_post) | **POST** /search/count/{type} | Count matches with no template
 *KnetikCloudClient::SearchApi* | [**search_count_with_template_get**](docs/SearchApi.md#search_count_with_template_get) | **GET** /search/count/{type}/{template} | Count matches with a template
@@ -645,7 +641,7 @@ Class | Method | HTTP request | Description
 *KnetikCloudClient::UsersApi* | [**add_user_tag**](docs/UsersApi.md#add_user_tag) | **POST** /users/{user_id}/tags | Add a tag to a user
 *KnetikCloudClient::UsersApi* | [**create_user_template**](docs/UsersApi.md#create_user_template) | **POST** /users/templates | Create a user template
 *KnetikCloudClient::UsersApi* | [**delete_user_template**](docs/UsersApi.md#delete_user_template) | **DELETE** /users/templates/{id} | Delete a user template
-*KnetikCloudClient::UsersApi* | [**get_direct_messages1**](docs/UsersApi.md#get_direct_messages1) | **GET** /users/users/{recipient_id}/messages | Get a list of direct messages with this user
+*KnetikCloudClient::UsersApi* | [**get_direct_messages1**](docs/UsersApi.md#get_direct_messages1) | **GET** /users/{recipient_id}/messages | Get a list of direct messages with this user
 *KnetikCloudClient::UsersApi* | [**get_user**](docs/UsersApi.md#get_user) | **GET** /users/{id} | Get a single user
 *KnetikCloudClient::UsersApi* | [**get_user_tags**](docs/UsersApi.md#get_user_tags) | **GET** /users/{user_id}/tags | List tags for a user
 *KnetikCloudClient::UsersApi* | [**get_user_template**](docs/UsersApi.md#get_user_template) | **GET** /users/templates/{id} | Get a single user template
@@ -758,8 +754,10 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::ActivityOccurrenceResults](docs/ActivityOccurrenceResults.md)
  - [KnetikCloudClient::ActivityOccurrenceResultsResource](docs/ActivityOccurrenceResultsResource.md)
  - [KnetikCloudClient::ActivityOccurrenceSettingsResource](docs/ActivityOccurrenceSettingsResource.md)
+ - [KnetikCloudClient::ActivityOccurrenceStatusWrapper](docs/ActivityOccurrenceStatusWrapper.md)
  - [KnetikCloudClient::ActivityResource](docs/ActivityResource.md)
  - [KnetikCloudClient::ActivityUserResource](docs/ActivityUserResource.md)
+ - [KnetikCloudClient::ActivityUserStatusWrapper](docs/ActivityUserStatusWrapper.md)
  - [KnetikCloudClient::AddressResource](docs/AddressResource.md)
  - [KnetikCloudClient::AggregateCountResource](docs/AggregateCountResource.md)
  - [KnetikCloudClient::AggregateInvoiceReportResource](docs/AggregateInvoiceReportResource.md)
@@ -772,6 +770,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::AvailableSettingResource](docs/AvailableSettingResource.md)
  - [KnetikCloudClient::BareActivityResource](docs/BareActivityResource.md)
  - [KnetikCloudClient::BareChallengeActivityResource](docs/BareChallengeActivityResource.md)
+ - [KnetikCloudClient::BasicTemplatedResource](docs/BasicTemplatedResource.md)
  - [KnetikCloudClient::Batch](docs/Batch.md)
  - [KnetikCloudClient::BatchRequest](docs/BatchRequest.md)
  - [KnetikCloudClient::BatchResult](docs/BatchResult.md)
@@ -781,7 +780,6 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::BillingReport](docs/BillingReport.md)
  - [KnetikCloudClient::BooleanResource](docs/BooleanResource.md)
  - [KnetikCloudClient::BreActionLog](docs/BreActionLog.md)
- - [KnetikCloudClient::BreCategoryResource](docs/BreCategoryResource.md)
  - [KnetikCloudClient::BreEvent](docs/BreEvent.md)
  - [KnetikCloudClient::BreEventLog](docs/BreEventLog.md)
  - [KnetikCloudClient::BreGlobalResource](docs/BreGlobalResource.md)
@@ -854,16 +852,17 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::FulfillmentType](docs/FulfillmentType.md)
  - [KnetikCloudClient::GlobalCheckAndIncrementResource](docs/GlobalCheckAndIncrementResource.md)
  - [KnetikCloudClient::GlobalResource](docs/GlobalResource.md)
- - [KnetikCloudClient::GooglePaymentRequest](docs/GooglePaymentRequest.md)
  - [KnetikCloudClient::GoogleToken](docs/GoogleToken.md)
  - [KnetikCloudClient::GrantTypeResource](docs/GrantTypeResource.md)
  - [KnetikCloudClient::GroupMemberResource](docs/GroupMemberResource.md)
+ - [KnetikCloudClient::GroupMemberStatusWrapper](docs/GroupMemberStatusWrapper.md)
  - [KnetikCloudClient::GroupResource](docs/GroupResource.md)
  - [KnetikCloudClient::IdRef](docs/IdRef.md)
  - [KnetikCloudClient::ImportJobOutputResource](docs/ImportJobOutputResource.md)
  - [KnetikCloudClient::ImportJobResource](docs/ImportJobResource.md)
  - [KnetikCloudClient::IntWrapper](docs/IntWrapper.md)
  - [KnetikCloudClient::IntegerOperationResource](docs/IntegerOperationResource.md)
+ - [KnetikCloudClient::InventoryStatusWrapper](docs/InventoryStatusWrapper.md)
  - [KnetikCloudClient::InventorySubscriptionResource](docs/InventorySubscriptionResource.md)
  - [KnetikCloudClient::InvoiceCreateRequest](docs/InvoiceCreateRequest.md)
  - [KnetikCloudClient::InvoiceItemResource](docs/InvoiceItemResource.md)
@@ -911,7 +910,6 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::PageResourceBareActivityResource](docs/PageResourceBareActivityResource.md)
  - [KnetikCloudClient::PageResourceBareChallengeActivityResource](docs/PageResourceBareChallengeActivityResource.md)
  - [KnetikCloudClient::PageResourceBillingReport](docs/PageResourceBillingReport.md)
- - [KnetikCloudClient::PageResourceBreCategoryResource](docs/PageResourceBreCategoryResource.md)
  - [KnetikCloudClient::PageResourceBreEventLog](docs/PageResourceBreEventLog.md)
  - [KnetikCloudClient::PageResourceBreGlobalResource](docs/PageResourceBreGlobalResource.md)
  - [KnetikCloudClient::PageResourceBreRule](docs/PageResourceBreRule.md)
@@ -970,7 +968,6 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::PageResourceSubscriptionTemplateResource](docs/PageResourceSubscriptionTemplateResource.md)
  - [KnetikCloudClient::PageResourceTemplateResource](docs/PageResourceTemplateResource.md)
  - [KnetikCloudClient::PageResourceTopicResource](docs/PageResourceTopicResource.md)
- - [KnetikCloudClient::PageResourceTopicSubscriberResource](docs/PageResourceTopicSubscriberResource.md)
  - [KnetikCloudClient::PageResourceTransactionResource](docs/PageResourceTransactionResource.md)
  - [KnetikCloudClient::PageResourceUsageInfo](docs/PageResourceUsageInfo.md)
  - [KnetikCloudClient::PageResourceUserAchievementGroupResource](docs/PageResourceUserAchievementGroupResource.md)
@@ -1013,6 +1010,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::ReactivateSubscriptionRequest](docs/ReactivateSubscriptionRequest.md)
  - [KnetikCloudClient::RefundRequest](docs/RefundRequest.md)
  - [KnetikCloudClient::RefundResource](docs/RefundResource.md)
+ - [KnetikCloudClient::ResourceTypeDescription](docs/ResourceTypeDescription.md)
  - [KnetikCloudClient::Result](docs/Result.md)
  - [KnetikCloudClient::RevenueCountryReportResource](docs/RevenueCountryReportResource.md)
  - [KnetikCloudClient::RevenueProductReportResource](docs/RevenueProductReportResource.md)
@@ -1050,6 +1048,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::SubscriptionPlanResource](docs/SubscriptionPlanResource.md)
  - [KnetikCloudClient::SubscriptionPriceOverrideRequest](docs/SubscriptionPriceOverrideRequest.md)
  - [KnetikCloudClient::SubscriptionResource](docs/SubscriptionResource.md)
+ - [KnetikCloudClient::SubscriptionStatusWrapper](docs/SubscriptionStatusWrapper.md)
  - [KnetikCloudClient::SubscriptionTemplateResource](docs/SubscriptionTemplateResource.md)
  - [KnetikCloudClient::TemplateEmailResource](docs/TemplateEmailResource.md)
  - [KnetikCloudClient::TemplatePushResource](docs/TemplatePushResource.md)
@@ -1076,12 +1075,12 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::UserItemLogResource](docs/UserItemLogResource.md)
  - [KnetikCloudClient::UserLevelingResource](docs/UserLevelingResource.md)
  - [KnetikCloudClient::UserNotificationResource](docs/UserNotificationResource.md)
+ - [KnetikCloudClient::UserNotificationStatusWrapper](docs/UserNotificationStatusWrapper.md)
  - [KnetikCloudClient::UserRelationshipReferenceResource](docs/UserRelationshipReferenceResource.md)
  - [KnetikCloudClient::UserRelationshipResource](docs/UserRelationshipResource.md)
  - [KnetikCloudClient::UserResource](docs/UserResource.md)
  - [KnetikCloudClient::UsernameLookupResource](docs/UsernameLookupResource.md)
  - [KnetikCloudClient::ValueWrapperboolean](docs/ValueWrapperboolean.md)
- - [KnetikCloudClient::ValueWrapperstring](docs/ValueWrapperstring.md)
  - [KnetikCloudClient::VariableTypeResource](docs/VariableTypeResource.md)
  - [KnetikCloudClient::VendorEmailLookupResource](docs/VendorEmailLookupResource.md)
  - [KnetikCloudClient::VendorResource](docs/VendorResource.md)
@@ -1128,6 +1127,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloudClient::PreReqEntitlement](docs/PreReqEntitlement.md)
  - [KnetikCloudClient::PriceOverridable](docs/PriceOverridable.md)
  - [KnetikCloudClient::RemoveCustomerEvent](docs/RemoveCustomerEvent.md)
+ - [KnetikCloudClient::ServiceDeployedEvent](docs/ServiceDeployedEvent.md)
  - [KnetikCloudClient::Spendable](docs/Spendable.md)
  - [KnetikCloudClient::StoreItem](docs/StoreItem.md)
  - [KnetikCloudClient::TextProperty](docs/TextProperty.md)

@@ -24,7 +24,7 @@ module KnetikCloudClient
     # To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. <br><br><b>Permissions Needed:</b> S3_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :bucket S3 bucket name
-    # @option opts [String] :path The path to the file relative the bucket (the s3 object key)
+    # @option opts [String] :path The path to the file relative to the bucket (the s3 object key)
     # @option opts [Integer] :expiration The number of seconds this URL will be valid. Default to 60 (default to 60)
     # @return [String]
     def get_download_url(opts = {})
@@ -36,7 +36,7 @@ module KnetikCloudClient
     # To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :bucket S3 bucket name
-    # @option opts [String] :path The path to the file relative the bucket (the s3 object key)
+    # @option opts [String] :path The path to the file relative to the bucket (the s3 object key)
     # @option opts [Integer] :expiration The number of seconds this URL will be valid. Default to 60
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
     def get_download_url_with_http_info(opts = {})

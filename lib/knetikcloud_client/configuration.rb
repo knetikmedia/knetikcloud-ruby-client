@@ -129,7 +129,7 @@ module KnetikCloudClient
 
     def initialize
       @scheme = 'https'
-      @host = 'sandbox.knetikcloud.com'
+      @host = 'jsapi-integration.us-east-1.elasticbeanstalk.com'
       @base_path = '/'
       @api_key = {}
       @api_key_prefix = {}

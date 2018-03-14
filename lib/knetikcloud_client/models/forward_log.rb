@@ -20,11 +20,17 @@ module KnetikCloudClient
 
     attr_accessor :error_msg
 
+    attr_accessor :event_id
+
+    attr_accessor :headers
+
     # The http status code the forward log entry
     attr_accessor :http_status_code
 
     # The id of the forward log entry
     attr_accessor :id
+
+    attr_accessor :method
 
     # The payload of the forward log entry
     attr_accessor :payload
@@ -35,8 +41,14 @@ module KnetikCloudClient
     # The retry count of the forward log entry
     attr_accessor :retry_count
 
+    attr_accessor :retryable
+
+    attr_accessor :rule_id
+
     # The start date of the forward log entry
     attr_accessor :start_date
+
+    attr_accessor :success
 
     # The endpoint url of the forward log entry
     attr_accessor :url
@@ -47,12 +59,18 @@ module KnetikCloudClient
       {
         :'end_date' => :'end_date',
         :'error_msg' => :'error_msg',
+        :'event_id' => :'event_id',
+        :'headers' => :'headers',
         :'http_status_code' => :'http_status_code',
         :'id' => :'id',
+        :'method' => :'method',
         :'payload' => :'payload',
         :'response' => :'response',
         :'retry_count' => :'retry_count',
+        :'retryable' => :'retryable',
+        :'rule_id' => :'rule_id',
         :'start_date' => :'start_date',
+        :'success' => :'success',
         :'url' => :'url'
       }
     end
@@ -62,12 +80,18 @@ module KnetikCloudClient
       {
         :'end_date' => :'Integer',
         :'error_msg' => :'String',
+        :'event_id' => :'String',
+        :'headers' => :'String',
         :'http_status_code' => :'Integer',
         :'id' => :'String',
+        :'method' => :'String',
         :'payload' => :'Object',
         :'response' => :'String',
         :'retry_count' => :'Integer',
+        :'retryable' => :'BOOLEAN',
+        :'rule_id' => :'String',
         :'start_date' => :'Integer',
+        :'success' => :'BOOLEAN',
         :'url' => :'String'
       }
     end
@@ -88,12 +112,24 @@ module KnetikCloudClient
         self.error_msg = attributes[:'error_msg']
       end
 
+      if attributes.has_key?(:'event_id')
+        self.event_id = attributes[:'event_id']
+      end
+
+      if attributes.has_key?(:'headers')
+        self.headers = attributes[:'headers']
+      end
+
       if attributes.has_key?(:'http_status_code')
         self.http_status_code = attributes[:'http_status_code']
       end
 
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'method')
+        self.method = attributes[:'method']
       end
 
       if attributes.has_key?(:'payload')
@@ -108,8 +144,20 @@ module KnetikCloudClient
         self.retry_count = attributes[:'retry_count']
       end
 
+      if attributes.has_key?(:'retryable')
+        self.retryable = attributes[:'retryable']
+      end
+
+      if attributes.has_key?(:'rule_id')
+        self.rule_id = attributes[:'rule_id']
+      end
+
       if attributes.has_key?(:'start_date')
         self.start_date = attributes[:'start_date']
+      end
+
+      if attributes.has_key?(:'success')
+        self.success = attributes[:'success']
       end
 
       if attributes.has_key?(:'url')
@@ -138,12 +186,18 @@ module KnetikCloudClient
       self.class == o.class &&
           end_date == o.end_date &&
           error_msg == o.error_msg &&
+          event_id == o.event_id &&
+          headers == o.headers &&
           http_status_code == o.http_status_code &&
           id == o.id &&
+          method == o.method &&
           payload == o.payload &&
           response == o.response &&
           retry_count == o.retry_count &&
+          retryable == o.retryable &&
+          rule_id == o.rule_id &&
           start_date == o.start_date &&
+          success == o.success &&
           url == o.url
     end
 
@@ -156,7 +210,7 @@ module KnetikCloudClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [end_date, error_msg, http_status_code, id, payload, response, retry_count, start_date, url].hash
+      [end_date, error_msg, event_id, headers, http_status_code, id, method, payload, response, retry_count, retryable, rule_id, start_date, success, url].hash
     end
 
     # Builds the object from hash

@@ -1,6 +1,6 @@
 # KnetikCloudClient::UsersSubscriptionsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -336,7 +336,7 @@ user_id = 56 # Integer | The id of the user
 
 inventory_id = 56 # Integer | The id of the user's inventory
 
-status = KnetikCloudClient::StringWrapper.new # StringWrapper | The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: ('current', 'canceled', 'stopped', 'payment_failed', 'suspended')
+status = KnetikCloudClient::SubscriptionStatusWrapper.new # SubscriptionStatusWrapper | The new status for the subscription
 
 
 begin
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **Integer**| The id of the user | 
  **inventory_id** | **Integer**| The id of the user&#39;s inventory | 
- **status** | [**StringWrapper**](StringWrapper.md)| The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;) | 
+ **status** | [**SubscriptionStatusWrapper**](SubscriptionStatusWrapper.md)| The new status for the subscription | 
 
 ### Return type
 

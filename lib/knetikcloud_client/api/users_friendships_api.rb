@@ -146,7 +146,7 @@ module KnetikCloudClient
     end
 
     # Returns the invite token
-    # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. <br><br><b>Permissions Needed:</b> FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
+    # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required. <br><br><b>Permissions Needed:</b> FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param [Hash] opts the optional parameters
     # @return [String]
@@ -156,7 +156,7 @@ module KnetikCloudClient
     end
 
     # Returns the invite token
-    # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
+    # This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
     # @param user_id The id of the user or &#39;me&#39; if logged in
     # @param [Hash] opts the optional parameters
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers

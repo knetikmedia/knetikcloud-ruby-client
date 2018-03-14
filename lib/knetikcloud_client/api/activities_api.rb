@@ -465,7 +465,7 @@ module KnetikCloudClient
     end
 
     # Load a single activity occurrence details
-    # <b>Permissions Needed:</b> ACTIVITIES_ADMIN
+    # <b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @return [ActivityOccurrenceResource]
@@ -475,7 +475,7 @@ module KnetikCloudClient
     end
 
     # Load a single activity occurrence details
-    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @return [Array<(ActivityOccurrenceResource, Fixnum, Hash)>] ActivityOccurrenceResource data, response status code and response headers
@@ -627,7 +627,7 @@ module KnetikCloudClient
     end
 
     # List activity occurrences
-    # <b>Permissions Needed:</b> ACTIVITIES_ADMIN
+    # <b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_activity Filter for occurrences of the given activity ID
     # @option opts [String] :filter_status Filter for occurrences in the given status
@@ -643,7 +643,7 @@ module KnetikCloudClient
     end
 
     # List activity occurrences
-    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_activity Filter for occurrences of the given activity ID
     # @option opts [String] :filter_status Filter for occurrences in the given status
@@ -759,7 +759,7 @@ module KnetikCloudClient
     end
 
     # Sets the status of an activity occurrence to FINISHED and logs metrics
-    # In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+    # In addition to user permissions requirements there is security based on the core_settings.results_trust setting. <br><br><b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityOccurrenceResultsResource] :activity_occurrence_results The activity occurrence object
@@ -770,7 +770,7 @@ module KnetikCloudClient
     end
 
     # Sets the status of an activity occurrence to FINISHED and logs metrics
-    # In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+    # In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityOccurrenceResultsResource] :activity_occurrence_results The activity occurrence object
@@ -816,7 +816,7 @@ module KnetikCloudClient
     end
 
     # Sets the settings of an activity occurrence
-    # 
+    # <b>Permissions Needed:</b> ACTIVITIES_USER and host or ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityOccurrenceSettingsResource] :settings The new settings
@@ -827,7 +827,7 @@ module KnetikCloudClient
     end
 
     # Sets the settings of an activity occurrence
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityOccurrenceSettingsResource] :settings The new settings
@@ -877,7 +877,7 @@ module KnetikCloudClient
     # @param activity_occurrence_id The id of the activity occurrence
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :status The new status
+    # @option opts [ActivityUserStatusWrapper] :status The new status
     # @return [ActivityUserResource]
     def set_user_status(activity_occurrence_id, user_id, opts = {})
       data, _status_code, _headers = set_user_status_with_http_info(activity_occurrence_id, user_id, opts)
@@ -889,7 +889,7 @@ module KnetikCloudClient
     # @param activity_occurrence_id The id of the activity occurrence
     # @param user_id The id of the user
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :status The new status
+    # @option opts [ActivityUserStatusWrapper] :status The new status
     # @return [Array<(ActivityUserResource, Fixnum, Hash)>] ActivityUserResource data, response status code and response headers
     def set_user_status_with_http_info(activity_occurrence_id, user_id, opts = {})
       if @api_client.config.debugging
@@ -993,10 +993,10 @@ module KnetikCloudClient
     end
 
     # Update the status of an activity occurrence
-    # If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+    # If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. <br><br><b>Permissions Needed:</b> ACTIVITIES_USER and host or ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
-    # @option opts [ValueWrapperstring] :activity_occurrence_status The activity occurrence status object
+    # @option opts [ActivityOccurrenceStatusWrapper] :activity_occurrence_status The activity occurrence status object
     # @return [nil]
     def update_activity_occurrence_status(activity_occurrence_id, opts = {})
       update_activity_occurrence_status_with_http_info(activity_occurrence_id, opts)
@@ -1004,10 +1004,10 @@ module KnetikCloudClient
     end
 
     # Update the status of an activity occurrence
-    # If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+    # If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
     # @param activity_occurrence_id The id of the activity occurrence
     # @param [Hash] opts the optional parameters
-    # @option opts [ValueWrapperstring] :activity_occurrence_status The activity occurrence status object
+    # @option opts [ActivityOccurrenceStatusWrapper] :activity_occurrence_status The activity occurrence status object
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_activity_occurrence_status_with_http_info(activity_occurrence_id, opts = {})
       if @api_client.config.debugging

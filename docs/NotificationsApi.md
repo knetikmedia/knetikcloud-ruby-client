@@ -1,6 +1,6 @@
 # KnetikCloudClient::NotificationsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > NotificationTypeResource create_notification_type(opts)
 
 Create a notification type
+
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
 
 ### Example
 ```ruby
@@ -76,6 +78,8 @@ Name | Type | Description  | Notes
 
 Delete a notification type
 
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -127,6 +131,8 @@ nil (empty response body)
 > NotificationTypeResource get_notification_type(id)
 
 Get a single notification type
+
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
 
 ### Example
 ```ruby
@@ -181,7 +187,7 @@ Name | Type | Description  | Notes
 
 List and search notification types
 
-Get a list of notification type with optional filtering
+Get a list of notification type with optional filtering. <br><br><b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
 
 ### Example
 ```ruby
@@ -241,6 +247,8 @@ Name | Type | Description  | Notes
 
 View a user's notification settings for a type
 
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
+
 ### Example
 ```ruby
 # load the gem
@@ -296,6 +304,8 @@ Name | Type | Description  | Notes
 > PageResourceNotificationUserTypeResource get_user_notification_info_list(user_id, opts)
 
 View a user's notification settings
+
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```ruby
@@ -357,6 +367,8 @@ Name | Type | Description  | Notes
 > PageResourceUserNotificationResource get_user_notifications(id, opts)
 
 Get notifications
+
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```ruby
@@ -421,6 +433,8 @@ Name | Type | Description  | Notes
 
 Send a notification
 
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
+
 ### Example
 ```ruby
 # load the gem
@@ -475,6 +489,8 @@ Name | Type | Description  | Notes
 
 Set notification status
 
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
+
 ### Example
 ```ruby
 # load the gem
@@ -495,7 +511,7 @@ user_id = "user_id_example" # String | The id of the user or 'me'
 notification_id = "notification_id_example" # String | The id of the notification
 
 opts = { 
-  notification: KnetikCloudClient::ValueWrapperstring.new # ValueWrapperstring | status
+  notification: KnetikCloudClient::UserNotificationStatusWrapper.new # UserNotificationStatusWrapper | status
 }
 
 begin
@@ -512,7 +528,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| The id of the user or &#39;me&#39; | 
  **notification_id** | **String**| The id of the notification | 
- **notification** | [**ValueWrapperstring**](ValueWrapperstring.md)| status | [optional] 
+ **notification** | [**UserNotificationStatusWrapper**](UserNotificationStatusWrapper.md)| status | [optional] 
 
 ### Return type
 
@@ -534,7 +550,7 @@ nil (empty response body)
 
 Enable or disable direct notifications for a user
 
-Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. <br><br><b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```ruby
@@ -593,6 +609,8 @@ nil (empty response body)
 > NotificationTypeResource update_notification_type(id, opts)
 
 Update a notificationType
+
+<b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
 
 ### Example
 ```ruby

@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a new config
-    # <b>Permissions Needed:</b> TOPICS_ADMIN
+    # <b>Permissions Needed:</b> CONFIGS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Config] :config The config object
     # @return [Config]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a new config
-    # &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Config] :config The config object
     # @return [Array<(Config, Fixnum, Hash)>] Config data, response status code and response headers

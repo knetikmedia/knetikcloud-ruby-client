@@ -21,7 +21,7 @@ module KnetikCloudClient
     end
 
     # Create a notification type
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [NotificationTypeResource] :notification_type notificationType
     # @return [NotificationTypeResource]
@@ -31,7 +31,7 @@ module KnetikCloudClient
     end
 
     # Create a notification type
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [NotificationTypeResource] :notification_type notificationType
     # @return [Array<(NotificationTypeResource, Fixnum, Hash)>] NotificationTypeResource data, response status code and response headers
@@ -72,7 +72,7 @@ module KnetikCloudClient
     end
 
     # Delete a notification type
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -82,7 +82,7 @@ module KnetikCloudClient
     end
 
     # Delete a notification type
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -124,7 +124,7 @@ module KnetikCloudClient
     end
 
     # Get a single notification type
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [NotificationTypeResource]
@@ -134,7 +134,7 @@ module KnetikCloudClient
     end
 
     # Get a single notification type
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [Array<(NotificationTypeResource, Fixnum, Hash)>] NotificationTypeResource data, response status code and response headers
@@ -177,7 +177,7 @@ module KnetikCloudClient
     end
 
     # List and search notification types
-    # Get a list of notification type with optional filtering
+    # Get a list of notification type with optional filtering. <br><br><b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
     # @option opts [Integer] :page The number of the page returned, starting with 1 (default to 1)
@@ -189,7 +189,7 @@ module KnetikCloudClient
     end
 
     # List and search notification types
-    # Get a list of notification type with optional filtering
+    # Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
     # @option opts [Integer] :page The number of the page returned, starting with 1
@@ -233,7 +233,7 @@ module KnetikCloudClient
     end
 
     # View a user's notification settings for a type
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
     # @param type_id The id of the topic
     # @param user_id The id of the subscriber or &#39;me&#39;
     # @param [Hash] opts the optional parameters
@@ -244,7 +244,7 @@ module KnetikCloudClient
     end
 
     # View a user&#39;s notification settings for a type
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
     # @param type_id The id of the topic
     # @param user_id The id of the subscriber or &#39;me&#39;
     # @param [Hash] opts the optional parameters
@@ -292,7 +292,7 @@ module KnetikCloudClient
     end
 
     # View a user's notification settings
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
     # @param user_id The id of the subscriber or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page (default to 25)
@@ -305,7 +305,7 @@ module KnetikCloudClient
     end
 
     # View a user&#39;s notification settings
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
     # @param user_id The id of the subscriber or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :size The number of objects returned per page
@@ -354,7 +354,7 @@ module KnetikCloudClient
     end
 
     # Get notifications
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
     # @param id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_status filter for notifications with a given status
@@ -368,7 +368,7 @@ module KnetikCloudClient
     end
 
     # Get notifications
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
     # @param id The id of the user or &#39;me&#39;
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_status filter for notifications with a given status
@@ -422,7 +422,7 @@ module KnetikCloudClient
     end
 
     # Send a notification
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [NotificationResource] :notification notification
     # @return [NotificationResource]
@@ -432,7 +432,7 @@ module KnetikCloudClient
     end
 
     # Send a notification
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
     # @param [Hash] opts the optional parameters
     # @option opts [NotificationResource] :notification notification
     # @return [Array<(NotificationResource, Fixnum, Hash)>] NotificationResource data, response status code and response headers
@@ -473,11 +473,11 @@ module KnetikCloudClient
     end
 
     # Set notification status
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
     # @param user_id The id of the user or &#39;me&#39;
     # @param notification_id The id of the notification
     # @param [Hash] opts the optional parameters
-    # @option opts [ValueWrapperstring] :notification status
+    # @option opts [UserNotificationStatusWrapper] :notification status
     # @return [nil]
     def set_user_notification_status(user_id, notification_id, opts = {})
       set_user_notification_status_with_http_info(user_id, notification_id, opts)
@@ -485,11 +485,11 @@ module KnetikCloudClient
     end
 
     # Set notification status
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
     # @param user_id The id of the user or &#39;me&#39;
     # @param notification_id The id of the notification
     # @param [Hash] opts the optional parameters
-    # @option opts [ValueWrapperstring] :notification status
+    # @option opts [UserNotificationStatusWrapper] :notification status
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def set_user_notification_status_with_http_info(user_id, notification_id, opts = {})
       if @api_client.config.debugging
@@ -535,7 +535,7 @@ module KnetikCloudClient
     end
 
     # Enable or disable direct notifications for a user
-    # Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+    # Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. <br><br><b>Permissions Needed:</b> NOTIFICATIONS_ADMIN or self
     # @param type_id The id of the topic
     # @param user_id The id of the subscriber or &#39;me&#39;
     # @param silenced silenced
@@ -547,7 +547,7 @@ module KnetikCloudClient
     end
 
     # Enable or disable direct notifications for a user
-    # Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+    # Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
     # @param type_id The id of the topic
     # @param user_id The id of the subscriber or &#39;me&#39;
     # @param silenced silenced
@@ -601,7 +601,7 @@ module KnetikCloudClient
     end
 
     # Update a notificationType
-    # 
+    # <b>Permissions Needed:</b> NOTIFICATIONS_ADMIN
     # @param id id
     # @param [Hash] opts the optional parameters
     # @option opts [NotificationTypeResource] :notification_type notificationType
@@ -612,7 +612,7 @@ module KnetikCloudClient
     end
 
     # Update a notificationType
-    # 
+    # &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
     # @param id id
     # @param [Hash] opts the optional parameters
     # @option opts [NotificationTypeResource] :notification_type notificationType

@@ -1,6 +1,6 @@
 # KnetikCloudClient::ChatApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**get_thread_messages**](ChatApi.md#get_thread_messages) | **GET** /chat/threads/{id}/messages | List messages in a thread
 [**get_topic_messages**](ChatApi.md#get_topic_messages) | **GET** /chat/topics/{id}/messages | List messages in a topic
 [**remove_chat_blacklist**](ChatApi.md#remove_chat_blacklist) | **DELETE** /chat/users/{id}/blacklist/{blacklisted_user_id} | Remove a user from a blacklist
-[**send_message**](ChatApi.md#send_message) | **POST** /chat/messages | Send a message
+[**send_chat_message**](ChatApi.md#send_chat_message) | **POST** /chat/messages | Send a message
 
 
 # **acknowledge_chat_message**
@@ -661,8 +661,8 @@ nil (empty response body)
 
 
 
-# **send_message**
-> ChatMessageResource send_message(opts)
+# **send_chat_message**
+> ChatMessageResource send_chat_message(opts)
 
 Send a message
 
@@ -689,10 +689,10 @@ opts = {
 
 begin
   #Send a message
-  result = api_instance.send_message(opts)
+  result = api_instance.send_chat_message(opts)
   p result
 rescue KnetikCloudClient::ApiError => e
-  puts "Exception when calling ChatApi->send_message: #{e}"
+  puts "Exception when calling ChatApi->send_chat_message: #{e}"
 end
 ```
 

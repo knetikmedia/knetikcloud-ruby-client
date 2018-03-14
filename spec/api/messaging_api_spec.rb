@@ -58,7 +58,7 @@ describe 'MessagingApi' do
 
   # unit tests for delete_message_template
   # Delete an existing message template
-  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   # @param id The message_template id
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -70,7 +70,7 @@ describe 'MessagingApi' do
 
   # unit tests for get_message_template
   # Get a single message template
-  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   # @param id The message_template id
   # @param [Hash] opts the optional parameters
   # @return [MessageTemplateResource]
@@ -82,7 +82,7 @@ describe 'MessagingApi' do
 
   # unit tests for get_message_templates
   # List and search message templates
-  # Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  # Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_tagset Filter for message templates with at least one of a specified set of tags (separated by comma)
   # @option opts [String] :filter_tag_intersection Filter for message templates with all of a specified set of tags (separated by comma)
@@ -97,13 +97,13 @@ describe 'MessagingApi' do
     end
   end
 
-  # unit tests for send_message1
+  # unit tests for send_message
   # Send a message
   # Sends a message with one or more formats to one or more users. Fill in any message formats desired (email, sms, websockets) and each user will recieve all valid formats. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   # @param [Hash] opts the optional parameters
   # @option opts [MessageResource] :message_resource The message to be sent
   # @return [nil]
-  describe 'send_message1 test' do
+  describe 'send_message test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -195,7 +195,7 @@ describe 'MessagingApi' do
 
   # unit tests for update_message_template
   # Update an existing message template
-  # &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  # &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   # @param id The message_template id
   # @param [Hash] opts the optional parameters
   # @option opts [MessageTemplateResource] :message_template_resource The message template

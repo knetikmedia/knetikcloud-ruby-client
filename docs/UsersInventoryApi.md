@@ -1,6 +1,6 @@
 # KnetikCloudClient::UsersInventoryApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1195,7 +1195,7 @@ user_id = 56 # Integer | The id of the user
 id = 56 # Integer | The id of the user inventory
 
 opts = { 
-  inventory_status: "inventory_status_example" # String | The inventory status object
+  inventory_status: KnetikCloudClient::InventoryStatusWrapper.new # InventoryStatusWrapper | The inventory status object
 }
 
 begin
@@ -1212,7 +1212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **Integer**| The id of the user | 
  **id** | **Integer**| The id of the user inventory | 
- **inventory_status** | **String**| The inventory status object | [optional] 
+ **inventory_status** | [**InventoryStatusWrapper**](InventoryStatusWrapper.md)| The inventory status object | [optional] 
 
 ### Return type
 

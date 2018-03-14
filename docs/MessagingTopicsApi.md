@@ -1,12 +1,11 @@
 # KnetikCloudClient::MessagingTopicsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**disable_topic_subscriber**](MessagingTopicsApi.md#disable_topic_subscriber) | **PUT** /messaging/topics/{id}/subscribers/{user_id}/disabled | Enable or disable messages for a user
 [**get_topic_subscriber**](MessagingTopicsApi.md#get_topic_subscriber) | **GET** /messaging/topics/{id}/subscribers/{user_id} | Get a subscriber to a topic
-[**get_topic_subscribers**](MessagingTopicsApi.md#get_topic_subscribers) | **GET** /messaging/topics/{id}/subscribers | Get all subscribers to a topic
 [**get_user_topics**](MessagingTopicsApi.md#get_user_topics) | **GET** /users/{id}/topics | Get all messaging topics for a given user
 
 
@@ -15,7 +14,7 @@ Method | HTTP request | Description
 
 Enable or disable messages for a user
 
-Useful for opt-out options on a single topic. Consider multiple topics for multiple opt-out options.
+Useful for opt-out options on a single topic. Consider multiple topics for multiple opt-out options. <br><br><b>Permissions Needed:</b> TOPICS_ADMIN or self
 
 ### Example
 ```ruby
@@ -75,7 +74,7 @@ nil (empty response body)
 
 Get a subscriber to a topic
 
-<b>Permissions Needed:</b> TOPICS_ADMIN
+<b>Permissions Needed:</b> TOPICS_ADMIN or self
 
 ### Example
 ```ruby
@@ -128,67 +127,12 @@ Name | Type | Description  | Notes
 
 
 
-# **get_topic_subscribers**
-> PageResourceTopicSubscriberResource get_topic_subscribers(id)
-
-Get all subscribers to a topic
-
-<b>Permissions Needed:</b> TOPICS_ADMIN
-
-### Example
-```ruby
-# load the gem
-require 'knetikcloud_client'
-# setup authorization
-KnetikCloudClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure OAuth2 access token for authorization: oauth2_password_grant
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = KnetikCloudClient::MessagingTopicsApi.new
-
-id = "id_example" # String | The id of the topic
-
-
-begin
-  #Get all subscribers to a topic
-  result = api_instance.get_topic_subscribers(id)
-  p result
-rescue KnetikCloudClient::ApiError => e
-  puts "Exception when calling MessagingTopicsApi->get_topic_subscribers: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The id of the topic | 
-
-### Return type
-
-[**PageResourceTopicSubscriberResource**](PageResourceTopicSubscriberResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
 # **get_user_topics**
 > PageResourceTopicResource get_user_topics(id)
 
 Get all messaging topics for a given user
 
-<b>Permissions Needed:</b> TOPICS_ADMIN
+<b>Permissions Needed:</b> TOPICS_ADMIN or self
 
 ### Example
 ```ruby

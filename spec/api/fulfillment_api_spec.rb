@@ -85,7 +85,7 @@ describe 'FulfillmentApi' do
   # unit tests for update_fulfillment_type
   # Update a fulfillment type
   # &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
-  # @param id The id
+  # @param id The fulfillment id
   # @param [Hash] opts the optional parameters
   # @option opts [FulfillmentType] :fulfillment_type The fulfillment type
   # @return [nil]
